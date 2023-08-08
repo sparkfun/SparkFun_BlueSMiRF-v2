@@ -1,4 +1,4 @@
-22200193469646022
+22200193683539133
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -84035,13 +84035,6 @@ Fiducial_0.635mm
 1
 1
 SparkFun-Aesthetic
-ORDERING_INSTRUCTIONS
-
-
-0
-0
-0
-SparkFun-Aesthetic
 OSHW_Logo_2.5mm
 
 Open Source Hardware Gear
@@ -84094,6 +84087,13 @@ SparkFun-Aesthetic
 OSHW_Logo_10mm
 
 Open Source Hardware Gear
+0
+0
+0
+SparkFun-Aesthetic
+Ordering_Instructions
+
+
 0
 0
 0
@@ -85603,15 +85603,15 @@ SFE_LOGO_NAME_.7
 0
 0
 SparkFun-Eagle-Aesthetics
-SFE_LOGO_NAME_.8
-<h3>SparkFun Font Logo - 0.8" Height - Silkscreen</h3>{return}<p>SparkFun font logo</p>{return}<p>Devices using:{return}<ul><li>SFE_LOGO_NAME</li></ul></p>
+SFE_LOGO_NAME_.08
+<h3>SparkFun Font Logo - 0.1" Height - Silkscreen</h3>{return}<p>SparkFun font logo</p>{return}<p>Devices using:{return}<ul><li>SFE_LOGO_NAME</li></ul></p>
 
 0
 0
 0
 SparkFun-Eagle-Aesthetics
-SFE_LOGO_NAME_.08
-<h3>SparkFun Font Logo - 0.1" Height - Silkscreen</h3>{return}<p>SparkFun font logo</p>{return}<p>Devices using:{return}<ul><li>SFE_LOGO_NAME</li></ul></p>
+SFE_LOGO_NAME_.8
+<h3>SparkFun Font Logo - 0.8" Height - Silkscreen</h3>{return}<p>SparkFun font logo</p>{return}<p>Devices using:{return}<ul><li>SFE_LOGO_NAME</li></ul></p>
 
 0
 0
