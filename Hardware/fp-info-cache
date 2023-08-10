@@ -1,4 +1,4 @@
-22203759951380323
+22203760029862647
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -85449,15 +85449,15 @@ SFE_LOGO_FLAME_.4
 0
 0
 SparkFun-Eagle-Aesthetics
-SFE_LOGO_FLAME_.05
-<h3>SparkFun Flame Logo - 0.05" Height - Silkscreen</h3>{return}<p>SparkFun Flame Logo</p>{return}<p>Devices using:{return}<ul><li>SFE_LOGO_FLAME</li></ul></p>
+SFE_LOGO_FLAME_.5
+<h3>SparkFun Flame Logo - 0.5" Height - Silkscreen</h3>{return}<p>SparkFun Flame Logo</p>{return}<p>Devices using:{return}<ul><li>SFE_LOGO_FLAME</li></ul></p>
 
 0
 0
 0
 SparkFun-Eagle-Aesthetics
-SFE_LOGO_FLAME_.5
-<h3>SparkFun Flame Logo - 0.5" Height - Silkscreen</h3>{return}<p>SparkFun Flame Logo</p>{return}<p>Devices using:{return}<ul><li>SFE_LOGO_FLAME</li></ul></p>
+SFE_LOGO_FLAME_.05
+<h3>SparkFun Flame Logo - 0.05" Height - Silkscreen</h3>{return}<p>SparkFun Flame Logo</p>{return}<p>Devices using:{return}<ul><li>SFE_LOGO_FLAME</li></ul></p>
 
 0
 0
@@ -91840,15 +91840,15 @@ SO14
 14
 14
 SparkFun-Eagle-IC-Comms
-SO016
-
+SO16
+<h3>SOIC-16</h3>{return}<p>Specifications:{return}<ul><li>Pin count: 16</li>{return}<li>Width:0.15"</li>{return}</ul></p>{return}<p>Example device(s):{return}<ul><li>HEX_CONVERTER</li>{return}</ul></p>
 
 0
 16
 16
 SparkFun-Eagle-IC-Comms
-SO16
-<h3>SOIC-16</h3>{return}<p>Specifications:{return}<ul><li>Pin count: 16</li>{return}<li>Width:0.15"</li>{return}</ul></p>{return}<p>Example device(s):{return}<ul><li>HEX_CONVERTER</li>{return}</ul></p>
+SO016
+
 
 0
 16
