@@ -1,4 +1,4 @@
-22200193683539133
+22203759951380323
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -53479,13 +53479,6 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
-ESP32-C6-MINI-1
-ESP32-C6-MINI-1
-
-
-0
-61
-61
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
@@ -84035,6 +84028,13 @@ Fiducial_0.635mm
 1
 1
 SparkFun-Aesthetic
+ORDERING_INSTRUCTIONS
+
+
+0
+0
+0
+SparkFun-Aesthetic
 OSHW_Logo_2.5mm
 
 Open Source Hardware Gear
@@ -84087,13 +84087,6 @@ SparkFun-Aesthetic
 OSHW_Logo_10mm
 
 Open Source Hardware Gear
-0
-0
-0
-SparkFun-Aesthetic
-Ordering_Instructions
-
-
 0
 0
 0
@@ -84915,7 +84908,7 @@ USB-C-16P
 
 0
 16
-11
+12
 SparkFun-Connector
 USB-SOLDER-PADS
 
@@ -86533,6 +86526,377 @@ WIZ811MJ
 0
 40
 40
+SparkFun-Eagle-Buzzard
+!CS_I
+<h3>Active-Low Chip Select Label</h3>{return}<p>Pointer (Board Input)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+!CS_O
+<h3>Active Low Chip-Select Label</h3>{return}<p>Flagtail (Board Output)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+!INT_I
+<h3>Active Low Interrupt Label</h3>{return}<p>Pointer (Board Input)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+!INT_O
+<h3>Active Low Interrupt Label</h3>{return}<p>Flagtail (Board Output)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+!RST_I
+<h3>Active-Low Reset Label</h3>{return}<p>Pointer (Board Input)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+!RST_O
+<h3>Active-Low Reset Label</h3>{return}<p>Flagtail (Board Output)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+3V3_P
+<h3>3.3V Label</h3>{return}<p>Square</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+3V3_TO
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+3V3_TO_32
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+3V3_TO_50
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+BYP
+<h3>Bypass Label</h3>{return}<p>Rounded</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}Useful near a bypass jumper.
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+GND_P
+<h3>GND Label</h3>{return}<p>Square</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+I2C
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+I2C_32
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+I2C_TO
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+INT
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+INT_I
+<h3>Interrupt Label</h3>{return}<p>Pointer(Board Input)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+INT_O
+<h3>Interrupt Label</h3>{return}<p>Flagtail (Board Output)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+JTAG_TO
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+LED
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+LED_32
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+LED_TO
+<h3>LED Label</h3>{return}<p>Text Only</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+LIPO_TO
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+LIPO_TO_32
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+LIPO_TO_50
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+MEAS
+<h3>Measure Label</h3>{return}<p>Rounded</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}Useful near the combination 2 PTH pin + solder jumper component for measuring current paths.
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+MEAS_32
+<h3>Measure Label</h3>{return}<p>Rounded</p>{return}<p>Eagle Scale Factor: 0.032</p>{return}{return}Useful near the combination 2 PTH pin + solder jumper component for measuring current paths.
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+MICROSD_TO
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+MICROSD_TO_32
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+MICROSD_TO_50
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+MISO_I
+<h3>MISO Label</h3>{return}<p>Pointer (Board Input)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+MISO_O
+<h3>MISO Label</h3>{return}<p>Flagtail (Board Output)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+MOSI_I
+<h3>MOSI Label</h3>{return}<p>Pointer (Board Input)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+MOSI_O
+<h3>MOSI Label</h3>{return}<p>Flagtail (Board Output)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+PROG
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+PROG_32
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+PWR
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+PWR_TO
+<h3>PWR Label</h3>{return}<p>Text Only</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+RST_I
+<h3>Reset Label</h3>{return}<p>Pointer (Board Input)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+RST_O
+<h3>Reset Label</h3>{return}<p>Flagtail (Board Output)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+SCK_I
+<h3>Serial Clock Label</h3>{return}<p>Pointer (Board Input)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+SCK_O
+<h3>Serial Clock Label</h3>{return}<p>Flagtail (Board Output)</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+SCL_IO
+<h3>SCL Label</h3>{return}<p>Rounded Edge</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+SDA_IO
+<h3>SDA Label</h3>{return}<p>Rounded edge</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+STAT
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+STAT_32
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+STAT_TO
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+STAT_TO_32
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+STAT_TO_50
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+VIN_P
+<h3>VIN Label</h3>{return}<p>Square</p>{return}<p>Eagle Scale Factor: 0.04</p>{return}{return}<p>Footprint Name Extensions:{return}<ul><li>_TO: Text Only if using this extension, any input/output extension is unnecessary</li>{return}<li>_O: Output relative to board</li>{return}<li>_I: Input relative to board</li>{return}<li>_IO: Bidirectional line</li>{return}<li>_P: Power</li>{return}<li>_32: Any number denotes the EAGLE Scale Factor, in this case, 0.032. If no extension, Scale Factor is the default 0.040</li>{return}</ul></p>
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+VIN_TO
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+VIN_TO_32
+
+
+0
+0
+0
+SparkFun-Eagle-Buzzard
+VIN_TO_50
+
+
+0
+0
+0
 SparkFun-Eagle-Capacitors
 8X10.5
 
@@ -91476,15 +91840,15 @@ SO14
 14
 14
 SparkFun-Eagle-IC-Comms
-SO16
-<h3>SOIC-16</h3>{return}<p>Specifications:{return}<ul><li>Pin count: 16</li>{return}<li>Width:0.15"</li>{return}</ul></p>{return}<p>Example device(s):{return}<ul><li>HEX_CONVERTER</li>{return}</ul></p>
+SO016
+
 
 0
 16
 16
 SparkFun-Eagle-IC-Comms
-SO016
-
+SO16
+<h3>SOIC-16</h3>{return}<p>Specifications:{return}<ul><li>Pin count: 16</li>{return}<li>Width:0.15"</li>{return}</ul></p>{return}<p>Example device(s):{return}<ul><li>HEX_CONVERTER</li>{return}</ul></p>
 
 0
 16
@@ -95983,6 +96347,13 @@ SOD-523 (Small Outline Diode)
 0
 2
 2
+SparkFun-Semiconductor-Standard
+SOT-353
+
+
+0
+5
+5
 SparkFun-Semiconductor-Standard
 SOT23-3
 
@@ -102633,3 +103004,10 @@ varistor
 0
 2
 2
+mPCIe
+mPCIe
+
+
+0
+0
+0
