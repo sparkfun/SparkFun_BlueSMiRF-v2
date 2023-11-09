@@ -1,0 +1,11 @@
+2023-11-09 10:57:57,069 - panelizer_logger - INFO - Running Panelizer
+2023-11-09 10:57:57,069 - panelizer_logger - INFO - ['--panelx', '127.000000', '--panely', '127.000000', '--smaller', '--gapx', '0.000000', '--gapy', '0.000000', '--hrail', '6.35', '--vrail', '6.35', '--fiducialslr']
+2023-11-09 10:57:57,078 - panelizer_logger - INFO - PANELIZER START: 2023-11-09T10:57:57.078026
+2023-11-09 10:58:00,776 - panelizer_logger - INFO - 
+START: 2023-11-09T10:57:57.078026
+
+Board: C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH\Production\SparkFun_BlueSMiRF-ESP32-PTH_panelized.kicad_pcb
+Board dimensions: 38.10 x 15.24 mm.
+You can fit 3 x 8 boards on the panel.
+
+2023-11-09 10:58:00,783 - panelizer_logger - INFO - Panelizer complete

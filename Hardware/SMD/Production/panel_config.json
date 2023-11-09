@@ -1,0 +1,14 @@
+{
+  "dimensionsInchesBtn": true,
+  "dimensionsMmBtn": false,
+  "panelSizeSmallerBtn": true,
+  "panelSizeLargerBtn": false,
+  "panelSizeXCtrl": "4",
+  "panelSizeYCtrl": "4",
+  "gapsVerticalCtrl": ".3",
+  "gapsHorizontalCtrl": "0.0",
+  "removeRightVerticalCheck": false,
+  "productionBordersCheck": true,
+  "productionFiducialsCheck": true,
+  "productionExposeCheck": false
+}
