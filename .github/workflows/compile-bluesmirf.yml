@@ -65,7 +65,7 @@ jobs:
 
       - name: Copy custom BlueSMiRF_Partitions.csv
         run:
-          cp Firmware/BlueSMiRF_Partitions.csv /home/runner/.arduino15/packages/esp32/hardware/esp32/2.0.2/tools/partitions/BlueSMiRF_Partitions.csv
+          cp Firmware/BlueSMiRF_Partitions.csv /home/runner/.arduino15/packages/esp32/hardware/esp32/2.0.11/tools/partitions/BlueSMiRF_Partitions.csv
 
       - name: Compile Sketch
         run: arduino-cli compile --fqbn "esp32:esp32:esp32":DebugLevel=${{ env.DEBUG_LEVEL }} ./Firmware/BlueSMiRF-ESP32/BlueSMiRF-ESP32.ino
