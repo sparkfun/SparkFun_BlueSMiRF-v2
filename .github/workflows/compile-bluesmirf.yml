@@ -1,0 +1,86 @@
+name: Build BlueSMiRF
+on: 
+  workflow_dispatch:
+    branches: 
+
+env:
+  FILENAME_PREFIX: BlueSMiRF
+  FIRMWARE_VERSION_MAJOR: 1
+  FIRMWARE_VERSION_MINOR: 0
+
+jobs:
+  build:
+    
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%b_%d_%Y')" >> $GITHUB_OUTPUT
+
+      - name: Get current date
+        id: dateNoScores
+        run: echo "dateNoScores=$(date +'%b %d %Y')" >> $GITHUB_OUTPUT
+
+      - name: Extract branch name
+        run: echo "BRANCH=${{github.ref_name}}" >> $GITHUB_ENV
+
+      #File_Name_v1_0.bin
+      #File_Name_RC-Jan_12_2123.bin
+      - name: Create file ending and compiler flags based on branch
+        run: |
+          if [[ $BRANCH == 'main' ]]; then
+              echo "FILE_ENDING_UNDERSCORE=_v${{ env.FIRMWARE_VERSION_MAJOR }}_${{ env.FIRMWARE_VERSION_MINOR }}" >> "$GITHUB_ENV"
+              echo "FILE_ENDING_NOUNDERSCORE=_v${{ env.FIRMWARE_VERSION_MAJOR }}.${{ env.FIRMWARE_VERSION_MINOR }}" >> "$GITHUB_ENV"
+              echo "ENABLE_DEVELOPER=false" >> "$GITHUB_ENV"
+              echo "DEBUG_LEVEL=none" >> "$GITHUB_ENV"
+          else
+              echo "FILE_ENDING_UNDERSCORE=_RC-${{ steps.date.outputs.date }}" >> "$GITHUB_ENV"
+              echo "FILE_ENDING_NOUNDERSCORE=_RC-${{ steps.dateNoScores.outputs.dateNoScores }}" >> "$GITHUB_ENV"
+              echo "ENABLE_DEVELOPER=true" >> "$GITHUB_ENV"
+              echo "DEBUG_LEVEL=debug" >> "$GITHUB_ENV"
+          fi
+
+      - name: Setup Arduino CLI
+        uses: arduino/setup-arduino-cli@v1
+
+      - name: Start config file
+        run: arduino-cli config init --additional-urls "https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json"
+
+      - name: Update index
+        run: arduino-cli core update-index
+
+      #We limit the ESP32 core to v2.0.11
+      - name: Install platform
+        run: arduino-cli core install esp32:esp32@2.0.11
+
+      - name: Get Known Libraries
+        run: arduino-cli lib install
+          JC_Button@2.1.2
+          ESP32_BleSerial@1.0.4
+
+      - name: Copy custom BlueSMiRF_Partitions.csv
+        run:
+          cp Firmware/BlueSMiRF_Partitions.csv /home/runner/.arduino15/packages/esp32/hardware/esp32/2.0.2/tools/partitions/BlueSMiRF_Partitions.csv
+
+      - name: Compile Sketch
+        run: arduino-cli compile --fqbn "esp32:esp32:esp32":DebugLevel=${{ env.DEBUG_LEVEL }} ./Firmware/BlueSMiRF-ESP32/BlueSMiRF-ESP32.ino
+          --build-property build.partitions=BlueSMiRF_Partitions
+          --build-property upload.maximum_size=3145728 
+          --build-property "compiler.cpp.extra_flags=\"-DFIRMWARE_VERSION_MAJOR=$FIRMWARE_VERSION_MAJOR\" \"-DFIRMWARE_VERSION_MINOR=$FIRMWARE_VERSION_MINOR\" \"-DENABLE_DEVELOPER=${{ env.ENABLE_DEVELOPER }}\""
+          --export-binaries
+
+      - name: Rename binary
+        run: |
+          cd Firmware/BlueSMiRF-ESP32/build/esp32.esp32.esp32/
+          mv BlueSMiRF-ESP32.ino.bin ${{ env.FILENAME_PREFIX }}${{ env.FILE_ENDING_UNDERSCORE }}.bin
+
+      - name: Upload binary to action
+        uses: actions/upload-artifact@v3
+        with: 
+          name: ${{ env.FILENAME_PREFIX }}${{ env.FILE_ENDING_UNDERSCORE }}
+          path: ./Firmware/BlueSMiRF-ESP32/build/esp32.esp32.esp32/${{ env.FILENAME_PREFIX }}${{ env.FILE_ENDING_UNDERSCORE }}.bin
