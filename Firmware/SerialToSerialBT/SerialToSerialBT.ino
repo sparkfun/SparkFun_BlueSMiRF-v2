@@ -16,7 +16,7 @@ uint8_t buffer[512];
 void setup()
 {
   Serial.begin(115200);
-  SerialBT.begin(BlueSMiRF);
+  SerialBT.begin("BlueSMiRF");
 }
 
 void loop()
