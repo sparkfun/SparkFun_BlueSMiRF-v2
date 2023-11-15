@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.ulp": "cpp",
+        "cstdint": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "iosfwd": "cpp",
+        "xlocale": "cpp"
+    }
+}
