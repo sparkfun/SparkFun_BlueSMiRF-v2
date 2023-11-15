@@ -28,7 +28,7 @@
   Note: CTS and RTS are only active/used when flow control is enabled (by default flowcontrol is disabled).
   Note: CTS and RTS logic can be inverted (selectively) for rare systems that require it.
 
-  Note: All visible ASCII characters are allowed in the command parser with the following notes:
+  Note: All visible ASCII characters are allowed in the command parser with the following exceptions:
     \ is not allowed
     # is seen as a script comment. Anything following a # will be ignored.
 
