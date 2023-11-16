@@ -1,8 +1,8 @@
 #ifdef COMPILE_BT
 
 //We use a local copy of the BluetoothSerial library so that we can increase the RX buffer.
-//#include "src/BluetoothSerial/BluetoothSerial.h"
-#include "BluetoothSerial.h"
+#include "src/BluetoothSerial/BluetoothSerial.h"
+//#include "BluetoothSerial.h"
 
 #include <BleSerial.h> //Click here to get the library: http://librarymanager/All#ESP32_BleSerial v1.0.4 by Avinab Malla
 
@@ -32,8 +32,8 @@ class BTClassicSerial : public virtual BTSerialInterface, public BluetoothSerial
   public:
     bool begin(String deviceName, bool isMaster, uint16_t rxQueueSize, uint16_t txQueueSize)
     {
-//        return BluetoothSerial::begin(deviceName, isMaster, rxQueueSize, txQueueSize);
-return BluetoothSerial::begin(deviceName, isMaster);
+        return BluetoothSerial::begin(deviceName, isMaster, rxQueueSize, txQueueSize);
+//return BluetoothSerial::begin(deviceName, isMaster);
     }
 
     void disconnect()
