@@ -67,7 +67,7 @@ typedef struct
         25; // Percent of serialReceiveBuffer that is free when RTS is asserted. Default of 25% of serialReceiveBuffer.
     int baudRate = 115200;
     uint32_t serialReceiveBufferSize =
-        1024 * 90; // Buffer size to receive serial data from the serial port, to be sent over Bluetooth.
+        1024 * 50; // Buffer size to receive serial data from the serial port, to be sent over Bluetooth.
     uint32_t serialTransmitBufferSize =
         1024 * 10; // Buffer size to receive bytes from Bluetooth waiting to be printed out UART.
 
