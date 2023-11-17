@@ -1,6 +1,6 @@
 #ifdef COMPILE_BT
 
-// We use a local copy of the BluetoothSerial library so that we can increase the RX buffer.
+// We use a local copy of the BluetoothSerial library so that we can increase the TX and RX buffers.
 #include "src/BluetoothSerial/BluetoothSerial.h"
 
 #include <BleSerial.h> //Click here to get the library: http://librarymanager/All#ESP32_BleSerial v1.0.4 by Avinab Malla

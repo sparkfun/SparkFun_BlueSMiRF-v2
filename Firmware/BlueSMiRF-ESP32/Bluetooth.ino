@@ -56,6 +56,12 @@ void bluetoothStart()
         else if (settings.btType == BLUETOOTH_RADIO_BLE)
             bluetoothSerial = new BTLESerial();
 
+        if (settings.debugBluetooth == true)
+        {
+            Serial.printf("settings.btRxSize: %d\r\n", settings.btRxSize);
+            Serial.printf("settings.btTxSize: %d\r\n", settings.btTxSize);
+        }
+        
         if (bluetoothSerial->begin(deviceName, false, settings.btRxSize, settings.btTxSize) ==
             false) // localName, isMaster, rxBufferSize, txBufferSize
         {
