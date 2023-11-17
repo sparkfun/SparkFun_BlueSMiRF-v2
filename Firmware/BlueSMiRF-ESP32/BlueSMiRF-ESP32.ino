@@ -166,12 +166,10 @@ void setup()
 {
     Serial.begin(115200); // Start serial for any initial debug messages
 
-    loadSettings(); // Get settings in NVM
+    loadSettings(); // Get settings from NVM
 
     // factoryDefaults();
-
-    // settings.debugBluetooth = true;
-    // settings.enableHeapReport = true;
+    // recordSystemSettings();
 
     serialStart(); // Malloc serial TX and RX buffers
 

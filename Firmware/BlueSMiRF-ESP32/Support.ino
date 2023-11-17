@@ -129,7 +129,6 @@ void recordSystemSettings()
 {
     settings.length = sizeof(Settings);
     systemSettings.putBytes("settingsStruct", &settings, sizeof(Settings)); // Write current settings to NVM
-    // systemPrintln("System settings recorded to NVM");
 }
 
 // Set setting struct to the default settings
