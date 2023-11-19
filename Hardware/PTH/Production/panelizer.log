@@ -1,12 +1,8 @@
-2023-11-19 12:43:18,190 - panelizer_logger - INFO - Running Panelizer
-2023-11-19 12:43:18,192 - panelizer_logger - INFO - ['--panelx', '177.800000', '--panely', '101.600000', '--smaller', '--vscorelayer', 'User.Comments', '--vscoretextlayer', 'User.Comments', '--gapx', '6.350000', '--gapy', '0.000000', '--hrail', '6.35', '--vrail', '6.35', '--fiducialslr']
-2023-11-19 12:43:18,193 - panelizer_logger - INFO - PANELIZER START: 2023-11-19T12:43:18.193670
-2023-11-19 12:43:20,423 - panelizer_logger - INFO - 
-START: 2023-11-19T12:43:18.193670
-Board saved by user.
+2023-11-19 12:49:36,895 - panelizer_logger - INFO - Running Panelizer
+2023-11-19 12:49:36,897 - panelizer_logger - INFO - ['--panelx', '177.800000', '--panely', '101.600000', '--smaller', '--vscorelayer', 'User.Comments', '--vscoretextlayer', 'User.Comments', '--gapx', '6.350000', '--gapy', '0.000000', '--hrail', '6.35', '--vrail', '6.35', '--fiducialslr']
+2023-11-19 12:49:36,899 - panelizer_logger - INFO - PANELIZER START: 2023-11-19T12:49:36.899517
+2023-11-19 12:49:39,642 - panelizer_logger - WARNING - 
+START: 2023-11-19T12:49:36.899517
+User does not want to overwrite the panel. Quitting.
 
-Board: C:\Users\nathan.seidle\Dropbox\Projects\SparkFun_BlueSMiRF-ESP32\Hardware\PTH\Production\SparkFun_BlueSMiRF-ESP32-PTH_panelized.kicad_pcb
-Board dimensions: 38.10 x 15.24 mm.
-You can fit 3 x 6 boards on the panel.
-
-2023-11-19 12:43:20,448 - panelizer_logger - INFO - Panelizer complete
+2023-11-19 12:49:40,644 - panelizer_logger - INFO - Panelizer complete

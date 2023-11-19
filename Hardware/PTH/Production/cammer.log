@@ -1,4 +1,24 @@
-2023-11-19 12:43:32,087 - cammer_logger - INFO - Running CAMmer
-2023-11-19 12:43:32,088 - cammer_logger - INFO - ['-l', 'F.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask', '-e', 'Edge.Cuts,User.Comments']
-2023-11-19 12:43:32,089 - cammer_logger - INFO - CAMMER START: 2023-11-19T12:43:32.089573
-2023-11-19 12:43:47,929 - cammer_logger - INFO - CAMmer cancelled
+2023-11-19 12:50:20,611 - cammer_logger - INFO - Running CAMmer
+2023-11-19 12:50:20,612 - cammer_logger - INFO - ['-l', 'F.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask', '-e', 'Edge.Cuts,User.Comments']
+2023-11-19 12:50:20,612 - cammer_logger - INFO - CAMMER START: 2023-11-19T12:50:20.612999
+2023-11-19 12:50:21,536 - cammer_logger - INFO - 
+START: 2023-11-19T12:50:20.612999
+Deleting existing C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GTL
+Renaming C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized-F_Cu.gbr to C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GTL
+Deleting existing C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GBL
+Renaming C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized-B_Cu.gbr to C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GBL
+Deleting existing C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GTP
+Renaming C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized-F_Paste.gbr to C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GTP
+Deleting existing C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GBP
+Renaming C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized-B_Paste.gbr to C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GBP
+Deleting existing C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GTO
+Renaming C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized-F_Silkscreen.gbr to C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GTO
+Deleting existing C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GBO
+Renaming C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized-B_Silkscreen.gbr to C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GBO
+Deleting existing C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GTS
+Renaming C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized-F_Mask.gbr to C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GTS
+Renaming C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized-B_Mask.gbr to C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GBS
+Renaming C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized-Edge_Cuts.gbr to C:/Users/nathan.seidle/Dropbox/Projects/SparkFun_BlueSMiRF-ESP32/Hardware/PTH/Production/SparkFun_BlueSMiRF-ESP32-PTH_panelized.GKO
+Drill report: C:\Users\nathan.seidle\Dropbox\Projects\SparkFun_BlueSMiRF-ESP32\Hardware\PTH\Production\drill_report.rpt
+
+2023-11-19 12:50:21,542 - cammer_logger - INFO - CAMmer complete
