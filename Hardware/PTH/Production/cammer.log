@@ -1,0 +1,4 @@
+2023-11-19 12:43:32,087 - cammer_logger - INFO - Running CAMmer
+2023-11-19 12:43:32,088 - cammer_logger - INFO - ['-l', 'F.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask', '-e', 'Edge.Cuts,User.Comments']
+2023-11-19 12:43:32,089 - cammer_logger - INFO - CAMMER START: 2023-11-19T12:43:32.089573
+2023-11-19 12:43:47,929 - cammer_logger - INFO - CAMmer cancelled

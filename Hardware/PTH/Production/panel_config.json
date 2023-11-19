@@ -3,12 +3,13 @@
   "dimensionsMmBtn": false,
   "panelSizeSmallerBtn": true,
   "panelSizeLargerBtn": false,
-  "panelSizeXCtrl": "5",
-  "panelSizeYCtrl": "5",
-  "gapsVerticalCtrl": "0.0",
+  "panelSizeXCtrl": "7",
+  "panelSizeYCtrl": "4",
+  "gapsVerticalCtrl": ".25",
   "gapsHorizontalCtrl": "0.0",
   "removeRightVerticalCheck": false,
   "productionBordersCheck": true,
   "productionFiducialsCheck": true,
-  "productionExposeCheck": false
+  "productionExposeCheck": false,
+  "vScoreLayer": "User.Comments"
 }

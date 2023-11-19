@@ -1,0 +1,25 @@
+Drill report for SparkFun_BlueSMiRF-ESP32_panelized.kicad_pcb
+Created on 11/19/2023 12:44:14 PM
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'SparkFun_BlueSMiRF-ESP32_panelized.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.300mm  0.0118"  (54 holes)
+    T2  0.305mm  0.0120"  (684 holes)
+    T3  0.950mm  0.0374"  (18 holes)
+
+    Total plated holes count 756
+
+
+Not plated through holes are merged with plated holes
+    unplated through holes:
+    =============================================================
+    T4  1.400mm  0.0551"  (36 holes)
+
+    Total unplated holes count 36
