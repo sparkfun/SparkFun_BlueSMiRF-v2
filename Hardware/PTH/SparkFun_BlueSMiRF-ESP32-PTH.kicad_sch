@@ -5,9 +5,9 @@
   (paper "USLetter")
 
   (title_block
-    (title "BlueSMiRF - ESP32")
+    (title "SparkFun BlueSMiRF - ESP32 PTH")
     (date "2023-07-29")
-    (rev "v10")
+    (rev "v11")
     (comment 1 "Designed by: N. Seidle")
   )
 
@@ -2950,7 +2950,7 @@
         )
       )
     )
-    (symbol "SparkFun-Capacitor:10uF_0603_6.3V_20%" (pin_numbers hide) (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
+    (symbol "SparkFun-Capacitor:10uF_0603_10V_20%" (pin_numbers hide) (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
       (property "Reference" "C" (at 0.635 2.54 0)
         (effects (font (size 1.27 1.27)) (justify left))
       )
@@ -2963,10 +2963,10 @@
       (property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf" (at 0 -16.51 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "PROD_ID" "CAP-11015" (at -1.27 -13.97 0)
+      (property "PROD_ID" "CAP-20155" (at -1.27 -13.97 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "Voltage" "6.3V" (at 0 -6.35 0)
+      (property "Voltage" "10V" (at 0 -6.35 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Tolerance" "20%" (at 0 -8.89 0)
@@ -2981,7 +2981,7 @@
       (property "ki_fp_filters" "C_*" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "10uF_0603_6.3V_20%_0_1"
+      (symbol "10uF_0603_10V_20%_0_1"
         (polyline
           (pts
             (xy -2.032 -0.762)
@@ -2999,7 +2999,7 @@
           (fill (type none))
         )
       )
-      (symbol "10uF_0603_6.3V_20%_1_1"
+      (symbol "10uF_0603_10V_20%_1_1"
         (pin passive line (at 0 3.81 270) (length 2.794)
           (name "~" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
@@ -4132,6 +4132,93 @@
         )
       )
     )
+    (symbol "SparkFun-Resistor:1k_0603" (pin_numbers hide) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+      (property "Reference" "R" (at 2.54 0 90)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "1k" (at -2.54 0 90)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 4.572 0 90)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 8.89 -1.27 90)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "PROD_ID" "RES-07856" (at 6.858 0 90)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "R res resistor" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Resistor" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "R_*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "1k_0603_0_1"
+        (polyline
+          (pts
+            (xy 0 -2.286)
+            (xy 0 -2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 2.286)
+            (xy 0 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 -0.762)
+            (xy 1.016 -1.143)
+            (xy 0 -1.524)
+            (xy -1.016 -1.905)
+            (xy 0 -2.286)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 0.762)
+            (xy 1.016 0.381)
+            (xy 0 0)
+            (xy -1.016 -0.381)
+            (xy 0 -0.762)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 2.286)
+            (xy 1.016 1.905)
+            (xy 0 1.524)
+            (xy -1.016 1.143)
+            (xy 0 0.762)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "1k_0603_1_1"
+        (pin passive line (at 0 3.81 270) (length 1.27)
+          (name "~" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 0 -3.81 90) (length 1.27)
+          (name "~" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
     (symbol "SparkFun-Resistor:330_0603" (pin_numbers hide) (pin_names (offset 0)) (in_bom yes) (on_board yes)
       (property "Reference" "R" (at 2.54 0 90)
         (effects (font (size 1.27 1.27)))
@@ -4859,9 +4946,25 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 1ea169a9-83e8-4c0d-ad35-d812942a7f32)
   )
+  (text "Level Translation\n" (at 92.71 142.24 0)
+    (effects (font (size 3 3)) (justify left bottom))
+    (uuid 51e7a25b-fdb5-4ddc-bb54-7bff0981c6bb)
+  )
+  (text "Voltage Regulation" (at 195.58 44.45 0)
+    (effects (font (size 3 3)) (justify left bottom))
+    (uuid 61c01ec9-025c-4b7f-becc-26d35ef42139)
+  )
+  (text "ESP32 Pico Mini\n" (at 44.45 24.13 0)
+    (effects (font (size 3 3)) (justify left bottom))
+    (uuid 670419bd-771a-40d5-a380-0186462b6f47)
+  )
   (text "Close to circumvent regulator" (at 207.01 97.79 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 76208151-3c22-4e19-8c0a-dd91598e6b3d)
+  )
+  (text "Connector\n" (at 27.94 148.59 0)
+    (effects (font (size 3 3)) (justify left bottom))
+    (uuid 8b5d18c9-a89b-4cbf-998f-58d43398c405)
   )
   (text "Suppress Debug During Boot" (at 78.74 55.88 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
@@ -4891,21 +4994,21 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "RTS_LV" (shape input) (at 124.46 186.69 180) (fields_autoplaced)
+  (global_label "~{RTS_LV}" (shape input) (at 124.46 186.69 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 33b6c4a6-b813-4e50-adfa-c2f7802ab815)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 114.9434 186.69 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "CTS_HV" (shape input) (at 97.79 186.69 0) (fields_autoplaced)
+  (global_label "~{CTS_HV}" (shape input) (at 97.79 186.69 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 3c3a7a09-13f6-4fae-bde6-5013fa9c38b8)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 107.609 186.69 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "RTS_HV" (shape input) (at 146.05 186.69 0) (fields_autoplaced)
+  (global_label "~{RTS_HV}" (shape input) (at 146.05 186.69 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 44c08c40-558e-4ced-ac87-db9b432cf472)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 155.869 186.69 0)
@@ -4926,7 +5029,7 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "CTS_LV" (shape input) (at 77.47 72.39 0) (fields_autoplaced)
+  (global_label "~{CTS_LV}" (shape input) (at 77.47 72.39 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 573123f4-8603-477c-8f80-497cfcc4dc29)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 86.9866 72.39 0)
@@ -4954,7 +5057,7 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "RTS_HV" (shape input) (at 36.83 160.02 180) (fields_autoplaced)
+  (global_label "~{RTS_HV}" (shape input) (at 36.83 160.02 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid af6c71cf-f528-4531-8fd3-ae974e1ad22d)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 27.011 160.02 0)
@@ -4968,7 +5071,7 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "RTS_LV" (shape input) (at 77.47 80.01 0) (fields_autoplaced)
+  (global_label "~{RTS_LV}" (shape input) (at 77.47 80.01 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid c7265e90-164b-4ed6-a64c-f5bef5f44f69)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 86.9866 80.01 0)
@@ -4982,14 +5085,14 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "CTS_HV" (shape input) (at 36.83 170.18 180) (fields_autoplaced)
+  (global_label "~{CTS_HV}" (shape input) (at 36.83 170.18 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid d1dda131-6abf-4f4d-9884-d3b6ee47be32)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 27.011 170.18 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "CTS_LV" (shape input) (at 86.36 186.69 180) (fields_autoplaced)
+  (global_label "~{CTS_LV}" (shape input) (at 86.36 186.69 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid d82ef50d-0e16-4023-b2b8-de86c3f77370)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 76.8434 186.69 0)
@@ -5021,7 +5124,7 @@
     )
     (pin "1" (uuid 7db2d494-dd72-445a-8739-3b874378ecc9))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "TP7") (unit 1)
         )
@@ -5046,7 +5149,7 @@
     )
     (pin "1" (uuid 9028b793-a799-4a22-8fa1-cd9773eaea60))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "TP5") (unit 1)
         )
@@ -5072,7 +5175,7 @@
     (pin "1" (uuid 901b73b6-2f8c-4fe1-a35b-981c875af2e3))
     (pin "2" (uuid 3e44455d-ba06-4570-9e88-97a76d07613e))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "JP1") (unit 1)
         )
@@ -5101,7 +5204,7 @@
     (pin "1" (uuid de57eb9c-5af2-4869-9861-ce10ce47d062))
     (pin "2" (uuid 113750e1-b2ae-4047-a0bb-7cd508015801))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "D1") (unit 1)
         )
@@ -5136,7 +5239,7 @@
     (pin "1" (uuid e8705c76-cb66-4a55-a3d5-ec2dd2e65c5b))
     (pin "2" (uuid 4c6ec120-c0f8-4244-9b81-625cd475ac6d))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "C3") (unit 1)
         )
@@ -5166,7 +5269,7 @@
     )
     (pin "1" (uuid f09be86d-95fd-4b27-b969-f1068be67090))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0106") (unit 1)
         )
@@ -5190,7 +5293,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "FID4") (unit 1)
         )
@@ -5215,7 +5318,7 @@
     )
     (pin "1" (uuid 20eba456-0329-4d26-849a-d3c8248bfe4d))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0104") (unit 1)
         )
@@ -5244,7 +5347,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "G1") (unit 1)
         )
@@ -5269,7 +5372,7 @@
     )
     (pin "1" (uuid 18c88e6a-e291-4ad4-ba47-1bdecb072999))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0109") (unit 1)
         )
@@ -5282,28 +5385,28 @@
     )
   )
 
-  (symbol (lib_id "SparkFun-Resistor:10k_0603") (at 125.73 157.48 0) (unit 1)
+  (symbol (lib_id "SparkFun-Resistor:1k_0603") (at 125.73 157.48 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3175ae4c-b89e-4dac-a71e-e0f926f5f56f)
     (property "Reference" "R7" (at 128.27 157.48 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10k" (at 123.19 157.48 90)
+    (property "Value" "1k" (at 123.19 157.48 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 130.048 157.48 90)
+    (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 130.302 157.48 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 133.35 157.48 90)
+    (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 134.62 158.75 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "PROD_ID" "RES-00824" (at 132.08 157.48 90)
+    (property "PROD_ID" "RES-07856" (at 132.588 157.48 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 47b3539b-3e09-4f8f-a5f8-8614592790fa))
     (pin "2" (uuid ed6ea24c-66a4-4b7e-88f6-0717a469f6b7))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "R7") (unit 1)
         )
@@ -5327,7 +5430,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "FID3") (unit 1)
         )
@@ -5357,7 +5460,7 @@
     (pin "5" (uuid c145a2e9-c136-4ec2-85e7-3a86431d9184))
     (pin "6" (uuid 1efa607b-f35b-49ec-98e2-86d1133eae66))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "J1") (unit 1)
         )
@@ -5382,7 +5485,7 @@
     )
     (pin "1" (uuid e76a04f5-6fe5-4ae2-bd2f-d4710c5ee6cf))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0101") (unit 1)
         )
@@ -5395,28 +5498,28 @@
     )
   )
 
-  (symbol (lib_id "SparkFun-Resistor:10k_0603") (at 91.44 162.56 90) (unit 1)
+  (symbol (lib_id "SparkFun-Resistor:1k_0603") (at 91.44 162.56 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 44c9e1a3-8f8a-4ba9-ad30-6e2be0263660)
     (property "Reference" "R3" (at 91.44 156.21 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10k" (at 91.44 158.75 90)
+    (property "Value" "1k" (at 91.44 158.75 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 91.44 158.242 90)
+    (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 91.44 157.988 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 91.44 154.94 90)
+    (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 92.71 153.67 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "PROD_ID" "RES-00824" (at 91.44 156.21 90)
+    (property "PROD_ID" "RES-07856" (at 91.44 155.702 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 16fa0072-b269-4e1d-a4b6-406425a6e069))
     (pin "2" (uuid d67b972c-8b42-48ba-b421-1078e4c2b7f2))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "R3") (unit 1)
         )
@@ -5441,7 +5544,7 @@
     )
     (pin "1" (uuid 15e90def-506b-4f20-95d0-af41779b3fef))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0112") (unit 1)
         )
@@ -5471,7 +5574,7 @@
     )
     (pin "1" (uuid a56edc36-322a-49e6-8e52-d9473c8f1222))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "TP4") (unit 1)
         )
@@ -5479,7 +5582,7 @@
     )
   )
 
-  (symbol (lib_id "SparkFun-Capacitor:10uF_0603_6.3V_20%") (at 190.5 66.04 0) (unit 1)
+  (symbol (lib_id "SparkFun-Capacitor:10uF_0603_10V_20%") (at 190.5 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4c608aea-3eb4-4bec-af6b-c2017a420145)
     (property "Reference" "C1" (at 194.31 62.23 0)
@@ -5494,10 +5597,10 @@
     (property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf" (at 190.5 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "PROD_ID" "CAP-11015" (at 189.23 80.01 0)
+    (property "PROD_ID" "CAP-20155" (at 189.23 80.01 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Voltage" "6.3V" (at 194.31 67.31 0)
+    (property "Voltage" "10V" (at 194.31 67.31 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Tolerance" "20%" (at 194.31 69.85 0)
@@ -5506,7 +5609,7 @@
     (pin "1" (uuid 56ed82b5-173b-4b8a-ae69-13082c075683))
     (pin "2" (uuid 7e5ce51b-5c4a-4ca2-8fa0-b15bf06fec88))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "C1") (unit 1)
         )
@@ -5531,7 +5634,7 @@
     )
     (pin "1" (uuid 340513c1-7956-4889-aef5-e5d757bb9b74))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0119") (unit 1)
         )
@@ -5542,10 +5645,10 @@
   (symbol (lib_id "SparkFun-RF:ESP32-PICO-V3-02") (at 60.96 69.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 586862b4-404c-4e30-a5a0-533772a19a88)
-    (property "Reference" "U1" (at 63.1541 30.48 0)
+    (property "Reference" "U1" (at 63.1541 33.02 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "ESP32_Pico_Mini" (at 63.1541 33.02 0)
+    (property "Value" "ESP32_Pico_Mini" (at 63.1541 35.56 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "SparkFun-RF:ESP32-MINI" (at 60.96 124.46 0)
@@ -5554,8 +5657,8 @@
     (property "Datasheet" "https://www.espressif.com/sites/default/files/documentation/esp32-pico-mini-02_datasheet_en.pdf" (at 60.96 127 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "PROD_ID" "IC-19692" (at 63.1541 35.56 0)
-      (effects (font (size 1.27 1.27)) (justify left))
+    (property "PROD_ID" "IC-19692" (at 59.69 129.54 0)
+      (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 7f114f02-7e3a-4e02-8245-dfdb2814b1d7))
     (pin "10" (uuid 182f00f6-e7ca-4f51-9f7d-9c9efd6d434b))
@@ -5619,7 +5722,7 @@
     (pin "8" (uuid 102483b5-02dd-40cf-8185-021d3deb28c4))
     (pin "9" (uuid 0e2c796a-f36d-4eeb-81af-54fd73e0e1a8))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "U1") (unit 1)
         )
@@ -5649,7 +5752,7 @@
     (pin "2" (uuid e86a2524-2a02-406d-9d4b-6e0dd1253622))
     (pin "3" (uuid deb27417-f7f0-4986-9d01-97caabe5aefc))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "Q1") (unit 1)
         )
@@ -5684,7 +5787,7 @@
     (pin "1" (uuid d0762641-ceb3-4b32-8625-500ca293b0a1))
     (pin "2" (uuid 0f21f6aa-d9cd-4b76-ab53-14f1f68121b3))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "C2") (unit 1)
         )
@@ -5713,7 +5816,7 @@
     (pin "1" (uuid 7f789ded-e4fc-4f01-9c20-a8571edd124b))
     (pin "2" (uuid d9e32fea-9937-4fd9-93d7-a2f503817862))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "SW1") (unit 1)
         )
@@ -5738,7 +5841,7 @@
     )
     (pin "1" (uuid 179234e3-4437-4fc8-9850-a3b1f9c828f8))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "TP2") (unit 1)
         )
@@ -5767,7 +5870,7 @@
     (pin "1" (uuid 98101b9d-b842-483b-b613-a60db7cab5ac))
     (pin "2" (uuid a662086b-e3b7-4b57-b9a2-07f95d86d801))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "R5") (unit 1)
         )
@@ -5775,28 +5878,28 @@
     )
   )
 
-  (symbol (lib_id "SparkFun-Resistor:10k_0603") (at 91.44 186.69 90) (unit 1)
+  (symbol (lib_id "SparkFun-Resistor:1k_0603") (at 91.44 186.69 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6feb47bb-5e8a-4f52-877f-b52595b09f48)
     (property "Reference" "R4" (at 91.44 180.34 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10k" (at 91.44 182.88 90)
+    (property "Value" "1k" (at 91.44 182.88 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 91.44 182.372 90)
+    (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 91.44 182.118 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 91.44 179.07 90)
+    (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 92.71 177.8 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "PROD_ID" "RES-00824" (at 91.44 180.34 90)
+    (property "PROD_ID" "RES-07856" (at 91.44 179.832 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 354777c1-68de-4842-923e-5b0b5c8cbcb2))
     (pin "2" (uuid fb9ce01b-e757-4555-82a3-225ee8f292e6))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "R4") (unit 1)
         )
@@ -5826,7 +5929,7 @@
     (pin "2" (uuid 4cfbb564-6330-4549-a699-7c318114fe6c))
     (pin "3" (uuid c5721001-b4a2-4e8b-afb7-c9c70d0ee4ab))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "Q2") (unit 1)
         )
@@ -5851,7 +5954,7 @@
     )
     (pin "1" (uuid eb8fdc25-7bf7-4e99-b1eb-15e0643566ed))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0108") (unit 1)
         )
@@ -5881,7 +5984,7 @@
     )
     (pin "1" (uuid 7fb71002-e0b2-43d9-b0a8-3d5a85df9747))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "TP3") (unit 1)
         )
@@ -5889,7 +5992,7 @@
     )
   )
 
-  (symbol (lib_id "SparkFun-Capacitor:10uF_0603_6.3V_20%") (at 243.84 66.04 0) (unit 1)
+  (symbol (lib_id "SparkFun-Capacitor:10uF_0603_10V_20%") (at 243.84 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7ba0b458-2ec0-4430-b6be-52a9a1b5209e)
     (property "Reference" "C4" (at 247.65 62.23 0)
@@ -5904,10 +6007,10 @@
     (property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf" (at 243.84 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "PROD_ID" "CAP-11015" (at 242.57 80.01 0)
+    (property "PROD_ID" "CAP-20155" (at 242.57 80.01 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Voltage" "6.3V" (at 247.65 67.31 0)
+    (property "Voltage" "10V" (at 247.65 67.31 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Tolerance" "20%" (at 247.65 69.85 0)
@@ -5916,7 +6019,7 @@
     (pin "1" (uuid acaefb2d-4bd7-4355-b25f-f4b98586840e))
     (pin "2" (uuid bdd5f048-d93d-4240-a7a7-e69c459ce5b6))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "C4") (unit 1)
         )
@@ -5945,7 +6048,7 @@
     (pin "1" (uuid 6544bf80-5624-4b3e-874e-51ca82d6e82f))
     (pin "2" (uuid 01649196-c0ce-47dc-baf8-8d3cb32dbc63))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "R6") (unit 1)
         )
@@ -5970,7 +6073,7 @@
     )
     (pin "1" (uuid 672d8ea3-54ce-4d89-92d5-a077b36b7327))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0102") (unit 1)
         )
@@ -6000,7 +6103,7 @@
     )
     (pin "1" (uuid f2b0878b-6579-4a3a-b46b-cd45fb0e9a35))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0114") (unit 1)
         )
@@ -6030,7 +6133,7 @@
     )
     (pin "1" (uuid 95afd9fe-f644-4026-b340-6c1b31b8f184))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0121") (unit 1)
         )
@@ -6060,7 +6163,7 @@
     )
     (pin "1" (uuid 03a5c85c-77d2-4682-8e8a-633ba0e9c247))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0124") (unit 1)
         )
@@ -6073,28 +6176,28 @@
     )
   )
 
-  (symbol (lib_id "SparkFun-Resistor:10k_0603") (at 138.43 157.48 0) (unit 1)
+  (symbol (lib_id "SparkFun-Resistor:1k_0603") (at 138.43 157.48 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a3b31200-7d3f-474f-82bb-dc0693267687)
     (property "Reference" "R9" (at 140.97 156.21 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "10k" (at 140.97 158.75 0)
+    (property "Value" "1k" (at 140.97 158.75 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 142.748 157.48 90)
+    (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 143.002 157.48 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 146.05 157.48 90)
+    (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 147.32 158.75 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "PROD_ID" "RES-00824" (at 144.78 157.48 90)
+    (property "PROD_ID" "RES-07856" (at 145.288 157.48 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 60938401-6cf2-46e2-910c-ee090372768c))
     (pin "2" (uuid 9950534c-f37a-4c69-8f71-174edb861bf7))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "R9") (unit 1)
         )
@@ -6119,7 +6222,7 @@
     )
     (pin "1" (uuid ef26ba77-ffe2-41f8-9095-dc2985933e4d))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0123") (unit 1)
         )
@@ -6151,7 +6254,7 @@
     (pin "4" (uuid 6f3c3f44-32c0-432b-a4e0-2798389a260b))
     (pin "5" (uuid 514e00e4-1697-4810-b357-38f0912e789f))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "U2") (unit 1)
         )
@@ -6181,7 +6284,7 @@
     )
     (pin "1" (uuid cf91ffc9-c42e-4801-ba50-4bbd8b98edb8))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0116") (unit 1)
         )
@@ -6206,7 +6309,7 @@
     )
     (pin "1" (uuid afdb51fc-de54-4ef4-9529-73f712f732d9))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0118") (unit 1)
         )
@@ -6236,7 +6339,7 @@
     )
     (pin "1" (uuid 431a474e-33ce-4107-94e2-bbff6406f701))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0120") (unit 1)
         )
@@ -6261,7 +6364,7 @@
     )
     (pin "1" (uuid 34e3b904-fdce-4797-89c1-76e27b2a740c))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0115") (unit 1)
         )
@@ -6286,7 +6389,7 @@
     )
     (pin "1" (uuid ce4c07e1-8266-45a5-b2a4-49493b81a4ba))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0103") (unit 1)
         )
@@ -6315,7 +6418,7 @@
     (pin "1" (uuid ed915175-df58-42aa-b4c6-982c49f1be05))
     (pin "2" (uuid 2d7ec552-0c71-429d-99a1-184ccec4df87))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "R2") (unit 1)
         )
@@ -6340,7 +6443,7 @@
     )
     (pin "1" (uuid 48427789-20f8-4550-96a4-3f636615b5e7))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0107") (unit 1)
         )
@@ -6369,7 +6472,7 @@
     (pin "1" (uuid 35289c35-1168-4a1e-bba1-4b1409cfea1f))
     (pin "2" (uuid 5cf39e83-0d19-4c68-8b2e-e714dbd5c59f))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "D2") (unit 1)
         )
@@ -6394,7 +6497,7 @@
     )
     (pin "1" (uuid c1c6c010-83a9-432e-89d6-360ae36d97c2))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0110") (unit 1)
         )
@@ -6423,7 +6526,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "G2") (unit 1)
         )
@@ -6447,7 +6550,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "FID1") (unit 1)
         )
@@ -6472,7 +6575,7 @@
     )
     (pin "1" (uuid 43ad1299-9266-4eb0-8f22-8916c0e15381))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0111") (unit 1)
         )
@@ -6503,7 +6606,7 @@
     (pin "1" (uuid eb432f33-a7d3-4643-a0ac-05a56667fecf))
     (pin "2" (uuid 13ad13fc-ce3d-4151-bfc1-168c7b127ab6))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "JP2") (unit 1)
         )
@@ -6528,7 +6631,7 @@
     )
     (pin "1" (uuid 31b8187d-d2d4-4a58-9b6f-94f30ead6cda))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "TP6") (unit 1)
         )
@@ -6553,7 +6656,7 @@
     )
     (pin "1" (uuid ef62d9e0-d510-4ddd-9c0f-366fecba0c4c))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0105") (unit 1)
         )
@@ -6582,7 +6685,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "FID2") (unit 1)
         )
@@ -6607,7 +6710,7 @@
     )
     (pin "1" (uuid a5c1dec7-d96a-4d65-8ea7-5f37728bd735))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0113") (unit 1)
         )
@@ -6637,7 +6740,7 @@
     )
     (pin "1" (uuid b2ac10c9-e734-4bb4-99c0-4da2a00409ec))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0117") (unit 1)
         )
@@ -6645,28 +6748,28 @@
     )
   )
 
-  (symbol (lib_id "SparkFun-Resistor:10k_0603") (at 125.73 181.61 0) (unit 1)
+  (symbol (lib_id "SparkFun-Resistor:1k_0603") (at 125.73 181.61 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f688e3bd-1e0b-44f3-9850-a8ff03de131f)
     (property "Reference" "R8" (at 128.27 181.61 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10k" (at 123.19 181.61 90)
+    (property "Value" "1k" (at 123.19 181.61 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 130.048 181.61 90)
+    (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 130.302 181.61 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 133.35 181.61 90)
+    (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 134.62 182.88 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "PROD_ID" "RES-00824" (at 132.08 181.61 90)
+    (property "PROD_ID" "RES-07856" (at 132.588 181.61 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid fb703c94-62a2-4e4d-827e-7899fc09c125))
     (pin "2" (uuid bd3ec13b-d20c-478f-9249-07b16d277351))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "R8") (unit 1)
         )
@@ -6691,7 +6794,7 @@
     )
     (pin "1" (uuid d2683214-ef8f-4e92-ae17-b98534e102d9))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0125") (unit 1)
         )
@@ -6716,7 +6819,7 @@
     )
     (pin "1" (uuid 4d379630-0cf2-4a63-8ac4-f93109e3b450))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "#PWR0122") (unit 1)
         )
@@ -6729,28 +6832,28 @@
     )
   )
 
-  (symbol (lib_id "SparkFun-Resistor:10k_0603") (at 138.43 181.61 0) (unit 1)
+  (symbol (lib_id "SparkFun-Resistor:1k_0603") (at 138.43 181.61 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid fa145686-ac73-45be-920a-33d3e6676a23)
     (property "Reference" "R10" (at 140.97 181.61 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10k" (at 135.89 181.61 90)
+    (property "Value" "1k" (at 135.89 181.61 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 142.748 181.61 90)
+    (property "Footprint" "SparkFun-Resistor:R_0603_1608Metric" (at 143.002 181.61 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 146.05 181.61 90)
+    (property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf" (at 147.32 182.88 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "PROD_ID" "RES-00824" (at 144.78 181.61 90)
+    (property "PROD_ID" "RES-07856" (at 145.288 181.61 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 717e2c06-af93-4bbe-8279-dcffc977c147))
     (pin "2" (uuid 0ec55d94-b38b-4aed-8c89-97de82380131))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "R10") (unit 1)
         )
@@ -6776,10 +6879,10 @@
     (property "PROD_ID" "RES-07857" (at 51.054 35.56 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid a832e0a2-6747-4106-b8cd-3d7988d63f92))
-    (pin "2" (uuid ef87acdb-641e-45b1-b669-7fe9b22d7e0e))
+    (pin "1" (uuid 3603ad8e-e0ea-4026-a2e4-29f924c9e835))
+    (pin "2" (uuid 53d6725d-6355-4816-a8a3-62d3066fd6ce))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "R1") (unit 1)
         )
@@ -6803,7 +6906,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "U3") (unit 1)
         )
@@ -6828,7 +6931,7 @@
     )
     (pin "1" (uuid 5fb1bd24-f370-46f9-bfa8-a71a7a35ced7))
     (instances
-      (project "SparkFun_BlueSMiRF-ESP32-PTH"
+      (project "SparkFun_BlueSMiRF-ESP32-PTH_panelized"
         (path "/1559d418-8eab-4cd5-99bd-b96fa1947de8"
           (reference "TP1") (unit 1)
         )
