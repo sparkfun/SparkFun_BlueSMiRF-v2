@@ -102,10 +102,10 @@ uint8_t *serialTransmitBuffer =
     nullptr; // Bytes received from RF waiting to be printed out UART. Buffer up to 1s of bytes at 4k
 
 TaskHandle_t serialReadTaskHandle = nullptr; // Store task handle so that we can delete it if needed
-const int serialReadTaskStackSize = 2000;
+const int serialReadTaskStackSize = 10000; //Must be larger to handle command interface + WiFi update
 
 TaskHandle_t serialWriteTaskHandle = nullptr; // Store task handle so that we can delete it if needed
-const int serialWriteTaskStackSize = 2000;
+const int serialWriteTaskStackSize = 3000;
 
 unsigned long lastByteReceived_ms = 0; // Track when last transmission was. Send partial buffer once time has expired.
 uint32_t rtsStartSendingBytes = 0;     // Calculated as a percentage of the overall buffer size. Calc'd at beginSerial
