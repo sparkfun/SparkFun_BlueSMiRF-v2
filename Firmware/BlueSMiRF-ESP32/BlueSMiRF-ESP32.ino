@@ -38,7 +38,8 @@
 
 */
 
-#define COMPILE_BT // Comment out to remove Bluetooth functionality
+#define COMPILE_BT   // Comment out to remove Bluetooth functionality
+#define COMPILE_WIFI // Comment out to remove WiFi functionality
 
 // Always define ENABLE_DEVELOPER to enable its use in conditional statements
 #ifndef ENABLE_DEVELOPER
@@ -48,8 +49,8 @@
 
 // This is passed in from compiler extra flags
 #ifndef FIRMWARE_VERSION_MAJOR
-#define FIRMWARE_VERSION_MAJOR 1
-#define FIRMWARE_VERSION_MINOR 0
+#define FIRMWARE_VERSION_MAJOR 99
+#define FIRMWARE_VERSION_MINOR 99
 #endif // FIRMWARE_VERSION_MAJOR
 
 // Hardware connections
