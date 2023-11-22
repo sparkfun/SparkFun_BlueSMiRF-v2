@@ -148,6 +148,28 @@ const uint8_t ButtonCheckTaskPriority = 0; // 3 being the highest, and 0 being t
 const int buttonTaskStackSize = 2000;
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+// WiFi
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#ifdef COMPILE_WIFI
+
+#include <WiFi.h>      //Built-in.
+#include <WiFiMulti.h> //Built-in.
+
+#endif
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+// Over-The-Air Update
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+#ifdef COMPILE_WIFI
+
+#include "ESP32OTAPull.h" //http://librarymanager/All#ESP-OTA-Pull Used for getting
+
+#define OTA_FIRMWARE_JSON_URL                                                                                          \
+    "https://raw.githubusercontent.com/sparkfun/SparkFun_RTK_Firmware_Binaries/main/RTK-Firmware.json"
+    //"https://raw.githubusercontent.com/sparkfun/SparkFun_BlueSMiRF_Binaries/main/BlueSMiRF-Firmware.json"
+#endif
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 // Global variables
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 char platformPrefix[55] = "BlueSMiRF"; // Sets the prefix for broadcast names
