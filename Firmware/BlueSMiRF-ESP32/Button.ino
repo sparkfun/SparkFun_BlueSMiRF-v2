@@ -63,8 +63,7 @@ void buttonFactoryDefaults()
   ledConnectOff();
  
   systemPrintln("System resetting");
-  delay(50);
-  //systemFlush(); //Allow print to complete
+  delay(50); //Allow print to complete
 
   ESP.restart();
 }
