@@ -344,8 +344,11 @@ void systemReset()
 void systemFlush()
 {
     // Wait for btWriteTask task to clear serialReceiveBuffer
-    while (availableRXBytes() > 0)
-        delay(1);
+    if (bluetoothState == BT_CONNECTED)
+    {
+        while (availableRXBytes() > 0)
+            delay(1);
+    }
 
     // Wait for serialWriteTask task to clear serialTransmitBuffer
     while (availableTXBytes() > 0)
