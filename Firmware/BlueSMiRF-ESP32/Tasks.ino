@@ -182,8 +182,11 @@ void serialReadStandardMode()
                 }
                 else
                 {
-                    // Ignore this escape character, passing along to output
-                    serialAddToOutputBuffer(incoming);
+                    // Ignore this escape character, passing along to serialReceiveBuffer
+                    //serialAddToOutputBuffer(incoming);
+                    serialReceiveBuffer[serialRxHead++] = settings.escapeCharacter;
+                    serialRxHead %= settings.serialReceiveBufferSize; // Wrap as needed
+
                     lastByteReceived_ms = millis(); // Mark so that we will send partial buffer as needed
                 }
             } // End incoming == settings.escapeCharacter
