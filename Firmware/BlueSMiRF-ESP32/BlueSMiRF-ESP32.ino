@@ -31,21 +31,10 @@
   Note: All visible ASCII characters are allowed in the command parser with the following exceptions:
     \ is not allowed
     # is seen as a script comment. Anything following a # will be ignored.
-
-  TODO
-  (Future) Allow user to input local WiFi SSID and PW for OTA update
-  Do we need to be in pairing mode or are we always advertising?
-
 */
 
 #define COMPILE_BT   // Comment out to remove Bluetooth functionality
 #define COMPILE_WIFI // Comment out to remove WiFi functionality
-
-// Always define ENABLE_DEVELOPER to enable its use in conditional statements
-#ifndef ENABLE_DEVELOPER
-#define ENABLE_DEVELOPER                                                                                               \
-    true // This enables specials developer modes (don't check power button at startup). Passed in from compiler flags.
-#endif   // ENABLE_DEVELOPER
 
 // This is passed in from compiler extra flags
 #ifndef FIRMWARE_VERSION_MAJOR
