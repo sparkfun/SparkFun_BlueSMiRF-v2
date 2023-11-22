@@ -48,6 +48,8 @@ const COMMAND_ENTRY commands[] = {
     {'Y', 0, 0, 0, 255, 0, TYPE_U8, valInt, "EscapeCharacterCount", &tempSettings.maxEscapeCharacters},
     {'Y', 0, 0, 0, 20000, 0, TYPE_U16, valInt, "MinEscapeTimeMs", &tempSettings.minEscapeTime_ms}, // Arbitrary 20s max
     {'Y', 0, 0, 0, 255, 0, TYPE_U8, valInt, "LedStyle", &tempSettings.ledStyle},
+    {'Y', 0, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiSSID", &tempSettings.wifiSsid},
+    {'Y', 0, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiPassword", &tempSettings.wifiPassword},
 
     /*Serial parameters
       Ltr, All, reset, min, max, digits,    type,         validation,     name,                   setting addr */
@@ -82,6 +84,8 @@ bool commandAT(const char *commandString)
     const char *string;
     unsigned long timer;
 
+    static bool newOTAFirmwareAvailable = false;
+
     //'AT'
     if (commandLength == 2)
         return true;
@@ -99,15 +103,33 @@ bool commandAT(const char *commandString)
             systemPrintln("  AT? - Print the command summary");
             systemPrintln("  ATA - Display all settings");
             systemPrintln("  ATB - Display Bluetooth settings"); // User settings
-            systemPrintln("  ATD - Display debug settings");     // User settings
+#ifdef COMPILE_WIFI
+            if (newOTAFirmwareAvailable == false)
+                systemPrintln("  ATC - Check for new firmware");
+            else
+                ; // Don't print anything
+#else
+            systemPrintln("  ATC - Check for new firmware ** WiFi not compiled **");
+#endif
+            systemPrintln("  ATD - Display debug settings"); // User settings
             systemPrintln("  ATF - Restore factory settings");
             systemPrintln("  ATS - Display serial settings"); // User settings
+            if (newOTAFirmwareAvailable == true)
+#ifdef COMPILE_WIFI
+                systemPrintln("  ATU - Update Firmware");
+#else
+                systemPrintln("  ATU - Update Firmware ** WiFi not compiled **");
+#endif
             systemPrintln("  ATW - Save current settings to NVM");
             systemPrintln("  ATX - Exit command mode");
             systemPrintln("  ATY - Display system settings"); // User settings
             systemPrintln("  ATZ - Reboot the system");
             systemPrintln("  AT-Param=xxx - Set parameter's value to xxx by name (Param)");
             systemPrintln("  AT-Param? - Print parameter's current value by name (Param)");
+            return true;
+
+        case ('C'): // ATC - Check for new firmware
+            newOTAFirmwareAvailable = wifiCheckNewFirmware();
             return true;
 
         case ('F'):                  // ATF - Reset to factory default
@@ -118,6 +140,11 @@ bool commandAT(const char *commandString)
             systemPrintln("Factory defaults applied");
             return true;
 
+        case ('U'): // ATU - Update firmware
+            if (newOTAFirmwareAvailable == true)
+                wifiUpdate();
+            return true;
+
         case ('W'):                  // ATW - Write parameters to the flash memory
             settings = tempSettings; // Apply user's modifications to settings struct
             recordSystemSettings();  // Record current settings struct to NVM
@@ -125,10 +152,9 @@ bool commandAT(const char *commandString)
             return true;
 
         case ('X'):                // ATX - Exit command mode
+            wifiStop();
             inCommandMode = false; // Return to printing normal RF serial data
-
             settings = tempSettings; // Apply user's modifications
-
             return true;
 
         case ('Z'): // ATZ - Reboots the system
@@ -230,7 +256,7 @@ void reportOK()
 void commandReset()
 {
     systemFlush();
-    systemReset();
+    ESP.restart();
 }
 
 // Remove any preceeding or following whitespace chars
@@ -323,8 +349,6 @@ bool valChar(void *value, uint32_t valMin, uint32_t valMax)
 // Validate the length of the string
 bool valString(void *value, uint32_t valMin, uint32_t valMax)
 {
-    Serial.println("Test");
-
     char *str = (char *)value;
 
     unsigned int length = strlen(str);
@@ -379,7 +403,7 @@ void commandDisplay(const COMMAND_ENTRY *command)
         systemPrint(*(uint32_t *)(command->setting));
         break;
     default:
-        Serial.println("Unknown type");
+        systemPrintln("Unknown type");
         break;
     }
     systemPrintln();

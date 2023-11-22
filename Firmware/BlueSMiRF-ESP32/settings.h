@@ -87,7 +87,8 @@ typedef struct
     uint8_t maxEscapeCharacters = 3;  // The number of escape characters required to enter command mode
     uint16_t minEscapeTime_ms = 2000; // Serial traffic must stop this amount before an escape char is recognized
     uint8_t ledStyle = LEDS_CLASSIC;  // Connect LED will blink when waiting for BT connection.
-    bool enableRCFirmware = false;    // Goes true when user opts in to release candidate firmware releases
+    char wifiSsid[50] = ""; // For firmware update over WiFi
+    char wifiPassword[50] = "";
 
     bool debugSerial = false;
     bool debugBluetooth = false;

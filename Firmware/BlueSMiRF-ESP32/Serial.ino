@@ -79,12 +79,10 @@ uint16_t availableTXCommandBytes()
 // See serialWriteTask for the actual Serial.write
 void serialAddToOutputBuffer(uint8_t data)
 {
-    // if (printEndpoint == PRINT_ENDPOINT_SERIAL || printEndpoint == PRINT_ENDPOINT_BLUETOOTH ||
-    //     printEndpoint == PRINT_ENDPOINT_ALL)
-    // {
     // Make sure there is enough room in the buffer
     if ((settings.serialTransmitBufferSize - availableTXBytes()) < 32)
     {
+        // Print direct to serial port, don't use systemPrintf
         Serial.printf("\r\nserialTransmitBuffer overflow! sizeof(serialTransmitBuffer): %d availableTXBytes(): %d\r\n",
                       settings.serialTransmitBufferSize, availableTXBytes());
     }
@@ -92,13 +90,6 @@ void serialAddToOutputBuffer(uint8_t data)
     // Add this byte to the serial output buffer
     serialTransmitBuffer[serialTxHead++] = data;
     serialTxHead %= settings.serialTransmitBufferSize;
-    // }
-    // else if (printEndpoint == PRINT_TO_RF)
-    // {
-    //     // Add this byte to the command response buffer
-    //     commandTXBuffer[commandTXHead++] = data;
-    //     commandTXHead %= sizeof(commandTXBuffer);
-    // }
 }
 
 // Restart serial port at user setting baud rate
@@ -107,11 +98,11 @@ void serialAddToOutputBuffer(uint8_t data)
 // Start serial tasks
 void serialStart()
 {
-    Serial.end(); //Close port before setting buffer size
+    Serial.end(); // Close port before setting buffer size
 
     Serial.setRxBufferSize(settings.uartReceiveBufferSize);
     Serial.setTimeout(settings.serialTimeout); // Requires serial traffic on the UART pins for detection
-    Serial.begin(settings.baudRate); // Restart serial at correct baud rate
+    Serial.begin(settings.baudRate);           // Restart serial at correct baud rate
 
     // Reduce threshold value above which RX FIFO full interrupt is generated
     // Allows more time between when the UART interrupt occurs and when the FIFO buffer overruns
@@ -129,6 +120,7 @@ void serialStart()
 
     if (serialReceiveBuffer == nullptr)
     {
+        // Print direct to serial port, don't use systemPrint
         Serial.println("Error: serialReceiveBuffer failed to malloc. Freezing.");
         while (1)
             ;
@@ -141,6 +133,7 @@ void serialStart()
 
     if (serialTransmitBuffer == nullptr)
     {
+        // Print direct to serial port, don't use systemPrint
         Serial.println("Error: serialTransmitBuffer failed to malloc. Freezing.");
         while (1)
             ;

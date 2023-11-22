@@ -24,7 +24,7 @@ void beginBoard()
     }
 
     char versionString[21];
-    getFirmwareVersion(versionString, sizeof(versionString), true);
+    getFirmwareVersion(versionString, sizeof(versionString));
     systemPrintf("%s-%s\r\n", platformPrefix, versionString); // Report system name/version before starting
 
     // Get unit MAC address
