@@ -1,6 +1,7 @@
+static volatile BTState bluetoothState = BT_OFF;
+
 #ifdef COMPILE_BT
 BTSerialInterface *bluetoothSerial;
-static volatile BTState bluetoothState = BT_OFF;
 
 // Call back for when BT connection event happens (connected/disconnect)
 // Used for updating the bluetoothState state machine
