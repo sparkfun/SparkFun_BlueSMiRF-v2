@@ -120,6 +120,7 @@ bool commandAT(const char *commandString)
 #else
                 systemPrintln("  ATU - Update Firmware ** WiFi not compiled **");
 #endif
+            systemPrintln("  ATV - Display firmware version");
             systemPrintln("  ATW - Save current settings to NVM");
             systemPrintln("  ATX - Exit command mode");
             systemPrintln("  ATY - Display system settings"); // User settings
@@ -145,15 +146,21 @@ bool commandAT(const char *commandString)
                 wifiUpdate();
             return true;
 
+        case ('V'): // ATV - Display current firmware verions
+            char currentVersion[21];
+            getFirmwareVersion(currentVersion, sizeof(currentVersion));
+            systemPrintf("%s", currentVersion);
+            return true;
+
         case ('W'):                  // ATW - Write parameters to the flash memory
             settings = tempSettings; // Apply user's modifications to settings struct
             recordSystemSettings();  // Record current settings struct to NVM
             // If the user changes the temp settings after this, they are applied, but not recorded to NVM
             return true;
 
-        case ('X'):                // ATX - Exit command mode
+        case ('X'): // ATX - Exit command mode
             wifiStop();
-            inCommandMode = false; // Return to printing normal RF serial data
+            inCommandMode = false;   // Return to printing normal RF serial data
             settings = tempSettings; // Apply user's modifications
             return true;
 

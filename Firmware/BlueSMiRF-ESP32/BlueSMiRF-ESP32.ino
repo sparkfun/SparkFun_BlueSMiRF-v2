@@ -54,7 +54,6 @@ uint8_t pin_connectLED = PIN_UNDEFINED;
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 #include "settings.h"
-#define SERIAL_RX_BUFFER_SIZE 1024
 
 // Hardware serial and BT buffers
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -179,9 +178,6 @@ void setup()
     Serial.begin(115200); // Start serial for any initial debug messages
 
     loadSettings(); // Get settings from NVM
-
-    // factoryDefaults();
-    // recordSystemSettings();
 
     serialStart(); // Malloc serial TX and RX buffers
 
