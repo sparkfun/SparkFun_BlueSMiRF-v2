@@ -130,7 +130,11 @@ bool commandAT(const char *commandString)
             return true;
 
         case ('C'): // ATC - Check for new firmware
+#ifdef COMPILE_WIFI
             newOTAFirmwareAvailable = wifiCheckNewFirmware();
+#else
+            systemPrintln(" ** WiFi not compiled **");
+#endif
             return true;
 
         case ('F'):                  // ATF - Reset to factory default
