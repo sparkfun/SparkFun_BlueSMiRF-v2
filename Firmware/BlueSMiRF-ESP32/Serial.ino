@@ -40,7 +40,7 @@ void rtsDeassert()
 }
 
 // Update the output of the RTS pin
-// LoRaSerial will drive RTS low when it is ready for data
+// BlueSMiRF will drive RTS low when it is ready for data
 // Given false, we tell the host we *do not* need more data
 // Given true, we tell the host we are ready for more data
 void updateRTS(bool assertRTS)

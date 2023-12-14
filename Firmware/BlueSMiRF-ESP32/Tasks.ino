@@ -15,7 +15,7 @@ void btReadTask(void *e)
                 // Check stream for escape characters
                 byte incoming = bluetoothRead();
 
-                if (incoming == settings.btEscapeCharacter)
+                if (settings.btEscapeCharacter > 0 && incoming == settings.btEscapeCharacter)
                 {
                     // Ignore escape characters received within 2 seconds of serial traffic
                     if (millis() - lastByteReceived_ms > settings.minEscapeTime_ms)

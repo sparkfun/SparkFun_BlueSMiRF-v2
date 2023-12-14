@@ -56,7 +56,7 @@ typedef struct
     uint8_t btWriteTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
     char btPin[5] = "1234";          // Default Pin for older Bluetooth devices is 1234.
     char btNickname[50] = {0};       // User configurable name to broadcast over Bluetooth during discovery
-    uint8_t btEscapeCharacter = '+'; // The character received from the remote system, sought to enter command mode
+    uint8_t btEscapeCharacter = 0; // The character received from the remote system, sought to enter command mode. Default off.
 
     // Serial settings - 'S'
     bool echo = false;        // Print locally inputted serial
