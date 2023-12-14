@@ -25,12 +25,19 @@
       external system to stop sending serial data. By default, the high water mark is when the buffer becomes <25%
       available, but is configurable (settings.rtsOnPercent).
 
-  Note: CTS and RTS are only active/used when flow control is enabled (by default flowcontrol is disabled).
+  Note: CTS and RTS are only active/used when flow control is enabled (by default flow control is disabled).
   Note: CTS and RTS logic can be inverted (selectively) for rare systems that require it.
 
   Note: All visible ASCII characters are allowed in the command parser with the following exceptions:
     \ is not allowed
     # is seen as a script comment. Anything following a # will be ignored.
+
+  Compiler settings:
+  * Board: ESP32 Dev Module
+  * Flash Size: 4MB
+  * Partition Scheme: Use custom partition file called BlueSMiRF_Partitions.csv (or built-in "Minimal SPIFFs (1.9MB APP
+  with OTA)")
+  * PSRAM: Enabled
 */
 
 #define COMPILE_BT   // Comment out to remove Bluetooth functionality
@@ -58,7 +65,7 @@ uint8_t pin_connectLED = PIN_UNDEFINED;
 // Hardware serial and BT buffers
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 #ifdef COMPILE_BT
-// See bluetoothSelect.h for implemenation
+// See bluetoothSelect.h for implementation
 #include "bluetoothSelect.h"
 #endif // COMPILE_BT
 
@@ -91,7 +98,7 @@ uint8_t *serialTransmitBuffer =
     nullptr; // Bytes received from RF waiting to be printed out UART. Buffer up to 1s of bytes at 4k
 
 TaskHandle_t serialReadTaskHandle = nullptr; // Store task handle so that we can delete it if needed
-const int serialReadTaskStackSize = 10000; //Must be larger to handle command interface + WiFi update
+const int serialReadTaskStackSize = 10000;   // Must be larger to handle command interface + WiFi update
 
 TaskHandle_t serialWriteTaskHandle = nullptr; // Store task handle so that we can delete it if needed
 const int serialWriteTaskStackSize = 3000;
@@ -123,7 +130,7 @@ bool forceRadioReset = false; // Goes true when a setting requires a link/radio 
 
 // Preferences for storing settings
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-#include <Preferences.h> //Built in ESP32 library
+#include <Preferences.h> //Built-in ESP32 library
 Preferences systemSettings;
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
@@ -155,7 +162,7 @@ const int buttonTaskStackSize = 2000;
 
 #define OTA_FIRMWARE_JSON_URL                                                                                          \
     "https://raw.githubusercontent.com/sparkfun/SparkFun_RTK_Firmware_Binaries/main/RTK-Firmware.json"
-    //"https://raw.githubusercontent.com/sparkfun/SparkFun_BlueSMiRF_Binaries/main/BlueSMiRF-Firmware.json"
+//"https://raw.githubusercontent.com/sparkfun/SparkFun_BlueSMiRF_Binaries/main/BlueSMiRF-Firmware.json"
 #endif
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
@@ -189,6 +196,8 @@ void setup()
 
     bluetoothStart(); // Begin broadcasting
 
+    ledStatusOff(); // Turn off Status LED until serial traffic is detected
+
     rtsAssert(); // Signal to external system that we are ready for data
 }
 
@@ -205,31 +214,13 @@ void loop()
 
     reportHeap(); // Display available RAM on heap
 
+    ledUpdate();
+
     // Force exit command mode if Bluetooth link is dropped
     if (btPrintEchoExit == true)
     {
         btPrintEchoExit = false;
         inCommandMode = false;
         commandLength = 0; // Get ready for next command
-    }
-
-    // Report levels of serialReceiveBuffer and serialTransmitBuffer
-    //  if(millis() - lastReport_ms > 1000)
-    //  {
-    //      lastReport_ms = millis();
-    //      Serial.printf("RX bytes to send: %d\tTX bytes to print: %d\r\n", availableRXBytes(), availableTXBytes());
-    //  }
-
-    if (settings.ledStyle == LEDS_CLASSIC)
-    {
-        if (millis() - lastLedUpdate > 1000)
-        {
-            lastLedUpdate = millis();
-
-            // Blink Connect LED at 1Hz while waiting for connection
-            digitalWrite(pin_connectLED, !digitalRead(pin_connectLED));
-
-            // Blink Status LED during serial traffic happens during task
-        }
     }
 }
