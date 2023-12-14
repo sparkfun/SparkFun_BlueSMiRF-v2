@@ -106,7 +106,6 @@ void loadSettings()
     {
         // Use the default constructors for settings
         recordSystemSettings();
-        // Serial.println("NVM is blank! Settings are now default");
     }
     else
     {
@@ -121,7 +120,6 @@ void loadSettings()
         else
         {
             settings = tempSettings; // Copy settings into global
-            // Serial.println("System settings loaded from NVM");
         }
     }
 }

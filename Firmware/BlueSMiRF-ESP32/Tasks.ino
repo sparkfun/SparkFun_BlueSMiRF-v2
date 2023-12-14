@@ -33,7 +33,7 @@ void btReadTask(void *e)
                     }
                     else
                     {
-                        // Ignore this escape character, passing along to output
+                        // Ignore this escape character, pass along to output
                         serialAddToOutputBuffer(incoming);
                         lastByteReceived_ms = millis();
                     }
@@ -97,7 +97,6 @@ void btWriteTask(void *e)
         {
             bluetoothWrite(btFrame, bytesToSend); // Send this chunk to BT radio
 
-            //            Serial.printf("final bytesToSend: %d\r\n", bytesToSend);
             bytesToSend = 0; // Start over
         }
 
@@ -113,14 +112,6 @@ void serialReadTask(void *e)
 {
     while (true)
     {
-        // while (Serial.available())
-        // {
-        //     byte incoming = systemRead();
-
-        //     serialReceiveBuffer[serialRxHead++] = incoming;   // Push incoming char to holding buffer
-        //     serialRxHead %= settings.serialReceiveBufferSize; // Wrap as needed
-        // }
-
         if (inCommandMode == false)
             serialReadStandardMode();
         else
@@ -212,7 +203,6 @@ void serialReadStandardMode()
             if (rtsAsserted == true && availableBufferSpace <= rtsStopSendingBytes)
             {
                 rtsDeassert();
-                Serial.println("\r\n\r\nserialReceiveBuffer full!\r\n");
             }
         }           // End Serial.available()
         ledRxOff(); // Turn off LED
