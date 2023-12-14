@@ -60,6 +60,7 @@ jobs:
         run: arduino-cli lib install
           JC_Button@2.1.2
           ESP32_BleSerial@1.0.4
+          "ESP32-OTA-Pull"@1.0.0
 
       - name: Copy custom BlueSMiRF_Partitions.csv
         run:
