@@ -32,13 +32,15 @@ PrintEndpoint printEndpoint = PRINT_ENDPOINT_SERIAL; // Controls where the confi
 
 typedef enum
 {
-    LEDS_CLASSIC = 0,    // Original RN-41 behavior. Connect blinks while waiting for BT connect.
-    LEDS_SERIAL_TRAFFIC, // Connect LED blinks with TX traffic, Status LED blinks with RX traffic.
+    // Original RN-41 behavior. Connect blinks while waiting for BT connect, solid when connected.
+    // Status LED off waiting for BT connect, blinks with TX/RX traffic.
+    LEDS_CLASSIC = 0,    
+    
+    // If not BT connection, blink connect LED
+    // Connect LED blinks with TX traffic, Status LED blinks with RX traffic.
+    LEDS_SERIAL_TRAFFIC, 
 
     LEDS_ALL_OFF,  // All LEDs off
-    LEDS_GREEN_ON, // Connect ON, only
-    LEDS_RED_ON,   // Status ON, only
-    LEDS_ALL_ON,   // All LEDs on
 } LEDS_USE_TYPE;
 
 typedef struct
