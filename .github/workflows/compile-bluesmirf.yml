@@ -69,7 +69,7 @@ jobs:
         run: arduino-cli compile --fqbn "esp32:esp32:esp32":DebugLevel=${{ env.DEBUG_LEVEL }} ./Firmware/BlueSMiRF-ESP32/BlueSMiRF-ESP32.ino
           --build-property build.partitions=BlueSMiRF_Partitions
           --build-property upload.maximum_size=3145728 
-          --build-property "compiler.cpp.extra_flags=\"-DFIRMWARE_VERSION_MAJOR=$FIRMWARE_VERSION_MAJOR\" \"-DFIRMWARE_VERSION_MINOR=$FIRMWARE_VERSION_MINOR\"
+          --build-property "compiler.cpp.extra_flags=\"-DFIRMWARE_VERSION_MAJOR=$FIRMWARE_VERSION_MAJOR\" \"-DFIRMWARE_VERSION_MINOR=$FIRMWARE_VERSION_MINOR\""
           --export-binaries
 
       - name: Rename binary
