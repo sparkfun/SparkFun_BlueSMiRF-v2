@@ -70,7 +70,7 @@ void buttonFactoryDefaults()
 
 uint8_t readPairButton()
 {
-  if (pin_pairButton == 255)
+  if (pin_pairButton == PIN_UNDEFINED)
     return (HIGH);
   return (digitalRead(pin_pairButton));
 }
