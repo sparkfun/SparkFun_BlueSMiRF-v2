@@ -4,8 +4,8 @@
 uint8_t pin_pair = 0;
 uint8_t pin_cts = 19;
 uint8_t pin_rts = 22;
-uint8_t pin_statusLED = 13;
-uint8_t pin_connectLED = 14;
+uint8_t pin_statusLED = 8;
+uint8_t pin_connectLED = 13;
 
 unsigned long lastChange = 0;
 
