@@ -42,12 +42,10 @@ void bluetoothStart()
         if (strlen(settings.btNickname) == 0)
         {
             // Default to 'BlueSMiRF-BC61'
-            snprintf(deviceName, sizeof(deviceName), "%s-%02X%02X", platformPrefix, btMACAddress[4], btMACAddress[5]);
+            snprintf(settings.btNickname, sizeof(settings.btNickname), "%s-%02X%02X", platformPrefix, btMACAddress[4], btMACAddress[5]);
         }
-        else
-        {
-            snprintf(deviceName, sizeof(deviceName), "%s", settings.btNickname);
-        }
+
+        snprintf(deviceName, sizeof(deviceName), "%s", settings.btNickname);
 
         // Select Bluetooth setup
         if (settings.btType == BLUETOOTH_RADIO_OFF)
