@@ -88,6 +88,7 @@ typedef struct
     uint8_t escapeCharacter = '$';    // The character sought to enter command mode
     uint8_t maxEscapeCharacters = 3;  // The number of escape characters required to enter command mode
     uint16_t minEscapeTime_ms = 2000; // Serial traffic must stop this amount before an escape char is recognized
+    uint16_t maxCommandTime_ms = 60000; // After this time, command mode cannot be entered
     uint8_t ledStyle = LEDS_CLASSIC;  // Connect LED will blink when waiting for BT connection.
     char wifiSsid[50] = ""; // For firmware update over WiFi
     char wifiPassword[50] = "";

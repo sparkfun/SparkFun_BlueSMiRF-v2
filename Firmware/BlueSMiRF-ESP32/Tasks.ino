@@ -148,7 +148,8 @@ void serialReadStandardMode()
         {
             byte incoming = systemRead();
 
-            if (incoming == settings.escapeCharacter)
+            //Command mode cannot be entered if the system has been running for more than setings.maxCommandTime_ms
+            if (incoming == settings.escapeCharacter && millis() < settings.maxCommandTime_ms) 
             {
                 // Ignore escape characters received within 2 seconds of serial traffic
                 // Allow escape characters received within first 2 seconds of power on

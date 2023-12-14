@@ -47,6 +47,7 @@ const COMMAND_ENTRY commands[] = {
     {'Y', 0, 0, ' ', '~', 0, TYPE_CHAR, valChar, "EscapeCharacter", &tempSettings.escapeCharacter},
     {'Y', 0, 0, 0, 255, 0, TYPE_U8, valInt, "EscapeCharacterCount", &tempSettings.maxEscapeCharacters},
     {'Y', 0, 0, 0, 20000, 0, TYPE_U16, valInt, "MinEscapeTimeMs", &tempSettings.minEscapeTime_ms}, // Arbitrary 20s max
+    {'Y', 0, 0, 0, 65000, 0, TYPE_U16, valInt, "MaxCommandTimeMs", &tempSettings.maxCommandTime_ms}, // Arbitrary 65s max
     {'Y', 0, 0, 0, 255, 0, TYPE_U8, valInt, "LedStyle", &tempSettings.ledStyle},
     {'Y', 0, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiSSID", &tempSettings.wifiSsid},
     {'Y', 0, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiPassword", &tempSettings.wifiPassword},
