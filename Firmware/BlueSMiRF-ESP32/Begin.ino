@@ -3,7 +3,7 @@
 // Must be called after beginGNSS so the GNSS type is known
 void beginBoard()
 {
-    // TODO look up fuses
+    // There is only one variant right now
     productVariant = BLUESMIRF_01;
 
     // Setup hardware pins
@@ -12,8 +12,8 @@ void beginBoard()
         pin_pairButton = 0;
         pin_cts = 19; // Input
         pin_rts = 22; // Output
-        pin_statusLED = 13;
-        pin_connectLED = 14;
+        pin_statusLED = 8;
+        pin_connectLED = 13;
 
         strncpy(platformPrefix, "BlueSMiRF", sizeof(platformPrefix) - 1);
 
