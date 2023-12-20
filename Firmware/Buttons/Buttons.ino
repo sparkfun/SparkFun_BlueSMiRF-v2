@@ -12,6 +12,8 @@ const uint8_t ButtonCheckTaskPriority = 0; // 3 being the highest, and 0 being t
 const int buttonTaskStackSize = 2000;
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+const uint8_t PIN_UNDEFINED = 255;
+
 int pin_pairButton = 0; // Use the boot button for testing
 
 int pin_statusLED = 13;
