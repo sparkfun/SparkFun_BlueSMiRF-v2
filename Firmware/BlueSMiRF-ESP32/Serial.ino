@@ -98,6 +98,7 @@ void serialAddToOutputBuffer(uint8_t data)
 // Start serial tasks
 void serialStart()
 {
+    Serial.flush(); //Finish printing any errors before closing to avoid corruption
     Serial.end(); // Close port before setting buffer size
 
     Serial.setRxBufferSize(settings.uartReceiveBufferSize);
