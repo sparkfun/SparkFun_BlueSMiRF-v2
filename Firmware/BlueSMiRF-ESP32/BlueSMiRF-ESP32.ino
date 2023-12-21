@@ -41,7 +41,7 @@
 */
 
 #define COMPILE_BT   // Comment out to remove Bluetooth functionality
-#define COMPILE_WIFI // Comment out to remove WiFi functionality
+// #define COMPILE_WIFI // Comment out to remove WiFi functionality
 
 // This is passed in from compiler extra flags
 #ifndef FIRMWARE_VERSION_MAJOR
@@ -166,10 +166,17 @@ const int buttonTaskStackSize = 2000;
 #endif
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+// Status and Connect LED control
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+TaskHandle_t ledTaskHandle = nullptr; // Store task handle so that we can delete it if needed
+const int ledTaskStackSize = 2000;
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 // Global variables
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-char platformPrefix[55] = "BlueSMiRF"; // Sets the prefix for broadcast names
+char platformPrefix[12] = "BlueSMiRF"; // Sets the prefix for broadcast names
 uint8_t btMACAddress[6];
+char broadcastName[100]; // The serial string that is broadcast. Ex: 'BlueSMiRF-BC61'
 
 Settings tempSettings; // Temporary settings used for command processing
 
@@ -177,12 +184,23 @@ bool inCommandMode = false;  // Normal data is prevented from entering serial ou
 uint32_t lastHeapReport = 0; // Report heap every 1s if option enabled
 uint32_t lastReport_ms = 0;
 
-uint32_t lastLedUpdate = 0; // Timer for LEDs
+uint32_t lastLedUpdate = 0;  // Timer for LEDs
+int statusLedBrightness = 0; // Enables LED to fade up/down
+int statusFadeAmount = 0;
+int connectLedBrightness = 0;
+int connectFadeAmount = 0;
+const int startingFadeAmount = 5; // Controls aggressiveness of fade. Also goes negative.
+const int fadeUpdateTimeMs = 30;  // ms between fade updates
+
+bool friendlyDeviceFound = false; // Goes true during manual pairing if friendly device is discovered
+
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 void setup()
 {
     Serial.begin(115200); // Start serial for any initial debug messages
+
+    delay(250); // TODO for testing
 
     loadSettings(); // Get settings from NVM
 
@@ -194,11 +212,13 @@ void setup()
 
     buttonBegin(); // Setup the pair button
 
-    bluetoothStart(); // Begin broadcasting
+    bluetoothBegin(); // Setup Bluetooth radio for normal or paired communication
 
     ledStatusOff(); // Turn off Status LED until serial traffic is detected
 
     rtsAssert(); // Signal to external system that we are ready for data
+
+    settings.debugBluetooth = true; //TODO remove
 }
 
 void loop()
@@ -210,11 +230,11 @@ void loop()
 
       btReadTask() - Read from BT SPP and write to serialTransmitBuffer. Check for escape characters.
       serialWriteTask() - Read from serialTransmitBuffer and write to UART.
+
+      ledUpdate() - Updates the state of the Status and Connect LEDs
     */
 
     reportHeap(); // Display available RAM on heap
-
-    ledUpdate();
 
     // Force exit command mode if Bluetooth link is dropped
     if (btPrintEchoExit == true)
@@ -223,4 +243,8 @@ void loop()
         inCommandMode = false;
         commandLength = 0; // Get ready for next command
     }
+
+    // Allow tasks to run
+    feedWdt();
+    taskYIELD();
 }

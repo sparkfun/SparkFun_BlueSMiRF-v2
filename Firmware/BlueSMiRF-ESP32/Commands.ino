@@ -18,6 +18,7 @@ enum
     TYPE_U8,
     TYPE_U16,
     TYPE_U32,
+    TYPE_MAC,
 };
 
 typedef bool (*COMMAND_ROUTINE)(const char *commandString);
@@ -41,13 +42,17 @@ const COMMAND_ENTRY commands[] = {
     {'B', 0, 0, 0, 1, 0, TYPE_U8, valInt, "BluetoothReadTaskCore", &tempSettings.btReadTaskCore},
     {'B', 0, 0, 0, 1, 0, TYPE_U8, valInt, "BluetoothReadTaskCore", &tempSettings.btReadTaskCore},
     {'B', 0, 0, 0, 50, 0, TYPE_STRING, valString, "BluetoothNickname", &tempSettings.btNickname},
+    {'B', 0, 0, 100, 25000, 0, TYPE_U16, valInt, "BluetoothConnectTimeoutMs", &tempSettings.btConnectTimeoutMs},
+    {'B', 0, 0, 0, 100, 0, TYPE_U8, valInt, "BluetoothConnectRetries", &tempSettings.btConnectRetries},
+    {'B', 0, 0, 0, 0, 0, TYPE_MAC, valMac, "BluetoothPairedMac", &tempSettings.btPairedMac},
 
     /*System parameters
      Ltr, All, reset, min, max, digits,    type,         validation,     name, setting addr */
     {'Y', 0, 0, ' ', '~', 0, TYPE_CHAR, valChar, "EscapeCharacter", &tempSettings.escapeCharacter},
     {'Y', 0, 0, 0, 255, 0, TYPE_U8, valInt, "EscapeCharacterCount", &tempSettings.maxEscapeCharacters},
     {'Y', 0, 0, 0, 20000, 0, TYPE_U16, valInt, "MinEscapeTimeMs", &tempSettings.minEscapeTime_ms}, // Arbitrary 20s max
-    {'Y', 0, 0, 0, 65000, 0, TYPE_U16, valInt, "MaxCommandTimeMs", &tempSettings.maxCommandTime_ms}, // Arbitrary 65s max
+    {'Y', 0, 0, 0, 65000, 0, TYPE_U16, valInt, "MaxCommandTimeMs",
+     &tempSettings.maxCommandTime_ms}, // Arbitrary 65s max
     {'Y', 0, 0, 0, 255, 0, TYPE_U8, valInt, "LedStyle", &tempSettings.ledStyle},
     {'Y', 0, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiSSID", &tempSettings.wifiSsid},
     {'Y', 0, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiPassword", &tempSettings.wifiPassword},
@@ -113,6 +118,7 @@ bool commandAT(const char *commandString)
             systemPrintln("  ATC - Check for new firmware ** WiFi not compiled **");
 #endif
             systemPrintln("  ATD - Display debug settings"); // User settings
+            systemPrintln("  ATM - Display MAC");
             systemPrintln("  ATF - Restore factory settings");
             systemPrintln("  ATS - Display serial settings"); // User settings
             if (newOTAFirmwareAvailable == true)
@@ -144,6 +150,10 @@ bool commandAT(const char *commandString)
             tempSettings = settings; // Make AT command system temp settings reflect current settings struct
             // If the user changes the temp settings after this, they are applied, but not recorded to NVM
             systemPrintln("Factory defaults applied");
+            return true;
+
+        case ('M'): // ATM - Display MAC
+            systemPrintf("%s", stringMac(btMACAddress));
             return true;
 
         case ('U'): // ATU - Update firmware
@@ -304,8 +314,6 @@ char *trimCommand()
 // Display all of the commands
 bool commandDisplayAll(const char *commandString)
 {
-    // airSpeed = convertSettingsToAirSpeed(&tempSettings); //Recalculate airspeed based on settings
-
     displayParameters(0, false);
     return true;
 }
@@ -382,6 +390,52 @@ bool valSpeedSerial(void *value, uint32_t valMin, uint32_t valMax)
             (settingValue == 115200 * 2) || (settingValue == 115200 * 4) || (settingValue == 115200 * 8));
 }
 
+// Validate a MAC address entry
+// A valid entry has 5 colons and 6 hex values - AA:BB:CC:DD:EE:FF
+bool valMac(void *value, uint32_t valMin, uint32_t valMax)
+{
+    char *str = (char *)value;
+
+    int macLength = strlen("00:00:00:00:00:00");
+
+    unsigned int length = strlen(str);
+
+    if (length == 0)
+    {
+        strncpy(str, "00:00:00:00:00:00", macLength); // Zero out the MAC address to mark it as unpaired
+        return (true);
+    }
+
+    if (length == 1 && str[0] == '0')
+    {
+        strncpy(str, "00:00:00:00:00:00", macLength); // Zero out the MAC address to mark it as unpaired
+        return (true);
+    }
+
+    if (length < macLength)
+        return (false);
+    if (length > macLength)
+        return (false);
+
+    // Check for HEX values and colons
+    for (int x = 0; x < length; x++)
+    {
+        // Check colons
+        if (x == 2 || x == 5 || x == 8 || x == 11 || x == 14)
+        {
+            if (str[x] != ':')
+                return (false);
+        }
+        else // Check hex digit
+        {
+            if (isxdigit(str[x]) == false)
+                return (false);
+        }
+    }
+
+    return true;
+}
+
 //----------------------------------------
 //  ATSxx routines
 //----------------------------------------
@@ -414,6 +468,24 @@ void commandDisplay(const COMMAND_ENTRY *command)
     case TYPE_U32:
         systemPrint(*(uint32_t *)(command->setting));
         break;
+    case TYPE_MAC: {
+        bool deviceIsPaired = false;
+
+        // Check that the MAC is > 0
+        for (int x = 0; x < 6; x++)
+        {
+            if (tempSettings.btPairedMac[x] > 0)
+            {
+                deviceIsPaired = true;
+                break;
+            }
+        }
+        if (deviceIsPaired == true)
+            displayString(stringMac((uint8_t *)command->setting));
+        else
+            systemPrint((char *)"Not paired");
+    }
+    break;
     default:
         systemPrintln("Unknown type");
         break;
@@ -515,6 +587,13 @@ bool commandSetOrDisplayValue(const COMMAND_ENTRY *command, const char *buffer)
                     if (*digit >= ' ' && *digit <= '~' && *digit != '\\') // Exclude \ character
                         continue;
                 }
+
+                // MACs can contain HEX or colons
+                if (command->type == TYPE_MAC)
+                {
+                    if (isxdigit(*digit) || *digit == ':')
+                        continue;
+                }
                 break;
             }
         if (*digit)
@@ -564,11 +643,16 @@ bool commandSetOrDisplayValue(const COMMAND_ENTRY *command, const char *buffer)
             if (valid)
                 *(uint16_t *)(command->setting) = (uint16_t)settingValue;
             break;
+        case TYPE_MAC:
+            valid = command->validate((void *)buffer, command->minValue, command->maxValue);
+            if (valid)
+                convertMac((char *)buffer, (uint8_t *)(command->setting));
+            break;
         }
         if (valid == false)
             break;
 
-        // See if this command requires a radio reset to be apply
+        // See if this command requires a radio reset to be applied
         if (valid && command->forceRadioReset)
             forceRadioReset = true;
 

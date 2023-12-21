@@ -10,10 +10,30 @@ ProductVariant productVariant = BLUESMIRF_01;
 // Radio status LED goes from off (LED off), no connection (blinking), to connected (solid)
 typedef enum
 {
-    BT_OFF = 0,
-    BT_NOTCONNECTED,
-    BT_CONNECTED,
+    BT_OFF = 0,      // Entered if user turns off Bluetooth entirely
+    BT_NOTCONNECTED, // Default mode. Waiting to be connected to.
+    BT_CONNECTED,    // Entered when BT singles it has a connection
+    BT_PAIRING,    // Entered when pair mode is active
+    
+    // BT_CONNECTING,   // Entered if a board is connecting to a paired MAC
+    // BT_SCANNING,     // Entered when pair mode is active
+    // BT_DISCOVERABLE, // Entered when scanning fails to detect any friendly devices
 } BTState;
+
+typedef enum
+{
+    LED_OFF = 0,      // Both LEDs off
+    LED_ON,           // Both LEDs on
+    LED_NOTCONNECTED, // S-0/C-1Hz: Default mode. Waiting to be connected to.
+    LED_CONNECTED,    // S-0/C-1: Entered when BT singles it has a connection
+    LED_CONNECTING,   // S-1/C-0: Entered if a board is connecting to a paired MAC
+    LED_SCANNING,     // S-Fade/C-0: Entered when actively scanning for compatible devices
+    LED_DISCOVERABLE, // S-0/C-Fade: Entered when scanning fails to detect any friendly devices
+
+    LED_BUTTON_3S_HOLD, // Blink S/C back/forth at 2Hz. Entered when user holds button for > 3 second
+    LED_BUTTON_8S_HOLD, // Blink S/C back/forth at 10Hz. Entered when user holds button for > 8 seconds
+} LEDState;
+LEDState ledState = LED_OFF;
 
 enum
 {
@@ -34,13 +54,13 @@ typedef enum
 {
     // Original RN-41 behavior. Connect blinks while waiting for BT connect, solid when connected.
     // Status LED off waiting for BT connect, blinks with TX/RX traffic.
-    LEDS_CLASSIC = 0,    
-    
+    LEDS_CLASSIC = 0,
+
     // If not BT connection, blink connect LED
     // Connect LED blinks with TX traffic, Status LED blinks with RX traffic.
-    LEDS_SERIAL_TRAFFIC, 
+    LEDS_SERIAL_TRAFFIC,
 
-    LEDS_ALL_OFF,  // All LEDs off
+    LEDS_ALL_OFF, // All LEDs off
 } LEDS_USE_TYPE;
 
 typedef struct
@@ -56,7 +76,11 @@ typedef struct
     uint8_t btWriteTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
     char btPin[5] = "1234";          // Default Pin for older Bluetooth devices is 1234.
     char btNickname[50] = {0};       // User configurable name to broadcast over Bluetooth during discovery
-    uint8_t btEscapeCharacter = 0; // The character received from the remote system, sought to enter command mode. Default off.
+    uint8_t btEscapeCharacter =
+        0; // The character received from the remote system, sought to enter command mode. Default off.
+    uint16_t btConnectTimeoutMs = 3000; // Milliseconds before a paired connection attempt times out
+    uint8_t btConnectRetries = 5;       // Number of retries of a paired connection
+    uint8_t btPairedMac[6] = {0};       // MAC address of the unit that is intentionally paired to this device
 
     // Serial settings - 'S'
     bool echo = false;        // Print locally inputted serial
@@ -85,12 +109,12 @@ typedef struct
     uint8_t serialWriteTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
 
     // System settings - 'Y'
-    uint8_t escapeCharacter = '$';    // The character sought to enter command mode
-    uint8_t maxEscapeCharacters = 3;  // The number of escape characters required to enter command mode
-    uint16_t minEscapeTime_ms = 2000; // Serial traffic must stop this amount before an escape char is recognized
+    uint8_t escapeCharacter = '$';      // The character sought to enter command mode
+    uint8_t maxEscapeCharacters = 3;    // The number of escape characters required to enter command mode
+    uint16_t minEscapeTime_ms = 2000;   // Serial traffic must stop this amount before an escape char is recognized
     uint16_t maxCommandTime_ms = 60000; // After this time, command mode cannot be entered
-    uint8_t ledStyle = LEDS_CLASSIC;  // Connect LED will blink when waiting for BT connection.
-    char wifiSsid[50] = ""; // For firmware update over WiFi
+    uint8_t ledStyle = LEDS_CLASSIC;    // Connect LED will blink when waiting for BT connection.
+    char wifiSsid[50] = "";             // For firmware update over WiFi
     char wifiPassword[50] = "";
 
     bool debugSerial = false;

@@ -12,8 +12,14 @@ void beginBoard()
         pin_pairButton = 0;
         pin_cts = 19; // Input
         pin_rts = 22; // Output
-        pin_statusLED = 8;
-        pin_connectLED = 13;
+
+        //BlueSMiRF hardware
+        // pin_statusLED = 8;
+        //pin_connectLED = 13;
+        
+        //Test hardware
+        pin_statusLED = 13;
+        pin_connectLED = 14;
 
         strncpy(platformPrefix, "BlueSMiRF", sizeof(platformPrefix) - 1);
 

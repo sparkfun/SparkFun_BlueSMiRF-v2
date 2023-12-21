@@ -962,7 +962,7 @@ bool BluetoothSerial::connect(String remoteName)
  *           ESP_SPP_ROLE_MASTER   master can handle up to 7 connections to slaves
  *           ESP_SPP_ROLE_SLAVE    can only have one connection to a master
  */
-bool BluetoothSerial::connect(uint8_t remoteAddress[], int channel, esp_spp_sec_t sec_mask, esp_spp_role_t role)
+bool BluetoothSerial::connect(uint8_t remoteAddress[], int channel, esp_spp_sec_t sec_mask, esp_spp_role_t role, uint16_t connectTimeout)
 {
     bool retval = false;
     if (!isReady(true, READY_TIMEOUT)) return false;
@@ -990,7 +990,7 @@ bool BluetoothSerial::connect(uint8_t remoteAddress[], int channel, esp_spp_sec_
 			log_e("spp connect failed");
       retval = false;
     } else {
-      retval = waitForConnect(READY_TIMEOUT);
+      retval = waitForConnect(connectTimeout);
       if(retval) {
             log_i("connected");
         } else {
@@ -1211,4 +1211,5 @@ BTAddress BluetoothSerial::getBtAddressObject() {
 String BluetoothSerial::getBtAddressString() {
     return getBtAddressObject().toString(true);
 }
+
 #endif
