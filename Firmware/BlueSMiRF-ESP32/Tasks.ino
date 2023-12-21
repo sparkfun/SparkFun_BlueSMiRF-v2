@@ -148,8 +148,8 @@ void serialReadStandardMode()
         {
             byte incoming = systemRead();
 
-            //Command mode cannot be entered if the system has been running for more than setings.maxCommandTime_ms
-            if (incoming == settings.escapeCharacter && millis() < settings.maxCommandTime_ms) 
+            // Command mode cannot be entered if the system has been running for more than setings.maxCommandTime_ms
+            if (incoming == settings.escapeCharacter && millis() < settings.maxCommandTime_ms)
             {
                 // Ignore escape characters received within 2 seconds of serial traffic
                 // Allow escape characters received within first 2 seconds of power on
@@ -169,13 +169,22 @@ void serialReadStandardMode()
                         tempSettings = settings;
 
                         escapeCharsReceived = 0;
+
+                        // Prep LED values for fading
+                        statusLedBrightness = 0;
+                        statusFadeAmount = startingFadeAmount;
+                        connectLedBrightness = 0;
+                        connectFadeAmount = startingFadeAmount;
+                        oldLedState = ledState; //Remember this state so we can return after leaving command mode
+                        ledState = LED_CONFIG;
+
                         return; // Avoid recording this incoming command char
                     }
                 }
                 else
                 {
                     // Ignore this escape character, passing along to serialReceiveBuffer
-                    //serialAddToOutputBuffer(incoming);
+                    // serialAddToOutputBuffer(incoming);
                     serialReceiveBuffer[serialRxHead++] = settings.escapeCharacter;
                     serialRxHead %= settings.serialReceiveBufferSize; // Wrap as needed
 

@@ -57,6 +57,7 @@ void ButtonCheckTask(void *e)
                     // Setup LEDs for blink back/forth
                     ledStatusOn();
                     ledConnectOff();
+                    lastLedUpdate = millis();
                     ledState = LED_BUTTON_8S_HOLD;
                 }
             }
@@ -68,6 +69,7 @@ void ButtonCheckTask(void *e)
                     // Setup LEDs for blink back/forth
                     ledStatusOn();
                     ledConnectOff();
+                    lastLedUpdate = millis();
                     ledState = LED_BUTTON_3S_HOLD;
                 }
             }
@@ -77,25 +79,40 @@ void ButtonCheckTask(void *e)
                 // Button just released
                 if (deltaTime >= 8000)
                 {
-                    Serial.println("Factory defaults");
-                    // buttonFactoryDefaults();
+                    buttonFactoryDefaults();
                 }
                 else if (deltaTime >= 3000)
                 {
-                    if(settings.debugBluetooth == true)
-                        systemPrintln("Button started pairing");
+                    if (settings.debugBluetooth == true)
+                        systemPrintln("Button initiated pairing");
 
-                    bluetoothBeginPairing(); 
+                    if (bluetoothConnected() == true)
+                    {
+                        // We can't initiate a discovery after the Bluetooth stack has connected
+                        // See issue: https://github.com/espressif/arduino-esp32/issues/8448
+                        // Workaround is to set a flag and reset
+
+                        if (settings.debugBluetooth == true)
+                        {
+                            systemPrintln("Reset for pairing work around");
+                            delay(50); // Allow print to finish
+                        }
+                        settings.btPairOnStartup = true;
+                        recordSystemSettings();
+                        ESP.restart();
+                    }
+
+                    bluetoothBeginPairing();
                 }
-                else if(bluetoothState == BT_PAIRING)
+                else if (bluetoothState == BT_PAIRING)
                 {
-                    if(settings.debugBluetooth == true)
+                    if (settings.debugBluetooth == true)
                         systemPrintln("Exit bluetooth pairing. Return to normal BT passive mode.");
 
-                    //Clear any paired MAC
+                    // Clear any paired MAC
                     settings.btPairedMac[0] = '\0';
 
-                    //Resart radio
+                    // Restart radio
                     bluetoothBegin();
                 }
             }

@@ -17,7 +17,9 @@ class BTSerialInterface
 
     virtual bool connect(uint8_t remoteAddress[], int channel = 0,
                          esp_spp_sec_t sec_mask = (ESP_SPP_SEC_ENCRYPT | ESP_SPP_SEC_AUTHENTICATE),
-                         esp_spp_role_t role = ESP_SPP_ROLE_MASTER, uint16_t connectTimeout = 10000) = 0;
+                         esp_spp_role_t role = ESP_SPP_ROLE_MASTER, uint16_t connectTimeoutMs = 10000) = 0;
+
+    virtual bool connect(String remoteName, uint16_t scanTimeoutMs = 32000) = 0;
 
     virtual bool connected(int timeout = 0) = 0;
 
@@ -53,6 +55,11 @@ class BTClassicSerial : public virtual BTSerialInterface, public BluetoothSerial
                  uint16_t connectTimeout)
     {
         return BluetoothSerial::connect(remoteAddress, channel, sec_mask, role, connectTimeout);
+    }
+
+    bool connect(String remoteName, uint16_t scanTimeoutMs)
+    {
+        return BluetoothSerial::connect(remoteName, scanTimeoutMs);
     }
 
     bool connected(int timeout)
@@ -134,7 +141,12 @@ class BTLESerial : public virtual BTSerialInterface, public BleSerial
     bool connect(uint8_t remoteAddress[], int channel, esp_spp_sec_t sec_mask, esp_spp_role_t role,
                  uint16_t connectTimeout)
     {
-        return (true);
+        return (false); //Not implemented in BLE
+    }
+
+    bool connect(String remoteName, uint16_t scanTimeoutMs)
+    {
+        return (false); //Not implemented in BLE
     }
 
     bool connected(int timeout)

@@ -1,7 +1,5 @@
 void ledBegin()
 {
-    Serial.println("LED begin");
-
     if (pin_connectLED != PIN_UNDEFINED)
         pinMode(pin_connectLED, OUTPUT);
     if (pin_statusLED != PIN_UNDEFINED)
@@ -10,7 +8,7 @@ void ledBegin()
     // Turn LEDs on to indicate system power-up
     ledConnectOn();
     ledStatusOn();
-    ledState = LED_ON;
+    ledState = LED_BLUETOOTH_STARTING;
 
     // Create a task to handle LED updates
     if (ledTaskHandle == nullptr)
@@ -18,7 +16,7 @@ void ledBegin()
                                 "ledUpdate",      // Just for humans
                                 ledTaskStackSize, // Stack Size
                                 nullptr,          // Task input parameter
-                                0,                // Priority 0 = lowest, 3 = highest
+                                1,                // Priority 0 = lowest, 3 = highest
                                 &ledTaskHandle,   // Task handle
                                 1);               // Core where task should run, 0=core, 1=Arduino
 }
@@ -38,7 +36,7 @@ void ledUpdate(void *e)
             ledConnectOff();
             ledStatusOff();
         }
-        else if (ledState == LED_ON)
+        else if (ledState == LED_BLUETOOTH_STARTING)
         {
             ledConnectOn();
             ledStatusOn();
@@ -48,6 +46,8 @@ void ledUpdate(void *e)
             // Blink Connect LED at 1Hz while waiting for connection
             if (millis() - lastLedUpdate > 1000)
             {
+                Serial.println("LED Not connected");
+
                 lastLedUpdate = millis();
                 ledConnectBlink();
                 ledStatusOff();
@@ -80,12 +80,7 @@ void ledUpdate(void *e)
             {
                 lastLedUpdate = millis();
                 ledConnectOff();
-
-                statusLedBrightness += statusFadeAmount;
-                if (statusLedBrightness > 255)
-                    statusFadeAmount *= -1; // Switch directions
-
-                ledStatusFade(statusLedBrightness);
+                ledStatusFade();
             }
         }
         else if (ledState == LED_DISCOVERABLE)
@@ -95,12 +90,7 @@ void ledUpdate(void *e)
             {
                 lastLedUpdate = millis();
                 ledStatusOff();
-
-                connectLedBrightness += connectFadeAmount;
-                if (connectLedBrightness > 255)
-                    connectFadeAmount *= -1; // Switch directions
-
-                ledConnectFade(connectLedBrightness);
+                ledConnectFade();
             }
         }
 
@@ -126,9 +116,21 @@ void ledUpdate(void *e)
             }
         }
 
+        // Fade S/C. Entered when user enters serial config
+        else if (ledState == LED_CONFIG)
+        {
+            if (millis() - lastLedUpdate > fadeUpdateTimeMs)
+            {
+                lastLedUpdate = millis();
+                ledStatusFade();
+                ledConnectFade();
+            }
+        }
+
         else
         {
-            Serial.println("Unknown LED state"); // We should not be here
+            systemPrintf("Unknown LED state: %d", ledState); // We should not be here
+            delay(100); //Limit print output
         }
         feedWdt();
         taskYIELD();
@@ -224,10 +226,22 @@ void ledConnectBlink()
     if (pin_connectLED != PIN_UNDEFINED)
         digitalWrite(pin_connectLED, !digitalRead(pin_connectLED));
 }
-void ledConnectFade(uint8_t fadeAmount)
+void ledConnectFade()
 {
+    connectLedBrightness += connectFadeAmount;
+    if (connectLedBrightness > maxFadeBrightness)
+    {
+        connectLedBrightness = maxFadeBrightness;
+        connectFadeAmount *= -1; // Switch directions
+    }
+    if (connectLedBrightness < 0)
+    {
+        connectLedBrightness = 0;
+        connectFadeAmount *= -1; // Switch directions
+    }
+
     if (pin_connectLED != PIN_UNDEFINED)
-        analogWrite(pin_connectLED, fadeAmount);
+        analogWrite(pin_connectLED, connectLedBrightness);
 }
 
 bool isStatusOn()
@@ -251,8 +265,20 @@ void ledStatusBlink()
     if (pin_statusLED != PIN_UNDEFINED)
         digitalWrite(pin_statusLED, !digitalRead(pin_statusLED));
 }
-void ledStatusFade(uint8_t fadeAmount)
+void ledStatusFade()
 {
+    statusLedBrightness += statusFadeAmount;
+    if (statusLedBrightness > maxFadeBrightness)
+    {
+        statusLedBrightness = maxFadeBrightness;
+        statusFadeAmount *= -1; // Switch directions
+    }
+    if (statusLedBrightness < 0)
+    {
+        statusLedBrightness = 0;
+        statusFadeAmount *= -1; // Switch directions
+    }
+
     if (pin_statusLED != PIN_UNDEFINED)
-        analogWrite(pin_statusLED, fadeAmount);
+        analogWrite(pin_statusLED, statusLedBrightness);
 }

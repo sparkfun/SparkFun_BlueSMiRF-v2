@@ -23,7 +23,7 @@ typedef enum
 typedef enum
 {
     LED_OFF = 0,      // Both LEDs off
-    LED_ON,           // Both LEDs on
+    LED_BLUETOOTH_STARTING, // Both LEDs on
     LED_NOTCONNECTED, // S-0/C-1Hz: Default mode. Waiting to be connected to.
     LED_CONNECTED,    // S-0/C-1: Entered when BT singles it has a connection
     LED_CONNECTING,   // S-1/C-0: Entered if a board is connecting to a paired MAC
@@ -32,8 +32,11 @@ typedef enum
 
     LED_BUTTON_3S_HOLD, // Blink S/C back/forth at 2Hz. Entered when user holds button for > 3 second
     LED_BUTTON_8S_HOLD, // Blink S/C back/forth at 10Hz. Entered when user holds button for > 8 seconds
+
+    LED_CONFIG, // Fade S/C during serial configuration
 } LEDState;
 LEDState ledState = LED_OFF;
+LEDState oldLedState = LED_OFF;
 
 enum
 {
@@ -80,7 +83,10 @@ typedef struct
         0; // The character received from the remote system, sought to enter command mode. Default off.
     uint16_t btConnectTimeoutMs = 3000; // Milliseconds before a paired connection attempt times out
     uint8_t btConnectRetries = 5;       // Number of retries of a paired connection
-    uint8_t btPairedMac[6] = {0};       // MAC address of the unit that is intentionally paired to this device
+    uint8_t btPairedMac[6] = {0};       // MAC address of the unit that the user wants to connect to at startup
+    char btPairedName[50] = {0};       // Name of the unit that the user wants to connect to at startup
+    bool btPairOnStartup = false; // Goes true when user initiates a pair. Work around for core discover bug
+    // See issue: https://github.com/espressif/arduino-esp32/issues/8448
 
     // Serial settings - 'S'
     bool echo = false;        // Print locally inputted serial

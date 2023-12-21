@@ -45,6 +45,7 @@ const COMMAND_ENTRY commands[] = {
     {'B', 0, 0, 100, 25000, 0, TYPE_U16, valInt, "BluetoothConnectTimeoutMs", &tempSettings.btConnectTimeoutMs},
     {'B', 0, 0, 0, 100, 0, TYPE_U8, valInt, "BluetoothConnectRetries", &tempSettings.btConnectRetries},
     {'B', 0, 0, 0, 0, 0, TYPE_MAC, valMac, "BluetoothPairedMac", &tempSettings.btPairedMac},
+    {'B', 0, 0, 0, 50, 0, TYPE_STRING, valString, "BluetoothPairedName", &tempSettings.btPairedName},
 
     /*System parameters
      Ltr, All, reset, min, max, digits,    type,         validation,     name, setting addr */
@@ -56,6 +57,7 @@ const COMMAND_ENTRY commands[] = {
     {'Y', 0, 0, 0, 255, 0, TYPE_U8, valInt, "LedStyle", &tempSettings.ledStyle},
     {'Y', 0, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiSSID", &tempSettings.wifiSsid},
     {'Y', 0, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiPassword", &tempSettings.wifiPassword},
+    // AT-BluetoothPairedName=test
 
     /*Serial parameters
       Ltr, All, reset, min, max, digits,    type,         validation,     name,                   setting addr */
@@ -118,8 +120,9 @@ bool commandAT(const char *commandString)
             systemPrintln("  ATC - Check for new firmware ** WiFi not compiled **");
 #endif
             systemPrintln("  ATD - Display debug settings"); // User settings
-            systemPrintln("  ATM - Display MAC");
             systemPrintln("  ATF - Restore factory settings");
+            systemPrintln("  ATM - Display MAC");
+            systemPrintln("  ATP - Start Pairing Process");
             systemPrintln("  ATS - Display serial settings"); // User settings
             if (newOTAFirmwareAvailable == true)
 #ifdef COMPILE_WIFI
@@ -156,6 +159,31 @@ bool commandAT(const char *commandString)
             systemPrintf("%s", stringMac(btMACAddress));
             return true;
 
+        case ('P'): // ATP - Start Pairing Process
+        {
+            if (settings.debugBluetooth == true)
+                systemPrintln("Command initiated pairing");
+
+            if (bluetoothConnected() == true)
+            {
+                // We can't initiate a discovery after the Bluetooth stack has connected
+                // See issue: https://github.com/espressif/arduino-esp32/issues/8448
+                // Workaround is to set flag and reset
+
+                if (settings.debugBluetooth == true)
+                {
+                    systemPrintln("Reset for pairing work around");
+                    delay(50); // Allow print to finish
+                }
+                settings.btPairOnStartup = true;
+                recordSystemSettings();
+                ESP.restart();
+            }
+
+            bluetoothBeginPairing();
+            return true;
+        }
+
         case ('U'): // ATU - Update firmware
             if (newOTAFirmwareAvailable == true)
                 wifiUpdate();
@@ -177,6 +205,12 @@ bool commandAT(const char *commandString)
             wifiStop();
             inCommandMode = false;   // Return to printing normal RF serial data
             settings = tempSettings; // Apply user's modifications
+
+            // The LED state may have changed while in config mode
+            if (bluetoothConnected() == true)
+                ledState = LED_CONNECTED;
+            else
+                ledState = oldLedState; // Return to previous state
             return true;
 
         case ('Z'): // ATZ - Reboots the system
@@ -482,8 +516,6 @@ void commandDisplay(const COMMAND_ENTRY *command)
         }
         if (deviceIsPaired == true)
             displayString(stringMac((uint8_t *)command->setting));
-        else
-            systemPrint((char *)"Not paired");
     }
     break;
     default:

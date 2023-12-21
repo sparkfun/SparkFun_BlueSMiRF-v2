@@ -8,6 +8,7 @@ BTSerialInterface *bluetoothSerial = nullptr;
 void bluetoothBegin()
 {
 #ifdef COMPILE_BT
+    ledState = LED_BLUETOOTH_STARTING;
 
     if (bluetoothSerial == nullptr)
     {
@@ -37,14 +38,51 @@ void bluetoothBegin()
         systemPrintf("settings.btTxSize: %d\r\n", settings.btTxSize);
     }
 
+    // Check for pairing/discovery work around flag
+    if (settings.btPairOnStartup == true)
+    {
+        if (settings.debugBluetooth)
+            systemPrintln("Restarting pairing due to reset work around");
+
+        settings.btPairOnStartup = false;
+        recordSystemSettings();
+
+        // Start BT in passive mode
+        if (bluetoothSerial->begin(broadcastName, false, settings.btRxSize, settings.btTxSize) ==
+            false) // localName, isMaster, rxBufferSize, txBufferSize
+        {
+            systemPrintln("An error occurred initializing Bluetooth");
+            return;
+        }
+
+        // User has initiated pairing. Begin pairing process before connecting.
+        bluetoothBeginPairing();
+        return;
+    }
+
     // If this device has been paired (with a valid MAC), attempt to connect to mate's MAC
-    if (deviceIsPaired() == true && settings.btType == BLUETOOTH_RADIO_SPP)
+    else if (deviceIsPairedMac() == true && settings.btType == BLUETOOTH_RADIO_SPP)
     {
         // Attempt to connect to remote device
-        if (connectToDevice(settings.btPairedMac, settings.btConnectRetries) == true)
+        if (connectToDeviceMac(settings.btPairedMac, settings.btConnectRetries) == true)
         {
             bluetoothStartTasks();
             bluetoothState = BT_CONNECTED;
+            ledState = LED_CONNECTED;
+            return;
+        }
+
+        // If we fail to connect, fall through and start general Bluetooth
+    }
+    // If this device has been paired (with a valid MAC), attempt to connect to mate's MAC
+    else if (deviceIsPairedName() == true && settings.btType == BLUETOOTH_RADIO_SPP)
+    {
+        // Attempt to connect to remote device
+        if (connectToDeviceName(settings.btPairedName, settings.btConnectRetries) == true)
+        {
+            bluetoothStartTasks();
+            bluetoothState = BT_CONNECTED;
+            ledState = LED_CONNECTED;
             return;
         }
 
@@ -87,7 +125,9 @@ void bluetoothBegin()
     bluetoothStartTasks();
 
     bluetoothState = BT_NOTCONNECTED;
+    ledState = LED_NOTCONNECTED;
 #else
+    ledState = LED_OFF;
     systemPrintln("Bluetooth not compiled");
 #endif
 }
@@ -121,7 +161,7 @@ void bluetoothStartTasks()
 
 // Attempt to connect to a given MAC
 // Returns true if successful
-bool connectToDevice(uint8_t *macAddress, int maxTries)
+bool connectToDeviceMac(uint8_t *macAddress, int maxTries)
 {
 #ifdef COMPILE_BT
     if (settings.debugBluetooth == true)
@@ -150,6 +190,55 @@ bool connectToDevice(uint8_t *macAddress, int maxTries)
         // remoteAddress, channel, sec_mask, role, connectTimeout
         if (bluetoothSerial->connect(macAddress, 0, (ESP_SPP_SEC_ENCRYPT | ESP_SPP_SEC_AUTHENTICATE),
                                      ESP_SPP_ROLE_MASTER, settings.btConnectTimeoutMs) == true)
+        {
+            if (settings.debugBluetooth == true)
+                systemPrintln("Connected!");
+            return (true);
+        }
+    }
+
+    if (settings.debugBluetooth == true)
+        systemPrintln("Failed to connect to paired device.");
+
+    bluetoothSerial->end(); // Release all resources
+
+    return (false);
+#else  // COMPILE_BT
+    systemPrintln("Bluetooth not compiled.");
+    return (false);
+#endif // COMPILE_BT
+}
+
+// Attempt to connect to a given radio Name
+// Returns true if successful
+bool connectToDeviceName(char *deviceName, int maxTries)
+{
+#ifdef COMPILE_BT
+    if (settings.debugBluetooth == true)
+        systemPrintf("Connecting to %s", deviceName);
+
+    ledState = LED_CONNECTING;
+
+    for (int x = 0; x < maxTries; x++)
+    {
+        if (settings.debugBluetooth == true)
+            systemPrintf("Try #%d\r\n", x + 1);
+
+        bluetoothSerial->end();
+
+        // Move to master mode with buffers
+        if (bluetoothSerial->begin("BlueSMiRF-Paired", true, settings.btRxSize, settings.btTxSize) == false)
+        {
+            systemPrintln("An error occurred initializing Bluetooth in master mode");
+            return (false);
+        }
+
+        // After discovery, if we immediately try to connect, it will always fail
+        // If we wait 250ms, it works ~50% of the time, and usually connects on 2nd attempt
+        delay(250);
+
+        // remoteName, scanTimeoutMs
+        if (bluetoothSerial->connect(deviceName, settings.btConnectTimeoutMs) == true)
         {
             if (settings.debugBluetooth == true)
                 systemPrintln("Connected!");
@@ -324,14 +413,14 @@ char *stringMac(uint8_t *macAddress)
 {
     int macSize = strlen("00:00:00:00:00:00");
     char *str = (char *)malloc(macSize + 1);
-    snprintf(str, macSize + 1, "%02X:%02X:%02X:%02X:%02X:%02X", macAddress[0], macAddress[1], macAddress[2], macAddress[3],
-             macAddress[4], macAddress[5]);
+    snprintf(str, macSize + 1, "%02X:%02X:%02X:%02X:%02X:%02X", macAddress[0], macAddress[1], macAddress[2],
+             macAddress[3], macAddress[4], macAddress[5]);
     return str;
 }
 
 // If we have a valid MAC, return true
 // Used to enter connect mode at power-up
-bool deviceIsPaired()
+bool deviceIsPairedMac()
 {
     // Check that the MAC is > 0
     for (int x = 0; x < 6; x++)
@@ -339,6 +428,17 @@ bool deviceIsPaired()
         if (settings.btPairedMac[x] > 0)
             return (true);
     }
+
+    return (false);
+}
+
+// If we have a valid Name, return true
+// Used to enter connect mode at power-up
+bool deviceIsPairedName()
+{
+    // Check that the Name is longer than 0
+    if (strlen(settings.btPairedName) > 0)
+        return (true);
 
     return (false);
 }
@@ -366,16 +466,6 @@ bool scanForFriendlyDevices(uint16_t maxScanTimeMs)
     statusLedBrightness = 0;
     statusFadeAmount = startingFadeAmount;
     ledState = LED_SCANNING;
-
-    if (bluetoothSerial->connected() == true)
-    {
-        // We must disconnect before scanning
-        if (settings.debugBluetooth == true)
-            systemPrintln("Disconnecting Bluetooth");
-
-        bluetoothSerial->disconnect();
-        delay(250);
-    }
 
     if (settings.debugBluetooth == true)
         systemPrintln("Starting discover process");
@@ -461,6 +551,7 @@ void becomeDiscoverable()
         systemPrintln("Device now discoverable as BlueSMiRF-Pairing");
 
 #else
+    ledState = LED_OFF;
     return;
 #endif
 }
@@ -479,8 +570,6 @@ void bluetoothBeginPairing()
     // Return true if MAC address has been obtained/stored
     if (scanForFriendlyDevices(2000) == true)
     {
-        Serial.println("Restarting bluetooth to connect to newly discovered device");
-
         // We have a MAC address, restart Bluetooth and it will use it
         bluetoothBegin();
     }
@@ -488,4 +577,13 @@ void bluetoothBeginPairing()
     {
         becomeDiscoverable();
     }
+}
+
+bool bluetoothConnected()
+{
+#ifdef BT_COMPILE
+    if (bluetoothSerial->connected())
+        return (true);
+#endif
+    return (false);
 }
