@@ -189,8 +189,10 @@ int statusLedBrightness = 0; // Enables LED to fade up/down
 int statusFadeAmount = 0;
 int connectLedBrightness = 0;
 int connectFadeAmount = 0;
-const int startingFadeAmount = 5; // Controls aggressiveness of fade. Also goes negative.
-const int fadeUpdateTimeMs = 30;  // ms between fade updates
+const int startingFadeAmount = 10; // Controls aggressiveness of fade.
+const int fadeUpdateTimeMs = 20;   // ms between fade updates
+const int maxFadeBrightness =
+    200; // Because brightness is non-linear, we reduce time where LED isn't noticeably changing
 
 bool friendlyDeviceFound = false; // Goes true during manual pairing if friendly device is discovered
 
