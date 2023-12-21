@@ -99,7 +99,6 @@ void loadSettings()
 {
     Settings tempSettings;
 
-    // We can't use systemPrints here because we haven't malloc'd the buffers yet
     systemSettings.begin("settings"); // Start the preferences library, working within a namespace called settings
 
     if (systemSettings.getBytesLength("settingsStruct") == 0) // Check if the NVM is blank
@@ -109,13 +108,17 @@ void loadSettings()
     }
     else
     {
-        systemSettings.getBytes("settingsStruct", &tempSettings, sizeof(Settings)); // Load NVM into the settings struct
+        systemSettings.getBytes("settingsStruct", &tempSettings, sizeof(Settings)); // Load NVM into the tempSettings struct
 
-        if (tempSettings.length != sizeof(Settings))
+        if (systemSettings.getBytesLength("settingsStruct") != sizeof(Settings))
         {
             // Use the default constructors for settings
             recordSystemSettings();
-            Serial.println("NVM was incorrect length! Settings are now default");
+
+            // We can't use systemPrints here because we haven't malloc'd the buffers yet
+            Serial.printf(
+                "NVM was incorrect length! Sizeof(Settings): %d systemSettings.getBytesLength: %d Settings are now default\r\n",
+                sizeof(Settings), systemSettings.getBytesLength("settingsStruct"));
         }
         else
         {
