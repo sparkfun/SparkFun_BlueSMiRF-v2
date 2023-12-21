@@ -920,7 +920,7 @@ bool BluetoothSerial::setPin(const char *pin) {
     return true;
 }
 
-bool BluetoothSerial::connect(String remoteName)
+bool BluetoothSerial::connect(String remoteName, uint16_t scanTimeoutMs)
 {
     bool retval = false;
 
@@ -945,7 +945,7 @@ bool BluetoothSerial::connect(String remoteName)
 #endif
     xEventGroupClearBits(_spp_event_group, SPP_CLOSED);
     if (esp_bt_gap_start_discovery(ESP_BT_INQ_MODE_GENERAL_INQUIRY, INQ_LEN, INQ_NUM_RSPS) == ESP_OK) {
-        retval = waitForConnect(SCAN_TIMEOUT);
+        retval = waitForConnect(scanTimeoutMs);
     }
     if (retval == false) {
       _isRemoteAddressSet = false;
@@ -962,7 +962,7 @@ bool BluetoothSerial::connect(String remoteName)
  *           ESP_SPP_ROLE_MASTER   master can handle up to 7 connections to slaves
  *           ESP_SPP_ROLE_SLAVE    can only have one connection to a master
  */
-bool BluetoothSerial::connect(uint8_t remoteAddress[], int channel, esp_spp_sec_t sec_mask, esp_spp_role_t role, uint16_t connectTimeout)
+bool BluetoothSerial::connect(uint8_t remoteAddress[], int channel, esp_spp_sec_t sec_mask, esp_spp_role_t role, uint16_t connectTimeoutMs)
 {
     bool retval = false;
     if (!isReady(true, READY_TIMEOUT)) return false;
@@ -990,19 +990,19 @@ bool BluetoothSerial::connect(uint8_t remoteAddress[], int channel, esp_spp_sec_
 			log_e("spp connect failed");
       retval = false;
     } else {
-      retval = waitForConnect(connectTimeout);
+      retval = waitForConnect(connectTimeoutMs);
       if(retval) {
             log_i("connected");
         } else {
             if(this->isClosed()) {
                 log_e("connect failed");
             } else {
-                log_e("connect timed out after %dms", READY_TIMEOUT);
+                log_e("connect timed out after %dms", connectTimeoutMs);
             }
         }
     }
   } else if (esp_spp_start_discovery(_peer_bd_addr) == ESP_OK) {
-    retval = waitForConnect(READY_TIMEOUT);
+    retval = waitForConnect(connectTimeoutMs);
   }
 
   if (!retval) {
