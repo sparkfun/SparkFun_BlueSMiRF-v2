@@ -70,6 +70,7 @@ const COMMAND_ENTRY commands[] = {
     {'S', 0, 0, 0, 0, 0, TYPE_U32, valInt, "SerialReceiveBufferSize", &tempSettings.serialReceiveBufferSize},
     {'S', 0, 0, 0, 0, 0, TYPE_U32, valInt, "SerialTransmitBufferSize", &tempSettings.serialTransmitBufferSize},
     {'S', 0, 0, 0, 0, 0, TYPE_SPEED_SERIAL, valSpeedSerial, "SerialSpeed", &tempSettings.baudRate},
+    {'S', 0, 0, 0, 1000, 0, TYPE_U16, valInt, "PartialFrameTimeout", &tempSettings.serialPartialFrameTimeoutMs}, // Arbitrary 1s max
 
     /*Debug parameters
       Ltr, All, reset, min, max, digits,    type,         validation,     name,                   setting addr */
@@ -205,6 +206,9 @@ bool commandAT(const char *commandString)
             wifiStop();
             inCommandMode = false;   // Return to printing normal RF serial data
             settings = tempSettings; // Apply user's modifications
+
+            ledStatusOff();
+            ledConnectOff();
 
             // The LED state may have changed while in config mode
             if (bluetoothConnected() == true)

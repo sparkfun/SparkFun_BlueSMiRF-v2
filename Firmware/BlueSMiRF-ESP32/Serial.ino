@@ -92,14 +92,23 @@ void serialAddToOutputBuffer(uint8_t data)
     serialTxHead %= settings.serialTransmitBufferSize;
 }
 
+// If we are in command mode, ignore characters coming in from the Bluetooth radio
+void bluetoothSerialAddToOutputBuffer(uint8_t data)
+{
+    if (inCommandMode == true)
+        return;
+
+    serialAddToOutputBuffer(data);
+}
+
 // Restart serial port at user setting baud rate
 // Malloc the Tx and Rx buffers
 // Calculate RTS thresholds
 // Start serial tasks
 void serialStart()
 {
-    Serial.flush(); //Finish printing any errors before closing to avoid corruption
-    Serial.end(); // Close port before setting buffer size
+    Serial.flush(); // Finish printing any errors before closing to avoid corruption
+    Serial.end();   // Close port before setting buffer size
 
     Serial.setRxBufferSize(settings.uartReceiveBufferSize);
     Serial.setTimeout(settings.serialTimeout); // Requires serial traffic on the UART pins for detection

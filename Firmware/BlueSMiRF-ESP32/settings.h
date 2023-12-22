@@ -13,8 +13,8 @@ typedef enum
     BT_OFF = 0,      // Entered if user turns off Bluetooth entirely
     BT_NOTCONNECTED, // Default mode. Waiting to be connected to.
     BT_CONNECTED,    // Entered when BT singles it has a connection
-    BT_PAIRING,    // Entered when pair mode is active
-    
+    BT_PAIRING,      // Entered when pair mode is active
+
     // BT_CONNECTING,   // Entered if a board is connecting to a paired MAC
     // BT_SCANNING,     // Entered when pair mode is active
     // BT_DISCOVERABLE, // Entered when scanning fails to detect any friendly devices
@@ -22,13 +22,13 @@ typedef enum
 
 typedef enum
 {
-    LED_OFF = 0,      // Both LEDs off
+    LED_OFF = 0,            // Both LEDs off
     LED_BLUETOOTH_STARTING, // Both LEDs on
-    LED_NOTCONNECTED, // S-0/C-1Hz: Default mode. Waiting to be connected to.
-    LED_CONNECTED,    // S-0/C-1: Entered when BT singles it has a connection
-    LED_CONNECTING,   // S-1/C-0: Entered if a board is connecting to a paired MAC
-    LED_SCANNING,     // S-Fade/C-0: Entered when actively scanning for compatible devices
-    LED_DISCOVERABLE, // S-0/C-Fade: Entered when scanning fails to detect any friendly devices
+    LED_NOTCONNECTED,       // S-0/C-1Hz: Default mode. Waiting to be connected to.
+    LED_CONNECTED,          // S-0/C-1: Entered when BT singles it has a connection
+    LED_CONNECTING,         // S-1/C-0: Entered if a board is connecting to a paired MAC
+    LED_SCANNING,           // S-Fade/C-0: Entered when actively scanning for compatible devices
+    LED_DISCOVERABLE,       // S-0/C-Fade: Entered when scanning fails to detect any friendly devices
 
     LED_BUTTON_3S_HOLD, // Blink S/C back/forth at 2Hz. Entered when user holds button for > 3 second
     LED_BUTTON_8S_HOLD, // Blink S/C back/forth at 10Hz. Entered when user holds button for > 8 seconds
@@ -69,24 +69,24 @@ typedef enum
 typedef struct
 {
     // Bluetooth settings - 'B'
-    uint8_t btType = BLUETOOTH_RADIO_SPP;
-    uint16_t btRxSize = 512 * 4;     // Original library is 320 bytes
-    uint16_t btTxSize = 512 * 2;     // Original library is 32 bytes
-    uint16_t btTimeout = 250;        // Default, ms
-    uint8_t btReadTaskPriority = 1;  // Read from BT SPP and write to serialTransmitBuffer. 3 = highest, 0 = lowest
-    uint8_t btReadTaskCore = 1;      // Core where task should run, 0=core, 1=Arduino
-    uint8_t btWriteTaskPriority = 1; // Read from serialReceiveBuffer and write to SPP. 3 = highest, 0 = lowest
-    uint8_t btWriteTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
-    char btPin[5] = "1234";          // Default Pin for older Bluetooth devices is 1234.
-    char btNickname[50] = {0};       // User configurable name to broadcast over Bluetooth during discovery
+    uint8_t btConnectRetries = 5;       // Number of retries of a paired connection
+    uint16_t btConnectTimeoutMs = 3000; // Milliseconds before a paired connection attempt times out
     uint8_t btEscapeCharacter =
         0; // The character received from the remote system, sought to enter command mode. Default off.
-    uint16_t btConnectTimeoutMs = 3000; // Milliseconds before a paired connection attempt times out
-    uint8_t btConnectRetries = 5;       // Number of retries of a paired connection
-    uint8_t btPairedMac[6] = {0};       // MAC address of the unit that the user wants to connect to at startup
-    char btPairedName[50] = {0};       // Name of the unit that the user wants to connect to at startup
+    char btNickname[50] = {0};    // User configurable name to broadcast over Bluetooth during discovery
+    char btPairedName[50] = {0};  // Name of the unit that the user wants to connect to at startup
+    uint8_t btPairedMac[6] = {0}; // MAC address of the unit that the user wants to connect to at startup
     bool btPairOnStartup = false; // Goes true when user initiates a pair. Work around for core discover bug
     // See issue: https://github.com/espressif/arduino-esp32/issues/8448
+    char btPin[5] = "1234";         // Default Pin for older Bluetooth devices is 1234.
+    uint8_t btReadTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
+    uint8_t btReadTaskPriority = 1; // Read from BT SPP and write to serialTransmitBuffer. 3 = highest, 0 = lowest
+    uint16_t btRxSize = 512 * 4;    // Original library is 320 bytes
+    uint8_t btType = BLUETOOTH_RADIO_SPP;
+    uint16_t btTxSize = 512 * 2;     // Original library is 32 bytes
+    uint16_t btTimeout = 250;        // Default, ms
+    uint8_t btWriteTaskPriority = 1; // Read from serialReceiveBuffer and write to SPP. 3 = highest, 0 = lowest
+    uint8_t btWriteTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
 
     // Serial settings - 'S'
     bool echo = false;        // Print locally inputted serial
@@ -108,6 +108,7 @@ typedef struct
     uint16_t serialRxFullThreshold = 50; // RX FIFO full interrupt. Max of ~128. See serialStart().
     int16_t serialTimeout = 1;           // In ms - used during SerialGNSS.begin. Number of ms to pass of no data before
                                          // hardware serial reports data available.
+    uint16_t serialPartialFrameTimeoutMs = 50; // Send partial buffer if time expires
 
     uint8_t serialReadTaskPriority = 1;  // Read from UART and write to serialReceiveBuffer. 3 = highest, 0 = lowest
     uint8_t serialReadTaskCore = 1;      // Core where task should run, 0=core, 1=Arduino

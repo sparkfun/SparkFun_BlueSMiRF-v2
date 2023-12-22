@@ -202,8 +202,6 @@ void setup()
 {
     Serial.begin(115200); // Start serial for any initial debug messages
 
-    delay(250); // TODO for testing
-
     loadSettings(); // Get settings from NVM
 
     serialStart(); // Malloc serial TX and RX buffers
@@ -219,8 +217,6 @@ void setup()
     ledStatusOff(); // Turn off Status LED until serial traffic is detected
 
     rtsAssert(); // Signal to external system that we are ready for data
-
-    settings.debugBluetooth = true; //TODO remove
 }
 
 void loop()
@@ -246,7 +242,7 @@ void loop()
         commandLength = 0; // Get ready for next command
     }
 
-    // Allow tasks to run
+    // Allow other low (0) priority tasks to run
     feedWdt();
     taskYIELD();
 }

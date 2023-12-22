@@ -46,8 +46,6 @@ void ledUpdate(void *e)
             // Blink Connect LED at 1Hz while waiting for connection
             if (millis() - lastLedUpdate > 1000)
             {
-                Serial.println("LED Not connected");
-
                 lastLedUpdate = millis();
                 ledConnectBlink();
                 ledStatusOff();
@@ -214,17 +212,26 @@ bool isConnectOn()
 void ledConnectOn()
 {
     if (pin_connectLED != PIN_UNDEFINED)
+    {
+        pinMode(pin_connectLED, OUTPUT); // Reconfig pin, post analog write
         digitalWrite(pin_connectLED, HIGH);
+    }
 }
 void ledConnectOff()
 {
     if (pin_connectLED != PIN_UNDEFINED)
+    {
+        pinMode(pin_connectLED, OUTPUT); // Reconfig pin, post analog write
         digitalWrite(pin_connectLED, LOW);
+    }
 }
 void ledConnectBlink()
 {
     if (pin_connectLED != PIN_UNDEFINED)
+    {
+        pinMode(pin_connectLED, OUTPUT); // Reconfig pin, post analog write
         digitalWrite(pin_connectLED, !digitalRead(pin_connectLED));
+    }
 }
 void ledConnectFade()
 {
@@ -253,17 +260,26 @@ bool isStatusOn()
 void ledStatusOn()
 {
     if (pin_statusLED != PIN_UNDEFINED)
+    {
+        pinMode(pin_statusLED, OUTPUT); // Reconfig pin, post analog write
         digitalWrite(pin_statusLED, HIGH);
+    }
 }
 void ledStatusOff()
 {
     if (pin_statusLED != PIN_UNDEFINED)
+    {
+        pinMode(pin_statusLED, OUTPUT); // Reconfig pin, post analog write
         digitalWrite(pin_statusLED, LOW);
+    }
 }
 void ledStatusBlink()
 {
     if (pin_statusLED != PIN_UNDEFINED)
+    {
+        pinMode(pin_statusLED, OUTPUT); // Reconfig pin, post analog write
         digitalWrite(pin_statusLED, !digitalRead(pin_statusLED));
+    }
 }
 void ledStatusFade()
 {

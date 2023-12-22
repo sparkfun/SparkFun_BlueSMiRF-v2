@@ -1,5 +1,5 @@
 // Read from BT SPP and write to serialTransmitBuffer.
-// If the remote device (phone, robot, etc) new data (NTRIP RTCM, etc), read it in over Bluetooth and pass along to
+// If the remote device (phone, robot, etc) has new data (NTRIP RTCM, etc), read it in over Bluetooth and pass along to
 // serialTransmitBuffer. Scan for escape characters to enter Bluetooth Echo Mode
 void btReadTask(void *e)
 {
@@ -34,7 +34,7 @@ void btReadTask(void *e)
                     else
                     {
                         // Ignore this escape character, pass along to output
-                        serialAddToOutputBuffer(incoming);
+                        bluetoothSerialAddToOutputBuffer(incoming);
                         lastByteReceived_ms = millis();
                     }
                 }
@@ -42,10 +42,10 @@ void btReadTask(void *e)
                 {
                     // Pass any escape characters that turned out to not be a complete escape sequence
                     while (escapeCharsReceived-- > 0)
-                        serialAddToOutputBuffer(settings.escapeCharacter);
+                        bluetoothSerialAddToOutputBuffer(settings.escapeCharacter);
 
-                    // Pass byte to system
-                    serialAddToOutputBuffer(incoming);
+                    // Pass byte to the output buffer, which will get sent to Serial.write
+                    bluetoothSerialAddToOutputBuffer(incoming);
 
                     lastByteReceived_ms = millis();
                     escapeCharsReceived = 0; // Update timeout check for escape char and partial frame
@@ -69,7 +69,6 @@ void btWriteTask(void *e)
     uint8_t btFrame[512];
     uint16_t bytesToSend = 0;
     unsigned long lastByteReceived_ms = 0;
-    uint16_t serialTimeoutBeforeSendingFrame_ms = 50; // Send partial buffer if time expires
 
     while (true)
     {
@@ -93,7 +92,7 @@ void btWriteTask(void *e)
         } // End availableRXBytes()
 
         // If no new data arrives after X_ms, send out partial frame
-        if ((bytesToSend > 0) && ((millis() - lastByteReceived_ms) > serialTimeoutBeforeSendingFrame_ms))
+        if ((bytesToSend > 0) && ((millis() - lastByteReceived_ms) > settings.serialPartialFrameTimeoutMs))
         {
             bluetoothWrite(btFrame, bytesToSend); // Send this chunk to BT radio
 
@@ -175,7 +174,8 @@ void serialReadStandardMode()
                         statusFadeAmount = startingFadeAmount;
                         connectLedBrightness = 0;
                         connectFadeAmount = startingFadeAmount;
-                        oldLedState = ledState; //Remember this state so we can return after leaving command mode
+
+                        oldLedState = ledState; // Remember this state so we can return after leaving command mode
                         ledState = LED_CONFIG;
 
                         return; // Avoid recording this incoming command char
@@ -317,8 +317,16 @@ void serialWriteTask(void *e)
             int bytesToSend = availableTXBytes();
 
             // Break chunk if we're at the end of the buffer. We'll get it in the next pass.
-            if ((serialTxTail + bytesToSend) > settings.serialReceiveBufferSize)
-                bytesToSend = settings.serialReceiveBufferSize - serialTxTail;
+            if ((serialTxTail + bytesToSend) > settings.serialTransmitBufferSize)
+            {
+                if (settings.debugSerial == true)
+                {
+                    systemPrintln();
+                    systemPrintln("Wrapping tail");
+                    systemPrintln();
+                }
+                bytesToSend = settings.serialTransmitBufferSize - serialTxTail;
+            }
 
             int bytesSent = 0;
 
@@ -346,7 +354,7 @@ void serialWriteTask(void *e)
     } // End while(true)
 }
 
-// Normally a delay(1) will feed the WDT but if we don't want to wait that long, this feeds the WDT without delay
+// Normally a delay(1) will feed the WDT but if we don't want to wait that long, this feeds the WDT with a minimum delay
 void feedWdt()
 {
     vTaskDelay(1);

@@ -117,7 +117,7 @@ void loadSettings()
 
             // We can't use systemPrints here because we haven't malloc'd the buffers yet
             Serial.printf(
-                "NVM was incorrect length! Sizeof(Settings): %d systemSettings.getBytesLength: %d Settings are now default\r\n",
+                "NVM was incorrect length! Sizeof(Settings): %d systemSettings.getBytesLength: %d. Settings are now default\r\n",
                 sizeof(Settings), systemSettings.getBytesLength("settingsStruct"));
         }
         else
