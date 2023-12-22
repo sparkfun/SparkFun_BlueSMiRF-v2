@@ -6,7 +6,8 @@
         {
             "label": "BlueSMiRF-Compile and Upload",
             "type": "shell",
-            "command": "arduino-cli --fqbn esp32:esp32:esp32:FlashSize=8M,DebugLevel=debug compile 'Firmware/BlueSMiRF-ESP32' --build-property build.partitions=BlueSMiRF_Partitions;arduino-cli upload -p COM3 --fqbn esp32:esp32:esp32:UploadSpeed=921600,FlashSize=8M 'Firmware/BlueSMiRF-ESP32'",
+            // "command": "arduino-cli --fqbn esp32:esp32:esp32:FlashSize=4M,DebugLevel=debug compile 'Firmware/BlueSMiRF-ESP32' --build-property build.partitions=min_spiffs;arduino-cli upload -p COM5 --fqbn esp32:esp32:esp32:UploadSpeed=921600,FlashSize=8M 'Firmware/BlueSMiRF-ESP32'",
+            "command": "arduino-cli --fqbn esp32:esp32:esp32:FlashSize=4M compile 'Firmware/BlueSMiRF-ESP32' --build-property build.partitions=min_spiffs;arduino-cli upload -p COM23 --fqbn esp32:esp32:esp32:UploadSpeed=921600,FlashSize=8M 'Firmware/BlueSMiRF-ESP32'",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -23,9 +24,9 @@
             "problemMatcher": []
         },
         {
-            "label": "RTK-Firmware-Just Upload",
+            "label": "BlueSMiRF-Just Upload",
             "type": "shell",
-            "command": "arduino-cli upload -p COM3 --fqbn esp32:esp32:esp32:UploadSpeed=921600,FlashSize=8M 'Firmware/BlueSMiRF-ESP32'",
+            "command": "arduino-cli upload -p COM23 --fqbn esp32:esp32:esp32:UploadSpeed=921600,FlashSize=8M 'Firmware/BlueSMiRF-ESP32'",
             "group": {
                 "kind": "build",
                 "isDefault": true

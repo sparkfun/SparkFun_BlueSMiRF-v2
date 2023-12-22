@@ -91,14 +91,14 @@ bool wifiConnect()
     {
         systemPrintln("No friendly WiFi networks detected.");
         if (bluetoothOriginallyConnected == true)
-            bluetoothStart();
+            bluetoothBegin();
         return (false);
     }
     else
     {
         systemPrintf("WiFi failed to connect: error #%d.\r\n", wifiResponse);
         if (bluetoothOriginallyConnected == true)
-            bluetoothStart();
+            bluetoothBegin();
         return (false);
     }
     return (true);

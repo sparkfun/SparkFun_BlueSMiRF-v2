@@ -6,6 +6,8 @@
         "xstring": "cpp",
         "xutility": "cpp",
         "iosfwd": "cpp",
-        "xlocale": "cpp"
+        "xlocale": "cpp",
+        "compare": "cpp",
+        "string_view": "cpp"
     }
 }
