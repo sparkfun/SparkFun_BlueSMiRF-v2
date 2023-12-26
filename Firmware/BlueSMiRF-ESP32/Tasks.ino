@@ -3,7 +3,7 @@
 // serialTransmitBuffer. Scan for escape characters to enter Bluetooth Echo Mode
 void btReadTask(void *e)
 {
-    int escapeCharsReceived = 0;
+    int remoteEscapeCharsReceived = 0;
     unsigned long lastByteReceived_ms = 0;
 
     while (true)
@@ -15,13 +15,16 @@ void btReadTask(void *e)
                 // Check stream for escape characters
                 byte incoming = bluetoothRead();
 
-                if (settings.btEscapeCharacter > 0 && incoming == settings.btEscapeCharacter)
+                // Check if remote escape character is enabled
+                // Command mode cannot be entered if the system has been running for more than setings.maxCommandTime_ms
+                if (settings.btEscapeCharacter > 0 && incoming == settings.btEscapeCharacter &&
+                    millis() < settings.maxCommandTime_ms)
                 {
                     // Ignore escape characters received within 2 seconds of serial traffic
                     if (millis() - lastByteReceived_ms > settings.minEscapeTime_ms)
                     {
-                        escapeCharsReceived++;
-                        if (escapeCharsReceived == settings.maxEscapeCharacters)
+                        remoteEscapeCharsReceived++;
+                        if (remoteEscapeCharsReceived == settings.maxEscapeCharacters)
                         {
                             printEndpoint = PRINT_ENDPOINT_ALL;
                             systemPrintln("Echoing all serial to BT device");
@@ -41,15 +44,15 @@ void btReadTask(void *e)
                 else // This is just a character in the stream, ignore
                 {
                     // Pass any escape characters that turned out to not be a complete escape sequence
-                    while (escapeCharsReceived-- > 0)
+                    while (remoteEscapeCharsReceived-- > 0)
                         bluetoothSerialAddToOutputBuffer(settings.escapeCharacter);
 
                     // Pass byte to the output buffer, which will get sent to Serial.write
                     bluetoothSerialAddToOutputBuffer(incoming);
 
                     lastByteReceived_ms = millis();
-                    escapeCharsReceived = 0; // Update timeout check for escape char and partial frame
-                }                            // End just a character in the stream
+                    remoteEscapeCharsReceived = 0; // Update timeout check for escape char and partial frame
+                }                                  // End just a character in the stream
 
             } // End btPrintEcho == false && bluetoothRxDataAvailable()
 
