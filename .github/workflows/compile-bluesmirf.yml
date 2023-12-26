@@ -114,7 +114,7 @@ jobs:
         # uses: dmnemec/copy_file_to_another_repo_action #Workaround for Issue: https://github.com/orgs/community/discussions/55820#discussioncomment-5946136
         uses: Jason2866/copy_file_to_another_repo_action@http408_fix
         env:
-          API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_RTK_FILE_TOKEN }}
+          API_TOKEN_GITHUB: ${{ secrets.BLUESMIRF_PRIVATE_REPO_TOKEN }}
         with:
           source_file: ${{ env.JSON_FILE_NAME }}
           destination_repo: 'sparkfun/SparkFun_BlueSMiRF-ESP32_Binaries'
