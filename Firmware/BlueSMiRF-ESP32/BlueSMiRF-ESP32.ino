@@ -45,7 +45,7 @@
   * spiffs 0x1000 4096
 */
 
-#define COMPILE_BT // Comment out to remove Bluetooth functionality
+#define COMPILE_BT   // Comment out to remove Bluetooth functionality
 #define COMPILE_WIFI // Comment out to remove WiFi functionality
 
 // This is passed in from compiler extra flags
@@ -166,10 +166,15 @@ const int buttonTaskStackSize = 2000;
 #include "ESP32OTAPull.h" //http://librarymanager/All#ESP-OTA-Pull Used for getting
 
 #define OTA_FIRMWARE_JSON_URL                                                                                          \
-    "https://raw.githubusercontent.com/sparkfun/SparkFun_RTK_Firmware_Binaries/main/RTK-Firmware.json"
-//"https://raw.githubusercontent.com/sparkfun/SparkFun_BlueSMiRF_Binaries/main/BlueSMiRF-Firmware.json"
+    "https://raw.githubusercontent.com/sparkfun/SparkFun_BlueSMiRF-ESP32_Binaries/main/BlueSMiRF-Firmware.json"
 #endif
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+// Github token for 
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#if __has_include("tokens.h")
+#include "tokens.h"
+#endif // __has_include("tokens.h")
 
 // Status and Connect LED control
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -185,9 +190,9 @@ char broadcastName[100]; // The serial string that is broadcast. Ex: 'BlueSMiRF-
 
 Settings tempSettings; // Temporary settings used for command processing
 
-bool inLocalCommandMode = false;  // Normal data is prevented from entering serial output when in command mode
-bool inBluetoothCommandMode = false; //If command mode is entered from BT, allow serial
-uint32_t lastHeapReport = 0; // Report heap every 1s if option enabled
+bool inLocalCommandMode = false;     // Normal data is prevented from entering serial output when in command mode
+bool inBluetoothCommandMode = false; // If command mode is entered from BT, allow serial
+uint32_t lastHeapReport = 0;         // Report heap every 1s if option enabled
 uint32_t lastReport_ms = 0;
 
 uint32_t lastLedUpdate = 0;  // Timer for LEDs
@@ -246,7 +251,7 @@ void loop()
     if (btPrintEchoExit == true)
     {
         btPrintEchoExit = false;
-        
+
         inLocalCommandMode = false;
         inBluetoothCommandMode = false;
 

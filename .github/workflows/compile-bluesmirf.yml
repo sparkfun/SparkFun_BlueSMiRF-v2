@@ -7,6 +7,7 @@ env:
   FILENAME_PREFIX: BlueSMiRF
   FIRMWARE_VERSION_MAJOR: 0
   FIRMWARE_VERSION_MINOR: 9
+  BLUESMIRF_PRIVATE_REPO_TOKEN: ${{ secrets.BLUESMIRF_PRIVATE_REPO_TOKEN }}
 
 jobs:
   build:
@@ -70,7 +71,9 @@ jobs:
         run: arduino-cli compile --fqbn "esp32:esp32:esp32":DebugLevel=${{ env.DEBUG_LEVEL }} ./Firmware/BlueSMiRF-ESP32/BlueSMiRF-ESP32.ino
           --build-property build.partitions=BlueSMiRF_Partitions
           --build-property upload.maximum_size=3145728 
-          --build-property "compiler.cpp.extra_flags=\"-DFIRMWARE_VERSION_MAJOR=$FIRMWARE_VERSION_MAJOR\" \"-DFIRMWARE_VERSION_MINOR=$FIRMWARE_VERSION_MINOR\""
+          --build-property "compiler.cpp.extra_flags=\"-DBLUESMIRF_PRIVATE_REPO_TOKEN=$BLUESMIRF_PRIVATE_REPO_TOKEN\"
+              \"-DFIRMWARE_VERSION_MAJOR=$FIRMWARE_VERSION_MAJOR\" 
+              \"-DFIRMWARE_VERSION_MINOR=$FIRMWARE_VERSION_MINOR\""
           --export-binaries
 
       - name: Rename binary
@@ -83,3 +86,16 @@ jobs:
         with: 
           name: ${{ env.FILENAME_PREFIX }}${{ env.FILE_ENDING_UNDERSCORE }}
           path: ./Firmware/BlueSMiRF-ESP32/build/esp32.esp32.esp32/${{ env.FILENAME_PREFIX }}${{ env.FILE_ENDING_UNDERSCORE }}.bin
+
+      - name: Push binary to Binaries Repo
+        # uses: dmnemec/copy_file_to_another_repo_action #Workaround for Issue: https://github.com/orgs/community/discussions/55820#discussioncomment-5946136
+        uses: Jason2866/copy_file_to_another_repo_action@http408_fix
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.BLUESMIRF_PRIVATE_REPO_TOKEN }}
+        with:
+          source_file: ./Firmware/RTK_Surveyor/build/esp32.esp32.esp32/${{ env.FILENAME_PREFIX }}${{ env.FILE_ENDING_UNDERSCORE }}.bin
+          destination_repo: 'sparkfun/SparkFun_BlueSMiRF-ESP32_Binaries'
+          destination_folder: ''
+          user_email: 'nathan@sparkfun.com'
+          user_name: 'nseidle'
+          commit_message: 'Github Action - Updating Binary ${{ steps.dateNoScores.outputs.dateNoScores }}'

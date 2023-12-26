@@ -71,6 +71,13 @@ bool wifiConnect()
 
 #ifdef COMPILE_WIFI
 
+// The token is provided at compile time via build flags
+#define DEVELOPMENT_TOKEN 0xAA, 0xBB, 0xCC, 0xDD, 0x00, 0x11, 0x22, 0x33, 0x0A, 0x0B, 0x0C, 0x0D, 0x00, 0x01, 0x02, 0x03
+#ifndef BLUESMIRF_PRIVATE_REPO_TOKEN
+#warning Using the DEVELOPMENT_TOKEN for github!
+#define BLUESMIRF_PRIVATE_REPO_TOKEN DEVELOPMENT_TOKEN
+#endif // BLUESMIRF_PRIVATE_REPO_TOKEN
+
     reportHeapNow();
 
     WiFiMulti wifiMulti;
