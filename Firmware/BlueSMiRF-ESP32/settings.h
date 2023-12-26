@@ -71,12 +71,11 @@ typedef struct
     // Bluetooth settings - 'B'
     uint8_t btConnectRetries = 5;       // Number of retries of a paired connection
     uint16_t btConnectTimeoutMs = 3000; // Milliseconds before a paired connection attempt times out
-    uint8_t btEscapeCharacter =
-        '+'; // The character received from the remote system, sought to enter command mode.
-    char btNickname[50] = {0};    // User configurable name to broadcast over Bluetooth during discovery
-    char btPairedName[50] = {0};  // Name of the unit that the user wants to connect to at startup
-    uint8_t btPairedMac[6] = {0}; // MAC address of the unit that the user wants to connect to at startup
-    bool btPairOnStartup = false; // Goes true when user initiates a pair. Work around for core discover bug
+    uint8_t btEscapeCharacter = '+';    // The character received from the remote system, sought to enter command mode.
+    char btNickname[50] = {0};          // User configurable name to broadcast over Bluetooth during discovery
+    char btPairedName[50] = {0};        // Name of the unit that the user wants to connect to at startup
+    uint8_t btPairedMac[6] = {0};       // MAC address of the unit that the user wants to connect to at startup
+    bool btPairOnStartup = false;       // Goes true when user initiates a pair. Work around for core discover bug
     // See issue: https://github.com/espressif/arduino-esp32/issues/8448
     char btPin[5] = "1234";         // Default Pin for older Bluetooth devices is 1234.
     uint8_t btReadTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
@@ -116,17 +115,17 @@ typedef struct
     uint8_t serialWriteTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
 
     // System settings - 'Y'
-    uint8_t escapeCharacter = '$';      // The character sought to enter command mode
-    uint8_t maxEscapeCharacters = 3;    // The number of escape characters required to enter command mode
-    uint16_t minEscapeTime_ms = 2000;   // Serial traffic must stop this amount before an escape char is recognized
-    uint16_t maxCommandTime_ms = 60000; // After this time, command mode cannot be entered
-    uint8_t ledStyle = LEDS_CLASSIC;    // Connect LED will blink when waiting for BT connection.
-    char wifiSsid[50] = "";             // For firmware update over WiFi
-    char wifiPassword[50] = "";
-
     bool debugSerial = false;
     bool debugBluetooth = false;
     bool enableHeapReport = false;
+    uint16_t psramThreshold = 1000;     // Use PSRAM for memory requests larger than this number of bytes
+    uint8_t escapeCharacter = '$';      // The character sought to enter command mode
+    uint8_t ledStyle = LEDS_CLASSIC;    // Connect LED will blink when waiting for BT connection.
+    uint16_t maxCommandTime_ms = 60000; // After this time, command mode cannot be entered
+    uint8_t maxEscapeCharacters = 3;    // The number of escape characters required to enter command mode
+    uint16_t minEscapeTime_ms = 2000;   // Serial traffic must stop this amount before an escape char is recognized
+    char wifiSsid[50] = "";             // For firmware update over WiFi
+    char wifiPassword[50] = "";
 
     uint8_t length = 0; // Used to detect if settings stuct has changed between firmware versions
 } Settings;

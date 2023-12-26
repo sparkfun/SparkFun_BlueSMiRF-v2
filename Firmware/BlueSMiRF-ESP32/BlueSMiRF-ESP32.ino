@@ -34,10 +34,16 @@
 
   Compiler settings:
   * Board: ESP32 Dev Module
-  * Flash Size: 4MB
+  * Flash Size: 8MB
   * Partition Scheme: Use custom partition file called BlueSMiRF_Partitions.csv (or built-in "Minimal SPIFFs (1.9MB APP
   with OTA)")
   * PSRAM: Enabled
+
+  Partitions:
+  * app0 0x3C0000 3.9MB
+  * app1 0x3C0000 3.9MB
+  * spiffs 0x1000 4096
+
 */
 
 #define COMPILE_BT // Comment out to remove Bluetooth functionality
@@ -204,6 +210,8 @@ void setup()
     Serial.begin(115200); // Start serial for any initial debug messages
 
     loadSettings(); // Get settings from NVM
+
+    psramBegin(); // Start PSRAM if available
 
     serialStart(); // Malloc serial TX and RX buffers
 

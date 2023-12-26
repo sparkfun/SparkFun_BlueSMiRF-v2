@@ -389,8 +389,13 @@ void reportHeapNow()
     if (settings.enableHeapReport == true)
     {
         lastHeapReport = millis();
-        systemPrintf("FreeHeap: %d / HeapLowestPoint: %d / LargestBlock: %d\r\n", ESP.getFreeHeap(),
-                     xPortGetMinimumEverFreeHeapSize(), heap_caps_get_largest_free_block(MALLOC_CAP_8BIT));
+        if (ESP.getPsramSize() > 0)
+            systemPrintf("FreeHeap: %d / HeapLowestPoint: %d / LargestBlock: %d / Used PSRAM: %d\r\n",
+                         ESP.getFreeHeap(), xPortGetMinimumEverFreeHeapSize(),
+                         heap_caps_get_largest_free_block(MALLOC_CAP_8BIT), ESP.getPsramSize() - ESP.getFreePsram());
+        else
+            systemPrintf("FreeHeap: %d / HeapLowestPoint: %d / LargestBlock: %d\r\n", ESP.getFreeHeap(),
+                         xPortGetMinimumEverFreeHeapSize(), heap_caps_get_largest_free_block(MALLOC_CAP_8BIT));
     }
 }
 
@@ -404,4 +409,20 @@ void reportHeap()
             reportHeapNow();
         }
     }
+}
+
+void psramBegin()
+{
+    if (psramInit() == false)
+    {
+        if (settings.debugSerial == true)
+            Serial.println("PSRAM not detected");
+        return;
+    }
+
+    // Print direct to serial port, don't use systemPrint
+    if (settings.debugSerial == true)
+        Serial.printf("PSRAM initialized. Available (bytes): %d\r\n", ESP.getFreePsram());
+
+    heap_caps_malloc_extmem_enable(settings.psramThreshold); // Use PSRAM for memory requests larger than X bytes
 }
