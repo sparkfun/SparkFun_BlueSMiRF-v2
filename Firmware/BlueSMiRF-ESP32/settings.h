@@ -72,7 +72,7 @@ typedef struct
     uint8_t btConnectRetries = 5;       // Number of retries of a paired connection
     uint16_t btConnectTimeoutMs = 3000; // Milliseconds before a paired connection attempt times out
     uint8_t btEscapeCharacter =
-        0; // The character received from the remote system, sought to enter command mode. Default off.
+        '+'; // The character received from the remote system, sought to enter command mode.
     char btNickname[50] = {0};    // User configurable name to broadcast over Bluetooth during discovery
     char btPairedName[50] = {0};  // Name of the unit that the user wants to connect to at startup
     uint8_t btPairedMac[6] = {0}; // MAC address of the unit that the user wants to connect to at startup

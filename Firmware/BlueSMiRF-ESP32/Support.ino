@@ -1,6 +1,16 @@
-// Read a byte from the serial port
-uint8_t systemRead()
+// If we are printing to all endpoints, BT gets priority
+int systemAvailable()
 {
+    if (printEndpoint == PRINT_ENDPOINT_BLUETOOTH || printEndpoint == PRINT_ENDPOINT_ALL)
+        return (bluetoothDataAvailable());
+    return (Serial.available());
+}
+
+// If we are printing to all endpoints, BT gets priority
+int systemRead()
+{
+    if (printEndpoint == PRINT_ENDPOINT_BLUETOOTH || printEndpoint == PRINT_ENDPOINT_ALL)
+        return (bluetoothRead());
     return (Serial.read());
 }
 
@@ -108,7 +118,8 @@ void loadSettings()
     }
     else
     {
-        systemSettings.getBytes("settingsStruct", &tempSettings, sizeof(Settings)); // Load NVM into the tempSettings struct
+        systemSettings.getBytes("settingsStruct", &tempSettings,
+                                sizeof(Settings)); // Load NVM into the tempSettings struct
 
         if (systemSettings.getBytesLength("settingsStruct") != sizeof(Settings))
         {
@@ -116,9 +127,9 @@ void loadSettings()
             recordSystemSettings();
 
             // We can't use systemPrints here because we haven't malloc'd the buffers yet
-            Serial.printf(
-                "NVM was incorrect length! Sizeof(Settings): %d systemSettings.getBytesLength: %d. Settings are now default\r\n",
-                sizeof(Settings), systemSettings.getBytesLength("settingsStruct"));
+            Serial.printf("NVM was incorrect length! Sizeof(Settings): %d systemSettings.getBytesLength: %d. Settings "
+                          "are now default\r\n",
+                          sizeof(Settings), systemSettings.getBytesLength("settingsStruct"));
         }
         else
         {
@@ -144,9 +155,10 @@ void factoryDefaults()
 
 void clearSerialBuffer()
 {
+    systemFlush();
     delay(20);
-    while (Serial.available())
-        Serial.read();
+    while (systemAvailable() > 0)
+        systemRead(); // Clear buffer
 }
 
 // Gathers raw characters from user until \n or \r is received
@@ -342,8 +354,18 @@ void systemFlush()
     // Wait for btWriteTask task to clear serialReceiveBuffer
     if (bluetoothState == BT_CONNECTED)
     {
+        if (settings.debugBluetooth == true)
+            Serial.println("Flushing Bluetooth characters");
+
+        // This pushes the data to the Bluetooth radio, but there
+        // may be a time delay for the radio to complete sending it out.
+        // This is important if a system reset is about to be issued
         while (availableRXBytes() > 0)
             delay(1);
+
+        bluetoothFlush();
+
+        delay(50); // Allow Bluetooth stack to transmit waiting data
     }
 
     // Wait for serialWriteTask task to clear serialTransmitBuffer

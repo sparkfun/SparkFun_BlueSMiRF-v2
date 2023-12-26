@@ -181,6 +181,7 @@ char broadcastName[100]; // The serial string that is broadcast. Ex: 'BlueSMiRF-
 Settings tempSettings; // Temporary settings used for command processing
 
 bool inLocalCommandMode = false;  // Normal data is prevented from entering serial output when in command mode
+bool inBluetoothCommandMode = false; //If command mode is entered from BT, allow serial
 uint32_t lastHeapReport = 0; // Report heap every 1s if option enabled
 uint32_t lastReport_ms = 0;
 
@@ -238,7 +239,10 @@ void loop()
     if (btPrintEchoExit == true)
     {
         btPrintEchoExit = false;
-        inCommandMode = false;
+        
+        inLocalCommandMode = false;
+        inBluetoothCommandMode = false;
+
         commandLength = 0; // Get ready for next command
     }
 

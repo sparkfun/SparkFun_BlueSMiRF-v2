@@ -27,11 +27,34 @@ void btReadTask(void *e)
                         if (remoteEscapeCharsReceived == settings.maxEscapeCharacters)
                         {
                             printEndpoint = PRINT_ENDPOINT_ALL;
-                            systemPrintln("Echoing all serial to BT device");
+
+                            lastByteReceived_ms = millis();
+
+                            systemPrintln("\r\nOK");
+
+                            if (settings.debugBluetooth == true)
+                                systemPrintln("Echoing all serial to BT device");
+
                             btPrintEcho = true;
 
-                            escapeCharsReceived = 0;
-                            lastByteReceived_ms = millis();
+                            inBluetoothCommandMode = true; // Allow AT parsing. All received RF data to be printed.
+
+                            forceRadioReset = false; // Don't reset the radio link unless a setting requires it
+
+                            tempSettings = settings;
+
+                            remoteEscapeCharsReceived = 0;
+
+                            // Prep LED values for fading
+                            statusLedBrightness = 0;
+                            statusFadeAmount = startingFadeAmount;
+                            connectLedBrightness = 0;
+                            connectFadeAmount = startingFadeAmount;
+
+                            oldLedState = ledState; // Remember this state so we can return after leaving command mode
+                            ledState = LED_CONFIG;
+
+                            // return; // Avoid recording this incoming command char
                         }
                     }
                     else
@@ -114,10 +137,10 @@ void serialReadTask(void *e)
 {
     while (true)
     {
-        if (inCommandMode == false)
-            serialReadStandardMode();
-        else
+        if (inLocalCommandMode == true || inBluetoothCommandMode == true)
             serialReadCommandMode();
+        else
+            serialReadStandardMode();
 
         feedWdt();
         taskYIELD();
@@ -241,7 +264,7 @@ void serialReadStandardMode()
 // Process command when a \r or ; is seen
 void serialReadCommandMode()
 {
-    while (Serial.available())
+    while (systemAvailable())
     {
         byte incoming = systemRead();
 
