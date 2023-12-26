@@ -43,7 +43,6 @@
   * app0 0x3C0000 3.9MB
   * app1 0x3C0000 3.9MB
   * spiffs 0x1000 4096
-
 */
 
 #define COMPILE_BT // Comment out to remove Bluetooth functionality
