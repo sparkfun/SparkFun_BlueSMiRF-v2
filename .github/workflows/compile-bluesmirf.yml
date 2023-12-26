@@ -93,7 +93,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.BLUESMIRF_PRIVATE_REPO_TOKEN }}
         with:
-          source_file: ./Firmware/RTK_Surveyor/build/esp32.esp32.esp32/${{ env.FILENAME_PREFIX }}${{ env.FILE_ENDING_UNDERSCORE }}.bin
+          source_file: ./Firmware/BlueSMiRF-ESP32/build/esp32.esp32.esp32/${{ env.FILENAME_PREFIX }}${{ env.FILE_ENDING_UNDERSCORE }}.bin
           destination_repo: 'sparkfun/SparkFun_BlueSMiRF-ESP32_Binaries'
           destination_folder: ''
           user_email: 'nathan@sparkfun.com'
