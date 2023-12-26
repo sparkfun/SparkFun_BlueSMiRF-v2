@@ -95,7 +95,7 @@ void serialAddToOutputBuffer(uint8_t data)
 // If we are in command mode, ignore characters coming in from the Bluetooth radio
 void bluetoothSerialAddToOutputBuffer(uint8_t data)
 {
-    if (inCommandMode == true)
+    if (inLocalCommandMode == true)
         return;
 
     serialAddToOutputBuffer(data);

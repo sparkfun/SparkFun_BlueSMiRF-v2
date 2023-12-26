@@ -162,8 +162,8 @@ void serialReadStandardMode()
                     {
                         systemPrintln("\r\nOK");
 
-                        inCommandMode = true;    // Allow AT parsing. Prevent received RF data from being printed.
-                        forceRadioReset = false; // Don't reset the radio link unless a setting requires it
+                        inLocalCommandMode = true; // Allow AT parsing. Prevent received RF data from being printed.
+                        forceRadioReset = false;   // Don't reset the radio link unless a setting requires it
 
                         tempSettings = settings;
 

@@ -180,7 +180,7 @@ char broadcastName[100]; // The serial string that is broadcast. Ex: 'BlueSMiRF-
 
 Settings tempSettings; // Temporary settings used for command processing
 
-bool inCommandMode = false;  // Normal data is prevented from entering serial output when in command mode
+bool inLocalCommandMode = false;  // Normal data is prevented from entering serial output when in command mode
 uint32_t lastHeapReport = 0; // Report heap every 1s if option enabled
 uint32_t lastReport_ms = 0;
 
