@@ -69,13 +69,9 @@ bool wifiConnect()
         }
     }
 
-    bool bluetoothOriginallyConnected = false;
-    if (bluetoothState == BT_CONNECTED)
-        bluetoothOriginallyConnected = true;
-
-    bluetoothStop(); // Discontinue Bluetooth during WiFi activity
-
 #ifdef COMPILE_WIFI
+
+    reportHeapNow();
 
     WiFiMulti wifiMulti;
     wifiMulti.addAP(settings.wifiSsid, settings.wifiPassword);
@@ -90,17 +86,16 @@ bool wifiConnect()
     else if (wifiResponse == WL_DISCONNECTED)
     {
         systemPrintln("No friendly WiFi networks detected.");
-        if (bluetoothOriginallyConnected == true)
-            bluetoothBegin();
         return (false);
     }
     else
     {
         systemPrintf("WiFi failed to connect: error #%d.\r\n", wifiResponse);
-        if (bluetoothOriginallyConnected == true)
-            bluetoothBegin();
         return (false);
     }
+
+    reportHeapNow();
+
     return (true);
 #else
     return (false);

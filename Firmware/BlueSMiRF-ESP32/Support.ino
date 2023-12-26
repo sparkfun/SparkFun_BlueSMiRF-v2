@@ -389,6 +389,7 @@ void reportHeapNow()
     if (settings.enableHeapReport == true)
     {
         lastHeapReport = millis();
+
         if (ESP.getPsramSize() > 0)
             systemPrintf("FreeHeap: %d / HeapLowestPoint: %d / LargestBlock: %d / Used PSRAM: %d\r\n",
                          ESP.getFreeHeap(), xPortGetMinimumEverFreeHeapSize(),
@@ -402,9 +403,9 @@ void reportHeapNow()
 // If debug option is on, print available heap
 void reportHeap()
 {
-    if (settings.enableHeapReport == true)
+    if (settings.enableHeapReport == true && inBluetoothCommandMode == false && inLocalCommandMode == false)
     {
-        if (millis() - lastHeapReport > 1000)
+        if (millis() - lastHeapReport > 2000)
         {
             reportHeapNow();
         }
