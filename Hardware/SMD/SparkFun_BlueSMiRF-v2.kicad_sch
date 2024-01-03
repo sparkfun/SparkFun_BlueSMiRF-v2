@@ -5,9 +5,9 @@
   (paper "USLetter")
 
   (title_block
-    (title "SparkFun BlueSMiRF - ESP32")
+    (title "SparkFun BlueSMiRF v2")
     (date "2023-07-29")
-    (rev "v10")
+    (rev "v11")
     (comment 1 "Designed by: N. Seidle")
   )
 

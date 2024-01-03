@@ -5,7 +5,7 @@
   (paper "USLetter")
 
   (title_block
-    (title "SparkFun BlueSMiRF - ESP32 PTH")
+    (title "SparkFun BlueSMiRF v2 - Headers")
     (date "2023-07-29")
     (rev "v11")
     (comment 1 "Designed by: N. Seidle")

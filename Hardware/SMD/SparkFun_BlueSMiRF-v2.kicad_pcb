@@ -1029,7 +1029,7 @@
 
   (footprint "SparkFun-Aesthetic:ORDERING_INSTRUCTIONS" (layer "F.Cu")
     (tstamp 460ed0de-4fae-4e24-94d3-63e72f2bef0d)
-    (at 1.52 4.06)
+    (at 180.34 81.28)
     (property "Sheetfile" "SparkFun_BlueSMiRF-ESP32.kicad_sch")
     (property "Sheetname" "")
     (path "/fb5b0e17-f339-4252-b7ad-a93a86880f9c")
