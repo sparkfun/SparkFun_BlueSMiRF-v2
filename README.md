@@ -1,4 +1,4 @@
-SparkFun BlueSMiRF ESP32 Firmware
+SparkFun BlueSMiRF v2 Firmware
 ===========================================================
 
 <table class="table table-hover table-striped table-bordered">
@@ -7,17 +7,17 @@ SparkFun BlueSMiRF ESP32 Firmware
    <td><a href="https://www.sparkfun.com/products/23287"><img src="https://cdn.sparkfun.com/r/600-600/assets/parts/2/3/4/8/3/23287-BlueSMiRF-ESP32-WithHeaders-Feature-NEW.jpg"></a></td>
   </tr>
   <tr align="center">
-    <td><a href="https://www.sparkfun.com/products/24113">SparkFun BlueSMiRF - ESP32 (WRL-24113)</a></td>
-    <td><a href="https://www.sparkfun.com/products/23287">SparkFun BlueSMiRF - ESP32 with Headers (WRL-23287)</a></td>
+    <td><a href="https://www.sparkfun.com/products/24113">SparkFun BlueSMiRF v2 (WRL-24113)</a></td>
+    <td><a href="https://www.sparkfun.com/products/23287">SparkFun BlueSMiRF v2 - Headers (WRL-23287)</a></td>
   </tr>
 </table>
 
-The [SparkFun BlueSMiRF - ESP32](https://www.sparkfun.com/products/24113) and [SparkFun BlueSMiRF - ESP32 with Headers](https://www.sparkfun.com/products/23287) are point to point serial cable replacements using Bluetooth. Simply throw serial characters at a BlueSMiRF and the data will arrive at the other radio, with guaranteed packet delivery. Baud rates supported up to 921600bps!
+The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) and [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/products/23287) are point to point serial cable replacements using Bluetooth. Simply throw serial characters at a BlueSMiRF and the data will arrive at the other radio, with guaranteed packet delivery. Baud rates supported up to 921600bps!
 
 This repo houses the [BlueSMiRF Product Manual](https://docs.sparkfun.com/SparkFun_BlueSMiRF-ESP32) and the firmware that runs on the SparkFun BlueSMiRF ESp32 product line including:
 
-* [SparkFun BlueSMiRF - ESP32](https://www.sparkfun.com/products/24113)
-* [SparkFun BlueSMiRF - ESP32 with Headers](https://www.sparkfun.com/products/23287)
+* [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113)
+* [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/products/23287)
 
 For compiled binaries of the firmware, please see [SparkFun BlueSMiRF ESP32 Firmware Binaries](https://github.com/sparkfun/SparkFun_BlueSMiRF-ESP32_Binaries).
 
