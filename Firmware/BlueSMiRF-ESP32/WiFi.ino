@@ -244,28 +244,39 @@ void otaDisplayPercentage(int bytesWritten, int totalLength, bool alwaysDisplay)
 // Returns true if reportedVersion is newer than currentVersion
 // Version number comes in as v2.7-Jan 5 2023
 // 2.7-Jan 5 2023 is newer than v2.7-Jan 1 2023
+// We can't use just the float number: v3.12 is a greater version than v3.9 but it is a smaller float number
 bool isReportedVersionNewer(char *reportedVersion, char *currentVersion)
 {
-    float currentVersionNumber = 0.0;
+    int currentVersionNumberMajor = 0;
+    int currentVersionNumberMinor = 0;
     int currentDay = 0;
     int currentMonth = 0;
     int currentYear = 0;
 
-    float reportedVersionNumber = 0.0;
+    int reportedVersionNumberMajor = 0;
+    int reportedVersionNumberMinor = 0;
     int reportedDay = 0;
     int reportedMonth = 0;
     int reportedYear = 0;
 
-    breakVersionIntoParts(currentVersion, &currentVersionNumber, &currentYear, &currentMonth, &currentDay);
-    breakVersionIntoParts(reportedVersion, &reportedVersionNumber, &reportedYear, &reportedMonth, &reportedDay);
+    breakVersionIntoParts(currentVersion, &currentVersionNumberMajor, &currentVersionNumberMinor, &currentYear,
+                          &currentMonth, &currentDay);
+    breakVersionIntoParts(reportedVersion, &reportedVersionNumberMajor, &reportedVersionNumberMinor, &reportedYear,
+                          &reportedMonth, &reportedDay);
 
-    log_d("currentVersion: %f %d %d %d", currentVersionNumber, currentYear, currentMonth, currentDay);
-    log_d("reportedVersion: %f %d %d %d", reportedVersionNumber, reportedYear, reportedMonth, reportedDay);
+    log_d("currentVersion (%s): %d.%d %d %d %d", currentVersion, currentVersionNumberMajor, currentVersionNumberMinor,
+          currentYear, currentMonth, currentDay);
+    log_d("reportedVersion (%s): %d.%d %d %d %d", reportedVersion, reportedVersionNumberMajor,
+          reportedVersionNumberMinor, reportedYear, reportedMonth, reportedDay);
 
     // Production firmware is named "2.6"
 
-    if (reportedVersionNumber > currentVersionNumber)
+    if (reportedVersionNumberMajor > currentVersionNumberMajor)
         return (true);
+    if (reportedVersionNumberMajor == currentVersionNumberMajor &&
+        reportedVersionNumberMinor > currentVersionNumberMinor)
+        return (true);
+    return (false);
 
     // Check which date is more recent
     // https://stackoverflow.com/questions/5283120/date-comparison-to-find-which-is-bigger-in-c
@@ -284,14 +295,15 @@ bool isReportedVersionNewer(char *reportedVersion, char *currentVersion)
 // Version number comes in as v2.7-Jan 5 2023
 // Given a char string, break into version number, year, month, day
 // Returns false if parsing failed
-bool breakVersionIntoParts(char *version, float *versionNumber, int *year, int *month, int *day)
+bool breakVersionIntoParts(char *version, int *versionNumberMajor, int *versionNumberMinor, int *year, int *month,
+                           int *day)
 {
     int placed = 0;
 
-    placed = sscanf(version, "%f", versionNumber);
-    if (placed != 1)
+    placed = sscanf(version, "%d.%d", versionNumberMajor, versionNumberMinor);
+    if (placed != 2)
     {
-        log_d("Failed to sscanf");
+        log_d("Failed to sscanf basic");
         return (false); // Something went wrong
     }
 
