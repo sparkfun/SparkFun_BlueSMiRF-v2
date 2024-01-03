@@ -73,41 +73,39 @@ typedef struct
     uint16_t btConnectTimeoutMs = 3000; // Milliseconds before a paired connection attempt times out
     uint8_t btEscapeCharacter = '+';    // The character received from the remote system, sought to enter command mode.
     char btNickname[50] = {0};          // User configurable name to broadcast over Bluetooth during discovery
-    char btPairedName[50] = {0};        // Name of the unit that the user wants to connect to at startup
     uint8_t btPairedMac[6] = {0};       // MAC address of the unit that the user wants to connect to at startup
+    char btPairedName[50] = {0};        // Name of the unit that the user wants to connect to at startup
     bool btPairOnStartup = false;       // Goes true when user initiates a pair. Work around for core discover bug
     // See issue: https://github.com/espressif/arduino-esp32/issues/8448
     char btPin[5] = "1234";         // Default Pin for older Bluetooth devices is 1234.
     uint8_t btReadTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
     uint8_t btReadTaskPriority = 1; // Read from BT SPP and write to serialTransmitBuffer. 3 = highest, 0 = lowest
-    uint16_t btRxSize = 512 * 4;    // Original library is 320 bytes
-    uint8_t btType = BLUETOOTH_RADIO_SPP;
-    uint16_t btTxSize = 512 * 2;     // Original library is 32 bytes
+    uint16_t btRxSize = 512 * 4;    // Receive buffer size. Original library is 320 bytes
     uint16_t btTimeout = 250;        // Default, ms
-    uint8_t btWriteTaskPriority = 1; // Read from serialReceiveBuffer and write to SPP. 3 = highest, 0 = lowest
+    uint16_t btTxSize = 512 * 2;     // Original library is 32 bytes
+    uint8_t btType = BLUETOOTH_RADIO_SPP;
     uint8_t btWriteTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
+    uint8_t btWriteTaskPriority = 1; // Read from serialReceiveBuffer and write to SPP. 3 = highest, 0 = lowest
 
     // Serial settings - 'S'
-    bool echo = false;        // Print locally inputted serial
     bool flowControl = false; // Enable the use of CTS/RTS flow control signals
     bool invertCts = false;   // Invert the input of CTS
     bool invertRts = false;   // Invert the output of RTS
-    uint16_t rtsStopSendingPercent =
-        5; // Percent of serialReceiveBuffer that is free when RTS is deasserted.  Default of 5% of serialReceiveBuffer.
+    uint16_t serialPartialFrameTimeoutMs = 50; // Send partial buffer if time expires
     uint8_t rtsStartSendingPercent =
         25; // Percent of serialReceiveBuffer that is free when RTS is asserted. Default of 25% of serialReceiveBuffer.
-    int baudRate = 115200;
     uint32_t serialReceiveBufferSize =
         1024 * 50; // Buffer size to receive serial data from the serial port, to be sent over Bluetooth.
+    uint16_t rtsStopSendingPercent =
+        5; // Percent of serialReceiveBuffer that is free when RTS is deasserted. Default of 5% of serialReceiveBuffer.
+    int baudRate = 115200; // Also known as SerialSpeed
     uint32_t serialTransmitBufferSize =
         1024 * 10; // Buffer size to receive bytes from Bluetooth waiting to be printed out UART.
 
     uint32_t uartReceiveBufferSize = 1024 * 2; // Buffer size to receive bytes from hardware interrupt.
-
     uint16_t serialRxFullThreshold = 50; // RX FIFO full interrupt. Max of ~128. See serialStart().
     int16_t serialTimeout = 1;           // In ms - used during SerialGNSS.begin. Number of ms to pass of no data before
                                          // hardware serial reports data available.
-    uint16_t serialPartialFrameTimeoutMs = 50; // Send partial buffer if time expires
 
     uint8_t serialReadTaskPriority = 1;  // Read from UART and write to serialReceiveBuffer. 3 = highest, 0 = lowest
     uint8_t serialReadTaskCore = 1;      // Core where task should run, 0=core, 1=Arduino
@@ -115,17 +113,19 @@ typedef struct
     uint8_t serialWriteTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
 
     // System settings - 'Y'
+    uint8_t escapeCharacter = '$';      // The character sought to enter command mode
+    uint8_t maxEscapeCharacters = 3;    // The number of escape characters required to enter command mode
+    uint8_t ledStyle = LEDS_CLASSIC;    // Controls the behavior of the Status and Connect LEDs
+    uint16_t maxCommandTime_ms = 60000; // After this time, command mode cannot be entered
+    uint16_t minEscapeTime_ms = 2000;   // Serial traffic must stop this amount before an escape char is recognized
+    uint16_t psramThreshold = 1000;     // Use PSRAM for memory requests larger than this number of bytes
+    char wifiSsid[50] = "";             // For firmware update over WiFi
+    char wifiPassword[50] = "";
+
+
     bool debugSerial = false;
     bool debugBluetooth = false;
     bool enableHeapReport = false;
-    uint16_t psramThreshold = 1000;     // Use PSRAM for memory requests larger than this number of bytes
-    uint8_t escapeCharacter = '$';      // The character sought to enter command mode
-    uint8_t ledStyle = LEDS_CLASSIC;    // Connect LED will blink when waiting for BT connection.
-    uint16_t maxCommandTime_ms = 60000; // After this time, command mode cannot be entered
-    uint8_t maxEscapeCharacters = 3;    // The number of escape characters required to enter command mode
-    uint16_t minEscapeTime_ms = 2000;   // Serial traffic must stop this amount before an escape char is recognized
-    char wifiSsid[50] = "";             // For firmware update over WiFi
-    char wifiPassword[50] = "";
 
     uint8_t length = 0; // Used to detect if settings stuct has changed between firmware versions
 } Settings;
@@ -149,7 +149,7 @@ typedef bool (*VALIDATION_ROUTINE)(void *value, uint32_t valMin, uint32_t valMax
 typedef struct _COMMAND_ENTRY
 {
     char letter;
-    char requireAll;
+    char display;
     bool forceRadioReset;
     uint32_t minValue;
     uint32_t maxValue;

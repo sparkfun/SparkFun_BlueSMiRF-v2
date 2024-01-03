@@ -34,46 +34,50 @@ typedef struct
 
 const COMMAND_ENTRY commands[] = {
     /*Bluetooth parameters
-     Ltr, All, reset, min, max, digits,    type,         validation,     name, setting addr */
-    {'B', 0, 0, 0, 1, 0, TYPE_U8, valInt, "BluetoothType", &tempSettings.btType},
-    {'B', 0, 0, 0, 1024 * 10, 0, TYPE_U16, valInt, "BluetoothRxSize", &tempSettings.btRxSize}, // Arbitrary 10k max
-    {'B', 0, 0, 0, 1024 * 10, 0, TYPE_U16, valInt, "BluetoothTxSize", &tempSettings.btTxSize},
-    {'B', 0, 0, 0, 3, 0, TYPE_U8, valInt, "BluetoothReadTaskPriority", &tempSettings.btReadTaskPriority},
-    {'B', 0, 0, 0, 1, 0, TYPE_U8, valInt, "BluetoothReadTaskCore", &tempSettings.btReadTaskCore},
-    {'B', 0, 0, 0, 1, 0, TYPE_U8, valInt, "BluetoothReadTaskCore", &tempSettings.btReadTaskCore},
-    {'B', 0, 0, 0, 50, 0, TYPE_STRING, valString, "BluetoothNickname", &tempSettings.btNickname},
-    {'B', 0, 0, 100, 25000, 0, TYPE_U16, valInt, "BluetoothConnectTimeoutMs", &tempSettings.btConnectTimeoutMs},
-    {'B', 0, 0, 0, 100, 0, TYPE_U8, valInt, "BluetoothConnectRetries", &tempSettings.btConnectRetries},
-    {'B', 0, 0, 0, 0, 0, TYPE_MAC, valMac, "BluetoothPairedMac", &tempSettings.btPairedMac},
-    {'B', 0, 0, 0, 50, 0, TYPE_STRING, valString, "BluetoothPairedName", &tempSettings.btPairedName},
+     Ltr, Display, reset, min, max, digits,    type,         validation,     name, setting addr */
 
-    /*System parameters
-     Ltr, All, reset, min, max, digits,    type,         validation,     name, setting addr */
-    {'Y', 0, 0, ' ', '~', 0, TYPE_CHAR, valChar, "EscapeCharacter", &tempSettings.escapeCharacter},
-    {'Y', 0, 0, 0, 255, 0, TYPE_U8, valInt, "EscapeCharacterCount", &tempSettings.maxEscapeCharacters},
-    {'Y', 0, 0, 0, 20000, 0, TYPE_U16, valInt, "MinEscapeTimeMs", &tempSettings.minEscapeTime_ms}, // Arbitrary 20s max
-    {'Y', 0, 0, 0, 65000, 0, TYPE_U16, valInt, "MaxCommandTimeMs",
-     &tempSettings.maxCommandTime_ms}, // Arbitrary 65s max
-    {'Y', 0, 0, 0, 255, 0, TYPE_U8, valInt, "LedStyle", &tempSettings.ledStyle},
-    {'Y', 0, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiSSID", &tempSettings.wifiSsid},
-    {'Y', 0, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiPassword", &tempSettings.wifiPassword},
-    // AT-BluetoothPairedName=test
+    {'B', 1, 0, 0, 100, 0, TYPE_U8, valInt, "BluetoothConnectRetries", &tempSettings.btConnectRetries},
+    {'B', 1, 0, 100, 25000, 0, TYPE_U16, valInt, "BluetoothConnectTimeoutMs", &tempSettings.btConnectTimeoutMs},
+    {'B', 1, 0, ' ', '~', 0, TYPE_CHAR, valChar, "BluetoothEscapeCharacter", &tempSettings.btEscapeCharacter},
+    {'B', 1, 0, 0, 50, 0, TYPE_STRING, valString, "BluetoothNickname", &tempSettings.btNickname},
+    {'B', 1, 0, 0, 0, 0, TYPE_MAC, valMac, "BluetoothPairedMac", &tempSettings.btPairedMac},
+    {'B', 1, 0, 0, 50, 0, TYPE_STRING, valString, "BluetoothPairedName", &tempSettings.btPairedName},
+    {'B', 1, 0, 0, 4, 0, TYPE_STRING, valString, "BluetoothPin", &tempSettings.btPin},
+    {'B', 0, 0, 0, 1, 0, TYPE_U8, valInt, "BluetoothReadTaskCore", &tempSettings.btReadTaskCore},
+    {'B', 0, 0, 0, 3, 0, TYPE_U8, valInt, "BluetoothReadTaskPriority", &tempSettings.btReadTaskPriority},
+    {'B', 1, 0, 0, 1024 * 10, 0, TYPE_U16, valInt, "BluetoothRxSize", &tempSettings.btRxSize}, // Arbitrary 10k max
+    {'B', 1, 0, 0, 1024 * 10, 0, TYPE_U16, valInt, "BluetoothTxSize", &tempSettings.btTxSize},
+    {'B', 1, 0, 0, 1, 0, TYPE_U8, valInt, "BluetoothType", &tempSettings.btType},
+    {'B', 0, 0, 0, 3, 0, TYPE_U8, valInt, "BluetoothWriteTaskPriority", &tempSettings.btWriteTaskPriority},
+    {'B', 0, 0, 0, 1, 0, TYPE_U8, valInt, "BluetoothWriteTaskCore", &tempSettings.btWriteTaskCore},
 
     /*Serial parameters
-      Ltr, All, reset, min, max, digits,    type,         validation,     name,                   setting addr */
-    {'S', 0, 0, 0, 1, 0, TYPE_BOOL, valInt, "Echo", &tempSettings.echo},
-    {'S', 0, 0, 0, 1, 0, TYPE_BOOL, valInt, "FlowControl", &tempSettings.flowControl},
-    {'S', 0, 0, 0, 1, 0, TYPE_BOOL, valInt, "InvertCts", &tempSettings.invertCts},
-    {'S', 0, 0, 0, 1, 0, TYPE_BOOL, valInt, "InvertRts", &tempSettings.invertRts},
-    {'S', 0, 0, 1, 99, 0, TYPE_U8, valInt, "RtsStopSendingPercent", &tempSettings.rtsStopSendingPercent},
-    {'S', 0, 0, 1, 99, 0, TYPE_U8, valInt, "RtsStartSendingPercent", &tempSettings.rtsStartSendingPercent},
-    {'S', 0, 0, 0, 0, 0, TYPE_U32, valInt, "SerialReceiveBufferSize", &tempSettings.serialReceiveBufferSize},
-    {'S', 0, 0, 0, 0, 0, TYPE_U32, valInt, "SerialTransmitBufferSize", &tempSettings.serialTransmitBufferSize},
-    {'S', 0, 0, 0, 0, 0, TYPE_SPEED_SERIAL, valSpeedSerial, "SerialSpeed", &tempSettings.baudRate},
-    {'S', 0, 0, 0, 1000, 0, TYPE_U16, valInt, "PartialFrameTimeout", &tempSettings.serialPartialFrameTimeoutMs}, // Arbitrary 1s max
+      Ltr, Display, reset, min, max, digits,    type,         validation,     name,                   setting addr */
+    {'S', 1, 0, 0, 1, 0, TYPE_BOOL, valInt, "FlowControl", &tempSettings.flowControl},
+    {'S', 1, 0, 0, 1, 0, TYPE_BOOL, valInt, "InvertCts", &tempSettings.invertCts},
+    {'S', 1, 0, 0, 1, 0, TYPE_BOOL, valInt, "InvertRts", &tempSettings.invertRts},
+    {'S', 1, 0, 1, 99, 0, TYPE_U8, valInt, "RtsStopSendingPercent", &tempSettings.rtsStopSendingPercent},
+    {'S', 1, 0, 1, 99, 0, TYPE_U8, valInt, "RtsStartSendingPercent", &tempSettings.rtsStartSendingPercent},
+    {'S', 1, 0, 0, 0, 0, TYPE_U32, valInt, "SerialReceiveBufferSize", &tempSettings.serialReceiveBufferSize},
+    {'S', 1, 0, 0, 0, 0, TYPE_U32, valInt, "SerialTransmitBufferSize", &tempSettings.serialTransmitBufferSize},
+    {'S', 1, 0, 0, 0, 0, TYPE_SPEED_SERIAL, valSpeedSerial, "SerialSpeed", &tempSettings.baudRate},
+    {'S', 1, 0, 0, 1000, 0, TYPE_U16, valInt, "PartialFrameTimeoutMs",
+     &tempSettings.serialPartialFrameTimeoutMs}, // Arbitrary 1s max
+
+    /*System parameters
+     Ltr, Display, reset, min, max, digits,    type,         validation,     name, setting addr */
+    {'Y', 1, 0, ' ', '~', 0, TYPE_CHAR, valChar, "EscapeCharacter", &tempSettings.escapeCharacter},
+    {'Y', 1, 0, 0, 255, 0, TYPE_U8, valInt, "EscapeCharacterCount", &tempSettings.maxEscapeCharacters},
+    {'Y', 1, 0, 0, 255, 0, TYPE_U8, valInt, "LedStyle", &tempSettings.ledStyle},
+    {'Y', 1, 0, 0, 65000, 0, TYPE_U16, valInt, "MaxCommandTimeMs",
+     &tempSettings.maxCommandTime_ms}, // Arbitrary 65s max
+    {'Y', 1, 0, 0, 20000, 0, TYPE_U16, valInt, "MinEscapeTimeMs", &tempSettings.minEscapeTime_ms}, // Arbitrary 20s max
+    {'Y', 0, 0, 500, 20000, 0, TYPE_U16, valInt, "PsramThreshold", &tempSettings.psramThreshold}, // Arbitrary 500 byte minimum
+    {'Y', 1, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiSSID", &tempSettings.wifiSsid},
+    {'Y', 1, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiPassword", &tempSettings.wifiPassword},
 
     /*Debug parameters
-      Ltr, All, reset, min, max, digits,    type,         validation,     name,                   setting addr */
+      Ltr, Display, reset, min, max, digits,    type,         validation,     name,                   setting addr */
     {'D', 0, 0, 0, 1, 0, TYPE_BOOL, valInt, "DebugSerial", &tempSettings.debugSerial},
     {'D', 0, 0, 0, 1, 0, TYPE_BOOL, valInt, "DebugBluetooth", &tempSettings.debugBluetooth},
     {'D', 0, 0, 0, 1, 0, TYPE_BOOL, valInt, "DebugHeap", &tempSettings.enableHeapReport},
@@ -94,6 +98,7 @@ bool commandAT(const char *commandString)
     unsigned long timer;
 
     static bool newOTAFirmwareAvailable = false;
+    static bool firmwareChecked = false;
 
     //'AT'
     if (commandLength == 2)
@@ -113,23 +118,19 @@ bool commandAT(const char *commandString)
             systemPrintln("  ATA - Display all settings");
             systemPrintln("  ATB - Display Bluetooth settings"); // User settings
 #ifdef COMPILE_WIFI
-            if (newOTAFirmwareAvailable == false)
-                systemPrintln("  ATC - Check for new firmware");
-            else
-                ; // Don't print anything
+            systemPrintln("  ATC - Check for new firmware");
 #else
             systemPrintln("  ATC - Check for new firmware ** WiFi not compiled **");
 #endif
             systemPrintln("  ATD - Display debug settings"); // User settings
             systemPrintln("  ATF - Restore factory settings");
-            systemPrintln("  ATM - Display MAC");
-            systemPrintln("  ATP - Start Pairing Process");
+            systemPrintln("  ATM - Display MAC address");
+            systemPrintln("  ATP - Start pairing process");
             systemPrintln("  ATS - Display serial settings"); // User settings
-            if (newOTAFirmwareAvailable == true)
 #ifdef COMPILE_WIFI
-                systemPrintln("  ATU - Update Firmware");
+            systemPrintln("  ATU - Update firmware");
 #else
-                systemPrintln("  ATU - Update Firmware ** WiFi not compiled **");
+            systemPrintln("  ATU - Update firmware ** WiFi not compiled **");
 #endif
             systemPrintln("  ATV - Display firmware version");
             systemPrintln("  ATW - Save current settings to NVM");
@@ -143,6 +144,7 @@ bool commandAT(const char *commandString)
         case ('C'): // ATC - Check for new firmware
 #ifdef COMPILE_WIFI
             newOTAFirmwareAvailable = wifiCheckNewFirmware();
+            firmwareChecked = true;
 #else
             systemPrintln(" ** WiFi not compiled **");
 #endif
@@ -186,8 +188,18 @@ bool commandAT(const char *commandString)
         }
 
         case ('U'): // ATU - Update firmware
+#ifndef COMPILE_WIFI
+            systemPrintln("** WiFi not compiled **");
+#else
+            if (firmwareChecked == false)
+            {
+                newOTAFirmwareAvailable = wifiCheckNewFirmware();
+                firmwareChecked = true;
+            }
+
             if (newOTAFirmwareAvailable == true)
                 wifiUpdate();
+#endif
             return true;
 
         case ('V'): // ATV - Display current firmware verions
@@ -204,8 +216,8 @@ bool commandAT(const char *commandString)
 
         case ('X'): // ATX - Exit command mode
             wifiStop();
-            inLocalCommandMode = false;   // Return to printing normal RF serial data
-            settings = tempSettings; // Apply user's modifications
+            inLocalCommandMode = false; // Return to printing normal RF serial data
+            settings = tempSettings;    // Apply user's modifications
 
             ledStatusOff();
             ledConnectOff();
@@ -726,7 +738,7 @@ void displayParameters(char letter, bool displayAll)
     for (index = 0; index < commandCount; index++)
     {
         if (displayAll || (letter == commands[sortOrder[index]].letter) ||
-            ((letter == 0) && (!commands[sortOrder[index]].requireAll)))
+            ((letter == 0) && (commands[sortOrder[index]].display)))
         {
             systemPrint("A");
             systemPrint("T-");
