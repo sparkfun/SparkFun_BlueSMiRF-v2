@@ -14,19 +14,19 @@ SparkFun BlueSMiRF v2 Firmware
 
 The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) and [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/products/23287) are point to point serial cable replacements using Bluetooth. Simply throw serial characters at a BlueSMiRF and the data will arrive at the other radio, with guaranteed packet delivery. Baud rates supported up to 921600bps!
 
-This repo houses the [BlueSMiRF Product Manual](https://docs.sparkfun.com/SparkFun_BlueSMiRF-ESP32) and the firmware that runs on the SparkFun BlueSMiRF ESp32 product line including:
+This repo houses the [BlueSMiRF Product Manual](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2) and the firmware that runs on the SparkFun BlueSMiRF ESP32 product line including:
 
 * [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113)
 * [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/products/23287)
 
-For compiled binaries of the firmware, please see [SparkFun BlueSMiRF ESP32 Firmware Binaries](https://github.com/sparkfun/SparkFun_BlueSMiRF-ESP32_Binaries).
+For compiled binaries of the firmware, please see [SparkFun BlueSMiRF ESP32 Firmware Binaries](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries).
 
 Repository Contents
 -------------------
 
 * **/Firmware** - Source code for SparkFun BlueSMiRF firmware as well as various feature unit tests
 * **/Documents** - Datasheets for various components.
-* **/docs** - Markdown pages for the [BlueSMiRF Product Manual](https://docs.sparkfun.com/SparkFun_BlueSMiRF-ESP32/)
+* **/docs** - Markdown pages for the [BlueSMiRF Product Manual](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/)
 
 Repository Branch Structure
 ---------------------------
@@ -110,7 +110,7 @@ Upon completion, the BlueSMiRF must be power cycled to exit bootload mode. Once 
 License Information
 -------------------
 
-This product is _**open source**_!  Please feel free to [contribute](https://docs.sparkfun.com/SparkFun_BlueSMiRF-ESP32/contribute/) to both the firmware and documentation.
+This product is _**open source**_!  Please feel free to [contribute](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/contribute/) to both the firmware and documentation.
 
 Various bits of the code have different licenses applied. Anything SparkFun wrote is beerware; if you see me (or any other SparkFun employee) at the local, and you've found our code helpful, please buy us a round!
 
