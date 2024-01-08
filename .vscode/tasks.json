@@ -6,7 +6,7 @@
         {
             "label": "BlueSMiRF-Compile and Upload",
             "type": "shell",
-            "command": "arduino-cli --fqbn esp32:esp32:esp32:FlashSize=8M,PSRAM=enabled compile 'Firmware/BlueSMiRF-v2' --build-property build.partitions=BlueSMiRF_Partitions;arduino-cli upload -p COM5 --fqbn esp32:esp32:esp32:UploadSpeed=921600,FlashSize=8M 'Firmware/BlueSMiRF-v2'",    
+            "command": "arduino-cli --fqbn esp32:esp32:esp32:FlashSize=8M,PSRAM=enabled compile 'Firmware/BlueSMiRF-v2' --warnings all --build-property build.partitions=BlueSMiRF_Partitions;arduino-cli upload -p COM13 --fqbn esp32:esp32:esp32:UploadSpeed=921600,FlashSize=8M 'Firmware/BlueSMiRF-v2'",    
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -25,7 +25,7 @@
         {
             "label": "BlueSMiRF-Just Upload",
             "type": "shell",
-            "command": "arduino-cli upload -p COM5 --fqbn esp32:esp32:esp32:UploadSpeed=921600,FlashSize=8M 'Firmware/BlueSMiRF-v2' --verbose",
+            "command": "arduino-cli upload -p COM13 --fqbn esp32:esp32:esp32:UploadSpeed=921600,FlashSize=8M 'Firmware/BlueSMiRF-v2' --verbose",
             "group": {
                 "kind": "build",
                 "isDefault": true
