@@ -7,6 +7,8 @@
 
 #include <BleSerial.h> //Click here to get the library: http://librarymanager/All#ESP32_BleSerial v1.0.4 by Avinab Malla
 
+extern void systemPrintln(const char *value);
+
 class BTSerialInterface
 {
   public:
@@ -137,21 +139,23 @@ class BTLESerial : public virtual BTSerialInterface, public BleSerial
         return true;
     }
 
-    // Not implemented yet
     bool connect(uint8_t remoteAddress[], int channel, esp_spp_sec_t sec_mask, esp_spp_role_t role,
                  uint16_t connectTimeout)
     {
-        return (false); //Not implemented in BLE
+        systemPrintln("Not yet implemented");
+        return (false); // Not implemented in BLE
     }
 
     bool connect(String remoteName, uint16_t scanTimeoutMs)
     {
-        return (false); //Not implemented in BLE
+        systemPrintln("Not yet implemented");
+        return (false); // Not implemented in BLE
     }
 
     bool connected(int timeout)
     {
-        return (false); //Not implemented in BLE
+        systemPrintln("Not yet implemented");
+        return (false); // Not implemented in BLE
     }
 
     void disconnect()
@@ -166,6 +170,7 @@ class BTLESerial : public virtual BTSerialInterface, public BleSerial
 
     bool discoverAsync(BTAdvertisedDeviceCb cb, int timeout)
     {
+        systemPrintln("Not yet implemented");
         return (false); // Not implemented in BLE
     }
     void discoverAsyncStop()
