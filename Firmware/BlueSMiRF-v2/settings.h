@@ -127,7 +127,7 @@ typedef struct
     bool debugBluetooth = false;
     bool enableHeapReport = false;
 
-    uint8_t length = 0; // Used to detect if settings stuct has changed between firmware versions
+    uint16_t length = 0; // Used to detect if settings stuct has changed between firmware versions
 } Settings;
 Settings settings;
 
