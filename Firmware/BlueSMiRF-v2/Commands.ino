@@ -92,13 +92,10 @@ const int commandCount = sizeof(commands) / sizeof(commands[0]);
 // Process the AT commands
 bool commandAT(const char *commandString)
 {
-    uint32_t delayMillis;
-    long deltaMillis;
-    const char *string;
-    unsigned long timer;
-
+#ifdef COMPILE_WIFI
     static bool newOTAFirmwareAvailable = false;
     static bool firmwareChecked = false;
+#endif
 
     //'AT'
     if (commandLength == 2)
@@ -266,7 +263,6 @@ void checkCommand()
     char *commandString;
     int index;
     int prefixLength;
-    uint16_t responseLength;
     bool success;
 
     // Zero terminate the string
@@ -446,7 +442,7 @@ bool valMac(void *value, uint32_t valMin, uint32_t valMax)
 {
     char *str = (char *)value;
 
-    int macLength = strlen("00:00:00:00:00:00");
+    int macLength = strlen("00:00:00:00:00:00") + 1;
 
     unsigned int length = strlen(str);
 
@@ -561,10 +557,8 @@ bool commandSetByName(const char *commandString)
     const COMMAND_ENTRY *command;
     int index;
     int nameLength;
-    int number;
     const char *param;
     int paramLength;
-    int table;
 
     // Determine the parameter name length
     param = &commandString[3];
