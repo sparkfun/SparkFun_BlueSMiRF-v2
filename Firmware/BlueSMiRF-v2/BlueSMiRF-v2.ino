@@ -77,10 +77,10 @@ uint8_t pin_connectLED = PIN_UNDEFINED;
 #include <driver/uart.h> //Required for uart_set_rx_full_threshold() on cores <v2.0.5
 
 TaskHandle_t btReadTaskHandle = nullptr; // Store task handle so that we can delete it if needed
-const int btReadTaskStackSize = 2000;
+const int btReadTaskStackSize = 3000;
 
 TaskHandle_t btWriteTaskHandle = nullptr; // Store task handle so that we can delete it if needed
-const int btWriteTaskStackSize = 2000;
+const int btWriteTaskStackSize = 3000;
 
 volatile static int combinedSpaceRemaining = 0; // Overrun indicator
 int bufferOverruns = 0;                         // Running count of possible data losses since power-on
