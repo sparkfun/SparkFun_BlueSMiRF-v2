@@ -20,6 +20,8 @@ void bluetoothBegin()
             bluetoothSerial = new BTClassicSerial();
         else if (settings.btType == BLUETOOTH_RADIO_BLE)
             bluetoothSerial = new BTLESerial();
+        else
+            systemPrintln("Error: Unknown Bluetooth setting");
     }
 
     if (strlen(settings.btNickname) == 0)
