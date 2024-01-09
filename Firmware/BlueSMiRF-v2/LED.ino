@@ -128,7 +128,7 @@ void ledUpdate(void *e)
         else
         {
             systemPrintf("Unknown LED state: %d", ledState); // We should not be here
-            delay(100); //Limit print output
+            delay(100);                                      // Limit print output
         }
         feedWdt();
         taskYIELD();
@@ -140,7 +140,7 @@ void ledTxOn()
 {
     if (settings.ledStyle == LEDS_CLASSIC) // Blink the status LED during serial traffic
     {
-        ledStatusBlink();
+        ledStatusBlinkSerial();
     }
     else if (settings.ledStyle == LEDS_SERIAL_TRAFFIC) // Connect = TX, Status = RX
     {
@@ -174,7 +174,7 @@ void ledRxOn()
 {
     if (settings.ledStyle == LEDS_CLASSIC) // Blink the status LED during serial traffic
     {
-        ledStatusBlink();
+        ledStatusBlinkSerial();
     }
     else if (settings.ledStyle == LEDS_SERIAL_TRAFFIC) // Connect = TX, Status = RX
     {
@@ -229,8 +229,26 @@ void ledConnectBlink()
 {
     if (pin_connectLED != PIN_UNDEFINED)
     {
-        pinMode(pin_connectLED, OUTPUT); // Reconfig pin, post analog write
-        digitalWrite(pin_connectLED, !digitalRead(pin_connectLED));
+        if (ledState == LED_BUTTON_3S_HOLD || ledState == LED_BUTTON_8S_HOLD)
+        {
+            // Don't allow serial tasks to control the LEDs during these states
+        }
+        else
+        {
+            pinMode(pin_connectLED, OUTPUT); // Reconfig pin, post analog write
+            digitalWrite(pin_connectLED, !digitalRead(pin_connectLED));
+        }
+    }
+}
+void ledConnectBlinkSerial()
+{
+    if (ledState == LED_BUTTON_3S_HOLD || ledState == LED_BUTTON_8S_HOLD)
+    {
+        // Don't allow serial tasks to control the LEDs during these states
+    }
+    else
+    {
+        ledConnectBlink();
     }
 }
 void ledConnectFade()
@@ -279,6 +297,17 @@ void ledStatusBlink()
     {
         pinMode(pin_statusLED, OUTPUT); // Reconfig pin, post analog write
         digitalWrite(pin_statusLED, !digitalRead(pin_statusLED));
+    }
+}
+void ledStatusBlinkSerial()
+{
+    if (ledState == LED_BUTTON_3S_HOLD || ledState == LED_BUTTON_8S_HOLD)
+    {
+        // Don't allow serial tasks to control the LEDs during these states
+    }
+    else
+    {
+        ledStatusBlink();
     }
 }
 void ledStatusFade()
