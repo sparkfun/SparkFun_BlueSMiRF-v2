@@ -187,6 +187,9 @@ const int ledTaskStackSize = 2000;
 char platformPrefix[12] = "BlueSMiRF"; // Sets the prefix for broadcast names
 uint8_t btMACAddress[6];
 char broadcastName[100]; // The serial string that is broadcast. Ex: 'BlueSMiRF-BC61'
+char broadcastNamePaired[100]; // The serial string that is broadcast when paired. Ex: 'BlueSMiRF-BC61-Paired'
+char broadcastNamePairing[100]; // The serial string that is broadcast when in pairing mode. Ex: 'BlueSMiRF-BC61-Pairing'
+char broadcastNameConnected[100]; // The serial string that is broadcast once connected to. Ex: 'BlueSMiRF-BC61-Connected'
 
 Settings tempSettings; // Temporary settings used for command processing
 

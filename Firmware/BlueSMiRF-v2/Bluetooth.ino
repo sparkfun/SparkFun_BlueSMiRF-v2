@@ -33,6 +33,15 @@ void bluetoothBegin()
 
     snprintf(broadcastName, sizeof(broadcastName), "%s", settings.btNickname);
 
+    // https://stackoverflow.com/questions/51534284/how-to-circumvent-format-truncation-warning-in-gcc
+    snprintf(broadcastNamePaired, sizeof(broadcastNamePaired), "%s-Paired", broadcastName) < 0 ? snprintfAbort()
+                                                                                               : (void)0;
+    snprintf(broadcastNamePairing, sizeof(broadcastNamePairing), "%s-Pairing", broadcastName) < 0 ? snprintfAbort()
+                                                                                                  : (void)0;
+    snprintf(broadcastNameConnected, sizeof(broadcastNameConnected), "%s-Connected", broadcastName) < 0
+        ? snprintfAbort()
+        : (void)0; // BlueSMiRF-50AF-Connected
+
     if (settings.debugBluetooth == true)
     {
         systemPrintf("Broadcast name: %s\r\n", broadcastName);
@@ -49,11 +58,10 @@ void bluetoothBegin()
         settings.btPairOnStartup = false;
         recordSystemSettings();
 
-        // Start BT in passive mode
-        if (bluetoothSerial->begin(broadcastName, false, settings.btRxSize, settings.btTxSize) ==
-            false) // localName, isMaster, rxBufferSize, txBufferSize
+        // Start BT, broadcast as normal name
+        if (bluetoothStartBroadcastName(broadcastName))
         {
-            systemPrintln("An error occurred initializing Bluetooth");
+            systemPrintln("An error occurred initializing Bluetooth in paired mode");
             return;
         }
 
@@ -92,8 +100,7 @@ void bluetoothBegin()
     }
 
     // Start BT in passive mode
-    if (bluetoothSerial->begin(broadcastName, false, settings.btRxSize, settings.btTxSize) ==
-        false) // localName, isMaster, rxBufferSize, txBufferSize
+    if (bluetoothStartBroadcastName(broadcastName) == false)
     {
         systemPrintln("An error occurred initializing Bluetooth");
         return;
@@ -118,12 +125,6 @@ void bluetoothBegin()
     esp_bt_gap_set_pin(pin_type, 4, pin_code);
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-    if (settings.debugBluetooth)
-    {
-        systemPrint("Bluetooth broadcasting as: ");
-        systemPrintln(broadcastName);
-    }
-
     bluetoothStartTasks();
 
     bluetoothState = BT_NOTCONNECTED;
@@ -132,6 +133,45 @@ void bluetoothBegin()
     ledState = LED_OFF;
     systemPrintln("Bluetooth not compiled");
 #endif
+}
+
+void snprintfAbort()
+{
+    if (settings.debugBluetooth == true)
+    {
+        systemPrintln("snprintf error");
+    }
+}
+
+bool bluetoothStartBroadcastName(char *castName)
+{
+    // BLE is limited to ~28 characters in the device name. Shorten platformPrefix if needed.
+    if (settings.btType == BLUETOOTH_RADIO_BLE)
+    {
+        if (strlen(castName) > 28)
+        {
+            if (settings.debugBluetooth == true)
+                systemPrintf("Warning! The Bluetooth device name '%s' is %d characters long and will not be fully "
+                             "displayed in BLE mode.\r\n",
+                             castName, strlen(castName));
+            castName[28] = '\0'; // Truncate
+        }
+    }
+
+    // localName, isMaster, rxBufferSize, txBufferSize)
+    bool response = bluetoothSerial->begin(castName, false, settings.btRxSize, settings.btTxSize);
+
+    if (response == true)
+    {
+        if (settings.debugBluetooth)
+        {
+            systemPrint("Bluetooth broadcasting as: ");
+            systemPrintln(castName);
+        }
+        return (true);
+    }
+
+    return (false);
 }
 
 void bluetoothStartTasks()
@@ -178,8 +218,8 @@ bool connectToDeviceMac(uint8_t *macAddress, int maxTries)
 
         bluetoothSerial->end();
 
-        // Move to master mode with buffers
-        if (bluetoothSerial->begin("BlueSMiRF-Paired", true, settings.btRxSize, settings.btTxSize) == false)
+        // Move to master mode, '-Paired'
+        if (bluetoothStartBroadcastName(broadcastNamePaired))
         {
             systemPrintln("An error occurred initializing Bluetooth in master mode");
             return (false);
@@ -228,10 +268,10 @@ bool connectToDeviceName(char *deviceName, int maxTries)
 
         bluetoothSerial->end();
 
-        // Move to master mode with buffers
-        if (bluetoothSerial->begin("BlueSMiRF-Paired", true, settings.btRxSize, settings.btTxSize) == false)
+        // Move to broadcast mode '-Paired'
+        if (bluetoothStartBroadcastName(broadcastNamePaired))
         {
-            systemPrintln("An error occurred initializing Bluetooth in master mode");
+            systemPrintln("An error occurred initializing Bluetooth in paired name mode");
             return (false);
         }
 
@@ -270,6 +310,14 @@ void bluetoothCallback(esp_spp_cb_event_t event, esp_spp_cb_param_t *param)
     {
         if (settings.debugBluetooth)
             systemPrintln("BT client Connected");
+
+        // Rename the device to *-Connected
+        if (bluetoothStartBroadcastName(broadcastNameConnected) == false)
+        {
+            systemPrintln("An error occurred renaming Bluetooth");
+            return;
+        }
+
         bluetoothState = BT_CONNECTED;
         ledState = LED_CONNECTED;
     }
@@ -278,6 +326,13 @@ void bluetoothCallback(esp_spp_cb_event_t event, esp_spp_cb_param_t *param)
     {
         if (settings.debugBluetooth)
             systemPrintln("BT client disconnected");
+
+        // Rename the device to default broadcast name
+        if (bluetoothStartBroadcastName(broadcastName) == false)
+        {
+            systemPrintln("An error occurred renaming Bluetooth");
+            return;
+        }
 
         btPrintEcho = false;
         btPrintEchoExit = true; // Force exit command mode
@@ -547,10 +602,10 @@ void becomeDiscoverable()
     bluetoothSerial->end();
 
     // Move to passive mode with buffers
-    bluetoothSerial->begin("BlueSMiRF-Pairing", false, settings.btRxSize, settings.btTxSize);
+    bluetoothStartBroadcastName(broadcastNamePairing);
 
     if (settings.debugBluetooth == true)
-        systemPrintln("Device now discoverable as BlueSMiRF-Pairing");
+        systemPrintf("Device now discoverable as %s\r\n", broadcastNamePairing);
 
 #else
     ledState = LED_OFF;
