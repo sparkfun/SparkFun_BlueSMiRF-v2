@@ -648,23 +648,34 @@ bool scanForFriendlyDevices(uint16_t maxScanTimeMs)
 
 #ifdef COMPILE_BT
 
+// The remote device will advertise as 'BlueSMiRF-ABCD-Pairing' during pairing discovery mode
+// Look for BlueSMiRF and -Pairing in a name
 void btAdvertisedDeviceFound(BTAdvertisedDevice *pDevice)
 {
     if (settings.debugBluetooth == true)
         systemPrintf("Found a device Name: %s\n\r", pDevice->getName().c_str());
 
-    // Only pair with devices that have the name "BlueSMiRF-Pairing"
-    if (strcmp(pDevice->getName().c_str(), "BlueSMiRF-Pairing") == 0)
+    char search1[] = "BlueSMiRF";
+    char search2[] = "-Pairing";
+
+    char *ptr = strstr(pDevice->getName().c_str(), search1);
+
+    if (ptr != NULL) // Found first search
     {
-        // Convert "94:e6:86:b6:89:0a" to {0x94, 0xE6, 0x86, 0xB6, 0x89, 0x0A}
-        convertMac((char *)pDevice->getAddress().toString().c_str(), settings.btPairedMac);
+        char *ptr2 = strstr(pDevice->getName().c_str(), search2);
 
-        recordSystemSettings(); // Store this MAC
+        if (ptr2 != NULL) // Found
+        {
+            // Convert "94:e6:86:b6:89:0a" to {0x94, 0xE6, 0x86, 0xB6, 0x89, 0x0A}
+            convertMac((char *)pDevice->getAddress().toString().c_str(), settings.btPairedMac);
 
-        if (settings.debugBluetooth == true)
-            systemPrintf("Found a friendly device MAC: %s", stringMac(settings.btPairedMac));
+            recordSystemSettings(); // Store this MAC
 
-        friendlyDeviceFound = true; // Indicate we can stop scanning
+            if (settings.debugBluetooth == true)
+                systemPrintf("Found a friendly device MAC: %s", stringMac(settings.btPairedMac));
+
+            friendlyDeviceFound = true; // Indicate we can stop scanning
+        }
     }
 }
 
