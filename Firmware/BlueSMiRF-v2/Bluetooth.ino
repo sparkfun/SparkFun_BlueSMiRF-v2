@@ -86,6 +86,11 @@ void bluetoothBegin()
             bluetoothStartTasks();
             bluetoothState = BT_CONNECTED;
             ledState = LED_CONNECTED;
+
+            // Change broadcast name to '-Paired'
+            if (bluetoothSetBroadcastName(broadcastNamePaired) == false)
+                systemPrintln("An error occurred setting broadcast name");
+
             return;
         }
 
@@ -100,6 +105,11 @@ void bluetoothBegin()
             bluetoothStartTasks();
             bluetoothState = BT_CONNECTED;
             ledState = LED_CONNECTED;
+
+            // Change broadcast name to '-Paired'
+            if (bluetoothSetBroadcastName(broadcastNamePaired) == false)
+                systemPrintln("An error occurred setting broadcast name");
+
             return;
         }
 
@@ -303,7 +313,7 @@ bool connectToDeviceMac(uint8_t *macAddress, int maxTries)
         bluetoothSerial->end();
 
         // Start BT in master mode with the name '-Paired'
-        if(bluetoothSerial->begin(broadcastNamePaired, true, settings.btRxSize, settings.btTxSize) == false)
+        if (bluetoothSerial->begin(broadcastNamePaired, true, settings.btRxSize, settings.btTxSize) == false)
         {
             systemPrintln("An error occurred initializing Bluetooth in master mode");
             return (false);
@@ -322,7 +332,7 @@ bool connectToDeviceMac(uint8_t *macAddress, int maxTries)
             if (settings.debugBluetooth == true)
                 systemPrintln("Connected!");
 
-                bluetoothState = BT_CONNECTED;
+            bluetoothState = BT_CONNECTED;
             return (true);
         }
     }
@@ -357,7 +367,7 @@ bool connectToDeviceName(char *deviceName, int maxTries)
         bluetoothSerial->end();
 
         // Start BT in master mode with the name '-Paired'
-        if(bluetoothSerial->begin(broadcastNamePaired, true, settings.btRxSize, settings.btTxSize) == false)
+        if (bluetoothSerial->begin(broadcastNamePaired, true, settings.btRxSize, settings.btTxSize) == false)
         {
             systemPrintln("An error occurred initializing Bluetooth in master mode");
             return (false);
