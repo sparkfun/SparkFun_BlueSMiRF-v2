@@ -703,6 +703,12 @@ void becomeDiscoverable()
 
     bluetoothSerial->end();
 
+    char broadcastNamePairing[50] = "";
+
+    // During discovery, broadcast as 'BlueSMiRF-BC61-Pairing', regardless of nickname setting
+    snprintf(broadcastNamePairing, sizeof(broadcastNamePairing), "BlueSMiRF-%02X%02X-Pairing", btMACAddress[4],
+             btMACAddress[5]);
+
     // Move to passive mode with buffers
     bluetoothSetBroadcastName(broadcastNamePairing);
 
