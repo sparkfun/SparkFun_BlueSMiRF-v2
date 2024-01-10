@@ -31,14 +31,21 @@ void bluetoothBegin()
                  btMACAddress[5]);
     }
 
-    snprintf(broadcastName, sizeof(broadcastName), "%s", settings.btNickname);
+    char bluetoothTypeString[10] = "";
+    if (settings.btType == BLUETOOTH_RADIO_BLE)
+        strcpy(bluetoothTypeString, "-BLE");
+
+    snprintf(broadcastName, sizeof(broadcastName), "%s%s", settings.btNickname, bluetoothTypeString);
 
     // https://stackoverflow.com/questions/51534284/how-to-circumvent-format-truncation-warning-in-gcc
-    snprintf(broadcastNamePaired, sizeof(broadcastNamePaired), "%s-Paired", broadcastName) < 0 ? snprintfAbort()
-                                                                                               : (void)0;
-    snprintf(broadcastNamePairing, sizeof(broadcastNamePairing), "%s-Pairing", broadcastName) < 0 ? snprintfAbort()
-                                                                                                  : (void)0;
-    snprintf(broadcastNameConnected, sizeof(broadcastNameConnected), "%s-Connected", broadcastName) < 0
+    snprintf(broadcastNamePaired, sizeof(broadcastNamePaired), "%s%s-Paired", broadcastName, bluetoothTypeString) < 0
+        ? snprintfAbort()
+        : (void)0;
+    snprintf(broadcastNamePairing, sizeof(broadcastNamePairing), "%s%s-Pairing", broadcastName, bluetoothTypeString) < 0
+        ? snprintfAbort()
+        : (void)0;
+    snprintf(broadcastNameConnected, sizeof(broadcastNameConnected), "%s%s-Connected", broadcastName,
+             bluetoothTypeString) < 0
         ? snprintfAbort()
         : (void)0; // BlueSMiRF-50AF-Connected
 
