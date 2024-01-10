@@ -70,7 +70,7 @@ jobs:
           cp Firmware/BlueSMiRF_Partitions.csv /home/runner/.arduino15/packages/esp32/hardware/esp32/2.0.11/tools/partitions/BlueSMiRF_Partitions.csv
 
       - name: Compile Sketch
-        run: arduino-cli compile --fqbn "esp32:esp32:esp32":DebugLevel=${{ env.DEBUG_LEVEL }} ./Firmware/BlueSMiRF-v2/BlueSMiRF-v2.ino
+        run: arduino-cli compile --fqbn "esp32:esp32:esp32":DebugLevel=${{ env.DEBUG_LEVEL }},PSRAM=enabled ./Firmware/BlueSMiRF-v2/BlueSMiRF-v2.ino
           --build-property build.partitions=BlueSMiRF_Partitions
           --build-property upload.maximum_size=3145728 
           --build-property "compiler.cpp.extra_flags=\"-DBLUESMIRF_PRIVATE_REPO_TOKEN=$BLUESMIRF_PRIVATE_REPO_TOKEN\"

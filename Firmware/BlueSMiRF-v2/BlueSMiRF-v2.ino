@@ -46,7 +46,7 @@
 */
 
 #define COMPILE_BT   // Comment out to remove Bluetooth functionality
-//#define COMPILE_WIFI // Comment out to remove WiFi functionality
+#define COMPILE_WIFI // Comment out to remove WiFi functionality
 
 // This is passed in from compiler extra flags
 #ifndef FIRMWARE_VERSION_MAJOR
