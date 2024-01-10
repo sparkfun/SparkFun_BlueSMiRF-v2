@@ -22,8 +22,8 @@ void beginBoard()
             Serial.println("No PSRAM available. Dev board detected. Changing I/O.");
             
             // Avoid pin 8 on regular WROOM modules
-            pin_statusLED = 13;
-            pin_connectLED = 14;
+            pin_statusLED = 14;
+            pin_connectLED = 13;
         }
 
         strncpy(platformPrefix, "BlueSMiRF", sizeof(platformPrefix) - 1);
