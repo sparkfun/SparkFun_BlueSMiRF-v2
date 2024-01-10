@@ -70,9 +70,10 @@ const COMMAND_ENTRY commands[] = {
     {'Y', 1, 0, 0, 255, 0, TYPE_U8, valInt, "EscapeCharacterCount", &tempSettings.maxEscapeCharacters},
     {'Y', 1, 0, 0, 255, 0, TYPE_U8, valInt, "LedStyle", &tempSettings.ledStyle},
     {'Y', 1, 0, 0, 65000, 0, TYPE_U16, valInt, "MaxCommandTimeMs",
-     &tempSettings.maxCommandTime_ms}, // Arbitrary 65s max
+     &tempSettings.maxCommandTime_ms},                                                             // Arbitrary 65s max
     {'Y', 1, 0, 0, 20000, 0, TYPE_U16, valInt, "MinEscapeTimeMs", &tempSettings.minEscapeTime_ms}, // Arbitrary 20s max
-    {'Y', 0, 0, 500, 20000, 0, TYPE_U16, valInt, "PsramThreshold", &tempSettings.psramThreshold}, // Arbitrary 500 byte minimum
+    {'Y', 0, 0, 500, 20000, 0, TYPE_U16, valInt, "PsramThreshold",
+     &tempSettings.psramThreshold}, // Arbitrary 500 byte minimum
     {'Y', 1, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiSSID", &tempSettings.wifiSsid},
     {'Y', 1, 0, 0, 50, 0, TYPE_STRING, valString, "WiFiPassword", &tempSettings.wifiPassword},
 
@@ -161,6 +162,15 @@ bool commandAT(const char *commandString)
 
         case ('P'): // ATP - Start Pairing Process
         {
+            //You can't pair if radio is off or in BLE mode
+            if (settings.btType == BLUETOOTH_RADIO_OFF)
+                return (true);
+            else if (settings.btType == BLUETOOTH_RADIO_BLE)
+            {
+                systemPrintln("Pairing not supported in BLE mode.");
+                return (true);
+            }
+
             if (settings.debugBluetooth == true)
                 systemPrintln("Command initiated pairing");
 
