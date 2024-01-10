@@ -56,6 +56,9 @@ void bluetoothBegin()
         systemPrintf("settings.btTxSize: %d\r\n", settings.btTxSize);
     }
 
+    // Start BT
+    bluetoothStartRadio();
+
     // Check for pairing/discovery work around flag
     if (settings.btPairOnStartup == true)
     {
@@ -65,8 +68,8 @@ void bluetoothBegin()
         settings.btPairOnStartup = false;
         recordSystemSettings();
 
-        // Start BT, broadcast as normal name
-        if (bluetoothStartBroadcastName(broadcastName))
+        // Broadcast the standard name
+        if (bluetoothSetBroadcastName(broadcastName))
         {
             systemPrintln("An error occurred initializing Bluetooth in paired mode");
             return;
@@ -107,7 +110,7 @@ void bluetoothBegin()
     }
 
     // Start BT in passive mode
-    if (bluetoothStartBroadcastName(broadcastName) == false)
+    if (bluetoothSetBroadcastName(broadcastName) == false)
     {
         systemPrintln("An error occurred initializing Bluetooth");
         return;
@@ -142,43 +145,120 @@ void bluetoothBegin()
 #endif
 }
 
+// Change the name that is being broadcast over Bluetooth
+bool bluetoothSetBroadcastName(char *castName)
+{
+    // at-bluetoothnickname=MyReallyLongNameToBreakTheFirmware
+    // at-bluetoothnickname=MyReallyLongNameToBreakTheFir
+    // at-bluetoothtype=1
+    // at-bluetoothtype=0
+
+    // For SPP, if a name is more than 32 characters, it will revert to "ESP32"
+    // For BleSerial, if a name is more than 29 characters, device will reset
+    // Shorten if needed.
+    if (strlen(castName) > 29)
+    {
+        if (settings.debugBluetooth == true)
+            systemPrintf("Warning! The Bluetooth device name '%s' is %d characters long and will not be fully "
+                         "displayed.\r\n",
+                         castName, strlen(castName));
+
+        castName[29] = '\0'; // Truncate
+
+        if (settings.debugBluetooth == true)
+            systemPrintf("Truncated castName: %s\r\n", castName);
+    }
+
+    // To change the name during SPP, we do a new begin()
+    if (settings.btType == BLUETOOTH_RADIO_SPP)
+    {
+        // localName, isMaster, rxBufferSize, txBufferSize)
+        bool response = bluetoothSerial->begin(castName, false, settings.btRxSize, settings.btTxSize);
+
+        if (response == true)
+        {
+            if (settings.debugBluetooth == true)
+            {
+                systemPrint("Bluetooth broadcasting as: ");
+                systemPrintln(castName);
+            }
+
+            return (true);
+        }
+        else
+        {
+            if (settings.debugBluetooth == true)
+                systemPrintln("Bluetooth SPP name change failed");
+        }
+    }
+
+    // To change the name during BLE, we use esp_ble_gap_set_device_name
+    else if (settings.btType == BLUETOOTH_RADIO_BLE)
+    {
+        esp_err_t response = esp_ble_gap_set_device_name(castName);
+
+        if (response == ESP_OK)
+        {
+            if (settings.debugBluetooth)
+            {
+                systemPrint("Bluetooth broadcasting as: ");
+                systemPrintln(castName);
+            }
+            return (true);
+        }
+    }
+
+    return (false);
+}
+
+// Start the bluetooth stack
+void bluetoothStartRadio()
+{
+    bluetoothStartRadio(broadcastName); // Default
+}
+
+void bluetoothStartRadio(char *castName)
+{
+    // For both SPP and BLE, we use begin
+    // but BLE cannot be begin() multiple times
+    if (bluetoothState == BT_OFF)
+    {
+        // For SPP, if a name is more than 32 characters, it will revert to "ESP32"
+        // For BleSerial, if a name is more than 29 characters, device will reset
+        // Shorten if needed.
+        if (strlen(castName) > 29)
+        {
+            if (settings.debugBluetooth == true)
+                systemPrintf("Warning! The Bluetooth device name '%s' is %d characters long and will not be fully "
+                             "displayed.\r\n",
+                             castName, strlen(castName));
+
+            castName[29] = '\0'; // Truncate
+
+            if (settings.debugBluetooth == true)
+                systemPrintf("Truncated castName: %s\r\n", castName);
+        }
+
+        // localName, isMaster, rxBufferSize, txBufferSize)
+        bool response = bluetoothSerial->begin(castName, false, settings.btRxSize, settings.btTxSize);
+
+        if (response == true)
+        {
+            if (settings.debugBluetooth == true)
+                systemPrintln("Bluetooth started");
+
+            bluetoothState = BT_NOTCONNECTED;
+        }
+    }
+}
+
+// A throw-away function for snprintf warning suppression
 void snprintfAbort()
 {
     if (settings.debugBluetooth == true)
     {
         systemPrintln("snprintf error");
     }
-}
-
-bool bluetoothStartBroadcastName(char *castName)
-{
-    // BLE is limited to ~28 characters in the device name. Shorten platformPrefix if needed.
-    if (settings.btType == BLUETOOTH_RADIO_BLE)
-    {
-        if (strlen(castName) > 28)
-        {
-            if (settings.debugBluetooth == true)
-                systemPrintf("Warning! The Bluetooth device name '%s' is %d characters long and will not be fully "
-                             "displayed in BLE mode.\r\n",
-                             castName, strlen(castName));
-            castName[28] = '\0'; // Truncate
-        }
-    }
-
-    // localName, isMaster, rxBufferSize, txBufferSize)
-    bool response = bluetoothSerial->begin(castName, false, settings.btRxSize, settings.btTxSize);
-
-    if (response == true)
-    {
-        if (settings.debugBluetooth)
-        {
-            systemPrint("Bluetooth broadcasting as: ");
-            systemPrintln(castName);
-        }
-        return (true);
-    }
-
-    return (false);
 }
 
 void bluetoothStartTasks()
@@ -226,7 +306,7 @@ bool connectToDeviceMac(uint8_t *macAddress, int maxTries)
         bluetoothSerial->end();
 
         // Move to master mode, '-Paired'
-        if (bluetoothStartBroadcastName(broadcastNamePaired))
+        if (bluetoothSetBroadcastName(broadcastNamePaired))
         {
             systemPrintln("An error occurred initializing Bluetooth in master mode");
             return (false);
@@ -276,7 +356,7 @@ bool connectToDeviceName(char *deviceName, int maxTries)
         bluetoothSerial->end();
 
         // Move to broadcast mode '-Paired'
-        if (bluetoothStartBroadcastName(broadcastNamePaired))
+        if (bluetoothSetBroadcastName(broadcastNamePaired))
         {
             systemPrintln("An error occurred initializing Bluetooth in paired name mode");
             return (false);
@@ -318,11 +398,15 @@ void bluetoothCallback(esp_spp_cb_event_t event, esp_spp_cb_param_t *param)
         if (settings.debugBluetooth)
             systemPrintln("BT client Connected");
 
-        // Rename the device to *-Connected
-        if (bluetoothStartBroadcastName(broadcastNameConnected) == false)
+        // Do not rename BLE radio during connect
+        if (settings.btType == BLUETOOTH_RADIO_SPP)
         {
-            systemPrintln("An error occurred renaming Bluetooth");
-            return;
+            // Rename the device to *-Connected
+            if (bluetoothSetBroadcastName(broadcastNameConnected) == false)
+            {
+                systemPrintln("An error occurred renaming Bluetooth");
+                return;
+            }
         }
 
         bluetoothState = BT_CONNECTED;
@@ -335,7 +419,7 @@ void bluetoothCallback(esp_spp_cb_event_t event, esp_spp_cb_param_t *param)
             systemPrintln("BT client disconnected");
 
         // Rename the device to default broadcast name
-        if (bluetoothStartBroadcastName(broadcastName) == false)
+        if (bluetoothSetBroadcastName(broadcastName) == false)
         {
             systemPrintln("An error occurred renaming Bluetooth");
             return;
@@ -609,7 +693,7 @@ void becomeDiscoverable()
     bluetoothSerial->end();
 
     // Move to passive mode with buffers
-    bluetoothStartBroadcastName(broadcastNamePairing);
+    bluetoothSetBroadcastName(broadcastNamePairing);
 
     if (settings.debugBluetooth == true)
         systemPrintf("Device now discoverable as %s\r\n", broadcastNamePairing);
@@ -628,8 +712,6 @@ void bluetoothBeginPairing()
 {
     bluetoothState = BT_PAIRING;
 
-    // TODO if user exits pairing mode, we need to do so gracefully
-
     // Look for devices called "BlueSMiRF-Pairing"
     // Return true if MAC address has been obtained/stored
     if (scanForFriendlyDevices(2000) == true)
@@ -643,6 +725,7 @@ void bluetoothBeginPairing()
     }
 }
 
+// Returns true if a connection is open
 bool bluetoothConnected()
 {
 #ifdef BT_COMPILE
