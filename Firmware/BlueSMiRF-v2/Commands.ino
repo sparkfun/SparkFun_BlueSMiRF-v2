@@ -39,7 +39,7 @@ const COMMAND_ENTRY commands[] = {
     {'B', 1, 0, 0, 100, 0, TYPE_U8, valInt, "BluetoothConnectRetries", &tempSettings.btConnectRetries},
     {'B', 1, 0, 100, 25000, 0, TYPE_U16, valInt, "BluetoothConnectTimeoutMs", &tempSettings.btConnectTimeoutMs},
     {'B', 1, 0, ' ', '~', 0, TYPE_CHAR, valChar, "BluetoothEscapeCharacter", &tempSettings.btEscapeCharacter},
-    {'B', 1, 0, 0, 50, 0, TYPE_STRING, valString, "BluetoothNickname", &tempSettings.btNickname},
+    {'B', 1, 0, 0, 29, 0, TYPE_STRING, valString, "BluetoothNickname", &tempSettings.btNickname},
     {'B', 1, 0, 0, 0, 0, TYPE_MAC, valMac, "BluetoothPairedMac", &tempSettings.btPairedMac},
     {'B', 1, 0, 0, 50, 0, TYPE_STRING, valString, "BluetoothPairedName", &tempSettings.btPairedName},
     {'B', 1, 0, 0, 4, 0, TYPE_STRING, valString, "BluetoothPin", &tempSettings.btPin},
