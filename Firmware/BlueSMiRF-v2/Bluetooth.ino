@@ -41,9 +41,6 @@ void bluetoothBegin()
     snprintf(broadcastNamePaired, sizeof(broadcastNamePaired), "%s%s-Paired", broadcastName, bluetoothTypeString) < 0
         ? snprintfAbort()
         : (void)0;
-    snprintf(broadcastNamePairing, sizeof(broadcastNamePairing), "%s%s-Pairing", broadcastName, bluetoothTypeString) < 0
-        ? snprintfAbort()
-        : (void)0;
     snprintf(broadcastNameConnected, sizeof(broadcastNameConnected), "%s%s-Connected", broadcastName,
              bluetoothTypeString) < 0
         ? snprintfAbort()
@@ -69,7 +66,7 @@ void bluetoothBegin()
         recordSystemSettings();
 
         // Broadcast the standard name
-        if (bluetoothSetBroadcastName(broadcastName))
+        if (bluetoothSetBroadcastName(broadcastName) == false)
         {
             systemPrintln("An error occurred initializing Bluetooth in paired mode");
             return;
@@ -179,7 +176,7 @@ bool bluetoothSetBroadcastName(char *castName)
         {
             if (settings.debugBluetooth == true)
             {
-                systemPrint("Bluetooth broadcasting as: ");
+                systemPrint("Bluetooth broadcast name set to: ");
                 systemPrintln(castName);
             }
 
@@ -294,7 +291,7 @@ bool connectToDeviceMac(uint8_t *macAddress, int maxTries)
 {
 #ifdef COMPILE_BT
     if (settings.debugBluetooth == true)
-        systemPrintf("Connecting to %s", stringMac(macAddress));
+        systemPrintf("Connecting to MAC: %s", stringMac(macAddress));
 
     ledState = LED_CONNECTING;
 
@@ -305,12 +302,14 @@ bool connectToDeviceMac(uint8_t *macAddress, int maxTries)
 
         bluetoothSerial->end();
 
-        // Move to master mode, '-Paired'
-        if (bluetoothSetBroadcastName(broadcastNamePaired))
+        // Start BT in master mode with the name '-Paired'
+        if(bluetoothSerial->begin(broadcastNamePaired, true, settings.btRxSize, settings.btTxSize) == false)
         {
             systemPrintln("An error occurred initializing Bluetooth in master mode");
             return (false);
         }
+
+        bluetoothState = BT_NOTCONNECTED;
 
         // After discovery, if we immediately try to connect, it will always fail
         // If we wait 250ms, it works ~50% of the time, and usually connects on 2nd attempt
@@ -322,6 +321,8 @@ bool connectToDeviceMac(uint8_t *macAddress, int maxTries)
         {
             if (settings.debugBluetooth == true)
                 systemPrintln("Connected!");
+
+                bluetoothState = BT_CONNECTED;
             return (true);
         }
     }
@@ -344,7 +345,7 @@ bool connectToDeviceName(char *deviceName, int maxTries)
 {
 #ifdef COMPILE_BT
     if (settings.debugBluetooth == true)
-        systemPrintf("Connecting to %s", deviceName);
+        systemPrintf("Connecting to name: %s", deviceName);
 
     ledState = LED_CONNECTING;
 
@@ -355,12 +356,14 @@ bool connectToDeviceName(char *deviceName, int maxTries)
 
         bluetoothSerial->end();
 
-        // Move to broadcast mode '-Paired'
-        if (bluetoothSetBroadcastName(broadcastNamePaired))
+        // Start BT in master mode with the name '-Paired'
+        if(bluetoothSerial->begin(broadcastNamePaired, true, settings.btRxSize, settings.btTxSize) == false)
         {
-            systemPrintln("An error occurred initializing Bluetooth in paired name mode");
+            systemPrintln("An error occurred initializing Bluetooth in master mode");
             return (false);
         }
+
+        bluetoothState = BT_NOTCONNECTED;
 
         // After discovery, if we immediately try to connect, it will always fail
         // If we wait 250ms, it works ~50% of the time, and usually connects on 2nd attempt
