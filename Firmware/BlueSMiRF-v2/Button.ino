@@ -86,23 +86,42 @@ void ButtonCheckTask(void *e)
                     if (settings.debugBluetooth == true)
                         systemPrintln("Button initiated pairing");
 
-                    if (bluetoothConnected() == true)
+                    // You can't pair if radio is off or in BLE mode
+                    if (settings.btType == BLUETOOTH_RADIO_OFF)
                     {
-                        // We can't initiate a discovery after the Bluetooth stack has connected
-                        // See issue: https://github.com/espressif/arduino-esp32/issues/8448
-                        // Workaround is to set a flag and reset
-
-                        if (settings.debugBluetooth == true)
-                        {
-                            systemPrintln("Reset for pairing work around");
-                            delay(50); // Allow print to finish
-                        }
-                        settings.btPairOnStartup = true;
-                        recordSystemSettings();
-                        ESP.restart();
+                        // Fall through and continue task
                     }
+                    else if (settings.btType == BLUETOOTH_RADIO_BLE)
+                    {
+                        if (settings.debugBluetooth == true)
+                            systemPrintln("Button pairing not supported in BLE mode.");
 
-                    bluetoothBeginPairing();
+                        // Reset LED state
+                        if (bluetoothState == BT_CONNECTED)
+                            ledState = LED_CONNECTED;
+
+                        // Fall through and continue task
+                    }
+                    else
+                    {
+                        if (bluetoothConnected() == true)
+                        {
+                            // We can't initiate a discovery after the Bluetooth stack has connected
+                            // See issue: https://github.com/espressif/arduino-esp32/issues/8448
+                            // Workaround is to set a flag and reset
+
+                            if (settings.debugBluetooth == true)
+                            {
+                                systemPrintln("Reset for pairing work around");
+                                delay(50); // Allow print to finish
+                            }
+                            settings.btPairOnStartup = true;
+                            recordSystemSettings();
+                            ESP.restart();
+                        }
+
+                        bluetoothBeginPairing();
+                    }
                 }
                 else if (bluetoothState == BT_PAIRING)
                 {
