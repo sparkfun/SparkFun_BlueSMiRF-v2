@@ -138,7 +138,11 @@ void ledUpdate(void *e)
 // Turn on TX (aka Connect) LED
 void ledTxOn()
 {
-    if (settings.ledStyle == LEDS_CLASSIC) // Blink the status LED during serial traffic
+    if (ledState == LED_BUTTON_3S_HOLD || ledState == LED_BUTTON_8S_HOLD)
+    {
+        // Don't allow serial tasks to control the LEDs during these states
+    }
+    else if (settings.ledStyle == LEDS_CLASSIC) // Blink the status LED during serial traffic
     {
         ledStatusBlinkSerial();
     }
@@ -154,7 +158,11 @@ void ledTxOn()
 }
 void ledTxOff()
 {
-    if (settings.ledStyle == LEDS_CLASSIC) // Blink the status LED during serial traffic
+    if (ledState == LED_BUTTON_3S_HOLD || ledState == LED_BUTTON_8S_HOLD)
+    {
+        // Don't allow serial tasks to control the LEDs during these states
+    }
+    else if (settings.ledStyle == LEDS_CLASSIC) // Blink the status LED during serial traffic
     {
         ledStatusOff();
     }
@@ -172,7 +180,11 @@ void ledTxOff()
 // Turn on RX (aka Status) LED
 void ledRxOn()
 {
-    if (settings.ledStyle == LEDS_CLASSIC) // Blink the status LED during serial traffic
+    if (ledState == LED_BUTTON_3S_HOLD || ledState == LED_BUTTON_8S_HOLD)
+    {
+        // Don't allow serial tasks to control the LEDs during these states
+    }
+    else if (settings.ledStyle == LEDS_CLASSIC) // Blink the status LED during serial traffic
     {
         ledStatusBlinkSerial();
     }
@@ -188,7 +200,11 @@ void ledRxOn()
 }
 void ledRxOff()
 {
-    if (settings.ledStyle == LEDS_CLASSIC) // Blink the status LED during serial traffic
+    if (ledState == LED_BUTTON_3S_HOLD || ledState == LED_BUTTON_8S_HOLD)
+    {
+        // Don't allow serial tasks to control the LEDs during these states
+    }
+    else if (settings.ledStyle == LEDS_CLASSIC) // Blink the status LED during serial traffic
     {
         ledStatusOff();
     }
@@ -229,15 +245,8 @@ void ledConnectBlink()
 {
     if (pin_connectLED != PIN_UNDEFINED)
     {
-        if (ledState == LED_BUTTON_3S_HOLD || ledState == LED_BUTTON_8S_HOLD)
-        {
-            // Don't allow serial tasks to control the LEDs during these states
-        }
-        else
-        {
-            pinMode(pin_connectLED, OUTPUT); // Reconfig pin, post analog write
-            digitalWrite(pin_connectLED, !digitalRead(pin_connectLED));
-        }
+        pinMode(pin_connectLED, OUTPUT); // Reconfig pin, post analog write
+        digitalWrite(pin_connectLED, !digitalRead(pin_connectLED));
     }
 }
 void ledConnectBlinkSerial()
