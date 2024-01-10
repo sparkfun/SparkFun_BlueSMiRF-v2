@@ -64,6 +64,7 @@ class BTClassicSerial : public virtual BTSerialInterface, public BluetoothSerial
         return BluetoothSerial::connect(remoteName, scanTimeoutMs);
     }
 
+    // Returns true if connection is open
     bool connected(int timeout)
     {
         return BluetoothSerial::connected(timeout);
@@ -152,10 +153,10 @@ class BTLESerial : public virtual BTSerialInterface, public BleSerial
         return (false); // Not implemented in BLE
     }
 
+    // Returns true if connection is open
     bool connected(int timeout)
     {
-        systemPrintln("Not yet implemented");
-        return (false); // Not implemented in BLE
+        return (BleSerial::connected());
     }
 
     void disconnect()
