@@ -4,7 +4,7 @@ The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wirele
 <center>
 <div class="grid cards col-2" markdown>
 
--   <a href="https://www.sparkfun.com/products/23287">
+-   <a href="https://www.sparkfun.com/products/24113">
       <figure markdown>
         <img src="https://cdn.sparkfun.com/r/600-600/assets/parts/2/4/4/3/8/24113-BlueSMiRF-ESP32-NoHeaders-Feature-NEW.jpg" style="width:140px; height:140px; object-fit:contain;" alt="SparkFun BlueSMiRF v2">
       </figure>

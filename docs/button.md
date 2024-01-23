@@ -33,19 +33,6 @@ Once a BlueSMiRF has entered Pairing Mode, it will scan for other compatible Blu
 
 If a second device enters Pairing Mode, it will scan for other compatible BlueSMiRF devices broadcasting the name (you guessed it) '**BlueSMiRF-Pairing**'. If a device is detected, the second device will connect to the first device, store the MAC address of the first device, and attempt to connect to it at every future power on. The first device will not be aware of or connect to the first device at power on.
 
-<div style="text-align: center;">
-  <table>
-    <tr style="vertical-align:middle;">
-     <td style="text-align: center; vertical-align: middle;"><a href="../assets/img/BlueSMiRF_V2_Bluetooth_Pair_Connect.gif"><img src="../assets/img/BlueSMiRF_V2_Bluetooth_Pair_Connect.gif" width="600px" height="600px" alt="GIF Pairing and Connecting Two BlueSMiRF V2s"></a></td>
-    </tr>
-    <tr style="vertical-align:middle;">
-     <td style="text-align: center; vertical-align: middle;">
-       <i>GIF Pairing and Connecting Two BlueSMiRF V2s</i>
-     </td>
-    </tr>
-  </table>
-</div>
-
 
 
 ## Factory Reset Mode
