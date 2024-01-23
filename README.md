@@ -44,14 +44,15 @@ Repository Contents
   * **/Production** - Production panel files (.brd)
 * **/docs** - Online documentation files
   * **/assets** - Folder containing all the file assets used for product documentation
-    * **/board_files** - Files for the product design
+    * **/board_files** - Copy of design files used for product documentation
     * **/component_documentation** - Datasheets and manuals for hardware components
-    * **/img** - Images for the product documentation
+    * **/img** - Images for product documentation
   * **/github** - Files stating how to contribute and filing issues for product
   * **/javascript** - Folder containing custom javascript used for product documentation
-  * **/stylesheet** - Folder containing CSS files
-* **/overrides** - Customization files for GitHub Pages product documentation
-
+  * **/stylesheet** - Folder containing CSS files used forproduct documentation
+* **/overrides** - Customization files used for product documentation
+  * **/.icons** - Icons used for product documentation
+  * **./partials** - Used for product documentation
 
 
 Documentation
