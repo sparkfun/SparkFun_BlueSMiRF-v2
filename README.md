@@ -1,4 +1,4 @@
-SparkFun BlueSMiRF v2 Firmware
+SparkFun BlueSMiRF v2
 ===========================================================
 
 <table class="table table-hover table-striped table-bordered">
@@ -12,21 +12,54 @@ SparkFun BlueSMiRF v2 Firmware
   </tr>
 </table>
 
-The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) and [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/products/23287) are point to point serial cable replacements using Bluetooth. Simply throw serial characters at a BlueSMiRF and the data will arrive at the other radio, with guaranteed packet delivery. Baud rates supported up to 921600bps!
+The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) and [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/products/23287) are wireless Bluetooth® serial links. These boards work as a wireless serial UART pipe and are a great wireless replacement for serial cables. Simply pair, connect, and transmit serial data between your TX/RX lines! Any serial stream from 2400 to 921600 baud can be passed seamlessly between two devices. 
 
-This repo houses the [BlueSMiRF Product Manual](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2) and the firmware that runs on the SparkFun BlueSMiRF ESP32 product line including:
+Duplex transmissions up to 921600bps are supported. What does this mean? You can throw a book at each BlueSMiRF, which will correctly buffer, transmit, and deliver the data streams, byte perfect, to both radios. 
+
+BlueSMiRF v2 has a multitude of exciting improvements over the original. The BlueSMiRF pinout is the same as previous Bluetooth Mates and USB-to-serial converters (i.e., FTDI, CH340, etc.), making it extremely easy to hook up to many common Arduino development boards and GNSS breakout boards.  The board can be connected directly with an Arduino Pro, Pro Mini, or any board with a standard 6-pin serial connector. We broke out the pins to the 1x6 header for this version of the board. You'll need to either solder a 1x6 female header or striped wires to the PTHs before being able to connect to another device. The SparkFun BlueSMiRF v2 is perfect for short-range applications up to 100ft (33m) indoors that require easy to setup, point-to-point communication. 
+
+A BlueSMiRF can be connected to a phone or computer to view data or remote control easily. Two BlueSMiRFs can also be easily connected using the onboard PAIR button. If needed, this button can be disabled by cutting the jumper on the back of the board. 
+
+We've designed the BlueSMiRF to be remotely configured from a phone using a serial terminal app. Changing the settings, such as the baud rate, flow control, and LED mode, is easily done using the simple AT command set. Additionally, Over The Air (OTA) updates using WiFi allow easy in-field firmware updates as new features are released.
+
+The BlueSMiRF v2 has an on-board voltage regulator to power between 3.3V and 5V. Logic level shifting circuitry is included on all pins to be 3.3V to 5V tolerant. Note that you will need an RS232 to TTL converter for higher voltages. A jumper on the top of the board is also included to bypass the voltage regulator. Two built-in LEDs indicate when the BlueSMiRF is connected and when there is serial UART traffic.
+
+**Note:** Bluetooth® classic (Serial Port Profile or SPP) is primarily supported. This Bluetooth protocol is supported on Android phones, most desktops, and laptops. BlueSMiRF also supports the BLE protocol, available on all Apple phones.
+
+This repo houses the [BlueSMiRF v2 Hookup Guide](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2) and the firmware that runs on the SparkFun BlueSMiRF V2 product line including:
 
 * [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113)
 * [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/products/23287)
 
 For compiled binaries of the firmware, please see [SparkFun BlueSMiRF ESP32 Firmware Binaries](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries).
 
+
+
 Repository Contents
 -------------------
 
+* **.github/workflows** - YAML files used for GitHub Actions and GitHub Pages/mkdocs
 * **/Firmware** - Source code for SparkFun BlueSMiRF firmware as well as various feature unit tests
-* **/Documents** - Datasheets for various components.
-* **/docs** - Markdown pages for the [BlueSMiRF Product Manual](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/)
+* **/Hardware** - Eagle design files (.brd, .sch)
+  * **/Production** - Production panel files (.brd)
+* **/docs** - Online documentation files
+  * **/assets** - Folder containing all the file assets used for product documentation
+    * **/board_files** - Files for the product design
+    * **/component_documentation** - Datasheets and manuals for hardware components
+    * **/img** - Images for the product documentation
+  * **/github** - Files stating how to contribute and filing issues for product
+  * **/javascript** - Folder containing custom javascript used for product documentation
+  * **/stylesheet** - Folder containing CSS files
+* **/overrides** - Customization files for GitHub Pages product documentation
+
+
+
+Documentation
+--------------
+
+* **[Firmware Binaries](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries)** - Compiled binaries of the firmware.
+* **[Hookup Guide](http://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/)** - Basic hookup guide for the BlueSMiRF v2 PTH and header versions.
+
 
 Repository Branch Structure
 ---------------------------
@@ -39,6 +72,8 @@ In contrast, `release_candidate` is where new code is added as it is developed.
 
 The documentation source code is in docs/ on `main`.  It is built automatically on push and stored in the branch `gh-pages`, from which it is served at the above URL. Documentation changes are pushed directly to main.
 
+
+
 Release Process
 ---------------
 
@@ -48,64 +83,20 @@ A pre-release is often created using the latest stable release candidate. These 
 
 The command-line interface is also available. You’ll need to download the [RTK Firmware Binaries](https://github.com/sparkfun/SparkFun_RTK_Firmware_Binaries) repo. This repo contains the binaries but also various supporting tools including esptool.exe and the three binaries required along with the firmware (bootloader, partitions, and app0).
 
+
+
 ## Updating Firmware From CLI
 
-Because it's much easier to use, we recommend the OTA firmware update process. If that fails for some reason, the following CLI method can be used.
+Because it's much easier to use, we recommend the OTA firmware update process. If that fails for some reason, you can use the CLI method. For more information, check out the tutorial under the section [firmware Update](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/firmware_update/).
 
-### Entering Bootload Mode
 
-Hold the **Pair** button while powering the BlueSMiRF. This will cause the ESP32 to enter bootload mode. Once the BlueSMiRF is in bootloader mode, the **Status** LED will be dimly lit, the **Connect** LED will be off. 
 
-We recommend using a breadboard or jumper wires to connect the BlueSMiRF to a USB-to-Serial connection. The TX and RX connections must be crossed over:
+Product Versions
+----------------
+* [WRL-24113](https://www.sparkfun.com/products/24113) - Initial release, PTH version
+* [WRL-23287](https://www.sparkfun.com/products/23287) - Initial release, Header version
 
-* VCC of USB-to-Serial -> VCC of BlueSMiRF 
-* TX of USB-to-Serial -> **RX** of BlueSMiRF
-* RX of USB-to-Serial -> **TX** of BlueSMiRF
-* GND of USB-to-Serial -> GND of BlueSMiRF
 
-### Windows
-
-Identify the COM port the USB-to-Serial device enumerated at. The easiest way to do this is to open the Device Manager:
-
-![CH340 is on COM6 as shown in Device Manager](img/Serial/RTK_Surveyor_-_Firmware_Update_COM_Port.jpg)
-
-*CH340 is on COM6 as shown in Device Manager*
-
-If the COM port is not showing be sure the unit is turned **On**. If an unknown device is appearing, you’ll need to [install drivers for the CH340](https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all). Once you know the COM port, open a command prompt (Windows button + r then type ‘cmd’).
-
-![batch_program.bat running esptool](img/Terminal/SparkFun%20RTK%20Firmware%20Update%20CLI.png)
-
-*batch_program.bat running esptool*
-
-Once the correct COM is identified, run 'batch_program.bat' along with the binary file name and COM port. For example *batch_program.bat BlueSMiRF_Firmware_v1_0.bin COM6*. COM6 should be replaced by the COM port you identified earlier.
-
-The batch file runs the following commands:
-
-```
-esptool.exe --chip esp32 --port COM3 --baud 921600  --before default_reset --after hard_reset write_flash  -z --flash_mode dio --flash_freq 80m --flash_size 8MB 0x1000 bins/bootloader.bin 0x8000 bins/partitions.bin 0xe000 bins/boot_app0.bin 0x10000 BlueSMiRF_Firmware_v1_0.bin 
-```
-
-Where *COM3* is replaced with the COM port that the RTK product enumerated at and *BlueSMiRF_Firmware_vx_x.bin* is the firmware you would like to load.
-
-**Note:** Some users have reported the 921600bps baud rate does not work. Decrease this to 115200 as needed.
-
-Upon completion, the BlueSMiRF must be power cycled to exit bootload mode. Once power cycled, the BlueSMiRF will start running the new firmware.
-
-### macOS / Linux
-
-Get [esptool.py](https://github.com/espressif/esptool). Connect a USB A to C cable from your computer to the USB-to-Serial. Now identify the COM port the RTK enumerated at.
-
-If an unknown device is appearing, you’ll need to [install drivers for the CH340](https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all). Once you know the COM port, run the following command:
-
-```
-py esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 921600  --before default_reset --after hard_reset write_flash  -z --flash_mode dio --flash_freq 80m --flash_size 8MB 0x1000 bins/bootloader.bin 0x8000 bins/partitions.bin 0xe000 bins/boot_app0.bin 0x10000 BlueSMiRF_Firmware_vx_x.bin 
-```
-
-Where */dev/ttyUSB0* is replaced with the port that the USB-to-Serial board enumerated at and *BlueSMiRF_Firmware_vx_x.bin* is the firmware you would like to load.
-
-**Note:** Some users have reported the 921600bps baud rate does not work. Decrease this to 115200 as needed.
-
-Upon completion, the BlueSMiRF must be power cycled to exit bootload mode. Once power cycled, the BlueSMiRF will start running the new firmware.
 
 License Information
 -------------------
