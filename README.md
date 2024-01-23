@@ -87,7 +87,7 @@ The command-line interface is also available. You’ll need to download the [RTK
 
 ## Updating Firmware From CLI
 
-Because it's much easier to use, we recommend the OTA firmware update process. If that fails for some reason, you can use the CLI method. For more information, check out the tutorial under the section [firmware Update](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/firmware_update/).
+Because it's much easier to use, we recommend the OTA firmware update process. If that fails for some reason, you can use the CLI method. For more information, check out the tutorial under the section [Firmware Update](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/firmware_update/).
 
 
 
