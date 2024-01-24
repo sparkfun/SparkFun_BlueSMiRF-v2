@@ -397,5 +397,16 @@ If you aren’t familiar with the following concepts, we also recommend checking
       <b>How to Solder: Through-Hole Soldering</b>
     </a>
 
-    <!-- ----------WHITE SPACE BETWEEN GRID CARDS---------- -->
+<!-- ----------WHITE SPACE BETWEEN GRID CARDS---------- -->
+-   <a href="https://learn.sparkfun.com/tutorials/logic-levels">
+      <figure markdown>
+        <img src="https://cdn.sparkfun.com/assets/learn_tutorials/6/2/Input_Output_Logic_Level_Tolerances_v3.png?_gl=1*647ace*_ga*MTYwMjY5MTgyMy4xNzAwMjQzOTQx*_ga_T369JS7J9N*MTcwNjA3Njc2Ni4xODEuMS4xNzA2MDc5MDc2LjMzLjAuMA.."style="width:264px; height:148px; object-fit:contain;" alt="Logic Levels">
+      </figure>
+    </a>
+
+    ---
+
+    <a href="https://learn.sparkfun.com/tutorials/logic-levels">
+      <b>Logic Levels</b>
+    </a>
 </div>

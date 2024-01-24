@@ -260,3 +260,17 @@ For boards that already include the footprint for a standard serial UART port, y
     </tr>
   </table>
 </div>
+
+!!! note
+    There are older boards that may have a serial port labeled as BlueSMiRF. You will need to wire the connection manually with jumper wires. One example is the SparkFun Arduino ProtoShield where the board uses the older BlueSMiRF pinout. There are jumpers that you can cut on the board and additional PTHs to rewire the pins if you decide to connect directly to the 1x6 header.
+
+    <div style="text-align: center;">
+    <table>
+      <tr style="vertical-align:middle;">
+       <td style="text-align: center; vertical-align: middle; border: solid 1px #cccccc;""><a href="https://cdn.sparkfun.com/assets/learn_tutorials/7/6/7/SparkFun_ProtoShield-TopView_SoftwareSerialUART.jpg"><img src="https://cdn.sparkfun.com/assets/learn_tutorials/7/6/7/SparkFun_ProtoShield-TopView_SoftwareSerialUART.jpg" width="300px" height="300px" alt="SparkFun Arduino ProtoShield Serial Port Highlighted"></a></td>
+      </tr>
+      <tr style="vertical-align:middle;">
+       <td style="text-align: center; vertical-align: middle; border: solid 1px #cccccc;"><i>SparkFun Arduino ProtoShield Serial Port Highlighted</i></td>
+      </tr>
+    </table>
+    </div>

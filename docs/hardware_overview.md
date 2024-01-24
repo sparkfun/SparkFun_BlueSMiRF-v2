@@ -36,7 +36,7 @@ There is also a version with PTHs out in the wild and it is essentially the same
 
 ### ESP32-PICO-MINI-02
 
-The board includes the smaller ESP32-PICO-MINI-02 module from Espressif. The SparkFun BlueSMiRF v2 is perfect for short range applications that require point-to-point communication. We've written some firmware to allow serial UART data to be sent between two Bluetooth devices. The supported protocols include SPP and BLE. Testing a pair of BlueSMiRF V2s and we got about ~110 feet (~33m) in the SparkFun building. The included firmware also includes a set of AT commands to configure the ESP32. This includes the baud rate, flow control, LED mode, and Over-The-Air (OTA) updates over a 2.4GHz WiFi network to name a few. You can also manually reprogram the ESP32 module using the command line interface as well! Just make sure to connect Tx and Rx between the BlueSMiRF and a USB-to-serial converter.
+The board includes the smaller ESP32-PICO-MINI-02 module from Espressif. The SparkFun BlueSMiRF v2 is perfect for short range applications that require point-to-point communication. We've written some firmware to allow serial UART data to be sent between two Bluetooth devices. The supported protocols include SPP and BLE. Testing a pair of BlueSMiRF V2s and we got about ~110 feet (~33m) in the SparkFun building. The TX (10k) and RX (50k) buffers are also very large to allow for radio delays. The included firmware also includes a set of AT commands to configure the ESP32. This includes the baud rate, flow control, LED mode, and Over-The-Air (OTA) updates over a 2.4GHz WiFi network to name a few. You can also manually reprogram the ESP32 module using the command line interface as well! Just make sure to connect Tx and Rx between the BlueSMiRF and a USB-to-serial converter.
 
 <div style="text-align: center;">
   <table>
@@ -68,7 +68,7 @@ Power is broken out on the 1x6 header through the VCC and GND pins. The recommen
   </table>
 </div>
 
-The current and power consumption depends on what it's doing at the time. Here are some of our results after measuring the current and power consumption at 3.3V. The module can get warm to the touch when pushing serial traffic through.
+The current and power consumption depends on what it's doing at the time. Here are some of our results after measuring the current and power consumption at 3.3V. The module can get toasty when pushing serial traffic through but not scary-burn-you-hot.
 
 * Idle: 72mA / 238mW
 * Connected with no Serial Traffic: 75mA / 248mW
@@ -153,7 +153,24 @@ Both boards include a standard serial UART header seen on many USB-to-serial con
 
 
 !!! tip
-    For those that are connecting to the old school RS232 serial port, you will need a [RS232 to TTL converter](https://www.sparkfun.com/products/449) for higher voltages. The RS232 to TTL converter can handle the larger voltages designed for RS232.
+    For those that are connecting to the old school RS232 serial port, you will need a [RS232 to TTL converter](https://www.sparkfun.com/products/449) for higher voltages. The RS232 to TTL converter can handle larger voltages designed for RS232.
+
+    <div style="text-align: center;">
+      <table>
+        <tr style="vertical-align:middle;">
+         <td style="text-align: center; vertical-align: middle; border: solid 1px #cccccc;"><a href="https://www.sparkfun.com/products/449"><img src="https://cdn.sparkfun.com//assets/parts/1/4/9/00449-01a.jpg" width="200px" height="200px" alt="SparkFun RS232 Shifter - SMD"></a></td>
+        </tr>
+        <tr style="vertical-align:middle;">
+         <td style="text-align: left; vertical-align: middle; border: solid 1px #cccccc;"><a href="https://www.sparkfun.com/products/449"><b>SparkFun RS232 Shifter - SMD</b>
+         <br />
+         PRT-00449</a></td>
+        </tr>
+      </table>
+    </div>
+
+
+!!! warning
+    While the TX and RX pins have logic level circuitry, the <span style="text-decoration:overline">CTS</span> and <span style="text--decoration:overline">RTS</span> do not. Make sure to be careful when connecting the flow control pins to a 5V system.
 
 
 
@@ -245,15 +262,3 @@ Each version of the board is 38.1mm x 15.2mm. Note that the version with the hea
     </tr>
   </table>
 </div>
-
-
-
-
-
-<!-- -----------
-
-!!! note "What is a BlueSMiRF?"
-    The BlueSMiRF was a Bluetooth device that was included in SparkFun's catalog. The footprint consists of a 1x6 header for the serial UART and power pins. Note that the arrangement of the header pins can be different from USB-to-serial converters (i.e. FTDI Serial Breakout Boards and CH340 Serial Basic Boards).
-
-
--->

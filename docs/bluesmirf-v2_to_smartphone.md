@@ -1,4 +1,7 @@
-In this example, we will connect a BlueSMiRF v2 to a smartphone.
+!!! note
+    Bluetooth classic (Serial Port Profile or SPP) is primarily supported. This Bluetooth protocol is supported on Android phones, most desktops, and laptops. The BlueSMiRF v2 also supports the BLE protocol, available on all Apple phones.
+
+In this example, we will connect a BlueSMiRF v2 to a smartphone and send serial data using the Bluetooth classic protocol (also known as Serial Port Profile or SPP).
 
 The image below shows the Serial Basic (CH340, USB-C) connected to the BlueSMiRF v2 Header using M/F jumper wires. Headers were used to easily remove and reconnect the BlueSMiRF v2 with headers.
 
@@ -16,7 +19,7 @@ The image below shows the Serial Basic (CH340, USB-C) connected to the BlueSMiRF
 
 ### Download the Serial Bluetooth Terminal App
 
-Head to your smartphone's app store. In this case, we were on an Android smartphone and used Google Play Store to download the [**Serial Bluetooth Terminal** app](https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&hl=en_US&gl=US&pli=1).
+Head to your smartphone's app store. In this case, we were on an Android smartphone and used Google Play Store to download the [**Serial Bluetooth Terminal** app](https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&hl=en_US&gl=US&pli=1). This app is great for development, debugging, and general use when using the BlueSMiRF's SPP and BLE protocols.
 
 <div style="text-align: center"><a href="https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&hl=en_US&gl=US&pli=1" class="md-button">Google Play: Serial Bluetooth Terminal</a></div>
 
