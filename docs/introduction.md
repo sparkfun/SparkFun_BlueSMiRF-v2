@@ -121,7 +121,7 @@ To follow along with this tutorial, you will need the following materials. You m
 
 ### Tools &nbsp;_(Optional)_
 
-You will need a soldering iron, solder, and [general soldering accessories](https://www.sparkfun.com/categories/49) for a secure connection when using the plated through holes. You may also need to solder headers or wires to any devices that the BlueSMiRF V2 is connecting to.
+You will need a soldering iron, solder, and [general soldering accessories](https://www.sparkfun.com/categories/49) for a secure connection when using the plated through holes. You may also need to solder headers or wires to any devices that the BlueSMiRF v2 is connecting to.
 
 * [Soldering Iron [TOL-14456]](https://www.sparkfun.com/products/14456)
 * [Solder Lead Free - 15-gram Tube [TOL-9163]](https://www.sparkfun.com/products/9163)

@@ -28,10 +28,10 @@ Press any key to continue . . .
 <div style="text-align: center;">
   <table>
     <tr style="vertical-align:middle;">
-     <td style="text-align: center; vertical-align: middle;"><a href="../assets/img/Error_Programming_BlueSMiRF_ESP32.JPG"><img src="../assets/img/Error_Programming_BlueSMiRF_ESP32.JPG" width="600px" height="600px" alt="Successfully Programmed BlueSMiRF V2 - ESP32"></a></td>
+     <td style="text-align: center; vertical-align: middle;"><a href="../assets/img/Error_Programming_BlueSMiRF_ESP32.JPG"><img src="../assets/img/Error_Programming_BlueSMiRF_ESP32.JPG" width="600px" height="600px" alt="Successfully Programmed BlueSMiRF v2 - ESP32"></a></td>
     </tr>
     <tr style="vertical-align:middle;">
-     <td style="text-align: center; vertical-align: middle;"><i>Error Programming BlueSMiRF V2 - ESP32</i></td>
+     <td style="text-align: center; vertical-align: middle;"><i>Error Programming BlueSMiRF v2 - ESP32</i></td>
     </tr>
   </table>
 </div>
@@ -39,7 +39,7 @@ Press any key to continue . . .
 Make sure to:
 
 * ensure that the wires are making connection and not loose
-* wired correctly between the USB-to-Serial Converter and your BlueSMiRF V2
+* wired correctly between the USB-to-Serial Converter and your BlueSMiRF v2
 * COM Port is the same one that the USB-to-Serial converter enumerated to on your computer
 * install the appropriate drivers
 * in Bootloader Mode
