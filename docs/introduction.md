@@ -1,5 +1,5 @@
 
-The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wireless Bluetooth&reg; serial link. This version of the popular BlueSMiRF uses the ESP32. These boards work as a wireless serial UART pipe and are a great wireless replacement for serial cables. Simply pair, connect, and transmit serial data between your TX/RX lines! Any serial stream from 2400 to 115200 baud can be passed seamlessly between two devices.
+The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wireless Bluetooth&reg; serial link. This version of the popular BlueSMiRF uses the ESP32. These boards work as a wireless serial UART pipe and are a great wireless replacement for serial cables. Simply pair, connect, and transmit serial data between your TX/RX lines! Any serial stream from 2400 to 921600 baud can be passed seamlessly between two devices.
 
 <center>
 <div class="grid cards col-2" markdown>
@@ -338,9 +338,8 @@ For those using the PTH version, you will need to connect to the PTHs. You could
 
 Depending on your setup or what you are doing, you may need the following as well.
 
-* 2.5GHz WiFi Network for firmware updates
+* 2.4GHz WiFi Network for firmware updates
 * Smartphone with an Internet Service
-
 
 
 ### Suggested Reading

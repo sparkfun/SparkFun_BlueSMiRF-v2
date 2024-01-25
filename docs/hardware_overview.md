@@ -115,13 +115,13 @@ The reset PTH labeled as <span STYLE="text-decoration:overline">RST</span> will 
     </div>
 
 
-Both boards include a standard serial UART header seen on many USB-to-serial converters: <span STYLE="text-decoration:overline">RTS</span>/RXI/TXO/VCC/<span STYLE="text-decoration:overline">CTS</span>/GND . Depending on the version that you receive, one will be PTH while the other is includes right angle male headers. Due to spacing, the PTH version will also have a different silkscreen labels.
+Both boards include a standard serial UART header seen on many USB-to-serial converters: <span STYLE="text-decoration:overline">RTS</span>/RXI/TXO/VCC/<span STYLE="text-decoration:overline">CTS</span>/GND. Depending on the version that you purchase, one will be PTH while the other includes right angle male headers. Due to spacing, the PTH version will also have slightly different silkscreen labels.
 
-* <b><span STYLE="text-decoration:overline">RTS</span></b> / <b><span STYLE="text-decoration:overline">RT</b> &mdash; The Return to Send is an output and is used for hardware flow control in some serial interfaces. Unlike Tx and RX, this pin does not include logic level translation. This output is not critical for simple serial communication.
+* <b><span STYLE="text-decoration:overline">RTS</span></b> / <b><span STYLE="text-decoration:overline">RT</b> &mdash; The Ready to Send is an output and is used for hardware flow control in some serial interfaces. This output is not critical for simple serial communication. If flow control is enabled, BlueSMiRF will drive its RTS low if its serial buffer is full (the radio is telling the host system to hold its horses).
 * **RXI** / **RI** &mdash; The serial receive is an input. This input pin receives serial data from another serial device. Logic level circuitry is included on this pin. **It should be connected to the TX of the other device.**
 * **TXO** / **TO** &mdash;	The serial transmit is an output. This output pin sends serial data to another device. Logic level circuitry is included on this pin. **It should be connected to the RX of the other device.**
 * **VCC**/ **V** / **3V3-5V** &mdash; This input voltage supply signal is routed through a AP2112K voltage regulator and brought down 3.3V for the ESP32. We will assume that it is attached to another device's standard serial port and it is providing power to the BlueSMiRF v2. As stated earlier, the recommended input voltage is between **3.3V to 5V**.
-* <b><span STYLE="text-decoration:overline">CTS</span></b> / <b><span STYLE="text-decoration:overline">CT</span></b> &mdash; The Clear to Send is an input. CTS is another serial flow control signal. Unlike Tx and RX, this pin does not include logic level translation. Like RTS, it's not required for most, simple serial interfaces.
+* <b><span STYLE="text-decoration:overline">CTS</span></b> / <b><span STYLE="text-decoration:overline">CT</span></b> &mdash; The Clear to Send is an input. CTS is another serial flow control signal. Like RTS, it's not required for most, simple serial interfaces. If flow control is enabled, BlueSMiRF will send data when its CTS pin is driven low (the host system is telling the radio that it's ready for more serial data).
 * **GND** / **G** &mdash; The 0V reference voltage, common to any other device connected to the Bluetooth modem.
 
 <div style="text-align: center;">
@@ -168,18 +168,12 @@ Both boards include a standard serial UART header seen on many USB-to-serial con
       </table>
     </div>
 
-
-!!! warning
-    While the TX and RX pins have logic level circuitry, the <span style="text-decoration:overline">CTS</span> and <span style="text--decoration:overline">RTS</span> do not. Make sure to be careful when connecting the flow control pins to a 5V system.
-
-
-
 ### Button
 
 The PAIR button is more than meets the eye. This button has more than one function depending on how long it is pushed down.
 
-* **Short Push** &mdash; Press and hold the button down between **4 to 8 seconds** will initiate pairing with another Bluetooth device. During that period of time, the **Status** and **Connect** LEDs will slowly blink back and forth. When the BlueSMiRF V2 fails to discover any compatible devices, it will enter _Discoverable_ mode.
-* **Long Push** &mdash; Press and hold the down for **more than 8 seconds**  to set the ESP32 back to its factory default settings.
+* **Short Push** &mdash; Press and hold the button down between **4 to 8 seconds** will initiate pairing with another Bluetooth device. During that period of time, the **Status** and **Connect** LEDs will slowly blink back and forth. When the BlueSMiRF v2 fails to discover any compatible devices, it will enter _Discoverable_ mode.
+* **Long Push** &mdash; Press and hold the down for **more than 8 seconds** to set the ESP32 back to its factory default settings.
 
 <div style="text-align: center;">
   <table>
@@ -190,7 +184,7 @@ The PAIR button is more than meets the eye. This button has more than one functi
 </div>
 
 !!! note
-    Users can also set the BlueSMiRF v2 in bootloader mode. In this mode, you can update the firmware manually through serial using a command line interface. Users will need to hold down the PAIR button when the BlueSMiRF v2 is not powered. Applying power will set the microcontroller to bootloader mode.
+    Users can also set the BlueSMiRF v2 in bootloader mode. In this mode, you can update the firmware manually through serial using a command line interface. Users will need to hold down the PAIR button when the BlueSMiRF v2 is not powered. Applying power will put the microcontroller into bootloader mode.
 
 For more information about using the button for each mode, check out the section about the [button control](../button/).
 

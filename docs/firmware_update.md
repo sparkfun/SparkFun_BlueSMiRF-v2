@@ -1,12 +1,10 @@
-From time to time, SparkFun will release new firmware for the BlueSMiRF V2 product line to add and improve functionality.  For most users, firmware can be upgraded over a 2.4GHz WiFi network using the [OTA method](firmware_update.md#updating-firmware-over-the-air). Users can also update the firmware manually using a Command Line Interface (CLI)
+From time to time, SparkFun will release new firmware for the BlueSMiRF v2 product line to add and improve functionality.  For most users, firmware can be upgraded over a 2.4GHz WiFi network using the [OTA method](firmware_update.md#updating-firmware-over-the-air). Users can also update the firmware manually using a Command Line Interface (CLI)
 
 
 
 ### Updating Firmware Over-The-Air (OTA)
 
 Once the `AT-WiFiSSID` and `AT-WiFiPassword` settings have been entered for your local WiFi network, the `ATC` command can be issued to check for new firmware. If new firmware is available, send the `ATU` command to begin an update.
-
-
 
 # Manually Updating Firmware Over Serial
 
@@ -16,7 +14,7 @@ Because it's much easier to use, we recommend the OTA firmware update process. I
 
 ### Entering Bootloader Mode
 
-Hold the **PAIR** button while powering the BlueSMiRF V2. This will cause the ESP32 to enter bootloader mode. Once the BlueSMiRF V2 is in bootloader mode, the **STATUS** LED will be dimly lit and the **CONNECT** LED will be off.
+Hold the **PAIR** button while powering the BlueSMiRF v2. This will cause the ESP32 to enter bootloader mode. Once the BlueSMiRF v2 is in bootloader mode, the **STATUS** LED will be dimly lit and the **CONNECT** LED will be off.
 
 We recommend using a [breadboard](https://www.sparkfun.com/products/12002) or [jumper wires](https://www.sparkfun.com/products/11026) to connect the BlueSMiRF to a [USB-to-Serial](https://www.sparkfun.com/products/15096) connection. At a minimum, you will need to connect the UART pins, power, and ground as stated in the hardware hookup. Remember, the TX and RX connections must be crossed over.
 
@@ -91,7 +89,7 @@ We recommend using a [breadboard](https://www.sparkfun.com/products/12002) or [j
 </div>
 
 !!! note
-    The connection also includes two additional connection for flow control: <span STYLE="text-decoration:overline">RTS</span> and CTS. These two connections are not needed for a basic serial UART connection. However, using all six wires can help make a tighter connection on the 1x6 header. The wire colors also connect TXO-to-RXI and RXI-to-RXO to indicate that it is not a direct connection between the two boards and the 1x6 header.
+    The connection also includes two additional connection for flow control: <span STYLE="text-decoration:overline">RTS</span> and <span STYLE="text-decoration:overline">CTS</span>. These two connections are not needed for a basic serial UART connection. However, using all six wires can help make a tighter connection on the 1x6 header. The wire colors also connect TXO-to-RXI and RXI-to-RXO to indicate that it is not a direct connection between the two boards and the 1x6 header.
 
 <div style="text-align: center;">
   <table>
