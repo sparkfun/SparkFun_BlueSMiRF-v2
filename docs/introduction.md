@@ -39,6 +39,8 @@ The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wirele
 </div>
 </center>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i8u3W0jVFTw?si=9iwrsCm9Ih9n9VCz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 In this tutorial, we'll go over the hardware and how to hookup the breakout board. We will also go over how to connect to a smartphone and a basic Arduino example to get started!
 
 

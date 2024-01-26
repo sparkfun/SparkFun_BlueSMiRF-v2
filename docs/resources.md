@@ -11,3 +11,4 @@ Now that you've successfully got your SparkFun BlueSMiRF v2 up and running, it's
 * [Datasheet (PDF)](../assets/component_documentation/esp32-pico-mini-02_datasheet_en.pdf) (ESP32-PICO-MINI-02)
 * [Firmware](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries)
 * [GitHub Hardware Repo](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2)
+* [SFE Product Showcase](https://www.youtube.com/watch?v=i8u3W0jVFTw)
