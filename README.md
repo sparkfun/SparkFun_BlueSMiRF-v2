@@ -26,7 +26,7 @@ The BlueSMiRF v2 has an on-board voltage regulator to power between 3.3V and 5V.
 
 **Note:** Bluetooth® classic (Serial Port Profile or SPP) is primarily supported. This Bluetooth protocol is supported on Android phones, most desktops, and laptops. BlueSMiRF also supports the BLE protocol, available on all Apple phones.
 
-This repo houses the [BlueSMiRF v2 Hookup Guide](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2) and the firmware that runs on the SparkFun BlueSMiRF V2 product line including:
+This repo houses the [BlueSMiRF v2 Hookup Guide](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2) and the firmware that runs on the SparkFun BlueSMiRF v2 product line including:
 
 * [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113)
 * [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/products/23287)

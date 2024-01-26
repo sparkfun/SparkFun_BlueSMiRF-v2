@@ -89,7 +89,7 @@ We recommend using a [breadboard](https://www.sparkfun.com/products/12002) or [j
 </div>
 
 !!! note
-    The connection also includes two additional connection for flow control: <span STYLE="text-decoration:overline">RTS</span> and <span STYLE="text-decoration:overline">CTS</span>. These two connections are not needed for a basic serial UART connection. However, using all six wires can help make a tighter connection on the 1x6 header. The wire colors also connect TXO-to-RXI and RXI-to-RXO to indicate that it is not a direct connection between the two boards and the 1x6 header.
+    The connection also includes two additional connections for flow control: <span STYLE="text-decoration:overline">RTS</span> and <span STYLE="text-decoration:overline">CTS</span>. These two connections are not needed for a basic serial UART connection. However, using all six wires can help make a tighter connection on the 1x6 header. The wire colors also connect TXO-to-RXI and RXI-to-RXO to indicate that it is not a direct connection between the two boards and the 1x6 header.
 
 <div style="text-align: center;">
   <table>
@@ -122,7 +122,7 @@ If the COM port is not showing, be sure the unit is turned **On**. If an unknown
 
 Once the correct COM port is identified, head to the [GitHub repo for the BlueSMiRF v2 binaries](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries) and download all the contents. Unzip the contents in a known directory and copy the path.
 
-<div style="text-align: center"><a href="https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries/archive/main.zip" class="md-button">Download BlueSMiRF V2 Binaries GitHub Repo (ZIP)</a></div>
+<div style="text-align: center"><a href="https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries/archive/main.zip" class="md-button">Download BlueSMiRF v2 Binaries GitHub Repo (ZIP)</a></div>
 
 Open a command prompt (Windows button + <kbd>r</kbd> then type ‘ <kbd>cmd</kbd> ’). Head to the directory where you unzipped the folder. You'll need to use the `cd` commmand, paste the path where you unzipped the folder, and hit the <kbd>enter</kbd> key.
 
@@ -161,10 +161,10 @@ After about 20 seconds, you should see the following message: `Done programming!
 <div style="text-align: center;">
   <table>
     <tr style="vertical-align:middle;">
-     <td style="text-align: center; vertical-align: middle;"><a href="../assets/img/Successfully_Programmed_BlueSMiRF_ESP32.JPG"><img src="../assets/img/Successfully_Programmed_BlueSMiRF_ESP32.JPG" width="600px" height="600px" alt="Successfully Programmed BlueSMiRF V2 - ESP32"></a></td>
+     <td style="text-align: center; vertical-align: middle;"><a href="../assets/img/Successfully_Programmed_BlueSMiRF_ESP32.JPG"><img src="../assets/img/Successfully_Programmed_BlueSMiRF_ESP32.JPG" width="600px" height="600px" alt="Successfully Programmed BlueSMiRF v2 - ESP32"></a></td>
     </tr>
     <tr style="vertical-align:middle;">
-     <td style="text-align: center; vertical-align: middle;"><i>Successfully Programmed BlueSMiRF V2 - ESP32</i></td>
+     <td style="text-align: center; vertical-align: middle;"><i>Successfully Programmed BlueSMiRF v2 - ESP32</i></td>
     </tr>
   </table>
 </div>
@@ -181,7 +181,7 @@ The batch file runs the following commands, where *COM4* is replaced with the CO
 !!! tip
     Finished programming the ESP32? Type <kbd>CTRL</kbd> + <kbd>C</kbd> , <kbd>Y</kbd> , and <kbd>ENTER</kbd> to exit the batch file. You can also close the window.
 
-Upon completion, the BlueSMiRF V2 must be power cycled to exit bootloader mode. Once power cycled, the BlueSMiRF will start running the new firmware.
+Upon completion, the BlueSMiRF v2 must be power cycled to exit bootloader mode. Once power cycled, the BlueSMiRF will start running the new firmware.
 
 !!! note
     We recommend disconnecting the USB cable from the USB-to-Serial Converter or your computer's COM port.
@@ -196,7 +196,7 @@ If the COM port is not showing, be sure the unit is turned **On**. If an unknown
 
 Once the correct COM port is identified, head to the [GitHub repo for the BlueSMiRF v2 binaries](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries) and download all the contents. Unzip the contents in a known directory and copy the path.
 
-<div style="text-align: center"><a href="https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries/archive/main.zip" class="md-button">Download BlueSMiRF V2 Binaries GitHub Repo (ZIP)</a></div>
+<div style="text-align: center"><a href="https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries/archive/main.zip" class="md-button">Download BlueSMiRF v2 Binaries GitHub Repo (ZIP)</a></div>
 
 
 Open a Terminal window and run the following command, where */dev/ttyUSB0* is replaced with the port that the USB-to-Serial board enumerated at and *BlueSMiRF_Firmware_vx_x.bin* is the firmware you would like to load.

@@ -1,6 +1,6 @@
 # Button Control
 
-The **PAIR** button on the BlueSMiRF V2 allows the device to enter a few different states.
+The **PAIR** button on the BlueSMiRF v2 allows the device to enter a few different states.
 
 * [Pairing Mode](../button/#pairing-mode)
 * [Factory Reset Mode](../button/#factory-reset-mode)
