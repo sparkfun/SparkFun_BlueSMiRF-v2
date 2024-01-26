@@ -203,7 +203,7 @@ Below is one example between the serial basic breakout (CH340, USB-C) and the Bl
 
 
 
-Adding a simple 1x6 stackable header between the jumper wires will make a quick adapter with the M/F jumper wires and USB-to-serial converter. You'll just need to match the DTR and GND pins. This is useful for those that need to constantly configure the BlueSMiRF V2's settings and re-reconnect to a USB-to-serial converter.
+Adding a simple 1x6 stackable header between the jumper wires will make a quick adapter with the M/F jumper wires and USB-to-serial converter. You'll just need to match the DTR and GND pins. This is useful for those that need to constantly configure the BlueSMiRF v2's settings and re-reconnect to a USB-to-serial converter.
 
 <div style="text-align: center;">
   <table>
@@ -240,21 +240,21 @@ Remember, for those that are using the PTH version, you will need to solder eith
 
 ### BlueSMiRF v2 to Standard Serial UART Port
 
-For boards that already include the footprint for a standard serial UART port, you can connect directly to the pins. You will find these on a few Arduino development boards. The Arduino Pro, Arduino Pro Mini, and LilyPad Arduino 328 Main Board are just a few boards that have the standard port. You will also notice certain boards will have the standard serial UART port labeled as the RTCM Correction Port on SparkFun high precision GNSS breakout boards. For certain boards that have a male header soldered, you may need to consider soldering a 1x6 female header on the BlueSMiRF V2 PTH.
+For boards that already include the footprint for a standard serial UART port, you can connect directly to the pins. You will find these on a few Arduino development boards. The Arduino Pro, Arduino Pro Mini, and LilyPad Arduino 328 Main Board are just a few boards that have the standard port. You will also notice certain boards will have the standard serial UART port labeled as the RTCM Correction Port on SparkFun high precision GNSS breakout boards. For certain boards that have a male header soldered, you may need to consider soldering a 1x6 female header on the BlueSMiRF v2 PTH.
 
 <div style="text-align: center;">
   <table>
     <tr style="vertical-align:middle;">
       <td style="text-align: center; vertical-align: middle;"><a href="../assets/img/24113-BlueSMiRF_v2_Arduino_Pro_Mini_3V3_Power_Supply.jpg"><img src="../assets/img/24113-BlueSMiRF_v2_Arduino_Pro_Mini_3V3_Power_Supply.jpg" width="600px" height="600px" alt="BlueSMiRF v2 Replacing Serial Connection on the Arduino Pro Mini 3.3V Serial Header Port"></a></td>
-      <td style="text-align: center; vertical-align: middle;"><a href="../assets/img/24113-BlueSMiRF_v2_Arduino_RedBoard_IoT_ESP32_ZED-F9P_RTCM_Correction_Port.jpg"><img src="../assets/img/24113-BlueSMiRF_v2_Arduino_RedBoard_IoT_ESP32_ZED-F9P_RTCM_Correction_Port.jpg" width="600px" height="600px" alt="RedBoard IoT Development Board ESP32 Connected to the ZED-F9P with the BlueSMiRF V2 Connected to the ZED-F9P's RTCM Correction Port"></a></td>
-      <td style="text-align: center; vertical-align: middle;"><a href="../assets/img/24113-BlueSMiRF_V2_High_Precision_GNSS_UM980_RTCM_Correction_Port.jpg"><img src="../assets/img/24113-BlueSMiRF_V2_High_Precision_GNSS_UM980_RTCM_Correction_Port.jpg" width="600px" height="600px" alt="High Precision GNSS UM980 with the BlueSMiRF V2 Connected to the UM980's RTCM Correction Port"></a></td>
+      <td style="text-align: center; vertical-align: middle;"><a href="../assets/img/24113-BlueSMiRF_v2_Arduino_RedBoard_IoT_ESP32_ZED-F9P_RTCM_Correction_Port.jpg"><img src="../assets/img/24113-BlueSMiRF_v2_Arduino_RedBoard_IoT_ESP32_ZED-F9P_RTCM_Correction_Port.jpg" width="600px" height="600px" alt="RedBoard IoT Development Board ESP32 Connected to the ZED-F9P with the BlueSMiRF v2 Connected to the ZED-F9P's RTCM Correction Port"></a></td>
+      <td style="text-align: center; vertical-align: middle;"><a href="../assets/img/24113-BlueSMiRF_V2_High_Precision_GNSS_UM980_RTCM_Correction_Port.jpg"><img src="../assets/img/24113-BlueSMiRF_V2_High_Precision_GNSS_UM980_RTCM_Correction_Port.jpg" width="600px" height="600px" alt="High Precision GNSS UM980 with the BlueSMiRF v2 Connected to the UM980's RTCM Correction Port"></a></td>
     </tr>
     <tr style="vertical-align:middle;">
      <td style="text-align: center; vertical-align: middle;"><i>BlueSMiRF v2 Replacing Serial Connection on the Arduino Pro Mini 3.3V Serial Header Port</i>
      </td>
-     <td style="text-align: center; vertical-align: middle;"><i>BlueSMiRF V2 Connected to the ZED-F9P's RTCM Correction Port</i>
+     <td style="text-align: center; vertical-align: middle;"><i>BlueSMiRF v2 Connected to the ZED-F9P's RTCM Correction Port</i>
      </td>
-     <td style="text-align: center; vertical-align: middle;"><i>UM980 with the BlueSMiRF V2 Connected to the UM980's RTCM Correction Port</i>
+     <td style="text-align: center; vertical-align: middle;"><i>UM980 with the BlueSMiRF v2 Connected to the UM980's RTCM Correction Port</i>
      </td>
 
     </tr>
