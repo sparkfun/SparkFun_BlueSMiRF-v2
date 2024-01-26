@@ -263,7 +263,7 @@ For those using the PTH version, you will need to connect to the PTHs. You could
     <a href="https://www.sparkfun.com/products/11894">
       <b>Female Headers</b>
       <br />
-      PRT-00115
+      PRT-11894
     </a>
 <!-- ----------WHITE SPACE BETWEEN PRODUCTS---------- -->
 -   <a href="https://www.sparkfun.com/products/9280">
@@ -334,6 +334,20 @@ For those using the PTH version, you will need to connect to the PTHs. You could
       <b>Jumper Wires Premium 6" M/M Pack of 10</b>
       <br />
       PRT-08431
+    </a>
+<!-- ----------WHITE SPACE BETWEEN PRODUCTS---------- -->
+-   <a href="https://www.sparkfun.com/products/553">
+      <figure markdown>
+        <img src="https://cdn.sparkfun.com/r/455-455/assets/parts/3/7/8/00553-03-L.jpg" style="width:140px; height:140px; object-fit:contain;" alt="Break Away Male Headers - Right Angle">
+      </figure>
+    </a>
+
+    ---
+
+    <a href="https://www.sparkfun.com/products/553">
+      <b>Break Away Male Headers - Right Angle</b>
+      <br />
+      PRT-00553
     </a>
 <!-- ----------WHITE SPACE BETWEEN PRODUCTS---------- -->
 </div>
