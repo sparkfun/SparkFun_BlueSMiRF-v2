@@ -141,7 +141,7 @@ Open a command prompt (Windows button + <kbd>r</kbd> then type ‘ <kbd>cmd</kbd
 
 You'll then need to run the '**batch_program.bat**' along with the binary file name and COM port. Enter the following command below, where **COM4** should be replaced by the COM port you identified earlier and **BlueSMiRF_Firmware_v1_0.bin** is the firmware that you are updating to. Make sure to send an additional key to run the batch file.
 
-``` bash
+```bash
 batch_program.bat BlueSMiRF_Firmware_v1_0.bin COM4
 ```
 
@@ -171,9 +171,9 @@ After about 20 seconds, you should see the following message: `Done programming!
 
 The batch file runs the following commands, where *COM4* is replaced with the COM port that the BlueSMiRF product enumerated at and *BlueSMiRF_Firmware_vx_x.bin* is the firmware you would like to load.
 
-<pre>
-    <code class="language-bash" style="white-space: pre-wrap;">esptool.exe --chip esp32 --port COM4 --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 8MB 0x1000 bins/bootloader.bin 0x8000 bins/partitions.bin 0xe000 bins/boot_app0.bin 0x10000 BlueSMiRF_Firmware_v1_0.bin</code>
-</pre>
+```bash
+esptool.exe --chip esp32 --port COM4 --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 8MB 0x1000 bins/bootloader.bin 0x8000 bins/partitions.bin 0xe000 bins/boot_app0.bin 0x10000 BlueSMiRF_Firmware_v1_0.bin
+```
 
 !!! note
     Some users have reported the `921600` baud rate does not work. Decrease this to `115200` as needed.
@@ -201,9 +201,9 @@ Once the correct COM port is identified, head to the [GitHub repo for the BlueSM
 
 Open a Terminal window and run the following command, where */dev/ttyUSB0* is replaced with the port that the USB-to-Serial board enumerated at and *BlueSMiRF_Firmware_vx_x.bin* is the firmware you would like to load.
 
-<pre>
-    <code class="language-bash" style="white-space: pre-wrap;">py esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 921600 --before default_reset --after hard_reset write_flash  -z --flash_mode dio --flash_freq 80m --flash_size 8MB 0x1000 bins/bootloader.bin 0x8000 bins/partitions.bin 0xe000 bins/boot_app0.bin 0x10000 BlueSMiRF_Firmware_vx_x.bin</code>
-</pre>
+```bash
+py esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 921600 --before default_reset --after hard_reset write_flash  -z --flash_mode dio --flash_freq 80m --flash_size 8MB 0x1000 bins/bootloader.bin 0x8000 bins/partitions.bin 0xe000 bins/boot_app0.bin 0x10000 BlueSMiRF_Firmware_vx_x.bin
+```
 
 !!! note
     Some users have reported the `921600` baud rate does not work. Decrease this to `115200` as needed.

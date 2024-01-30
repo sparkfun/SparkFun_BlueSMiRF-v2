@@ -25,6 +25,11 @@
   max-height: var(--md-codeblock-height, 800px);
 } */
 
+/* Word wrap code blocks (no horizontal scroll) */
+pre code {
+  white-space : pre-wrap;
+}
+
 
 /* ================================================================================== */
 /* Icons                                                                              */
