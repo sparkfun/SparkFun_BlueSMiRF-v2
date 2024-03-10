@@ -96,7 +96,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.BLUESMIRF_PRIVATE_REPO_TOKEN }}
         with:
           source_file: ./Firmware/BlueSMiRF-v2/build/esp32.esp32.esp32/${{ env.FILENAME_PREFIX }}${{ env.FILE_ENDING_UNDERSCORE }}.bin
-          destination_repo: 'sparkfun/SparkFun_BlueSMiRF-v2_Binaries'
+          destination_repo: 'rcdemuth/SparkFun_BlueSMiRF-v2_Binaries'
           destination_folder: ''
           user_email: 'nathan@sparkfun.com'
           user_name: 'nseidle'
@@ -108,7 +108,7 @@ jobs:
           path: ${{ env.JSON_FILE_NAME }}
           write-mode: overwrite
           contents: |
-            {"Configurations": [{"Version":"${{ env.FIRMWARE_VERSION_MAJOR }}.${{ env.FIRMWARE_VERSION_MINOR }}${{ env.JSON_ENDING }}", "URL":"https://raw.githubusercontent.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries/main/${{ env.FILENAME_PREFIX }}${{ env.FILE_ENDING_UNDERSCORE }}.bin"}]}
+            {"Configurations": [{"Version":"${{ env.FIRMWARE_VERSION_MAJOR }}.${{ env.FIRMWARE_VERSION_MINOR }}${{ env.JSON_ENDING }}", "URL":"https://raw.githubusercontent.com/'rcdemuth/SparkFun_BlueSMiRF-v2_Binaries'/main/${{ env.FILENAME_PREFIX }}${{ env.FILE_ENDING_UNDERSCORE }}.bin"}]}
 
       - name: Push JSON to Binaries Repo
         # uses: dmnemec/copy_file_to_another_repo_action #Workaround for Issue: https://github.com/orgs/community/discussions/55820#discussioncomment-5946136
@@ -117,8 +117,8 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.BLUESMIRF_PRIVATE_REPO_TOKEN }}
         with:
           source_file: ${{ env.JSON_FILE_NAME }}
-          destination_repo: 'sparkfun/SparkFun_BlueSMiRF-v2_Binaries'
+          destination_repo: 'rcdemuth/SparkFun_BlueSMiRF-v2_Binaries'
           destination_folder: ''
-          user_email: 'nathan@sparkfun.com'
-          user_name: 'nseidle'
+          user_email: 'demuth@marshall.edu'
+          user_name: 'rcdemuth'
           commit_message: 'Github Action - Updating JSON ${{ steps.dateNoScores.outputs.dateNoScores }}'
