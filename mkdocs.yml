@@ -4,8 +4,8 @@ site_description: A hookup guide for the SparkFun BlueSMiRF v2.
 site_url: https://sparkfun.github.io/SparkFun_BlueSMiRF-v2
 site_author: SparkFun Electronics
 
-repo_url: https://github.com/sparkfun/SparkFun_BlueSMiRF-v2
-repo_name: sparkfun/SparkFun_BlueSMiRF-v2
+repo_url: https://github.com/rcdemuth/SparkFun_BlueSMiRF-v2
+repo_name: rcdemuth/SparkFun_BlueSMiRF-v2
 
 copyright:
   Copyright 2023 - <a href="https://www.sparkfun.com/" target="_blank" rel="noopener">SparkFun Electronics&#174;<br>
