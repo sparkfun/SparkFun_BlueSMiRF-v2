@@ -7163,7 +7163,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Fiducial_0.5"
+		(property "Value" "Fiducial_0.5mm"
 			(at 265.43 180.34 0)
 			(effects
 				(font
@@ -7227,7 +7227,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Fiducial_0.5"
+		(property "Value" "Fiducial_0.5mm"
 			(at 265.43 176.53 0)
 			(effects
 				(font
@@ -7283,19 +7283,21 @@
 		(fields_autoplaced yes)
 		(uuid "121ed9a5-01e7-4dd7-b54f-83421b7fb86b")
 		(property "Reference" "JP1"
-			(at 118.618 77.47 0)
+			(at 123.19 76.8349 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "~"
-			(at 123.19 77.47 0)
+			(at 123.19 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "SparkFun-Jumper:Jumper_2_NC_Trace"
@@ -7317,7 +7319,7 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, closed/bridged"
-			(at 120.65 77.47 0)
+			(at 130.81 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7351,7 +7353,7 @@
 		(fields_autoplaced yes)
 		(uuid "15b00e4a-6086-4619-aacb-9adde36e24bc")
 		(property "Reference" "D1"
-			(at 102.87 89.2175 90)
+			(at 102.87 89.2174 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7360,7 +7362,7 @@
 			)
 		)
 		(property "Value" "Green"
-			(at 102.87 91.7575 90)
+			(at 102.87 91.7574 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7387,7 +7389,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 99.06 88.9 0)
+			(at 111.76 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7396,7 +7398,7 @@
 			)
 		)
 		(property "PROD_ID" "DIO-00821"
-			(at 106.934 89.154 0)
+			(at 106.68 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7430,7 +7432,7 @@
 		(fields_autoplaced yes)
 		(uuid "1e4fe9cb-0e33-4ee9-abe1-26137a4b7997")
 		(property "Reference" "C3"
-			(at 234.95 62.23 0)
+			(at 234.95 62.2299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7439,7 +7441,7 @@
 			)
 		)
 		(property "Value" "1.0uF"
-			(at 234.95 64.77 0)
+			(at 234.95 64.7699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7466,7 +7468,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 231.14 66.04 0)
+			(at 231.14 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7484,7 +7486,7 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 234.95 67.31 0)
+			(at 234.95 67.3099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7493,7 +7495,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 234.95 69.85 0)
+			(at 234.95 69.8499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7542,6 +7544,7 @@
 		)
 		(property "Value" "VCC"
 			(at 203.2 55.88 0)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7567,7 +7570,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 203.2 59.69 0)
+			(at 203.2 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7598,14 +7601,15 @@
 		(fields_autoplaced yes)
 		(uuid "2c8f8064-c0e6-4566-965c-3448b0aab320")
 		(property "Reference" "TP3"
-			(at 97.79 180.34 0)
+			(at 100.33 182.1179 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "TestPoint_0.75mm"
+		(property "Value" "0.75mm"
 			(at 97.79 189.23 0)
 			(effects
 				(font
@@ -7633,7 +7637,7 @@
 			)
 		)
 		(property "Description" "Test Point"
-			(at 97.79 185.42 0)
+			(at 97.79 195.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7894,7 +7898,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 118.11 157.48 0)
+			(at 116.84 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7903,7 +7907,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 125.73 157.48 0)
+			(at 114.3 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7946,14 +7950,15 @@
 		(fields_autoplaced yes)
 		(uuid "35891c4c-9964-4001-890c-fdec5884a302")
 		(property "Reference" "TP2"
-			(at 97.79 156.21 0)
+			(at 100.33 157.9879 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "TestPoint_0.75mm"
+		(property "Value" "0.75mm"
 			(at 97.79 165.1 0)
 			(effects
 				(font
@@ -7981,7 +7986,7 @@
 			)
 		)
 		(property "Description" "Test Point"
-			(at 97.79 161.29 0)
+			(at 97.79 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8048,7 +8053,7 @@
 			)
 		)
 		(property "Description" "ESP32 Small Formfactor"
-			(at 60.96 69.85 0)
+			(at 60.96 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8356,7 +8361,7 @@
 			)
 		)
 		(property "Footprint" "SparkFun-Resistor:R_0603_1608Metric"
-			(at 88.138 162.56 90)
+			(at 92.71 157.988 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8365,7 +8370,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 83.82 161.29 90)
+			(at 93.98 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8374,7 +8379,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 92.71 162.56 0)
+			(at 92.71 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8383,7 +8388,7 @@
 			)
 		)
 		(property "PROD_ID" "RES-07856"
-			(at 85.852 162.56 90)
+			(at 92.71 155.702 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8488,7 +8493,7 @@
 		(fields_autoplaced yes)
 		(uuid "4c608aea-3eb4-4bec-af6b-c2017a420145")
 		(property "Reference" "C1"
-			(at 194.31 62.23 0)
+			(at 194.31 62.2299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8497,7 +8502,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 194.31 64.77 0)
+			(at 194.31 64.7699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8524,7 +8529,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 190.5 66.04 0)
+			(at 190.5 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8542,7 +8547,7 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 194.31 67.31 0)
+			(at 194.31 67.3099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8551,7 +8556,7 @@
 			)
 		)
 		(property "Tolerance" "20%"
-			(at 194.31 69.85 0)
+			(at 194.31 69.8499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8594,6 +8599,7 @@
 		)
 		(property "Value" "GND"
 			(at 120.65 97.79 0)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8619,7 +8625,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 120.65 93.98 0)
+			(at 120.65 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8656,12 +8662,13 @@
 				)
 			)
 		)
-		(property "Value" "NMOS_0.2A_50V"
-			(at 132.08 168.91 90)
+		(property "Value" "BSS138"
+			(at 130.81 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "SparkFun-Semiconductor-Standard:SOT23-3"
@@ -8683,7 +8690,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, drain/gate/source"
-			(at 132.08 160.02 0)
+			(at 114.3 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8701,7 +8708,7 @@
 			)
 		)
 		(property "IMax" "0.2A"
-			(at 132.08 173.99 90)
+			(at 128.27 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8709,7 +8716,7 @@
 			)
 		)
 		(property "VMax" "50V"
-			(at 132.08 171.45 90)
+			(at 125.73 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8745,7 +8752,7 @@
 		(fields_autoplaced yes)
 		(uuid "5c8fe2a8-90ac-49ef-93f4-5ebd6ea9d622")
 		(property "Reference" "C2"
-			(at 207.01 62.23 0)
+			(at 207.01 62.2299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8754,7 +8761,7 @@
 			)
 		)
 		(property "Value" "1.0uF"
-			(at 207.01 64.77 0)
+			(at 207.01 64.7699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8781,7 +8788,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 203.2 66.04 0)
+			(at 203.2 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8799,7 +8806,7 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 207.01 67.31 0)
+			(at 207.01 67.3099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8808,7 +8815,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 207.01 69.85 0)
+			(at 207.01 69.8499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8851,6 +8858,7 @@
 		)
 		(property "Value" "VCC"
 			(at 215.9 87.63 0)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8876,7 +8884,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 215.9 91.44 0)
+			(at 215.9 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8915,7 +8923,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SPST_Momentary_4.6x2.8mm"
+		(property "Value" "SMD_4.6x2.8mm_h2.5mm"
 			(at 124.46 88.8999 90)
 			(effects
 				(font
@@ -8986,14 +8994,15 @@
 		(fields_autoplaced yes)
 		(uuid "67003345-b6f8-434f-989a-6d92a1ec3193")
 		(property "Reference" "TP7"
-			(at 190.5 54.61 0)
+			(at 193.04 56.3879 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "TestPoint_0.75mm"
+		(property "Value" "0.75mm"
 			(at 190.5 63.5 0)
 			(effects
 				(font
@@ -9021,7 +9030,7 @@
 			)
 		)
 		(property "Description" "Test Point"
-			(at 190.5 59.69 0)
+			(at 190.5 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9070,7 +9079,7 @@
 			)
 		)
 		(property "Footprint" "SparkFun-Resistor:R_0603_1608Metric"
-			(at 99.06 75.438 90)
+			(at 103.632 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9079,7 +9088,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 99.06 71.12 90)
+			(at 107.95 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9088,7 +9097,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 99.06 80.01 0)
+			(at 110.49 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9097,7 +9106,7 @@
 			)
 		)
 		(property "PROD_ID" "RES-00818"
-			(at 99.06 73.152 90)
+			(at 105.918 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9147,7 +9156,7 @@
 			)
 		)
 		(property "Footprint" "SparkFun-Resistor:R_0603_1608Metric"
-			(at 88.138 186.69 90)
+			(at 92.71 182.118 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9156,7 +9165,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 83.82 185.42 90)
+			(at 93.98 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9165,7 +9174,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 92.71 186.69 0)
+			(at 92.71 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9174,7 +9183,7 @@
 			)
 		)
 		(property "PROD_ID" "RES-07856"
-			(at 85.852 186.69 90)
+			(at 92.71 179.832 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9214,12 +9223,13 @@
 				)
 			)
 		)
-		(property "Value" "NMOS_0.2A_50V"
-			(at 132.08 193.04 90)
+		(property "Value" "BSS138"
+			(at 130.81 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "SparkFun-Semiconductor-Standard:SOT23-3"
@@ -9241,7 +9251,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, drain/gate/source"
-			(at 132.08 184.15 0)
+			(at 114.3 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9259,7 +9269,7 @@
 			)
 		)
 		(property "IMax" "0.2A"
-			(at 132.08 198.12 90)
+			(at 128.27 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9267,7 +9277,7 @@
 			)
 		)
 		(property "VMax" "50V"
-			(at 132.08 195.58 90)
+			(at 125.73 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9303,7 +9313,7 @@
 		(fields_autoplaced yes)
 		(uuid "7ba0b458-2ec0-4430-b6be-52a9a1b5209e")
 		(property "Reference" "C4"
-			(at 247.65 62.23 0)
+			(at 247.65 62.2299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9312,7 +9322,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 247.65 64.77 0)
+			(at 247.65 64.7699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9339,7 +9349,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 243.84 66.04 0)
+			(at 243.84 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9357,7 +9367,7 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 247.65 67.31 0)
+			(at 247.65 67.3099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9366,7 +9376,7 @@
 			)
 		)
 		(property "Tolerance" "20%"
-			(at 247.65 69.85 0)
+			(at 247.65 69.8499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9407,7 +9417,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Fiducial_0.5"
+		(property "Value" "Fiducial_0.5mm"
 			(at 261.62 176.53 0)
 			(effects
 				(font
@@ -9481,7 +9491,7 @@
 			)
 		)
 		(property "Footprint" "SparkFun-Resistor:R_0603_1608Metric"
-			(at 110.49 75.692 90)
+			(at 114.808 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9490,7 +9500,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 110.49 71.12 90)
+			(at 119.38 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9499,7 +9509,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 110.49 80.01 0)
+			(at 121.92 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9508,7 +9518,7 @@
 			)
 		)
 		(property "PROD_ID" "RES-07857"
-			(at 110.49 73.406 90)
+			(at 117.094 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9777,14 +9787,15 @@
 		(fields_autoplaced yes)
 		(uuid "9b0cab59-43be-4862-aefd-9a3dd51dba9c")
 		(property "Reference" "TP5"
-			(at 144.78 180.34 0)
+			(at 147.32 182.1179 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "TestPoint_0.75mm"
+		(property "Value" "0.75mm"
 			(at 144.78 189.23 0)
 			(effects
 				(font
@@ -9812,7 +9823,7 @@
 			)
 		)
 		(property "Description" "Test Point"
-			(at 144.78 185.42 0)
+			(at 144.78 195.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9994,12 +10005,11 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 140.97 160.02 0)
+			(at 140.97 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" "SparkFun-Resistor:R_0603_1608Metric"
@@ -10012,7 +10022,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 130.81 157.48 0)
+			(at 129.54 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10021,7 +10031,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 138.43 157.48 0)
+			(at 127 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10073,6 +10083,7 @@
 		)
 		(property "Value" "VCC"
 			(at 138.43 148.59 0)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10098,7 +10109,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 138.43 152.4 0)
+			(at 138.43 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10163,7 +10174,7 @@
 			)
 		)
 		(property "Description" "600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5"
-			(at 222.25 63.5 0)
+			(at 222.25 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10257,6 +10268,7 @@
 		)
 		(property "Value" "GND"
 			(at 110.49 97.79 0)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10282,7 +10294,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 93.98 0)
+			(at 110.49 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10392,7 +10404,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Fiducial_0.5"
+		(property "Value" "Fiducial_0.5mm"
 			(at 261.62 180.34 0)
 			(effects
 				(font
@@ -10529,6 +10541,7 @@
 		)
 		(property "Value" "VCC"
 			(at 38.1 154.94 0)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10554,7 +10567,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 38.1 158.75 0)
+			(at 38.1 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10594,6 +10607,7 @@
 		)
 		(property "Value" "GND"
 			(at 99.06 97.79 0)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10619,7 +10633,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 99.06 93.98 0)
+			(at 99.06 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10659,6 +10673,7 @@
 		)
 		(property "Value" "VCC"
 			(at 138.43 172.72 0)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10684,7 +10699,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 138.43 176.53 0)
+			(at 138.43 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10804,7 +10819,7 @@
 			)
 		)
 		(property "Footprint" "SparkFun-Resistor:R_0603_1608Metric"
-			(at 88.9 93.218 90)
+			(at 84.582 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10813,7 +10828,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 88.9 96.52 90)
+			(at 80.01 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10822,7 +10837,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 88.9 88.9 0)
+			(at 77.47 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10831,7 +10846,7 @@
 			)
 		)
 		(property "PROD_ID" "RES-00824"
-			(at 88.9 95.25 90)
+			(at 82.55 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10865,7 +10880,7 @@
 		(fields_autoplaced yes)
 		(uuid "c939406e-434a-444c-9156-b82f2ce442b5")
 		(property "Reference" "D2"
-			(at 114.3 89.2175 90)
+			(at 114.3 89.2174 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10874,7 +10889,7 @@
 			)
 		)
 		(property "Value" "Red"
-			(at 114.3 91.7575 90)
+			(at 114.3 91.7574 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10883,7 +10898,7 @@
 			)
 		)
 		(property "Footprint" "SparkFun-LED:LED_0603_1608Metric_Red"
-			(at 116.84 88.9 0)
+			(at 118.11 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10892,7 +10907,7 @@
 			)
 		)
 		(property "Datasheet" "https://docs.broadcom.com/docs/AV02-0551EN"
-			(at 119.38 90.17 0)
+			(at 120.65 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10901,7 +10916,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 110.49 88.9 0)
+			(at 123.19 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10910,7 +10925,7 @@
 			)
 		)
 		(property "PROD_ID" "DIO-17976"
-			(at 115.062 88.9 0)
+			(at 115.57 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11079,14 +11094,15 @@
 		(fields_autoplaced yes)
 		(uuid "db879061-97b5-4d2a-b390-012ab22576d0")
 		(property "Reference" "TP6"
-			(at 181.61 64.77 0)
+			(at 184.15 66.5479 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "TestPoint_0.75mm"
+		(property "Value" "0.75mm"
 			(at 181.61 73.66 0)
 			(effects
 				(font
@@ -11114,7 +11130,7 @@
 			)
 		)
 		(property "Description" "Test Point"
-			(at 181.61 69.85 0)
+			(at 181.61 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11288,7 +11304,7 @@
 		(fields_autoplaced yes)
 		(uuid "ec58ad6e-ba37-4421-906b-b7a50999d216")
 		(property "Reference" "JP2"
-			(at 220.98 90.678 0)
+			(at 220.98 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11296,7 +11312,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 220.98 95.25 0)
+			(at 220.98 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11313,7 +11329,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 220.98 97.79 0)
+			(at 220.98 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11322,7 +11338,7 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, open"
-			(at 220.98 92.71 0)
+			(at 220.98 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11365,6 +11381,7 @@
 		)
 		(property "Value" "GND"
 			(at 88.9 97.79 0)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11390,7 +11407,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 88.9 93.98 0)
+			(at 88.9 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11421,14 +11438,15 @@
 		(fields_autoplaced yes)
 		(uuid "eefc4217-4a9a-469b-8b28-e4adf7181ef3")
 		(property "Reference" "TP4"
-			(at 144.78 156.21 0)
+			(at 147.32 157.9879 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "TestPoint_0.75mm"
+		(property "Value" "0.75mm"
 			(at 144.78 165.1 0)
 			(effects
 				(font
@@ -11456,7 +11474,7 @@
 			)
 		)
 		(property "Description" "Test Point"
-			(at 144.78 161.29 0)
+			(at 144.78 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11511,7 +11529,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 118.11 181.61 0)
+			(at 116.84 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11520,7 +11538,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 125.73 181.61 0)
+			(at 114.3 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11572,6 +11590,7 @@
 		)
 		(property "Value" "GND"
 			(at 38.1 177.8 0)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11597,7 +11616,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 38.1 173.99 0)
+			(at 38.1 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11724,7 +11743,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 130.81 181.61 0)
+			(at 129.54 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11733,7 +11752,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 138.43 181.61 0)
+			(at 127 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11784,12 +11803,11 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 45.72 36.83 90)
+			(at 41.91 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" "SparkFun-Resistor:R_0603_1608Metric"
@@ -11802,7 +11820,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 52.07 35.56 0)
+			(at 53.34 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11811,7 +11829,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 44.45 35.56 0)
+			(at 55.88 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11918,14 +11936,14 @@
 		(fields_autoplaced yes)
 		(uuid "ff0eb37e-fae8-473e-8b33-89a41d01f858")
 		(property "Reference" "TP1"
-			(at 38.1 40.64 0)
+			(at 39.878 38.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "PTH"
 			(at 46.99 40.64 0)
 			(effects
 				(font
@@ -11953,7 +11971,7 @@
 			)
 		)
 		(property "Description" "Test Point"
-			(at 43.18 40.64 0)
+			(at 53.34 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
