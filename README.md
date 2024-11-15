@@ -40,8 +40,8 @@ Repository Contents
 
 * **.github/workflows** - YAML files used for GitHub Actions and GitHub Pages/mkdocs
 * **/Firmware** - Source code for SparkFun BlueSMiRF firmware as well as various feature unit tests
-* **/Hardware** - Eagle design files (.brd, .sch)
-  * **/Production** - Production panel files (.brd)
+* **/Hardware** - KiCad design files (.kicad_pcb, .kicad_sch)
+  * **/Production** - Production panel files (.kicad_pcb)
 * **/docs** - Online documentation files
   * **/assets** - Folder containing all the file assets used for product documentation
     *  **/3d_model** - Exported 3D models from KiCad
