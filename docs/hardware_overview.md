@@ -242,7 +242,7 @@ The board includes the following jumpers on the top and bottom of the board.
 
 ### 3D Model
 
-3D models of the SparkFun BlueSMiRF v2 SMD and components were exported to STEP and STL files using KiCad.
+A 3D model of the SparkFun BlueSMiRF v2 SMD and components was exported to STEP file using KiCad.
 
 <!-- Import the component -->
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
@@ -255,12 +255,8 @@ The board includes the following jumpers on the top and bottom of the board.
 <div style="text-align: center">
     <a href="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_model.step" target="stp_file" class="md-button">Click Here for the STEP File</a>
 </div>
-<br />
-<div style="text-align: center">
-    <a href="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_model.stl" target="stl_file" class="md-button">Click Here for the STL File</a>
-</div>
 
-3D models of the SparkFun BlueSMiRF v2 PTH and components were also exported to STEP and STL files using KiCad.
+A 3D model of the SparkFun BlueSMiRF v2 PTH and components was also exported to STEP file using KiCad.
 
 <div style="text-align: center;">
     <model-viewer src="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_model.glb" camera-controls poster="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_image.png" environment-image="legacy" shadow-intensity="1.58" exposure="0.64" shadow-softness="0.24" tone-mapping="neutral" camera-orbit="-46.67deg 57.14deg 153.3m" field-of-view="30deg" style="width: 750px; height: 500px;">
@@ -269,10 +265,6 @@ The board includes the following jumpers on the top and bottom of the board.
 <br />
 <div style="text-align: center">
     <a href="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_model.step" target="stp_file" class="md-button">Click Here for the STEP File</a>
-</div>
-<br />
-<div style="text-align: center">
-    <a href="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_model.stl" target="stl_file" class="md-button">Click Here for the STL File</a>
 </div>
 
 
