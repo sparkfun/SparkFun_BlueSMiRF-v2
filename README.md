@@ -12,13 +12,13 @@ SparkFun BlueSMiRF v2
   </tr>
 </table>
 
-The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) and [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/products/23287) are wireless Bluetooth® serial links. These boards work as a wireless serial UART pipe and are a great wireless replacement for serial cables. Simply pair, connect, and transmit serial data between your TX/RX lines! Any serial stream from 2400 to 921600 baud can be passed seamlessly between two devices. 
+The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) and [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/products/23287) are wireless Bluetooth® serial links. These boards work as a wireless serial UART pipe and are a great wireless replacement for serial cables. Simply pair, connect, and transmit serial data between your TX/RX lines! Any serial stream from 2400 to 921600 baud can be passed seamlessly between two devices.
 
-Duplex transmissions up to 921600bps are supported. What does this mean? You can throw a book at each BlueSMiRF, which will correctly buffer, transmit, and deliver the data streams, byte perfect, to both radios. 
+Duplex transmissions up to 921600bps are supported. What does this mean? You can throw a book at each BlueSMiRF, which will correctly buffer, transmit, and deliver the data streams, byte perfect, to both radios.
 
-BlueSMiRF v2 has a multitude of exciting improvements over the original. The BlueSMiRF pinout is the same as previous Bluetooth Mates and USB-to-serial converters (i.e., FTDI, CH340, etc.), making it extremely easy to hook up to many common Arduino development boards and GNSS breakout boards.  The board can be connected directly with an Arduino Pro, Pro Mini, or any board with a standard 6-pin serial connector. We broke out the pins to the 1x6 header for this version of the board. You'll need to either solder a 1x6 female header or striped wires to the PTHs before being able to connect to another device. The SparkFun BlueSMiRF v2 is perfect for short-range applications up to 100ft (33m) indoors that require easy to setup, point-to-point communication. 
+BlueSMiRF v2 has a multitude of exciting improvements over the original. The BlueSMiRF pinout is the same as previous Bluetooth Mates and USB-to-serial converters (i.e., FTDI, CH340, etc.), making it extremely easy to hook up to many common Arduino development boards and GNSS breakout boards.  The board can be connected directly with an Arduino Pro, Pro Mini, or any board with a standard 6-pin serial connector. We broke out the pins to the 1x6 header for this version of the board. You'll need to either solder a 1x6 female header or striped wires to the PTHs before being able to connect to another device. The SparkFun BlueSMiRF v2 is perfect for short-range applications up to 100ft (33m) indoors that require easy to setup, point-to-point communication.
 
-A BlueSMiRF can be connected to a phone or computer to view data or remote control easily. Two BlueSMiRFs can also be easily connected using the onboard PAIR button. If needed, this button can be disabled by cutting the jumper on the back of the board. 
+A BlueSMiRF can be connected to a phone or computer to view data or remote control easily. Two BlueSMiRFs can also be easily connected using the onboard PAIR button. If needed, this button can be disabled by cutting the jumper on the back of the board.
 
 We've designed the BlueSMiRF to be remotely configured from a phone using a serial terminal app. Changing the settings, such as the baud rate, flow control, and LED mode, is easily done using the simple AT command set. Additionally, Over The Air (OTA) updates using WiFi allow easy in-field firmware updates as new features are released.
 
@@ -40,10 +40,11 @@ Repository Contents
 
 * **.github/workflows** - YAML files used for GitHub Actions and GitHub Pages/mkdocs
 * **/Firmware** - Source code for SparkFun BlueSMiRF firmware as well as various feature unit tests
-* **/Hardware** - Eagle design files (.brd, .sch)
-  * **/Production** - Production panel files (.brd)
+* **/Hardware** - KiCad design files (.kicad_pcb, .kicad_sch)
+  * **/Production** - Production panel files (.kicad_pcb)
 * **/docs** - Online documentation files
   * **/assets** - Folder containing all the file assets used for product documentation
+    *  **/3d_model** - Exported 3D models from KiCad
     * **/board_files** - Copy of design files used for product documentation
     * **/component_documentation** - Datasheets and manuals for hardware components
     * **/img** - Images for product documentation

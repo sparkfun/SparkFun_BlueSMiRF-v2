@@ -240,6 +240,35 @@ The board includes the following jumpers on the top and bottom of the board.
 
 
 
+### 3D Model
+
+A 3D model of the SparkFun BlueSMiRF v2 SMD and components was exported to STEP file using KiCad.
+
+<!-- Import the component -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+<div style="text-align: center;">
+    <model-viewer src="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_model.glb" camera-controls poster="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_image.png" environment-image="legacy" shadow-intensity="1.58" exposure="0.64" shadow-softness="0.24" tone-mapping="neutral" camera-orbit="-46.67deg 57.14deg 153.3m" field-of-view="30deg" style="width: 750px; height: 500px;">
+    </model-viewer>
+</div>
+<br />
+<div style="text-align: center">
+    <a href="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_model.step" target="stp_file" class="md-button">Click Here for the STEP File</a>
+</div>
+
+A 3D model of the SparkFun BlueSMiRF v2 PTH and components was also exported to STEP file using KiCad.
+
+<div style="text-align: center;">
+    <model-viewer src="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_model.glb" camera-controls poster="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_image.png" environment-image="legacy" shadow-intensity="1.58" exposure="0.64" shadow-softness="0.24" tone-mapping="neutral" camera-orbit="-46.67deg 57.14deg 153.3m" field-of-view="30deg" style="width: 750px; height: 500px;">
+    </model-viewer>
+</div>
+<br />
+<div style="text-align: center">
+    <a href="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_model.step" target="stp_file" class="md-button">Click Here for the STEP File</a>
+</div>
+
+
+
 ### Board Dimensions
 
 Each version of the board is 38.1mm x 15.2mm. Note that the version with the headers makes the board slightly longer by making the overall length 44.2mm. Adding a row of female 1x6 headers or jumper wires will increase the length slightly as well. There are no mounting holes for standoffs on the boards.
