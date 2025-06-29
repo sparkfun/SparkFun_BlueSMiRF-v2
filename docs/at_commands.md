@@ -266,7 +266,7 @@ Below is a table for Bluetooth commands, a short description of the command, and
             <td style="text-align: center; border: solid 1px #cccccc;">
               The character received from the remote system, sought to enter command mode
             </td>
-            <td style="text-align: center; border: solid 1px #cccccc;">+
+            <td style="text-align: center; border: solid 1px #cccccc;">$
             </td>
         </tr>        
         <tr>        
