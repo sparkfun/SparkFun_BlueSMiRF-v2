@@ -844,10 +844,407 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "SparkFun-Switch:DPDT_Slide_SMD_7.2x3.5mm"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 0 4.318 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "DPDT_Slide_SMD_7.2x3.5mm"
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "SparkFun-Switch:Slide_DPDT_SMD_7.2x3.5mm"
+				(at 0 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/SW_slide_ayz.pdf"
+				(at 0 -21.59 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Switch dual pole double throw"
+				(at 0 -26.67 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "PROD_ID" "SWCH-08179"
+				(at 0 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfg Part#" "ABC"
+				(at 0 -24.13 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "SparkFun AYZ0202"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SW*DPDT*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "DPDT_Slide_SMD_7.2x3.5mm_0_0"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -2.032 -8.89)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 -0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 0 -3.175)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -5.08) (xy 0 -4.445)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -6.35) (xy 0 -5.715)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -7.62) (xy 0 -6.985)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 -2.54)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 -11.43)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "DPDT_Slide_SMD_7.2x3.5mm_0_1"
+				(polyline
+					(pts
+						(xy -1.524 0.254) (xy 1.651 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 -8.636) (xy 1.651 -6.604)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 2.54)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 -6.35)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "DPDT_Slide_SMD_7.2x3.5mm_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -8.89 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -6.35 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -11.43 180)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(wire
 		(pts
-			(xy 140.97 83.82) (xy 142.24 83.82)
+			(xy 160.02 100.33) (xy 161.29 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "080a8607-f30f-43af-a08b-8573dadd06e0")
+	)
+	(wire
+		(pts
+			(xy 160.02 73.66) (xy 161.29 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08ef1369-4290-4ccd-9150-e2fdd3d64190")
+	)
+	(wire
+		(pts
+			(xy 91.44 85.09) (xy 90.17 85.09)
 		)
 		(stroke
 			(width 0)
@@ -857,7 +1254,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 91.44) (xy 142.24 91.44)
+			(xy 91.44 92.71) (xy 90.17 92.71)
 		)
 		(stroke
 			(width 0)
@@ -867,17 +1264,37 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 91.44) (xy 179.07 91.44)
+			(xy 160.02 114.3) (xy 161.29 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2a7fbb21-284e-42b5-962c-f725f2b3126f")
+		(uuid "2b4bd11a-e61d-4689-96e1-c65d10f3af47")
 	)
 	(wire
 		(pts
-			(xy 140.97 86.36) (xy 142.24 86.36)
+			(xy 219.71 92.71) (xy 220.98 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f0ddca6-b85b-4827-bb42-30bf8410fb01")
+	)
+	(wire
+		(pts
+			(xy 160.02 87.63) (xy 161.29 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "392cbe2f-0ce4-4c9e-8477-9f4a05590734")
+	)
+	(wire
+		(pts
+			(xy 91.44 87.63) (xy 90.17 87.63)
 		)
 		(stroke
 			(width 0)
@@ -887,7 +1304,17 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 96.52) (xy 179.07 96.52)
+			(xy 148.59 102.87) (xy 149.86 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40e9ce7e-dd91-4e70-9437-40c8633a4575")
+	)
+	(wire
+		(pts
+			(xy 219.71 97.79) (xy 220.98 97.79)
 		)
 		(stroke
 			(width 0)
@@ -897,7 +1324,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 96.52) (xy 142.24 96.52)
+			(xy 91.44 97.79) (xy 90.17 97.79)
 		)
 		(stroke
 			(width 0)
@@ -907,7 +1334,37 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 93.98) (xy 142.24 93.98)
+			(xy 160.02 82.55) (xy 161.29 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "48ef0246-270b-4804-8f87-c81286b52acc")
+	)
+	(wire
+		(pts
+			(xy 219.71 87.63) (xy 220.98 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f6ceeb2-0646-440a-b38b-c15cb4765adb")
+	)
+	(wire
+		(pts
+			(xy 148.59 111.76) (xy 149.86 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6566b00b-a4b1-40ed-8646-c805c990f8ed")
+	)
+	(wire
+		(pts
+			(xy 91.44 95.25) (xy 90.17 95.25)
 		)
 		(stroke
 			(width 0)
@@ -917,27 +1374,47 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 88.9) (xy 179.07 88.9)
+			(xy 148.59 85.09) (xy 149.86 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "966d7094-05f7-4f9e-bad3-f2d06c89d497")
+		(uuid "9773a756-2664-483a-87c7-d5230efdafd3")
 	)
 	(wire
 		(pts
-			(xy 177.8 93.98) (xy 179.07 93.98)
+			(xy 160.02 78.74) (xy 161.29 78.74)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b5cdf038-13b6-4d81-a896-0611eafd748e")
+		(uuid "a6ebca20-c943-4046-88bc-fba539004607")
 	)
 	(wire
 		(pts
-			(xy 177.8 83.82) (xy 179.07 83.82)
+			(xy 160.02 109.22) (xy 161.29 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b00018cf-4847-4840-8f51-3270dc4fe3cf")
+	)
+	(wire
+		(pts
+			(xy 219.71 90.17) (xy 220.98 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b69dc127-5258-43e9-8997-bd9c4cbbdaac")
+	)
+	(wire
+		(pts
+			(xy 219.71 85.09) (xy 220.98 85.09)
 		)
 		(stroke
 			(width 0)
@@ -947,7 +1424,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 88.9) (xy 142.24 88.9)
+			(xy 91.44 90.17) (xy 90.17 90.17)
 		)
 		(stroke
 			(width 0)
@@ -957,7 +1434,17 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 86.36) (xy 179.07 86.36)
+			(xy 160.02 105.41) (xy 161.29 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d79c614a-eec5-4178-916b-309688afea43")
+	)
+	(wire
+		(pts
+			(xy 148.59 76.2) (xy 149.86 76.2)
 		)
 		(stroke
 			(width 0)
@@ -965,9 +1452,19 @@
 		)
 		(uuid "ec90f386-250a-4002-8fc1-1453c12d46f6")
 	)
+	(wire
+		(pts
+			(xy 219.71 95.25) (xy 220.98 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc5be452-4a8b-42ea-a6c4-04d2d9833e2c")
+	)
 	(global_label "RXI"
 		(shape input)
-		(at 177.8 86.36 180)
+		(at 148.59 76.2 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -977,7 +1474,7 @@
 		)
 		(uuid "2c87afb3-c986-4eba-89d9-63c52a7bd4c4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 171.7305 86.36 0)
+			(at 142.5205 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -989,29 +1486,51 @@
 	)
 	(global_label "RXI"
 		(shape input)
-		(at 140.97 86.36 180)
+		(at 91.44 87.63 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "3a667ac4-c38e-49ad-9dfb-79c0bcf7aa7c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 134.9005 86.36 0)
+			(at 97.5095 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TX"
+		(shape input)
+		(at 161.29 82.55 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3be8264f-5c13-4daa-bb5a-99700626d271")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 166.4523 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
 	)
 	(global_label "~{CTS}"
 		(shape input)
-		(at 177.8 91.44 180)
+		(at 148.59 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1021,7 +1540,7 @@
 		)
 		(uuid "3f135bb1-fd6f-49a4-b7ee-81fa32b0911f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 171.3677 91.44 0)
+			(at 142.1577 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1031,31 +1550,97 @@
 			)
 		)
 	)
-	(global_label "~{RTS}"
+	(global_label "RX"
 		(shape input)
-		(at 140.97 83.82 180)
+		(at 161.29 73.66 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "4bdd121b-43cd-4c3b-b8b1-3cf6e03a989a")
+		(uuid "481a74eb-665c-4955-a319-5bec06cee347")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 134.5377 83.82 0)
+			(at 166.7547 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CTS"
+		(shape input)
+		(at 161.29 114.3 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "49deb0a3-6713-482b-8667-fc19c11c97ea")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 167.7223 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "~{RTS}"
+		(shape input)
+		(at 91.44 85.09 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4bdd121b-43cd-4c3b-b8b1-3cf6e03a989a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 97.8723 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
 	)
 	(global_label "~{CTS}"
 		(shape input)
-		(at 140.97 93.98 180)
+		(at 91.44 95.25 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "551b41ea-fae4-4971-a245-770b4c2658c4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 97.8723 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CTS"
+		(shape input)
+		(at 219.71 92.71 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1063,43 +1648,87 @@
 			)
 			(justify right)
 		)
-		(uuid "551b41ea-fae4-4971-a245-770b4c2658c4")
+		(uuid "5817963a-34e6-4bfd-8fcb-a469a9093b6b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 134.5377 93.98 0)
+			(at 213.2777 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CTS"
+		(shape input)
+		(at 161.29 100.33 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "59954483-e43a-4d12-a7e0-11a15e0776e0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 167.7223 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
 	)
 	(global_label "GND"
 		(shape input)
-		(at 140.97 96.52 180)
+		(at 91.44 97.79 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "6a22d427-9e36-4d82-9060-7941915b2105")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 134.1143 96.52 0)
+			(at 98.2957 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TX"
+		(shape input)
+		(at 161.29 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7058fdfd-17ae-485d-ae7f-b246a6c3c4c8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 166.4523 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
 	)
 	(global_label "~{RTS}"
 		(shape input)
-		(at 177.8 93.98 180)
+		(at 148.59 111.76 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1109,7 +1738,7 @@
 		)
 		(uuid "78631710-4c8a-4fda-92f4-1a636390e738")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 171.3677 93.98 0)
+			(at 142.1577 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1121,7 +1750,7 @@
 	)
 	(global_label "VCC"
 		(shape input)
-		(at 177.8 83.82 180)
+		(at 219.71 85.09 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1131,7 +1760,7 @@
 		)
 		(uuid "78923f62-cf90-4d33-a44e-c42893df5a1d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 171.1862 83.82 0)
+			(at 213.0962 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1141,9 +1770,75 @@
 			)
 		)
 	)
+	(global_label "RTS"
+		(shape input)
+		(at 161.29 109.22 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7afd8469-c5d5-4deb-8686-3c4c7a7d97a6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 167.7223 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "TXO"
 		(shape input)
-		(at 140.97 88.9 180)
+		(at 91.44 90.17 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7d24be7e-e51a-4ad0-8b53-e9b58899c50e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 97.9328 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RX"
+		(shape input)
+		(at 161.29 87.63 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8a09d4f0-8eb8-411d-8bdd-9c3ad7b55b68")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 166.7547 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TX"
+		(shape input)
+		(at 219.71 90.17 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1151,9 +1846,9 @@
 			)
 			(justify right)
 		)
-		(uuid "7d24be7e-e51a-4ad0-8b53-e9b58899c50e")
+		(uuid "8aca8243-313c-47ca-9ef7-fab313bb7378")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 134.4772 88.9 0)
+			(at 214.5477 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1163,9 +1858,31 @@
 			)
 		)
 	)
+	(global_label "RTS"
+		(shape input)
+		(at 161.29 105.41 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b6ac8a73-24c1-4a52-a846-7946e1710628")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 167.7223 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "TXO"
 		(shape input)
-		(at 177.8 88.9 180)
+		(at 148.59 85.09 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1175,7 +1892,7 @@
 		)
 		(uuid "cfa7c713-1b0f-4c6f-b0ce-d495a71f3c1d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 171.3072 88.9 0)
+			(at 142.0972 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1187,7 +1904,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 177.8 96.52 180)
+		(at 219.71 97.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1197,7 +1914,51 @@
 		)
 		(uuid "dd893bcb-d33a-49fb-8a19-9c1f3a63c69c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 170.9443 96.52 0)
+			(at 212.8543 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RX"
+		(shape input)
+		(at 219.71 87.63 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e0ece941-005b-4bd9-acc3-6a7714524071")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 214.2453 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RTS"
+		(shape input)
+		(at 219.71 95.25 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "eac15332-9826-4313-81e5-1ddcbcc0bc01")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.2777 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1209,38 +1970,37 @@
 	)
 	(global_label "VCC"
 		(shape input)
-		(at 140.97 91.44 180)
+		(at 91.44 92.71 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "f286890c-b3bb-4950-bb1a-2c97fec9fe87")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 134.3562 91.44 0)
+			(at 98.0538 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
 	)
 	(symbol
 		(lib_id "SparkFun-Connector:Conn_01x06_RA_SMD_Male")
-		(at 119.38 87.63 0)
+		(at 54.61 90.17 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "2e267540-ac80-47c9-8e00-59a257c18f1e")
 		(property "Reference" "J3"
-			(at 121.92 87.6299 0)
+			(at 57.15 90.1699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1249,7 +2009,7 @@
 			)
 		)
 		(property "Value" "Conn_01x06"
-			(at 121.92 90.1699 0)
+			(at 57.15 92.7099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1258,7 +2018,7 @@
 			)
 		)
 		(property "Footprint" "SparkFun-Connector:1x06_SMD_RA_Male"
-			(at 119.38 100.33 0)
+			(at 54.61 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1267,7 +2027,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.sparkfun.com/datasheets/Prototyping/Connectors/11029.pdf"
-			(at 116.84 105.41 0)
+			(at 52.07 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1276,7 +2036,7 @@
 			)
 		)
 		(property "Description" "SMD male pins, right angle"
-			(at 119.38 107.95 0)
+			(at 54.61 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1285,7 +2045,7 @@
 			)
 		)
 		(property "PROD_ID" "CONN-08971"
-			(at 118.11 102.87 0)
+			(at 53.34 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1322,16 +2082,16 @@
 	)
 	(symbol
 		(lib_id "SparkFun-Connector:Conn_01x06_RA_SMD_Female")
-		(at 147.32 88.9 0)
+		(at 85.09 90.17 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "4942af69-debe-476a-8d1a-a37f387ab61f")
 		(property "Reference" "J2"
-			(at 149.86 88.8999 0)
+			(at 82.55 90.1699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1340,7 +2100,7 @@
 			)
 		)
 		(property "Value" "Conn_01x06"
-			(at 149.86 91.4399 0)
+			(at 82.55 92.7099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1349,7 +2109,7 @@
 			)
 		)
 		(property "Footprint" "SparkFun-Connector:1x06_SMD_RA_Female"
-			(at 147.32 101.6 0)
+			(at 85.09 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1358,7 +2118,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.sparkfun.com/datasheets/Prototyping/Connectors/11029.pdf"
-			(at 144.78 106.68 0)
+			(at 87.63 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1367,7 +2127,7 @@
 			)
 		)
 		(property "Description" "SMD male pins, right angle"
-			(at 147.32 109.22 0)
+			(at 85.09 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1376,7 +2136,7 @@
 			)
 		)
 		(property "PROD_ID" "CONN-08971"
-			(at 146.05 104.14 0)
+			(at 86.36 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1412,8 +2172,204 @@
 		)
 	)
 	(symbol
+		(lib_id "SparkFun-Switch:DPDT_Slide_SMD_7.2x3.5mm")
+		(at 154.94 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4b3db3b2-4b6e-4d54-9db2-bc8f50ccbd66")
+		(property "Reference" "SW1"
+			(at 154.94 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "DPDT_Slide_SMD_7.2x3.5mm"
+			(at 154.94 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "SparkFun-Switch:Slide_DPDT_SMD_7.2x3.5mm"
+			(at 154.94 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/SW_slide_ayz.pdf"
+			(at 154.94 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Switch dual pole double throw"
+			(at 154.94 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PROD_ID" "SWCH-08179"
+			(at 154.94 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfg Part#" "ABC"
+			(at 154.94 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "7c57253b-16d6-41c6-9d6f-abd04eb1ef15")
+		)
+		(pin "2"
+			(uuid "b9d52af4-8bcf-4cc9-9032-72bac8101c84")
+		)
+		(pin "5"
+			(uuid "4cfae004-a2b5-49d1-b1e6-068dc0103a7c")
+		)
+		(pin "3"
+			(uuid "317fb316-8eb5-4d2a-8666-891eb58349f3")
+		)
+		(pin "4"
+			(uuid "9c36a310-3b6f-4099-b015-84e494636afc")
+		)
+		(pin "1"
+			(uuid "01180362-1a97-4793-838f-b807147edeff")
+		)
+		(instances
+			(project ""
+				(path "/5b5d34c4-3bcb-4e9c-9114-6ddfb6838388"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SparkFun-Switch:DPDT_Slide_SMD_7.2x3.5mm")
+		(at 154.94 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ac91bcd6-d411-46d7-8d45-9e1727d5edc7")
+		(property "Reference" "SW2"
+			(at 154.94 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "DPDT_Slide_SMD_7.2x3.5mm"
+			(at 154.94 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "SparkFun-Switch:Slide_DPDT_SMD_7.2x3.5mm"
+			(at 154.94 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/SW_slide_ayz.pdf"
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Switch dual pole double throw"
+			(at 154.94 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PROD_ID" "SWCH-08179"
+			(at 154.94 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfg Part#" "ABC"
+			(at 154.94 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0ac29ece-4e30-415b-8d19-2effdf24e796")
+		)
+		(pin "1"
+			(uuid "cef658eb-5c2a-415c-9101-e6fe5e82ec83")
+		)
+		(pin "3"
+			(uuid "5f7a45d0-dab2-451a-a6b7-955ae580f650")
+		)
+		(pin "4"
+			(uuid "adc96745-a3cc-4289-bfb2-b816dff69e82")
+		)
+		(pin "6"
+			(uuid "7c02bb05-a0cc-4b10-8566-77f0527f397a")
+		)
+		(pin "5"
+			(uuid "2f9ee4e2-47e1-49c2-9711-fac3bdc6ffa5")
+		)
+		(instances
+			(project ""
+				(path "/5b5d34c4-3bcb-4e9c-9114-6ddfb6838388"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "SparkFun-Connector:Conn_01x06_JST_1.25mm_Locking")
-		(at 184.15 88.9 0)
+		(at 226.06 90.17 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1422,7 +2378,7 @@
 		(fields_autoplaced yes)
 		(uuid "d88fe9c2-b60e-4b59-85c9-fbfe1d01a520")
 		(property "Reference" "J1"
-			(at 186.69 88.8999 0)
+			(at 228.6 90.1699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1431,7 +2387,7 @@
 			)
 		)
 		(property "Value" "JST_Locking_6"
-			(at 186.69 91.4399 0)
+			(at 228.6 92.7099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1440,7 +2396,7 @@
 			)
 		)
 		(property "Footprint" "SparkFun-Connector:JST_SMD_1.25mm-6_Locking"
-			(at 184.15 101.6 0)
+			(at 226.06 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1449,7 +2405,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/eGH.pdf"
-			(at 184.15 104.14 0)
+			(at 226.06 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1458,7 +2414,7 @@
 			)
 		)
 		(property "Description" "JST locking connector"
-			(at 184.15 106.68 0)
+			(at 226.06 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1467,7 +2423,7 @@
 			)
 		)
 		(property "PROD_ID" "CONN-16497"
-			(at 184.15 109.22 0)
+			(at 226.06 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
