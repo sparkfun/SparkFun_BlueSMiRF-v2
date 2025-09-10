@@ -39,13 +39,24 @@
 >
 
   <!-- Site title -->
-  <!-- title="{{ config.site_name | e }}" -->
+  <!-- <label class="md-nav__title" for="__drawer">
+    <a
+      href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
+      title="{{ config.site_name | e }}"
+      class="md-nav__button md-logo"
+      aria-label="{{ config.site_name }}"
+      data-md-component="logo"
+    >
+      {% include "partials/logo.html" %}
+    </a>
+    {{ config.site_name }}
+  </label> -->
   <label class="md-nav__title" for="__drawer">
     <a
       href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
-      title="SparkFun Product Page"
+      title="sparkfun.com"
       class="md-nav__button md-logo"
-      aria-label="{{ config.site_name }}"
+      aria-label="SparkPNT"
       data-md-component="logo"
     >
       {% include "partials/logo.html" %}
@@ -71,7 +82,8 @@
     <li class="md-nav__item">
       <a href="/SparkFun_BlueSMiRF-v2/hard_copy/" class="md-nav__link">
       <span class="md-ellipsis">
-          Hard Copies&nbsp;{% include ".icons/material/book-open-variant.svg" %}
+        🖨️ Print View
+        <!-- Hard Copies&nbsp;{% include ".icons/material/book-open-variant.svg" %} -->
       </span>
       </a>
     </li>

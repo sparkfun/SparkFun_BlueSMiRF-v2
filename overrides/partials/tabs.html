@@ -30,22 +30,22 @@
 >
   <div class="md-tabs__inner md-grid">
 
-    <!-- Adds tab on right side of header -->
-    {% if "hard_copy.md" %}
-    <ul class="md-tabs__list" style="float: right;">
-      <li class="md-tabs__item">
-        <a href="/SparkFun_BlueSMiRF-v2/hard_copy/" class="md-tabs__link">
-          Hard Copies 🖨️
-        </a>
-      </li>
-    </ul>
-    {% endif %}
+  <!-- Adds tab on right side of header -->
+  {% if "print_view.md" %}
+  <ul class="md-tabs__list" style="float: right;">
+    <li class="md-tabs__item">
+    <a href="/SparkFun_BlueSMiRF-v2/hard_copy/" class="md-tabs__link">
+      🖨️ Print View
+    </a>
+    </li>
+  </ul>
+  {% endif %}
 
-    <!-- Original tabbed sections -->
-    <ul class="md-tabs__list">
-      {% for nav_item in nav %}
-        {{ item.render(nav_item) }}
-      {% endfor %}
-    </ul>
+  <!-- Original tabbed sections -->
+  <ul class="md-tabs__list">
+    {% for nav_item in nav %}
+    {{ item.render(nav_item) }}
+    {% endfor %}
+  </ul>
   </div>
 </nav>
