@@ -19,8 +19,8 @@ theme:
   # Theme: https://squidfunk.github.io/mkdocs-material/
   name: material
 
-  # Icon in Browser Tab (must be square img - i.e. 32x32 pixels)
-  favicon: assets/sfe_favicon.png
+  # Icon in Browser Tab (must be a square image - i.e. 32x32 pixels)
+  favicon: assets/img/sfe-logo.png
 
   # Page Font
   font:
@@ -92,7 +92,7 @@ theme:
   # Configures icons
   icon:
     # Sets homepage icon
-    logo: sfe-logo
+    logo: sfe
 
     # Sets repo icon to GitHub icon
     repo: fontawesome/brands/github
@@ -209,7 +209,7 @@ extra:
 
   # Configures social icons in the footer
   social:
-    - icon: sfe-logo
+    - icon: sfe
       link: https://www.sparkfun.com/
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/sparkfun
