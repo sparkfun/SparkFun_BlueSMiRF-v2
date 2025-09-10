@@ -1,7 +1,7 @@
 
 The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wireless Bluetooth&reg; serial link. This version of the popular BlueSMiRF uses the ESP32. These boards work as a wireless serial UART pipe and are a great wireless replacement for serial cables. Simply pair, connect, and transmit serial data between your TX/RX lines! Any serial stream from 2400 to 921600 baud can be passed seamlessly between two devices.
 
-<center>
+
 <div class="grid cards col-2" markdown>
 
 -   <a href="https://www.sparkfun.com/products/24113">
@@ -17,7 +17,9 @@ The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wirele
       <br />
       WRL-24113
       <br />
-      <center>[Purchase from SparkFun :fontawesome-solid-cart-plus:](https://www.sparkfun.com/products/23288){ .md-button .md-button--primary }</center>
+      <article style="text-align: center;" markdown>
+      [Purchase from SparkFun :fontawesome-solid-cart-plus:](https://www.sparkfun.com/products/23288){ .md-button .md-button--primary }
+      </article>
     </a>
 <!-- ----------WHITE SPACE BETWEEN PRODUCTS---------- -->
 -   <a href="https://www.sparkfun.com/products/23287">
@@ -33,11 +35,13 @@ The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wirele
       <br />
       WRL-23287
       <br />
-      <center>[Purchase from SparkFun :fontawesome-solid-cart-plus:](https://www.sparkfun.com/products/23288){ .md-button .md-button--primary }</center>
+      <article style="text-align: center;" markdown>
+      [Purchase from SparkFun :fontawesome-solid-cart-plus:](https://www.sparkfun.com/products/23288){ .md-button .md-button--primary }
+      </article>
     </a>
 
 </div>
-</center>
+
 
 <div style="text-align: center;">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/i8u3W0jVFTw?si=9iwrsCm9Ih9n9VCz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

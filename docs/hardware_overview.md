@@ -248,23 +248,25 @@ A 3D model of the SparkFun BlueSMiRF v2 SMD and components was exported to STEP 
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 
 <div style="text-align: center;">
-    <model-viewer src="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_model.glb" camera-controls poster="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_image.png" environment-image="legacy" shadow-intensity="1.58" exposure="0.64" shadow-softness="0.24" tone-mapping="neutral" camera-orbit="-46.67deg 57.14deg 153.3m" field-of-view="30deg" style="width: 750px; height: 500px;">
-    </model-viewer>
-</div>
+
+<model-viewer src="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_model.glb" camera-controls poster="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_image.png" environment-image="legacy" shadow-intensity="1.58" exposure="0.64" shadow-softness="0.24" tone-mapping="neutral" camera-orbit="-46.67deg 57.14deg 153.3m" field-of-view="30deg" style="width: 750px; height: 500px; margin: auto;">
+</model-viewer>
+
 <br />
-<div style="text-align: center">
-    <a href="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_model.step" target="stp_file" class="md-button">Click Here for the STEP File</a>
+
+<a href="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_model.step" target="stp_file" class="md-button">Click Here for the STEP File</a>
 </div>
 
 A 3D model of the SparkFun BlueSMiRF v2 PTH and components was also exported to STEP file using KiCad.
 
 <div style="text-align: center;">
-    <model-viewer src="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_model.glb" camera-controls poster="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_image.png" environment-image="legacy" shadow-intensity="1.58" exposure="0.64" shadow-softness="0.24" tone-mapping="neutral" camera-orbit="-46.67deg 57.14deg 153.3m" field-of-view="30deg" style="width: 750px; height: 500px;">
-    </model-viewer>
-</div>
+
+<model-viewer src="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_model.glb" camera-controls poster="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_image.png" environment-image="legacy" shadow-intensity="1.58" exposure="0.64" shadow-softness="0.24" tone-mapping="neutral" camera-orbit="-46.67deg 57.14deg 153.3m" field-of-view="30deg" style="width: 750px; height: 500px; margin: auto;">
+</model-viewer>
+
 <br />
-<div style="text-align: center">
-    <a href="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_model.step" target="stp_file" class="md-button">Click Here for the STEP File</a>
+
+<a href="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_model.step" target="stp_file" class="md-button">Click Here for the STEP File</a>
 </div>
 
 
