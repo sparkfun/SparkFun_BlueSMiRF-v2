@@ -207,6 +207,8 @@ extra:
   # Configures the hyperlink for the logo in the header
   homepage: https://www.sparkfun.com/
 
+  generator: right
+
   # Configures social icons in the footer
   social:
     - icon: sfe
@@ -221,9 +223,6 @@ extra:
       link: https://www.facebook.com/SparkFun
     - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/sparkfun
-    - icon: fontawesome/solid/cookie-bite
-      link: ./#__consent
-      name: Change cookie settings
 
   # Configures Google Analytics
   analytics:
