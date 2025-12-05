@@ -5,10 +5,11 @@
 	(uuid "1559d418-8eab-4cd5-99bd-b96fa1947de8")
 	(paper "USLetter")
 	(title_block
-		(title "SparkFun BlueSMiRF v2 Headers")
-		(date "2023-07-29")
-		(rev "v11")
-		(comment 1 "Designed by: N. Seidle")
+		(title "SparkFun BlueSMiRF v2 JST")
+		(date "2025-12-04")
+		(rev "v10")
+		(company "SparkFun Electronics")
+		(comment 1 "Designed by: Wes Furuya")
 	)
 	(lib_symbols
 		(symbol "SparkFun-Aesthetic:Fiducial_0.5mm"

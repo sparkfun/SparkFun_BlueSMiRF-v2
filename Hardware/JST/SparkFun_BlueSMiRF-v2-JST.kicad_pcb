@@ -7,6 +7,13 @@
 		(legacy_teardrops no)
 	)
 	(paper "A4")
+	(title_block
+		(title "SparkFun BlueSMiRF v2 JST")
+		(date "2025-12-04")
+		(rev "v10")
+		(company "SparkFun Electronics")
+		(comment 1 "Designed By: Wes Furuya")
+	)
 	(layers
 		(0 "F.Cu" signal)
 		(2 "B.Cu" signal)
