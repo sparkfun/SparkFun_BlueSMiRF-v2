@@ -1,6 +1,5 @@
 ---
 hide:
-  - navigation
   - toc
 icon: fontawesome/solid/scroll
 ---
