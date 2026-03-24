@@ -1,3 +1,3 @@
 javascript directory
 ====================
-This folder should contain the files for the custom javascript that is enabled in the product documentation
+This folder should contain the files for scripts to be included for the webpage
