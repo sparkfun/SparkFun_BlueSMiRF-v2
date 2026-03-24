@@ -30,7 +30,7 @@ There is also a version with PTHs out in the wild and it is essentially the same
   </table>
 </div>
 
- For more information, check out our [Resources and Going Further](../resources/) for the board designs and the ESP32.
+ For more information, check out our [Resources and Going Further](resources.md) for the board designs and the ESP32.
 
 
 
@@ -101,7 +101,7 @@ The reset PTH labeled as <span STYLE="text-decoration:overline">RST</span> will 
 ### Serial UART Port
 
 !!! note
-    As stated in the [previous section](../old_school_to_new_school), the pinout of the BlueSMiRF v2 is different from previous BlueSMiRFs, hence the version 2. Besides the ESP32 module, the pinout has the same pinout as previous Bluetooth Mates and USB-to-serial converters (i.e. FTDI, CH340, etc.). The board is meant to connect directly with an Arduino Pro, Pro Mini, RTCM Correction Ports on high precision GNSS breakout boards, or any board with a standard serial-to-USB port. Below is the back of the Bluetooth Mate, BlueSMiRF, and BlueSMiRF v2 boards.
+    As stated in the [previous section](old_school_to_new_school.md), the pinout of the BlueSMiRF v2 is different from previous BlueSMiRFs, hence the version 2. Besides the ESP32 module, the pinout has the same pinout as previous Bluetooth Mates and USB-to-serial converters (i.e. FTDI, CH340, etc.). The board is meant to connect directly with an Arduino Pro, Pro Mini, RTCM Correction Ports on high precision GNSS breakout boards, or any board with a standard serial-to-USB port. Below is the back of the Bluetooth Mate, BlueSMiRF, and BlueSMiRF v2 boards.
 
     <div style="text-align: center;">
       <table>
@@ -186,7 +186,7 @@ The PAIR button is more than meets the eye. This button has more than one functi
 !!! note
     Users can also set the BlueSMiRF v2 in bootloader mode. In this mode, you can update the firmware manually through serial using a command line interface. Users will need to hold down the PAIR button when the BlueSMiRF v2 is not powered. Applying power will put the microcontroller into bootloader mode.
 
-For more information about using the button for each mode, check out the section about the [button control](../button/).
+For more information about using the button for each mode, check out the section about the [button control](button.md).
 
 <div style="text-align: center"><a href="../button/" class="md-button">Button Control</a></div>
 
@@ -210,7 +210,7 @@ The board includes the following status LEDs as indicated in the image below.
   </table>
 </div>
 
-The LEDs can also blink at different rates, fade, or become dim when the PAIR button is held down. This is used as an indicator to tell when we are entering pairing, factory reset, or bootloader mode. For more information, check out the section about the [button control](../button/).
+The LEDs can also blink at different rates, fade, or become dim when the PAIR button is held down. This is used as an indicator to tell when we are entering pairing, factory reset, or bootloader mode. For more information, check out the section about the [button control](button.md).
 
 <div style="text-align: center"><a href="../button/" class="md-button">Button Control</a></div>
 

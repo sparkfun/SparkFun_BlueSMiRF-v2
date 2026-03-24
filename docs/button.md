@@ -2,9 +2,9 @@
 
 The **PAIR** button on the BlueSMiRF v2 allows the device to enter a few different states.
 
-* [Pairing Mode](../button/#pairing-mode)
-* [Factory Reset Mode](../button/#factory-reset-mode)
-* [Bootloader Mode](../button/#bluetooth-mode)
+* [Pairing Mode](#pairing-mode)
+* [Factory Reset Mode](#factory-reset-mode)
+* [Bootloader Mode](#bluetooth-mode)
 
 
 

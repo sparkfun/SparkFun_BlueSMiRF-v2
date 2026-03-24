@@ -152,7 +152,7 @@ If you have not already, make sure to upload the Arduino example code from the b
 --8<-- "https://raw.githubusercontent.com/sparkfun/OpenLCD/master/firmware/Examples/Serial/Example1_Serial_Basic/Example1_Serial_Basic.ino"
 ```
 
-With both boards powered, follow the steps to [pair and connect the two BlueSMiRFs together](/button/pairing-mode). If all is well, you should see the RedBoard Plus transmitting the same message to the SerLCD. Instead of a wired connection, a pair of BlueSMiRF's were used!
+With both boards powered, follow the steps to [pair and connect the two BlueSMiRFs together](button.md#pairing-mode). If all is well, you should see the RedBoard Plus transmitting the same message to the SerLCD. Instead of a wired connection, a pair of BlueSMiRF's were used!
 
 <div style="text-align: center;">
   <table>
