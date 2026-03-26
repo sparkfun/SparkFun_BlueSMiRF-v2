@@ -4,13 +4,13 @@ Each BlueSMiRF v2 firmware comes with a set of AT commands to read or change the
 ## AT Commands
 
 !!! note
-	At-command mode cannot be entered for **60 seconds** after powering or resetting the device. This setting can be changed with the `AT-MaxCommandTimeMs` command.
+    Command mode cannot be entered for **60 seconds** after power-on or resetting the device. This setting can be changed with the `AT-MaxCommandTimeMs` command.
 
 BlueSMiRF radios are very flexible. By default, the radio is looking for serial communication at **115200** bps. Open the [terminal](https://learn.sparkfun.com/tutorials/terminal-basics) of your choice. Then enter `$$$` and wait for an `OK`. Both the CONNECT and STATUS LEDs will fade in and fade out whenever the board is in Command Mode. At this point, the radio is now ready for an AT command.
 
 <figure markdown>
-[![BlueSMiRF v2 Connected to Serial Terminal and in Command Mode](./assets/img/BlueSMiRF_v2_AT_Commands_1_b.JPG){ width="600" }](./assets/img/BlueSMiRF_v2_AT_Commands_1_b.JPG "Click to enlarge")
-<figcaption markdown>BlueSMiRF v2 Connected to Serial Terminal and in Command Mode</figcaption>
+[![Entering Command Mode](./assets/img/example-terminal-command_mode.jpg){ width="600" }](./assets/img/example-terminal-command_mode.jpg "Click to enlarge")
+<figcaption markdown>Response acknowledging user is in command mode.</figcaption>
 </figure>
 
 
@@ -27,32 +27,32 @@ Below is a brief list of commands. The BlueSMiRF will recognize commands with ca
 
 <div style="text-align: center;" markdown>
 
-| AT Command     | Command Description                             |
-| :------------: | :---------------------------------------------- |
-| `$$$`          | Enter Command Mode                              |
-| `AT`           | Reports OK                                      |
-| `AT?`          | Display this help text                          |
-| `ATA`          | Display all settings                            |
-| `ATB`          | Display Bluetooth settings                      |
-| `ATC`          | Check for new firmware                          |
-| `ATD`          | Display the debug settings                      |
-| `ATF`          | Restore factory settings                        |
-| `ATM`          | Display MAC address                             |
-| `ATP`          | Start pairing process                           |
-| `ATS`          | Display serial settings                         |
-| `ATU`          | Update Firmware                                 |
-| `ATV`          | Display firmware version                        |
-| `ATW`          | Save current settings to NVM                    |
-| `ATX`          | Exit command mode                               |
-| `ATY`          | Display system settings                         |
-| `ATZ`          | Reboot the system                               |
-| `AT-Param=xxx` | Set parameter's value to xxx by name (Param)    |
-| `AT-Param?`    | Print parameter's current value by name (Param) |
-| `AT-?`         | Display the setting values                      |
+| AT Command           | Command Description                             |
+| :------------------: | :---------------------------------------------- |
+| `$$$`                | Enter Command Mode                              |
+| `AT`                 | Reports OK                                      |
+| `AT?`                | Display this help text                          |
+| `ATA`                | Display all settings                            |
+| `ATB`                | Display Bluetooth settings                      |
+| `ATC`                | Check for new firmware                          |
+| `ATD`                | Display the debug settings                      |
+| `ATF`                | Restore factory settings                        |
+| `ATM`                | Display MAC address                             |
+| `ATP`                | Start pairing process                           |
+| `ATS`                | Display serial settings                         |
+| `ATU`                | Update Firmware                                 |
+| `ATV`                | Display firmware version                        |
+| `ATW`                | Save current settings to NVM                    |
+| `ATX`                | Exit command mode                               |
+| `ATY`                | Display system settings                         |
+| `ATZ`                | Reboot the system                               |
+| `AT-<Param>=<value>` | Set parameter's value to xxx by name (Param)    |
+| `AT-<Param>?`        | Print parameter's current value by name (Param) |
+| `AT-?`               | Display the setting values                      |
 
 </div>
 
-A parameter is set using the **AT-** prefix, followed by the name of the command with an equals sign and the value to set. For example, sending **AT-SerialSpeed=115200** followed by the ++enter++ key (or a carriage return) will change the serial interface speed to 115200bps. This setting can be stored in NVM (non-volatile memory) by sending the **ATW** command.
+A parameter `<Param>` is set using the **AT-** prefix, followed by the name of the command with an equals sign and the value to set. For example, sending **AT-SerialSpeed=115200** followed by the ++enter++ key (or a carriage return) will change the serial interface speed to 115200bps. This setting can be stored in NVM (non-volatile memory) by sending the **ATW** command.
 
 To query a setting, send the AT command without a value and the device will respond with the current value. For example, sending **AT-SerialSpeed** followed by the ++enter++ key will generate the response **115200** followed by **OK**.
 
@@ -70,7 +70,7 @@ The commands are best discussed in groups:
 
 
 
-## Bluetooth Commands
+### Bluetooth Commands
 Below is a table for Bluetooth commands, a short description of the command, and its factory default value (if applicable). Right after the table, there is also a list which provides a detailed explanation of each parameter as well.
 
 <div style="text-align: center;" markdown>
@@ -92,27 +92,38 @@ Below is a table for Bluetooth commands, a short description of the command, and
 </div>
 
 
-- **BluetoothConnectRetries** &mdash; If this device has a paired MAC or name, at power up it will attempt to connect to this paired device. A connection is not guaranteed, and the connection will be re-tried this number of times before going into passive, discoverable mode.
-- **BluetoothConnectTimeoutMs** &mdash; When this device is connecting to a paired device, if this number of milliseconds expires before a connection is made, the device will attempt to reconnect to the paired device.
-- **BluetoothEscapeCharacter** &mdash; This is the character that must be transmitted by a remote device to enter command mode remotely over the Bluetooth connection.
+- **BluetoothConnectRetries**
+:   If this device has a paired MAC or name, at power up it will attempt to connect to this paired device. A connection is not guaranteed, and the connection will be re-tried this number of times before going into passive, discoverable mode.
+- **BluetoothConnectTimeoutMs**
+:   When this device is connecting to a paired device, if this number of milliseconds expires before a connection is made, the device will attempt to reconnect to the paired device.
+- **BluetoothEscapeCharacter**
+:   This is the character that must be transmitted by a remote device to enter command mode remotely over the Bluetooth connection.
 
 	!!! note
 		Escape characters are ignored after `MaxCommandTimeMs` number of milliseconds and within `MinEscapeTimeMs` of other incoming characters.
 
-- **BluetoothNickname** &mdash; The name that is broadcast when other devices are scanning for devices to pair to.
-- **BluetoothPairedMac** &mdash; The MAC address of the BlueSMiRF that this device should pair to at power-on. Use the `ATM` command on the remote device to display its MAC address. This command is not normally used; use the button pairing method for an easier way to pair two devices.
-- **BluetoothPairedName** &mdash; The name of the BlueSMiRF that this device should pair to at power-on. Use the `BluetoothNickname` command on the remote device to change its paired name. This command is not normally used; use the button pairing method for an easier way to pair two devices.
-- **BluetoothPin** &mdash; The pin that is needed during pairing. Only needed on very old Bluetooth USB dongles.
-- **BluetoothRxSize** &mdash; The size of the Bluetooth receive buffer. Increase if a large amount of data is coming into the BlueSMiRF over Bluetooth, before the speed of the serial interface can output it.
-- **BluetoothTxSize** &mdash; The size of the Bluetooth transmit buffer. Increase if a large amount of data needs to be transmitted over Bluetooth but the connection between devices is poor and multiple retransmissions occur.
-- **BluetoothType** &mdash; Controls the Bluetooth protocol. This parameter accepts a `0`, `1`, and `2` for the Bluetooth Protocol as listed below. Note that only the SPP protocol supports pairing.
+- **BluetoothNickname**
+:   The name that is broadcast when other devices are scanning for devices to pair to.
+- **BluetoothPairedMac**
+:   The MAC address of the BlueSMiRF that this device should pair to at power-on. Use the `ATM` command on the remote device to display its MAC address. This command is not normally used; use the button pairing method for an easier way to pair two devices.
+- **BluetoothPairedName**
+:   The name of the BlueSMiRF that this device should pair to at power-on. Use the `BluetoothNickname` command on the remote device to change its paired name. This command is not normally used; use the button pairing method for an easier way to pair two devices.
+- **BluetoothPin**
+:   The pin that is needed during pairing. Only needed on very old Bluetooth USB dongles.
+- **BluetoothRxSize**
+:   The size of the Bluetooth receive buffer. Increase if a large amount of data is coming into the BlueSMiRF over Bluetooth, before the speed of the serial interface can output it.
+- **BluetoothTxSize**
+:   The size of the Bluetooth transmit buffer. Increase if a large amount of data needs to be transmitted over Bluetooth but the connection between devices is poor and multiple retransmissions occur.
+- **BluetoothType**
+:   Controls the Bluetooth protocol. This parameter accepts a `0`, `1`, and `2` for the Bluetooth Protocol as listed below. Note that only the SPP protocol supports pairing.
+
 	- Protocol `0` = Serial Port Profile (SPP)
 	- Protocol `1` = Bluetooth Low-Energy (BLE)
 	- Protocol `2` = Radio off
 
 
 
-## Serial Commands
+### Serial Commands
 Below is a table for serial commands, a short description of the command, and its factory default value (if applicable). Right after the table, there is also a list which provides a detailed explanation of each parameter as well.
 
 
@@ -140,12 +151,11 @@ Below is a table for serial commands, a short description of the command, and it
 - **RtsStartSendingPercent** - Percent of serialReceiveBuffer that is free when RTS is asserted. Default of 25% of serialReceiveBuffer.
 - **RtsStopSendingPercent** - Percent of serialReceiveBuffer that is free when RTS is deasserted. Default of 5% of serialReceiveBuffer.
 - **SerialReceiveBufferSize** - Buffer size to receive serial data from the serial port, to be sent over Bluetooth. The default is 51200.
-- **SerialSpeed** - The baud rate that the BlueSMiRF operates at. Discrete values 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200 (default), 230400, 460800, and 921600bps are allowed.   
-- **SerialTransmitBufferSize** - Buffer size to receive bytes from Bluetooth, waiting to be printed out the UART. The default is 10240.
+- **SerialSpeed** - The baud rate that the BlueSMiRF operates at. Discrete values 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200 (default), 230400, 460800, and 921600bps are allowed.  - **SerialTransmitBufferSize** - Buffer size to receive bytes from Bluetooth, waiting to be printed out the UART. The default is 10240.
 
 
 
-## System Commands
+### System Commands
 Below is a table for system commands, a short description of the command, and its factory default value (if applicable). Right after the table, there is also a list which provides a detailed explanation of each parameter as well.
 
 
@@ -165,13 +175,22 @@ Below is a table for system commands, a short description of the command, and it
 </div>
 
 
-- **EscapeCharacter** &mdash; The character that must be entered a number of times (`EscapeCharacterCount`) to enter configuration mode. An escape character must be entered before the max time of `MaxCommandTimeMs` and after `MinEscapeTimeMs`.
-- **EscapeCharacterCount** &mdash; The number of escape characters needed before command mode is entered. Set to 0 to disable.
+- **EscapeCharacter**
+:   The character that must be entered a number of times (`EscapeCharacterCount`) to enter configuration mode. An escape character must be entered before the max time of `MaxCommandTimeMs` and after `MinEscapeTimeMs`.
+- **EscapeCharacterCount**
+:   The number of escape characters needed before command mode is entered. Set to 0 to disable.
 - **LedStyle** - Controls how the LEDs behave: CLASSIC = `0`, SERIAL_TRAFFIC = `1`, OFF = `2`.
-	- **CLASSIC mode (default)** = `0` &mdash; The **STATUS** LED blinks with TX/RX traffic.
-	- **SERIAL_TRAFFIC mode** = `1` &mdash; The **CONNECT** LED blinks with TX traffic and the **STATUS** LED blinks with RX traffic.
-	- **OFF mode** = `2` &mdash; The **CONNECT** and **STATUS** LEDs are turned off.
-- **MaxCommandTimeMs** &mdash; Once this number of milliseconds has passed, command mode cannot be entered. This is used as a method to prevent a remote system from accidentally entering command mode.
-- **MinEscapeTimeMs** &mdash; This number of milliseconds must pass between the last serial character received and an escape character. This is used as a method to prevent a remote system from accidentally entering command mode.
-- **WiFiPassword** &mdash; The password for the local WiFi used for firmware updates.
-- **WiFiSSID** &mdash; The SSID for the local WiFi used for firmware updates.
+	- **CLASSIC mode (default)** = `0`
+:   The **STATUS** LED blinks with TX/RX traffic.
+	- **SERIAL_TRAFFIC mode** = `1`
+:   The **CONNECT** LED blinks with TX traffic and the **STATUS** LED blinks with RX traffic.
+	- **OFF mode** = `2`
+:   The **CONNECT** and **STATUS** LEDs are turned off.
+- **MaxCommandTimeMs**
+:   Once this number of milliseconds has passed, command mode cannot be entered. This is used as a method to prevent a remote system from accidentally entering command mode.
+- **MinEscapeTimeMs**
+:   This number of milliseconds must pass between the last serial character received and an escape character. This is used as a method to prevent a remote system from accidentally entering command mode.
+- **WiFiPassword**
+:   The password for the local WiFi used for firmware updates.
+- **WiFiSSID**
+:   The SSID for the local WiFi used for firmware updates.

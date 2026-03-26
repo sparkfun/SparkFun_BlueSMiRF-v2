@@ -1,5 +1,12 @@
-<div class="video-500px" style="margin: auto;" markdown>
+# Introduction
+<div class="grid cards desc" markdown>
+
+<div markdown>
+
+<article class="video-container" style="margin: auto;" markdown>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/i8u3W0jVFTw?si=9iwrsCm9Ih9n9VCz" title="Product Showcase: SparkFun BlueSMiRF v2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</article>
+
 </div>
 
 
@@ -9,34 +16,31 @@ The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wirele
 <div class="grid cards" markdown>
 
 -   <a href="https://www.sparkfun.com/products/24113">
-	<figure markdown>
-	![Product thumbnail](https://cdn.sparkfun.com/assets/parts/2/4/4/3/8/24113-BlueSMiRF-ESP32-NoHeaders-Feature-NEW.jpg)
-	</figure>
+	**SparkFun BlueSMiRF v2 - PTH Pins**<br>
+	**SKU:** WRL-24113
 
 	---
 
-	**SparkFun BlueSMiRF v2**
+	<figure markdown>
+	![Product thumbnail](https://cdn.sparkfun.com/assets/parts/2/4/4/3/8/24113-BlueSMiRF-ESP32-NoHeaders-Feature-NEW.jpg)
+	</figure></a>
 
-	WRL-24113
-	</a>
 
 	<article style="text-align: center;" markdown>
 	[Purchase from SparkFun :fontawesome-solid-cart-plus:](https://www.sparkfun.com/products/24113){ .md-button .md-button--primary }
 	</article>
 
 
-
 -   <a href="https://www.sparkfun.com/products/23287">
-	<figure markdown>
-	![Product thumbnail](https://cdn.sparkfun.com/assets/parts/2/3/4/8/3/23287-BlueSMiRF-ESP32-WithHeaders-Feature-NEW.jpg)
-	</figure>
+	**SparkFun BlueSMiRF v2 - Male Header**<br>
+	**SKU:** WRL-23287
 
 	---
 
-	**SparkFun BlueSMiRF v2 - Headers**
+	<figure markdown>
+	![Product thumbnail](https://cdn.sparkfun.com/assets/parts/2/3/4/8/3/23287-BlueSMiRF-ESP32-WithHeaders-Feature-NEW.jpg)
+	</figure></a>
 
-	WRL-23287
-	</a>
 
 	<article style="text-align: center;" markdown>
 	[Purchase from SparkFun :fontawesome-solid-cart-plus:](https://www.sparkfun.com/products/23287){ .md-button .md-button--primary }
@@ -46,8 +50,8 @@ The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wirele
 
 
 
-### Required Materials
-To follow along with this tutorial, you will need the following materials. You may not need everything though depending on what you have. Add it to your cart, read through the guide, and adjust the cart as necessary. We recommend the board with headers to minimize the amount of soldering to your application.
+## Required Materials
+To follow along with the examples in this tutorial, you will need the following materials. You may not need everything though depending on what you have. Add it to your cart, read through the guide, and adjust the cart as necessary. We recommend the board with headers to minimize the amount of soldering to your application.
 
 - 2x [SparkFun BlueSMiRF v2 - Headers [WRL-23287]](https://www.sparkfun.com/products/23287)
 - 2x [Jumper Wires Premium 6" M/F Pack of 10 [PRT-09140]](https://www.sparkfun.com/products/9140)
@@ -56,7 +60,7 @@ To follow along with this tutorial, you will need the following materials. You m
 
 <div class="grid cards" markdown>
 
--   <a href="https://www.sparkfun.com/products/19177">
+-   <a href="https://www.sparkfun.com/products/23287">
 	<figure markdown>
 	![Product thumbnail](https://cdn.sparkfun.com/r/600-600/assets/parts/2/3/4/8/3/23287-BlueSMiRF-ESP32-WithHeaders-Feature-NEW.jpg)
 	</figure>
@@ -345,7 +349,7 @@ Depending on your setup or what you are doing, you may need the following as wel
 
 
 
-### Suggested Reading
+## Suggested Reading
 If you aren’t familiar with the following concepts, we also recommend checking out a few of these tutorials before continuing.
 
 <div class="grid cards" markdown style="text-align: center;">

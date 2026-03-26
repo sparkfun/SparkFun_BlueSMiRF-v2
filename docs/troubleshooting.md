@@ -13,7 +13,7 @@ If you are seeing the following error when attempting to flash the binaries:
 
 
 <figure markdown>
-[![Error message](./assets/img/Error_Programming_BlueSMiRF_ESP32.JPG){ width="600" }](./assets/img/Error_Programming_BlueSMiRF_ESP32.JPG "Click to enlarge")
+[![Error message](./assets/img/firmware-upload_failed.jpg){ width="600" }](./assets/img/firmware-upload_failed.jpg "Click to enlarge")
 <figcaption markdown>Error Programming BlueSMiRF v2 - ESP32</figcaption>
 </figure>
 

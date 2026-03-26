@@ -1,18 +1,18 @@
-From time to time, SparkFun will release new firmware for the BlueSMiRF v2 product line to add and improve functionality.  For most users, firmware can be upgraded over a 2.4GHz WiFi network using the [OTA method](firmware_update.md#updating-firmware-over-the-air). Users can also update the firmware manually using a Command Line Interface (CLI)
+From time to time, SparkFun will release new firmware for the BlueSMiRF v2 product line to add and improve functionality. For most users, firmware can be upgraded over a 2.4GHz WiFi network using the [OTA method](#updating-firmware-over-the-air-ota). Users can also update the firmware manually using a Command Line Interface (CLI)
 
 
 
-## Updating Firmware Over-The-Air (OTA)
+## Over-The-Air (OTA)
 
 Once the `AT-WiFiSSID` and `AT-WiFiPassword` settings have been entered for your local WiFi network, the `ATC` command can be issued to check for new firmware. If new firmware is available, send the `ATU` command to begin an update.
 
-## Manually Updating Firmware Over Serial
+## Serial Interface
 
 Because it's much easier to use, we recommend the OTA firmware update process. If that fails for some reason, the following CLI method can be used.
 
 
 
-### Entering Bootloader Mode
+### Bootloader Mode
 
 Hold the ++"PAIR"++ button while powering the BlueSMiRF v2. This will cause the ESP32 to enter bootloader mode. Once the BlueSMiRF v2 is in bootloader mode, the **STATUS** LED will be dimly lit and the **CONNECT** LED will be off.
 
@@ -28,59 +28,59 @@ We recommend using a [breadboard](https://www.sparkfun.com/products/12002) or [j
 			</th>
 		</tr>
 		<tr>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#fff3cd"><font color="#000000">DTR</font>
+			<td style="text-align: center; border: solid 1px #cccccc;">DTR
 			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#fff3cd"><font color="#000000"></font>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#fff3cd"><font color="#000000"></font>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#fff3cd"><font color="#000000"><span STYLE="text-decoration:overline">RTS</span></font>
-			</td>
-		</tr>
-		<tr>		
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#ffdaaf"><font color="#000000">RXI</font>
-			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#ffdaaf"><font color="#000000"></font>
-			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#d4edda"><font color="#000000"></font>
-			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#d4edda"><font color="#000000">**RXI**</font>
+			<td style="text-align: center; border: solid 1px #cccccc;">
+			<td style="text-align: center; border: solid 1px #cccccc;">
+			<td style="text-align: center; border: solid 1px #cccccc;"><span STYLE="text-decoration:overline">RTS</span>
 			</td>
 		</tr>
-		<tr>		
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#d4edda"><font color="#000000">TXO</font>
+		<tr>
+			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#cce5ff"><font color="#000000">RXI</font>
 			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#d4edda"><font color="#000000"></font>
+			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#cce5ff">
 			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#ffdaaf"><font color="#000000"></font>
+			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#fff3cd">
 			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#ffdaaf"><font color="#000000">**TXO**</font>
+			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#fff3cd"><font color="#000000">RXI</font>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#fff3cd"><font color="#000000">TXO</font>
+			</td>
+			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#fff3cd">
+			</td>
+			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#cce5ff">
+			</td>
+			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#cce5ff"><font color="#000000">TXO</font>
 			</td>
 		</tr>
 		<tr>
 			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#f2dede"><font color="#000000">3V3</font>
 			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#f2dede"><font color="#000000"></font>
+			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#f2dede">
 			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#f2dede"><font color="#000000"></font>
+			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#f2dede">
 			</td>
 			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#f2dede"><font color="#000000">VCC</font>
 			</td>
 		</tr>
 		<tr>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#cce5ff"><font color="#000000">CTS</font>
+			<td style="text-align: center; border: solid 1px #cccccc;">CTS
 			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#cce5ff"><font color="#000000"></font>
+			<td style="text-align: center; border: solid 1px #cccccc;">
 			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#cce5ff"><font color="#000000"></font>
+			<td style="text-align: center; border: solid 1px #cccccc;">
 			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#cce5ff"><font color="#000000">CTS</font>
+			<td style="text-align: center; border: solid 1px #cccccc;">CTS
 			</td>
 		</tr>
 		<tr>
 			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#DDDDDD"><font color="#000000">GND</font>
 			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#DDDDDD"><font color="#000000"></font>
+			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#DDDDDD">
 			</td>
-			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#DDDDDD"><font color="#000000"></font>
+			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#DDDDDD">
 			</td>
 			<td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#DDDDDD"><font color="#000000">GND</font>
 			</td>
@@ -88,12 +88,13 @@ We recommend using a [breadboard](https://www.sparkfun.com/products/12002) or [j
 	</table>
 </div>
 
+
 !!! note
-	The connection also includes two additional connections for flow control: <span STYLE="text-decoration:overline">RTS</span> and <span STYLE="text-decoration:overline">CTS</span>. These two connections are not needed for a basic serial UART connection. However, using all six wires can help make a tighter connection on the 1x6 header. The wire colors also connect TXO-to-RXI and RXI-to-RXO to indicate that it is not a direct connection between the two boards and the 1x6 header.
+	To automatically trigger the reset of the ESP32, users can connect the `DTR` pin from the USB-to-Serial converter to the [`RST` reset pin on the BlueSMiRF](hardware_overview.md#reset).
 
 
 <figure markdown>
-[![USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with an Additional Stackable Header](./assets/img/CH340_stackable_header_BlueSMiRF-v2.jpg){ width="600" }](./assets/img/CH340_stackable_header_BlueSMiRF-v2.jpg "Click to enlarge")
+[![USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with an Additional Stackable Header](./assets/img/assembly-smd-uart_adapter-alt.jpg){ width="600" }](./assets/img/assembly-smd-uart_adapter-alt.jpg "Click to enlarge")
 <figcaption markdown>USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with an Additional Stackable Header</figcaption>
 </figure>
 
@@ -104,7 +105,7 @@ Identify the COM port the USB-to-Serial device enumerated at. The easiest way to
 
 
 <figure markdown>
-[![CH340 is on COM10 as shown in Device Manager](./assets/img/Device_Manager_CH340_COM_Port.jpg){ width="300" }](./assets/img/Device_Manager_CH340_COM_Port.jpg "Click to enlarge")
+[![CH340 is on COM10 as shown in Device Manager](./assets/img/firmware-device_manager.jpg){ width="300" }](./assets/img/firmware-device_manager.jpg "Click to enlarge")
 <figcaption markdown>CH340 is on COM10 as shown in Device Manager</figcaption>
 </figure>
 
@@ -124,7 +125,7 @@ Open a command prompt (++win++ + ++r++ then type `cmd`). Head to the directory w
 
 
 <figure markdown>
-[![Change Path to BlueSmiRF Binaries Folder](./assets/img/Change_Path_Blue_SMiRF_Binaries_Folder.JPG){ width="600" }](./assets/img/Change_Path_Blue_SMiRF_Binaries_Folder.JPG "Click to enlarge")
+[![Change Path to BlueSmiRF Binaries Folder](./assets/img/firmware-repository_directory.jpg){ width="600" }](./assets/img/firmware-repository_directory.jpg "Click to enlarge")
 <figcaption markdown>Change Path to BlueSmiRF Binaries Folder</figcaption>
 </figure>
 
@@ -138,7 +139,7 @@ batch_program.bat BlueSMiRF_Firmware_v1_0.bin COM4
 
 
 <figure markdown>
-[![batch_program.bat running esptool](./assets/img/batch_running_esptool.JPG){ width="600" }](./assets/img/batch_running_esptool.JPG "Click to enlarge")
+[![batch_program.bat running esptool](./assets/img/firmware-execute_batch.jpg){ width="600" }](./assets/img/firmware-execute_batch.jpg "Click to enlarge")
 <figcaption markdown>`batch_program.bat` running `esptool`</figcaption>
 </figure>
 
@@ -147,7 +148,7 @@ After about 20 seconds, you should see the following message: `Done programming!
 
 
 <figure markdown>
-[![Successfully Programmed BlueSMiRF v2 - ESP32](./assets/img/Successfully_Programmed_BlueSMiRF_ESP32.JPG){ width="600" }](./assets/img/Successfully_Programmed_BlueSMiRF_ESP32.JPG "Click to enlarge")
+[![Successfully Programmed BlueSMiRF v2 - ESP32](./assets/img/firmware-upload_complete.jpg){ width="600" }](./assets/img/firmware-upload_complete.jpg "Click to enlarge")
 <figcaption markdown>Successfully Programmed BlueSMiRF v2 - ESP32</figcaption>
 </figure>
 

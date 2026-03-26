@@ -579,7 +579,7 @@
     display: table;
     table-layout: fixed;
   }
-  
+
   /* Sets images size in tables */
   .md-typeset table:not([class]) td img {
     width: 100%;
@@ -627,7 +627,7 @@
   /* .md-typeset .grid.grid.cards.col-4 {
     grid-template-columns: repeat(auto-fit,minmax(8rem,1fr));
   } */
-  
+
   /* Sets maximum image size */
   .md-typeset img {
     max-width:  350px;

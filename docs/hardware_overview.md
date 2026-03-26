@@ -3,13 +3,13 @@ In this section, we will highlight the hardware and pins that are broken out on 
 <div class="grid" markdown>
 
 <figure markdown>
-[![SMD with Headers, Top View](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Top.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Top.jpg "Click to enlarge")
+[![SMD with Headers, Top View](./assets/img/headers-top.jpg){ width="600" }](./assets/img/headers-top.jpg "Click to enlarge")
 <figcaption markdown>SMD with Headers, Top View</figcaption>
 </figure>
 
 
 <figure markdown>
-[![SMD with Headers, Bottom View](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Bottom.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Bottom.jpg "Click to enlarge")
+[![SMD with Headers, Bottom View](./assets/img/headers-bottom.jpg){ width="600" }](./assets/img/headers-bottom.jpg "Click to enlarge")
 <figcaption markdown>SMD with Headers, Bottom View</figcaption>
 </figure>
 
@@ -22,13 +22,13 @@ There is also a version with PTHs out in the wild and it is essentially the same
 <div class="grid" markdown>
 
 <figure markdown>
-[![PTH Version, Top View](./assets/img/24113-BlueSMiRF-v2_PTH_NoHeaders_top.jpg){ width="600" }](./assets/img/24113-BlueSMiRF-v2_PTH_NoHeaders_top.jpg "Click to enlarge")
+[![PTH Version, Top View](./assets/img/pth-top.jpg){ width="600" }](./assets/img/pth-top.jpg "Click to enlarge")
 <figcaption markdown>PTH Version, Top View</figcaption>
 </figure>
 
 
 <figure markdown>
-[![PTH Version, Bottom View](./assets/img/24113-BlueSMiRF-v2_PTH_NoHeaders_bottom.jpg){ width="600" }](./assets/img/24113-BlueSMiRF-v2_PTH_NoHeaders_bottom.jpg "Click to enlarge")
+[![PTH Version, Bottom View](./assets/img/pth-bottom.jpg){ width="600" }](./assets/img/pth-bottom.jpg "Click to enlarge")
 <figcaption markdown>PTH Version, Bottom View</figcaption>
 </figure>
 
@@ -39,17 +39,17 @@ For more information, check out our [Resources and Going Further](resources.md) 
 
 
 
-### ESP32-PICO-MINI-02
+## ESP32-PICO-MINI-02
 The board includes the smaller ESP32-PICO-MINI-02 module from Espressif. The SparkFun BlueSMiRF v2 is perfect for short range applications that require point-to-point communication. We've written some firmware to allow serial UART data to be sent between two Bluetooth devices. The supported protocols include SPP and BLE. Testing a pair of BlueSMiRF v2s and we got about ~110 feet (~33m) in the SparkFun building. The TX (10k) and RX (50k) buffers are also very large to allow for radio delays. The included firmware also includes a set of AT commands to configure the ESP32. This includes the baud rate, flow control, LED mode, and Over-The-Air (OTA) updates over a 2.4GHz WiFi network to name a few. You can also manually reprogram the ESP32 module using the command line interface as well! Just make sure to connect Tx and Rx between the BlueSMiRF and a USB-to-serial converter.
 
 
 <figure markdown>
-[![ESP32-PICO-MINI-02 Module Highlighted](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Module.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Module.jpg "Click to enlarge")
+[![ESP32-PICO-MINI-02 Module Highlighted](./assets/img/headers-esp32.jpg){ width="600" }](./assets/img/headers-esp32.jpg "Click to enlarge")
 </figure>
 
 
 
-### Power
+## Power
 Power is broken out on the 1x6 header through the VCC and GND pins. The recommended input voltage can be between **3.3V** to **5V**. Logic level shifting circuitry is included on the TX and RX pins so that they are 3.3V to 5V tolerant.
 
 - **VCC** / **3V3-5V** &mdash; On the top of the board, the input voltage is labeled as **VCC**. On the back of the board, this is labeled as **3V3-5V**. Voltage is regulated down with the AP2112K 3.3V/600mA voltage regulator from this pin. Typically, one would apply either 3.3V or 5V to this pin. Make sure that power you provide to this pin does not exceed *6 volts*. For advanced users, you can bypass this voltage regulator by adding a solder blob on the jumper labeled as **JP2**. Be careful as the input voltage range is smaller and you may run the risk of damaging the ESP32.
@@ -59,13 +59,13 @@ Power is broken out on the 1x6 header through the VCC and GND pins. The recommen
 <div class="grid" markdown>
 
 <figure markdown>
-[![Power Highlighted, Top View](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Power_Top.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Power_Top.jpg "Click to enlarge")
+[![Power Highlighted, Top View](./assets/img/headers-power_top.jpg){ width="600" }](./assets/img/headers-power_top.jpg "Click to enlarge")
 <figcaption markdown>Power, Top View</figcaption>
 </figure>
 
 
 <figure markdown>
-[![Power Highlighted, Bottom View](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Power_Bottom.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Power_Bottom.jpg "Click to enlarge")
+[![Power Highlighted, Bottom View](./assets/img/headers-power_bottom.jpg){ width="600" }](./assets/img/headers-power_bottom.jpg "Click to enlarge")
 <figcaption markdown>Power, Bottom View</figcaption>
 </figure>
 
@@ -83,20 +83,20 @@ The current and power consumption depends on what it's doing at the time. Here a
 
 
 
-### Reset
+## Reset
 The reset PTH labeled as <span STYLE="text-decoration:overline">RST</span> will restart the ESP32 whenever the pin is grounded.
 
 
 <div class="grid" markdown>
 
 <figure markdown>
-[![Reset Highlighted, Top View](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Reset_Top.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Reset_Top.jpg "Click to enlarge")
+[![Reset Highlighted, Top View](./assets/img/headers-reset_top.jpg){ width="600" }](./assets/img/headers-reset_top.jpg "Click to enlarge")
 <figcaption markdown>Reset, Top View</figcaption>
 </figure>
 
 
 <figure markdown>
-[![Reset Highlighted, Bottom View](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Reset_Bottom.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Reset_Bottom.jpg "Click to enlarge")
+[![Reset Highlighted, Bottom View](./assets/img/headers-reset_bottom.jpg){ width="600" }](./assets/img/headers-reset_bottom.jpg "Click to enlarge")
 <figcaption markdown>Reset, Bottom View</figcaption>
 </figure>
 
@@ -104,13 +104,13 @@ The reset PTH labeled as <span STYLE="text-decoration:overline">RST</span> will 
 
 
 
-### Serial UART Port
+## Serial UART Port
 
 !!! note
-	As stated in the [previous section](old_school_to_new_school.md), the pinout of the BlueSMiRF v2 is different from previous BlueSMiRFs, hence the version 2. Besides the ESP32 module, the pinout has the same pinout as previous Bluetooth Mates and USB-to-serial converters (i.e. FTDI, CH340, etc.). The board is meant to connect directly with an Arduino Pro, Pro Mini, RTCM Correction Ports on high precision GNSS breakout boards, or any board with a standard serial-to-USB port. Below is the back of the Bluetooth Mate, BlueSMiRF, and BlueSMiRF v2 boards.
+	As stated in the [previous section](revision_history.md), the pinout of the BlueSMiRF v2 is different from previous BlueSMiRFs, hence the version 2. Besides the ESP32 module, the pinout has the same pinout as previous Bluetooth Mates and USB-to-serial converters (i.e. FTDI, CH340, etc.). The board is meant to connect directly with an Arduino Pro, Pro Mini, RTCM Correction Ports on high precision GNSS breakout boards, or any board with a standard serial-to-USB port. Below is the back of the Bluetooth Mate, BlueSMiRF, and BlueSMiRF v2 boards.
 
 	<figure markdown>
-	[![Back of Bluetooth Mate, BlueSMiRF, and BlueSMiRF v2](./assets/img/Header_BlueSMiRF_Bluetooth_Mate_Comparison_2.jpg){ width="600" }](./assets/img/Header_BlueSMiRF_Bluetooth_Mate_Comparison_2.jpg "Click to enlarge")
+	[![Back of Bluetooth Mate, BlueSMiRF, and BlueSMiRF v2](./assets/img/revision-pinout-all.jpg){ width="600" }](./assets/img/revision-pinout-all.jpg "Click to enlarge")
 	<figcaption markdown>Back of Bluetooth Mate, BlueSMiRF, and BlueSMiRF v2</figcaption>
 	</figure>
 
@@ -129,13 +129,13 @@ Both boards include a standard serial UART header seen on many USB-to-serial con
 <div class="grid" markdown>
 
 <figure markdown>
-[![Serial Header Highlighted, Top View](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Serial_UART_Header_Top.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Serial_UART_Header_Top.jpg "Click to enlarge")
+[![Serial Header Highlighted, Top View](./assets/img/headers-pinout_top.jpg){ width="600" }](./assets/img/headers-pinout_top.jpg "Click to enlarge")
 <figcaption markdown>Serial Header, Top View</figcaption>
 </figure>
 
 
 <figure markdown>
-[![Serial Header Highlighted, Bottom View](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Serial_UART_Header_Bottom.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Serial_UART_Header_Bottom.jpg "Click to enlarge")
+[![Serial Header Highlighted, Bottom View](./assets/img/headers-pinout_bottom.jpg){ width="600" }](./assets/img/headers-pinout_bottom.jpg "Click to enlarge")
 <figcaption markdown>Serial Header, Bottom View</figcaption>
 </figure>
 
@@ -145,13 +145,13 @@ Both boards include a standard serial UART header seen on many USB-to-serial con
 <div class="grid" markdown>
 
 <figure markdown>
-[![PTH Serial Header Highlighted, Top View](./assets/img/24113-BlueSMiRF-v2_PTH_NoHeaders_top_pinout.jpg){ width="600" }](./assets/img/24113-BlueSMiRF-v2_PTH_NoHeaders_top_pinout.jpg "Click to enlarge")
+[![PTH Serial Header Highlighted, Top View](./assets/img/pth-pinout_top.jpg){ width="600" }](./assets/img/pth-pinout_top.jpg "Click to enlarge")
 <figcaption markdown>PTH Serial Header, Top View</figcaption>
 </figure>
 
 
 <figure markdown>
-[![PTH Serial Header Highlighted, Bottom View](./assets/img/24113-BlueSMiRF-v2_PTH_NoHeaders_bottom_pinout.jpg){ width="600" }](./assets/img/24113-BlueSMiRF-v2_PTH_NoHeaders_bottom_pinout.jpg "Click to enlarge")
+[![PTH Serial Header Highlighted, Bottom View](./assets/img/pth-pinout_bottom.jpg){ width="600" }](./assets/img/pth-pinout_bottom.jpg "Click to enlarge")
 <figcaption markdown>PTH Serial Header, Bottom View</figcaption>
 </figure>
 
@@ -179,7 +179,7 @@ Both boards include a standard serial UART header seen on many USB-to-serial con
 
 
 
-### Button
+## Button
 The ++"PAIR"++ button is more than meets the eye. This button has more than one function depending on how long it is pushed down.
 
 - **Short Push** &mdash; Press and hold the button down between **4 to 8 seconds** will initiate pairing with another Bluetooth device. During that period of time, the **Status** and **Connect** LEDs will slowly blink back and forth. When the BlueSMiRF v2 fails to discover any compatible devices, it will enter _Discoverable_ mode.
@@ -187,23 +187,22 @@ The ++"PAIR"++ button is more than meets the eye. This button has more than one 
 
 
 <figure markdown>
-[![Pair Button Highlighted](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Button.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Button.jpg "Click to enlarge")
-<!-- <figcaption markdown>Pair Button Highlighted</figcaption> -->
+[![Pair Button Highlighted](./assets/img/headers-button.jpg){ width="600" }](./assets/img/headers-button.jpg "Click to enlarge")
 </figure>
 
 
 !!! note
 	Users can also set the BlueSMiRF v2 in bootloader mode. In this mode, you can update the firmware manually through serial using a command line interface. Users will need to hold down the ++"PAIR"++ button when the BlueSMiRF v2 is not powered. Applying power will put the microcontroller into bootloader mode.
 
-For more information about using the button for each mode, check out the section about the [button control](button.md).
+For more information about using the button for each mode, check out the section about the [device operation](operation_modes.md).
 
 <article style="text-align: center;" markdown>
-[Button Control](button.md){ .md-button .md-button--primary }
+[Device Operation](operation_modes.md){ .md-button .md-button--primary }
 </article>
 
 
 
-### LEDs
+## LEDs
 The board includes the following status LEDs as indicated in the image below.
 
 - **CONNECT** &mdash; The connect LED indicates when the ESP32 is connected to another Bluetooth device. The behavior of the LED will depend on the mode:
@@ -215,19 +214,19 @@ The board includes the following status LEDs as indicated in the image below.
 
 
 <figure markdown>
-[![LEDs Highlighted](./assets/img/23287-BlueSMiRF-v2-WithHeaders_LEDs.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_LEDs.jpg "Click to enlarge")
+[![LEDs Highlighted](./assets/img/headers-LEDs.jpg){ width="600" }](./assets/img/headers-LEDs.jpg "Click to enlarge")
 </figure>
 
 
-The LEDs can also blink at different rates, fade, or become dim when the ++"PAIR"++ button is held down. This is used as an indicator to tell when we are entering pairing, factory reset, or bootloader mode. For more information, check out the section about the [button control](button.md).
+The LEDs can also blink at different rates, fade, or become dim when the ++"PAIR"++ button is held down. This is used as an indicator to tell when we are entering pairing, factory reset, or bootloader mode. For more information, check out the section about the [device operation](operation_modes.md).
 
 <article style="text-align: center;" markdown>
-[Button Control](button.md){ .md-button .md-button--primary }
+[Device Operation](operation_modes.md){ .md-button .md-button--primary }
 </article>
 
 
 
-### Jumpers
+## Jumpers
 
 !!!note
 	If this is your first time working with jumpers, check out the [How to Work with Jumper Pads and PCB Traces](https://learn.sparkfun.com/tutorials/how-to-work-with-jumper-pads-and-pcb-traces/all) tutorial for more information.
@@ -241,13 +240,13 @@ The board includes the following jumpers on the top and bottom of the board.
 <div class="grid" markdown>
 
 <figure markdown>
-[![Jumpers Highlighted, Top View](./assets/img/23287-BlueSMiRF-v2-WithHeaders_JP2_VCC_Bypass_Jumper.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_JP2_VCC_Bypass_Jumper.jpg "Click to enlarge")
+[![Jumpers Highlighted, Top View](./assets/img/headers-jumper_vcc.jpg){ width="600" }](./assets/img/headers-jumper_vcc.jpg "Click to enlarge")
 <figcaption markdown>Jumpers, Top View</figcaption>
 </figure>
 
 
 <figure markdown>
-[![Jumpers Highlighted, Bottom View](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Button_BTN_Jumper.jpg){ width="600" }](./assets/img/23287-BlueSMiRF-v2-WithHeaders_Button_BTN_Jumper.jpg "Click to enlarge")
+[![Jumpers Highlighted, Bottom View](./assets/img/headers-jumper_btn.jpg){ width="600" }](./assets/img/headers-jumper_btn.jpg "Click to enlarge")
 <figcaption markdown>Jumpers, Bottom View</figcaption>
 </figure>
 
@@ -255,7 +254,7 @@ The board includes the following jumpers on the top and bottom of the board.
 
 
 
-### 3D Model
+## 3D Model
 A 3D model of the SparkFun BlueSMiRF v2 SMD and components was exported to STEP file using KiCad.
 
 <!-- Import the component -->
@@ -288,20 +287,20 @@ A 3D model of the SparkFun BlueSMiRF v2 PTH and components was also exported to 
 
 
 
-### Board Dimensions
+## Board Dimensions
 Each version of the board is 38.1mm x 15.2mm. Note that the version with the headers makes the board slightly longer by making the overall length 44.2mm. Adding a row of female 1x6 headers or jumper wires will increase the length slightly as well. There are no mounting holes for standoffs on the boards.
 
 
 <div class="grid" markdown>
 
 <figure markdown>
-[![Board Dimensions for PTH, without Headers](./assets/img/SparkFun_BlueSMiRF-v2-PTH_Board_Dimensions.png){ width="600" }](./assets/img/SparkFun_BlueSMiRF-v2-PTH_Board_Dimensions.png "Click to enlarge")
+[![Board Dimensions for PTH, without Headers](./assets/board_files/PTH/dimensions-pth.png){ width="600" }](./assets/board_files/PTH/dimensions-pth.png "Click to enlarge")
 <figcaption markdown>Board Dimensions for PTH, without Headers</figcaption>
 </figure>
 
 
 <figure markdown>
-[![Board Dimensions for SMD with Headers](./assets/img/SparkFun_BlueSMiRF-v2_SMD_Headers_Board_Dimensions.jpg){ width="600" }](./assets/img/SparkFun_BlueSMiRF-v2_SMD_Headers_Board_Dimensions.jpg "Click to enlarge")
+[![Board Dimensions for SMD with Headers](./assets/board_files/SMD_Headers/dimensions-smd.png){ width="600" }](./assets/board_files/SMD_Headers/dimensions-smd.png "Click to enlarge")
 <figcaption markdown>Board Dimensions for SMD with Headers</figcaption>
 </figure>
 

@@ -6,18 +6,18 @@ Now that you've successfully got your SparkFun BlueSMiRF v2 up and running, it's
 
 	- **PTH Header**
 
-		- [Schematic (PDF)](./assets/board_files/PTH/SparkFun_BlueSMiRF-v2_PTH_Schematic_v11.pdf)
-		- [KiCad Files (ZIP)](./assets/board_files/PTH/SparkFun_BlueSMiRF-v2.zip)
-		- [3D Model (STEP)](./assets/3d_model/SparkFun_BlueSMiRF-v2_3D_model.step)
-		- [Board Dimensions (PNG)](./assets/img/SparkFun_BlueSMiRF-v2-PTH_Board_Dimensions.png)
+		- [Schematic (PDF)](./assets/board_files/PTH/schematic-pth.pdf)
+		- [KiCad Files (ZIP)](./assets/board_files/PTH/kicad_files-pth.zip)
+		- [3D Model (STEP)](./assets/3d_model/cad_model-pth.step)
+		- [Board Dimensions (PNG)](./assets/board_files/PTH/dimensions-pth.png)
 
 
 	- **Male Header Pins**
 
-		- [Schematic (PDF)](./assets/board_files/SMD_Headers/SparkFun_BlueSMiRF-v2_SMD_Headers_Schematic_v11.pdf)
-		- [KiCad Files (ZIP)](./assets/board_files/SMD_Headers/SparkFun_BlueSMiRF-v2-SMD_Headers.zip)
-		- [3D Model (STEP)](./assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_model.step)
-		- [Board Dimensions (PNG)](./assets/img/SparkFun_BlueSMiRF-v2_SMD_Headers_Board_Dimensions.jpg)
+		- [Schematic (PDF)](./assets/board_files/SMD_Headers/schematic-smd.pdf)
+		- [KiCad Files (ZIP)](./assets/board_files/SMD_Headers/kicad_files-smd.zip)
+		- [3D Model (STEP)](./assets/3d_model/cad_model-smd.step)
+		- [Board Dimensions (PNG)](./assets/board_files/SMD_Headers/dimensions-smd.png)
 
 
 	- **JST-GH Connector**
