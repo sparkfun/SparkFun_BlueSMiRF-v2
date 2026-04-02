@@ -12,8 +12,8 @@ window.MathJax = {
       processHtmlClass: "arithmatex"
     }
   };
-  
-  document$.subscribe(() => { 
+
+  document$.subscribe(() => {
     MathJax.typesetPromise()
   })
   
