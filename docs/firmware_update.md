@@ -1,4 +1,4 @@
-From time to time, SparkFun will release new firmware for the BlueSMiRF v2 product line to add and improve functionality. For most users, firmware can be upgraded over a 2.4GHz WiFi network using the [OTA method](#updating-firmware-over-the-air-ota). Users can also update the firmware manually using a Command Line Interface (CLI)
+From time to time, SparkFun will release new firmware for the BlueSMiRF v2 product line to add and improve functionality. For most users, firmware can be upgraded over a 2.4GHz WiFi network using the [OTA method](#over-the-air-ota). Users can also update the firmware manually using a Command Line Interface (CLI)
 
 
 
@@ -16,7 +16,7 @@ Because it's much easier to use, we recommend the OTA firmware update process. I
 
 Hold the ++"PAIR"++ button while powering the BlueSMiRF v2. This will cause the ESP32 to enter bootloader mode. Once the BlueSMiRF v2 is in bootloader mode, the **STATUS** LED will be dimly lit and the **CONNECT** LED will be off.
 
-We recommend using a [breadboard](https://www.sparkfun.com/products/12002) or [jumper wires](https://www.sparkfun.com/products/11026) to connect the BlueSMiRF to a [USB-to-Serial](https://www.sparkfun.com/products/15096) connection. At a minimum, you will need to connect the UART pins, power, and ground as stated in the hardware hookup. Remember, the TX and RX connections must be crossed over.
+We recommend using a [breadboard](https://www.sparkfun.com/breadboard-self-adhesive-white.html) or [jumper wires](https://www.sparkfun.com/jumper-wires-standard-7-m-m-30-awg-30-pack.html) to connect the BlueSMiRF to a [USB-to-Serial adapter](https://www.sparkfun.com/sparkfun-serial-basic-breakout-ch340c-and-usb-c.html). At a minimum, you will need to connect the UART pins, power, and ground as stated in the hardware assembly. Remember, the TX and RX connections must be crossed over.
 
 <div style="text-align: center;">
 	<table>

@@ -10,12 +10,14 @@
 </div>
 
 
-The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wireless Bluetooth&reg; serial link. This version of the popular BlueSMiRF uses the ESP32. These boards work as a wireless serial UART pipe and are a great wireless replacement for serial cables. Simply pair, connect, and transmit serial data between your TX/RX lines! Any serial stream from 2400 to 921600 baud can be passed seamlessly between two devices. In this tutorial, we'll go over the hardware and how to hookup the breakout board. We will also go over how to connect to a smartphone and a basic Arduino example to get started!
+-   Our BlueSMiRF product line is a series of wireless Bluetooth&reg; serial links. The SparkFun BlueSMiRF v2 is a reboot of the previous [BlueSMiRF board](https://www.sparkfun.com/sparkfun-bluetooth-mate-silver.html), utilizing the Espressif's ESP32 Pico Mini for wireless communication and comes in several variants, with [PTH pins](https://www.sparkfun.com/sparkfun-bluesmirf-v2.html), [male headers](https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html), or a [JST connector](https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html). These boards operate as a serial data link and are a great replacement for hardwired between boards. Simply connect a BlueSMiRF v2, pair the devices over Bluetooth&reg;, and simultaneously transmit and receive data! Any serial stream from 2400 to 921600 baud can be passed between two devices; with a range of 100' (33m). In this tutorial, we'll go over the hardware and the connections to a BlueSMiRF v2. We will also provide a few examples; including, how to connect to the BlueSMiRF v2 with a smartphone and a basic Arduino example transmitting data between two BlueSMiRF v2s... so [let's get started!](hardware_overview.md)
+
+</div>
 
 
 <div class="grid cards" markdown>
 
--   <a href="https://www.sparkfun.com/products/24113">
+-   <a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2.html">
 	**SparkFun BlueSMiRF v2 - PTH Pins**<br>
 	**SKU:** WRL-24113
 
@@ -27,11 +29,11 @@ The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wirele
 
 
 	<article style="text-align: center;" markdown>
-	[Purchase from SparkFun :fontawesome-solid-cart-plus:](https://www.sparkfun.com/products/24113){ .md-button .md-button--primary }
+	[Purchase from SparkFun :fontawesome-solid-cart-plus:](https://www.sparkfun.com/sparkfun-bluesmirf-v2.html){ .md-button .md-button--primary }
 	</article>
 
 
--   <a href="https://www.sparkfun.com/products/23287">
+-   <a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html">
 	**SparkFun BlueSMiRF v2 - Male Header**<br>
 	**SKU:** WRL-23287
 
@@ -43,7 +45,23 @@ The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wirele
 
 
 	<article style="text-align: center;" markdown>
-	[Purchase from SparkFun :fontawesome-solid-cart-plus:](https://www.sparkfun.com/products/23287){ .md-button .md-button--primary }
+	[Purchase from SparkFun :fontawesome-solid-cart-plus:](https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html){ .md-button .md-button--primary }
+	</article>
+
+
+-   <a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html">
+	**SparkFun BlueSMiRF v2 - JST Connector**<br>
+	**SKU:** WRL-30414
+
+	---
+
+	<figure markdown>
+	![Product thumbnail](https://cdn.sparkfun.com/assets/parts/3/2/3/2/2/30414-BlueSMiRF-V2-Feature.jpg)
+	</figure></a>
+
+
+	<article style="text-align: center;" markdown>
+	[Purchase from SparkFun :fontawesome-solid-cart-plus:](https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html){ .md-button .md-button--primary }
 	</article>
 
 </div>
@@ -53,14 +71,14 @@ The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/products/24113) is a wirele
 ## Required Materials
 To follow along with the examples in this tutorial, you will need the following materials. You may not need everything though depending on what you have. Add it to your cart, read through the guide, and adjust the cart as necessary. We recommend the board with headers to minimize the amount of soldering to your application.
 
-- 2x [SparkFun BlueSMiRF v2 - Headers [WRL-23287]](https://www.sparkfun.com/products/23287)
-- 2x [Jumper Wires Premium 6" M/F Pack of 10 [PRT-09140]](https://www.sparkfun.com/products/9140)
-- 2x [SparkFun Serial Basic Breakout - CH340C and USB-C [DEV-15096]](https://www.sparkfun.com/products/15096)
-- 2x [Reversible USB A to C Cable - 0.8m [CAB-15425]](https://www.sparkfun.com/products/15425)
+- 2x [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html)
+- 2x [Jumper Wires Premium 6" M/F Pack of 10](https://https://www.sparkfun.com/jumper-wires-premium-6-m-f-pack-of-10.html)
+- 2x [SparkFun Serial Basic Breakout - CH340C and USB-C](https://www.sparkfun.com/sparkfun-serial-basic-breakout-ch340c-and-usb-c.html)
+- 2x [USB-A to USB-C Cable - 1m, USB 2.0 (Flexible Silicone)](https://www.sparkfun.com/usb-a-to-usb-c-cable-1m-usb-2-0-flexible-silicone.html)
 
 <div class="grid cards" markdown>
 
--   <a href="https://www.sparkfun.com/products/23287">
+-   <a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html">
 	<figure markdown>
 	![Product thumbnail](https://cdn.sparkfun.com/r/600-600/assets/parts/2/3/4/8/3/23287-BlueSMiRF-ESP32-WithHeaders-Feature-NEW.jpg)
 	</figure>
@@ -73,9 +91,9 @@ To follow along with the examples in this tutorial, you will need the following 
 	</a>
 
 
--   <a href="https://www.sparkfun.com/products/9140">
+-   <a href="https://https://www.sparkfun.com/jumper-wires-premium-6-m-f-pack-of-10.html">
 	<figure markdown>
-	![Product thumbnail](https://cdn.sparkfun.com//assets/parts/2/5/5/7/09140-02-L.jpg)
+	![Product thumbnail](https://cdn.sparkfun.com/assets/parts/2/5/5/7/09140-02-L.jpg)
 	</figure>
 
 	---
@@ -86,9 +104,9 @@ To follow along with the examples in this tutorial, you will need the following 
 	</a>
 
 
--   <a href="https://www.sparkfun.com/products/15096">
+-   <a href="https://www.sparkfun.com/sparkfun-serial-basic-breakout-ch340c-and-usb-c.html">
 	<figure markdown>
-	![Product thumbnail](https://cdn.sparkfun.com//assets/parts/1/3/4/5/2/15096-SparkFun_Serial_Basic_Breakout_-_CH340C_and_USB-C-01.jpg)
+	![Product thumbnail](https://cdn.sparkfun.com/assets/parts/1/3/4/5/2/15096-SparkFun_Serial_Basic_Breakout_-_CH340C_and_USB-C-01.jpg)
 	</figure>
 
 	---
@@ -99,16 +117,16 @@ To follow along with the examples in this tutorial, you will need the following 
 	</a>
 
 
--   <a href="https://www.sparkfun.com/products/15425">
+-   <a href="https://www.sparkfun.com/usb-a-to-usb-c-cable-1m-usb-2-0-flexible-silicone.html">
 	<figure markdown>
-	![Product thumbnail](https://cdn.sparkfun.com//assets/parts/1/3/9/8/4/15425-Reversible_USB_A_to_C_Cable_-_0.8m-02.jpg)
+	![Product thumbnail](https://cdn.sparkfun.com/assets/parts/2/6/1/8/5/CAB-25630-USB-to-USB-C-1mm-Feature.jpg)
 	</figure>
 
 	---
 
-	**Reversible USB A to C Cable - 0.8m**
+	**USB-A to USB-C Cable - 1m, USB 2.0 (Flexible Silicone)**
 
-	CAB-15425
+	CAB-25630
 	</a>
 
 

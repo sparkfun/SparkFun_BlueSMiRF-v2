@@ -6,26 +6,26 @@ Now that you've successfully got your SparkFun BlueSMiRF v2 up and running, it's
 
 	- **PTH Header**
 
-		- [Schematic (PDF)](./assets/board_files/PTH/schematic-pth.pdf)
-		- [KiCad Files (ZIP)](./assets/board_files/PTH/kicad_files-pth.zip)
+		- [Schematic (PDF)](./assets/board_files/schematic-pth.pdf)
+		- [KiCad Files (ZIP)](./assets/board_files/kicad_files-pth.zip)
 		- [3D Model (STEP)](./assets/3d_model/cad_model-pth.step)
-		- [Board Dimensions (PNG)](./assets/board_files/PTH/dimensions-pth.png)
+		- [Board Dimensions (PNG)](./assets/board_files/dimensions-pth.png)
 
 
 	- **Male Header Pins**
 
-		- [Schematic (PDF)](./assets/board_files/SMD_Headers/schematic-smd.pdf)
-		- [KiCad Files (ZIP)](./assets/board_files/SMD_Headers/kicad_files-smd.zip)
+		- [Schematic (PDF)](./assets/board_files/schematic-smd.pdf)
+		- [KiCad Files (ZIP)](./assets/board_files/kicad_files-smd.zip)
 		- [3D Model (STEP)](./assets/3d_model/cad_model-smd.step)
-		- [Board Dimensions (PNG)](./assets/board_files/SMD_Headers/dimensions-smd.png)
+		- [Board Dimensions (PNG)](./assets/board_files/dimensions-smd.png)
 
 
 	- **JST-GH Connector**
 
-		- [Schematic](./assets/board_files/JST/schematic-jst.pdf)
-		- [KiCad Files](./assets/board_files/JST/kicad_files-jst.zip)
+		- [Schematic](./assets/board_files/schematic-jst.pdf)
+		- [KiCad Files](./assets/board_files/kicad_files-jst.zip)
 		- [3D Model](./assets/3d_model/cad_model-jst.step)
-		- [Board Dimensions](./assets/board_files/JST/dimensions-jst.png)
+		- [Board Dimensions](./assets/board_files/dimensions-jst.png)
 
 	</div>
 

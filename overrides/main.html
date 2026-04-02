@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
+<!-- Announcement bar -->
+{% block announce %}
+  <article style="text-align: center;">
+    <span class="twemoji sfe">
+      {% include ".icons/sfe.svg" %}
+    </span>
+    <strong>Product Release:</strong> The new variant of the BlueSMiRF v2, features a JST connector to simplify connections to our GNSS breakout boards with just a JST cable.
+  </article>
+{% endblock %}
+
+
 {% block content %}
 
 <!-- Adds file-eye icon to view hookup guide as a single page -->

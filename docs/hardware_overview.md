@@ -1,3 +1,163 @@
+## :material-history: Revision History
+For a background on the development and design revisions of the BlueSMiRF, check out the [**Board Revision History** page](revision_history.md) of the guide.
+
+
+
+## :material-folder-cog: Design Files
+The design of the BlueSMiRF is similar to previous generations. However, we have made a few modifications to the design to simplify how users to the board
+
+- Features an ESP32-PICO-MINI-02 module programmed with our open-source firmware
+	- Easily [update the firmware](firmware_update.md) Over-the-Air or through the serial interface
+	- Remotely configure the settings with a simple [AT-command set](at_commands.md)
+- We have three variants with different connections to simplify hooking up the BlueSMiRF to your project
+	- The PTH pad and male header variants have fully, adopted the pin layout from the Bluetooth Mate
+		- <span style="text-decoration:overline">`RTS`</span>/`RXI`/`TXO`/`VCC`/<span style="text-decoration:overline">`CTS`</span>/`GND`
+		- Pin labels are now provided on both sides of the board
+	- On the JST variant, the pin layout and JST connector matches the serial radios
+- A [user button](hardware_overview.md#button) has been added to simplify pairing, triggering various modes of operation, and resetting the factory defaults
+- Upgraded the voltage regulator to the APA2112K 3.3V, 600mA for increased performance
+
+
+There are no mounting holes for standoffs on the boards.
+
+
+<!-- Import the component -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+
+<div class="grid cards desc" markdown>
+
+-   :kicad-primary:{ .enlarge-logo } Design Files
+
+	---
+
+	- :material-folder-zip: [Schematics](./assets/board_files/schematics.zip)
+		- :fontawesome-solid-file-pdf: [PTH Pads](./assets/board_files/schematic-pth.pdf)
+		- :fontawesome-solid-file-pdf: [Male Header](./assets/board_files/schematic-smd.pdf)
+		- :fontawesome-solid-file-pdf: [JST Connector](./assets/board_files/schematic-jst.pdf)
+	- :material-folder-zip: [KiCad Files](./assets/board_files/kicad_files.zip)
+		- :material-folder-zip: [PTH Pads](./assets/board_files/kicad_files-pth.zip)
+		- :material-folder-zip: [Male Header](./assets/board_files/kicad_files-smd.zip)
+		- :material-folder-zip: [JST Connector](./assets/board_files/kicad_files-jst.zip)
+	- :material-folder-zip: [Board Dimensions](./assets/board_files/dimensions.zip)
+		- :fontawesome-solid-file-pdf: [PTH Pads](./assets/board_files/dimensions-pth.pdf):
+			- 1.50" x 0.60" (38.1mm x 15.2mm)
+		- :fontawesome-solid-file-pdf: [Male Header](./assets/board_files/dimensions-smd.pdf):
+			- 1.74" x 0.60" (44.2mm x 15.2mm)
+		- :fontawesome-solid-file-pdf: [JST Connector](./assets/board_files/dimensions-jst.pdf):
+			- 1.60" x 0.60" (40.8mm x 15.2mm)
+	- :material-folder-zip: [STEP Files](./assets/3d_model/step_files.zip)
+		- :material-cube-outline: [PTH Pads](./assets/3d_model/cad_model-pth.step)
+		- :material-cube-outline: [Male Header](./assets/3d_model/cad_model-smd.step)
+		- :material-cube-outline: [JST Connector](./assets/3d_model/cad_model-jst.step)
+
+
+-   <!-- Boxes in tabs -->
+
+	=== "PTH Pads"
+		<article style="margin: auto; text-align: center;" markdown>
+		<model-viewer src="../assets/3d_model/web_model-pth.glb" poster="../assets/3d_model/poster-pth.png" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" exposure="1" camera-orbit="0deg 60deg 0.09m" field-of-view="30deg" style="width: 100%; height: 450px;">
+		</model-viewer>
+
+		[Download the `*.step` File](./assets/3d_model/cad_model-pth.step "Click download"){ .md-button .md-button--primary width="250px" }
+
+		</article>
+
+
+	=== "Male Header"
+		<article style="margin: auto; text-align: center;" markdown>
+		<model-viewer src="../assets/3d_model/web_model-smd.glb" poster="../assets/3d_model/poster-smd.png" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" exposure="1" camera-orbit="0deg 60deg 0.09m" field-of-view="30deg" style="width: 100%; height: 450px;">
+		</model-viewer>
+
+		[Download the `*.step` File](./assets/3d_model/cad_model-smd.step "Click download"){ .md-button .md-button--primary width="250px" }
+
+		</article>
+
+
+	=== "JST Connector"
+		<article style="margin: auto; text-align: center;" markdown>
+		<model-viewer src="../assets/3d_model/web_model-jst.glb" poster="../assets/3d_model/poster-jst.png" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" exposure="1" camera-orbit="0deg 60deg 0.09m" field-of-view="30deg" style="width: 100%; height: 450px;">
+		</model-viewer>
+
+
+		[Download the `*.step` File](./assets/3d_model/cad_model-jst.step "Click download"){ .md-button .md-button--primary width="250px" }
+
+		</article>
+
+
+	???+ tip "Manipulate 3D Model"
+		<article style="text-align: center;" markdown>
+
+		| Controls       | Mouse                    | Touchscreen    |
+		| :------------- | :----------------------: | :------------: |
+		| Zoom           | Scroll Wheel             | 2-Finger Pinch |
+		| Rotate         | ++"Left-Click"++ & Drag  | 1-Finger Drag  |
+		| Move/Translate | ++"Right-Click"++ & Drag | 2-Finger Drag  |
+
+		</article>
+
+</div>
+
+
+??? tip "Need Dimensions?"
+	For more board dimensions, users can download the [KiCad files](./assets/board_files/kicad_files.zip) for these board. These files can be opened in KiCad and measurements can be made with the measuring tool.
+
+
+	<div class="grid" markdown>
+
+	<div markdown>
+
+	<figure markdown>
+	[![Board Dimensions of PTH variant](./assets/board_files/dimensions-pth.png){ width="450" }](./assets/board_files/dimensions-pth.png "Click to enlarge")
+	<figcaption markdown>Dimensions of the BlueSMiRF v2 - PTH.</figcaption>
+	</figure>
+
+	</div>
+
+
+	<div markdown>
+
+	<figure markdown>
+	[![Board Dimensions of header variant](./assets/board_files/dimensions-smd.png){ width="450" }](./assets/board_files/dimensions-smd.png "Click to enlarge")
+	<figcaption markdown>Dimensions of the BlueSMiRF v2 - Header.</figcaption>
+	</figure>
+
+	</div>
+
+
+	<div markdown>
+
+	<figure markdown>
+	[![Board Dimensionsof JST variant](./assets/board_files/dimensions-jst.png){ width="450" }](./assets/board_files/dimensions-jst.png "Click to enlarge")
+	<figcaption markdown>Dimensions of the BlueSMiRF v2 - JST.</figcaption>
+	</figure>
+
+	</div>
+
+	</div>
+
+
+	!!! info ":octicons-download-16:{ .heart } KiCad - Free Download!"
+		KiCad is free, open-source [CAD]("computer-aided design") program for electronics. Click on the button below to download their software. *(\*Users can find out more information about KiCad from their [website](https://www.kicad.org/).)*
+
+
+		<article style="text-align: center;" markdown>
+		[Download :kicad-primary:{ .enlarge-logo }](https://www.kicad.org/download/ "Go to downloads page"){ .md-button .md-button--primary width="250px" }
+		</article>
+
+
+	??? info ":straight_ruler: Measuring Tool"
+		This video demonstrates how to utilize the dimensions tool in KiCad, to include additional measurements:
+
+
+		<article class="video-500px" style="text-align: center; margin: auto;" markdown>
+		<iframe src="https://www.youtube.com/embed/-eXuD8pkCYw" title="KiCad Dimension Tool" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		![QR code to play video](./assets/img/qr_code/dimension_tool.png){ .qr width="85" }
+		</article>
+
+
+
+## Board Layout
 In this section, we will highlight the hardware and pins that are broken out on the SparkFun BlueSMiRF v2. For the scope of the tutorial, we will be referring to the version with the headers.
 
 <div class="grid" markdown>
@@ -248,60 +408,6 @@ The board includes the following jumpers on the top and bottom of the board.
 <figure markdown>
 [![Jumpers Highlighted, Bottom View](./assets/img/headers-jumper_btn.jpg){ width="600" }](./assets/img/headers-jumper_btn.jpg "Click to enlarge")
 <figcaption markdown>Jumpers, Bottom View</figcaption>
-</figure>
-
-</div>
-
-
-
-## 3D Model
-A 3D model of the SparkFun BlueSMiRF v2 SMD and components was exported to STEP file using KiCad.
-
-<!-- Import the component -->
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
-
-
-<div style="text-align: center;" markdown>
-
-<model-viewer src="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_model.glb" camera-controls poster="../assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_image.png" environment-image="legacy" shadow-intensity="1.58" exposure="0.64" shadow-softness="0.24" tone-mapping="neutral" camera-orbit="-46.67deg 57.14deg 153.3m" field-of-view="30deg" style="width: 750px; height: 500px; margin: auto;">
-</model-viewer>
-
-
-[Click Here for the STEP File](./assets/3d_model/SparkFun_BlueSMiRF-v2-Headers_3D_model.step){ .md-button .md-button--primary }
-
-</div>
-
-
-A 3D model of the SparkFun BlueSMiRF v2 PTH and components was also exported to STEP file using KiCad.
-
-
-<div style="text-align: center;" markdown>
-
-<model-viewer src="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_model.glb" camera-controls poster="../assets/3d_model/SparkFun_BlueSMiRF-v2_3D_image.png" environment-image="legacy" shadow-intensity="1.58" exposure="0.64" shadow-softness="0.24" tone-mapping="neutral" camera-orbit="-46.67deg 57.14deg 153.3m" field-of-view="30deg" style="width: 750px; height: 500px; margin: auto;">
-</model-viewer>
-
-
-[Click Here for the STEP File](./assets/3d_model/SparkFun_BlueSMiRF-v2_3D_model.step){ .md-button .md-button--primary }
-
-</div>
-
-
-
-## Board Dimensions
-Each version of the board is 38.1mm x 15.2mm. Note that the version with the headers makes the board slightly longer by making the overall length 44.2mm. Adding a row of female 1x6 headers or jumper wires will increase the length slightly as well. There are no mounting holes for standoffs on the boards.
-
-
-<div class="grid" markdown>
-
-<figure markdown>
-[![Board Dimensions for PTH, without Headers](./assets/board_files/PTH/dimensions-pth.png){ width="600" }](./assets/board_files/PTH/dimensions-pth.png "Click to enlarge")
-<figcaption markdown>Board Dimensions for PTH, without Headers</figcaption>
-</figure>
-
-
-<figure markdown>
-[![Board Dimensions for SMD with Headers](./assets/board_files/SMD_Headers/dimensions-smd.png){ width="600" }](./assets/board_files/SMD_Headers/dimensions-smd.png "Click to enlarge")
-<figcaption markdown>Board Dimensions for SMD with Headers</figcaption>
 </figure>
 
 </div>
