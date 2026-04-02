@@ -9,28 +9,28 @@ icon: fontawesome/solid/scroll
 --8<-- "./docs/introduction.md"
 
 # Old School to New School
---8<-- "./docs/old_school_to_new_school.md"
+--8<-- "./docs/revision_history.md"
 
 # Hardware Overview
 --8<-- "./docs/hardware_overview.md"
 
-# Hardware Hookup
---8<-- "./docs/hardware_hookup.md"
+# Hardware Assembly
+--8<-- "./docs/hardware_assembly.md"
 
-# AT Command Reference
+# Operation Modes
+--8<-- "./docs/operation_modes.md"
+
+# Configuration
 --8<-- "./docs/at_commands.md"
 
-# Button Control
---8<-- "./docs/button.md"
+# Example 1 - Remote Access
+--8<-- "./docs/example-remote_access.md"
 
-# Example 1 - BlueSMiRF to BlueSMiRF
---8<-- "./docs/bluesmirf-v2_to_bluesmirf-v2.md"
-
-# Example 2 - BlueSMiRF to Smartphone
---8<-- "./docs/bluesmirf-v2_to_smartphone.md"
+# Example 2 - Pair Two BlueSMiRFs
+--8<-- "./docs/example-pair_bluesmirf.md"
 
 # Example 3 - Wireless Serial LCD
---8<-- "./docs/Arduino_Serial_LCD_BlueSMiRFs.md"
+--8<-- "./docs/example-serlcd.md"
 
 # Firmware Update
 --8<-- "./docs/firmware_update.md"

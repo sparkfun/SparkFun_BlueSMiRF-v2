@@ -13,6 +13,43 @@
 }
 
 
+/* Rotate objects */
+.rotate-90 {
+  transform: rotate(90deg); /* Equal to rotateZ(90deg) */
+}
+
+
+/* Allow users to set the "mkdocs-material generator" to right side of footer */
+.md-social.generator-right {
+  display: inline-flex;
+  gap: .2rem;
+  margin: 0 .4rem;
+  padding: .4rem 0 0
+}
+
+@media screen and (min-width: 45em) {
+  .md-social.generator-right {
+    padding: .2rem 0 0
+  }
+}
+
+.md-copyright.generator-right {
+  color: var(--md-footer-fg-color--lighter);
+  font-size: .64rem;
+  margin: auto .6rem;
+  padding: 0 0 .6rem;
+  width: 100%
+}
+
+@media screen and (min-width: 45em) {
+  .md-copyright.generator-right {
+    padding: 0 0 .2rem;
+      width:auto
+  }
+}
+
+
+/* SparkFun dark brand color: #3c464d */
 
 /* Sets the maximum height size of the code blocks */
 /* (code block becomes scrollable, but not compatible when lines are displayed) */
@@ -25,10 +62,89 @@
   max-height: var(--md-codeblock-height, 800px);
 } */
 
-/* Word wrap code blocks (no horizontal scroll) */
-pre code {
-  white-space : pre-wrap;
+
+/* ================================================================================== */
+/* Code Block                                                                         */
+/* ================================================================================== */
+
+/* Fixes highlighting of code blocks in other elements (i.e. content tabs, buttons, etc.) */
+.md-typeset a:focus code, .md-typeset a:hover code {
+  background-color: var(--md-code-fg-color);
 }
+
+
+/* ================================================================================== */
+/* Content Tabs                                                                       */
+/* ================================================================================== */
+
+/* Sets the background color of the labels and creates an outline */
+.md-typeset .tabbed-labels > label {
+  background-color: var(--md-code-bg-color--light);
+  border-top: .1rem solid var(--md-default-fg-color--lighter);
+  border-left: .1rem solid var(--md-default-fg-color--lighter);
+  border-right: .1rem solid var(--md-default-fg-color--lighter);
+  margin-left: .1rem;
+  margin-right: .1rem;
+}
+
+/* Sets background color of active label to accent, when mouse is hovered over item */
+.md-typeset .tabbed-labels > label > a:hover {
+  /* Bright Red - Issue with red code block text */
+  /* background-color: var(--md-accent-fg-color); */
+
+  /* Transparent Red - Issue, not visible in dark theme */
+  /* background-color: var(--md-accent-bg-color--transparent); */
+
+  /* Blue - In light theme, issue with dark blue on black letters */
+  /* background-color: var(--md-typeset-a-color); */
+
+  /* Grey - In light theme, issue with dark grey on black letters (better than blue) */
+  /* background-color: var(--md-primary-fg-color); */
+
+  /* Light Blue */
+  background-color: #547cc6b7;
+
+}
+
+/* Sets kbd button aesthetic */
+.md-typeset {
+  --md-typeset-kbd-color:rgb(80, 80, 80);
+  --md-typeset-kbd-border-color: rgb(175, 175, 175);
+  --md-typeset-kbd-accent-color: hsla(0, 0%, 50%, 0.4);
+}
+
+.md-typeset kbd {
+  color:#ffffff;
+}
+
+
+/* Sets the color of the background and outline on the active label */
+.md-typeset .tabbed-set>input:first-child:checked~.tabbed-labels>:first-child,
+.md-typeset .tabbed-set>input:nth-child(2):checked~.tabbed-labels>:nth-child(2),
+.md-typeset .tabbed-set>input:nth-child(3):checked~.tabbed-labels>:nth-child(3),
+.md-typeset .tabbed-set>input:nth-child(4):checked~.tabbed-labels>:nth-child(4),
+.md-typeset .tabbed-set>input:nth-child(5):checked~.tabbed-labels>:nth-child(5),
+.md-typeset .tabbed-set>input:nth-child(6):checked~.tabbed-labels>:nth-child(6),
+.md-typeset .tabbed-set>input:nth-child(7):checked~.tabbed-labels>:nth-child(7),
+.md-typeset .tabbed-set>input:nth-child(8):checked~.tabbed-labels>:nth-child(8),
+.md-typeset .tabbed-set>input:nth-child(9):checked~.tabbed-labels>:nth-child(9),
+.md-typeset .tabbed-set>input:nth-child(10):checked~.tabbed-labels>:nth-child(10),
+.md-typeset .tabbed-set>input:nth-child(11):checked~.tabbed-labels>:nth-child(11),
+.md-typeset .tabbed-set>input:nth-child(12):checked~.tabbed-labels>:nth-child(12),
+.md-typeset .tabbed-set>input:nth-child(13):checked~.tabbed-labels>:nth-child(13),
+.md-typeset .tabbed-set>input:nth-child(14):checked~.tabbed-labels>:nth-child(14),
+.md-typeset .tabbed-set>input:nth-child(15):checked~.tabbed-labels>:nth-child(15),
+.md-typeset .tabbed-set>input:nth-child(16):checked~.tabbed-labels>:nth-child(16),
+.md-typeset .tabbed-set>input:nth-child(17):checked~.tabbed-labels>:nth-child(17),
+.md-typeset .tabbed-set>input:nth-child(18):checked~.tabbed-labels>:nth-child(18),
+.md-typeset .tabbed-set>input:nth-child(19):checked~.tabbed-labels>:nth-child(19),
+.md-typeset .tabbed-set>input:nth-child(20):checked~.tabbed-labels>:nth-child(20) {
+  background-color: #0000;
+  border-top: .1rem solid var(--md-default-fg-color);
+  border-left: .1rem solid var(--md-default-fg-color);
+  border-right: .1rem solid var(--md-default-fg-color);
+}
+
 
 
 /* ================================================================================== */
@@ -49,11 +165,17 @@ pre code {
   animation: heart 1000ms infinite;
 }
 
-/* Autodesk Icon ==================================================================== */
-.md-typeset .twemoji.autodesk svg {
-  display:inline-flex;
+/* Enlarge Logos ==================================================================== */
+.md-typeset .twemoji.enlarge-logo svg {
+  display: inline-flex;
   height: 1rem;
   width: 100%;
+}
+
+.md-typeset .twemoji.icon-max-width svg {
+  display: inline-flex;
+  width: 100%;
+  max-height: var(--md-icon-size);
 }
 
 
@@ -63,23 +185,24 @@ pre code {
 
 /* SparkFun ========================================================================= */
 .md-typeset :is(.tip)>:is(.admonition-title,summary):before {
-  background-color: #ee2e22;
+  background-color: #e0311d;
 }
 
 
 /* GitHub =========================================================================== */
 .md-typeset .admonition.github,
 .md-typeset details.github {
-  border-color: white;
+  border-color: #8250DF;
 }
 .md-typeset .github > .admonition-title,
 .md-typeset .github > summary {
-  background-image: linear-gradient(to bottom, #8241f9, #4e277b);
+  /* background-image: linear-gradient(to bottom, #8241f9, #4e277b); */
+  background-color: rgba(130, 80, 223, 0.4);
   /* background-color: rgb(110, 64, 201); */
 }
 .md-typeset .github > .admonition-title::before,
 .md-typeset .github > summary::before {
-  background-color: white;
+  background-color: var(--md-typeset-color);
   -webkit-mask-image: var(--md-admonition-icon--github);
           mask-image: var(--md-admonition-icon--github);
 }
@@ -88,34 +211,75 @@ pre code {
 /* Arduino ========================================================================== */
 .md-typeset .admonition.arduino,
 .md-typeset details.arduino {
-  border-color: #005c5f;
+  border-color: #62AEB2;
+  /* border-color: #005c5f; */
 }
 .md-typeset .arduino > .admonition-title,
 .md-typeset .arduino > summary {
-  background-color: rgba(0, 92, 95, 0.1);
+  background-color: #00878F;
+  /* background-color: rgba(0, 135, 143, 0.8); */
 }
 .md-typeset .arduino > .admonition-title::before,
 .md-typeset .arduino > summary::before {
-  background-color: #005c5f;
+  background-color: white;
   -webkit-mask-image: var(--md-admonition-icon--arduino);
           mask-image: var(--md-admonition-icon--arduino);
+}
+.md-typeset .arduino > .admonition-title,
+.md-typeset .arduino > summary {
+  /* color: #E5AD24; */
+  /* color: #E47128; */
+  /* color: #8C7965; */
+  color: white;
+}
+
+
+/* Raspberry Pi ===================================================================== */
+.md-typeset .admonition.rpi,
+.md-typeset details.rpi {
+  border-color: #6CC04A;
+}
+.md-typeset .rpi > .admonition-title,
+.md-typeset .rpi > summary {
+  /* background-color: rgba(197, 26, 74, 0.75); */
+  background-color: #C51A4A;
+}
+.md-typeset .rpi > .admonition-title::before,
+.md-typeset .rpi > summary::before {
+  /* background-color: var(--md-typeset-color); */
+  background-color: black;
+  -webkit-mask-image: var(--md-admonition-icon--rpi);
+          mask-image: var(--md-admonition-icon--rpi);
+}
+.md-typeset .rpi > .admonition-title,
+.md-typeset .rpi > summary {
+  color: white;
 }
 
 
 /* Python =========================================================================== */
 .md-typeset .admonition.python,
 .md-typeset details.python {
-  border-color: #3776ab;
+  border-color: #646464;
+  /* border-color: #4B8BBE; */
 }
 .md-typeset .python > .admonition-title,
 .md-typeset .python > summary {
-  background-color: #1e415e;
+  background-color: #306998;
+  /* background-color: rgba(48, 105, 152, 0.75); */
 }
 .md-typeset .python > .admonition-title::before,
 .md-typeset .python > summary::before {
-  background-color: #3776ab;
+  background-color: #FFD43B;
+  /* background-color: #4B8BBE; */
   -webkit-mask-image: var(--md-admonition-icon--python);
           mask-image: var(--md-admonition-icon--python);
+}
+.md-typeset .python > .admonition-title,
+.md-typeset .python > summary {
+  color: white;
+  /* color: #646464; */
+  /* color: #FFE873; */
 }
 
 
@@ -194,60 +358,47 @@ pre code {
 /* https://github.com/squidfunk/mkdocs-material/discussions/3535 */
 
 .headerlink {
-	--permalink-size: 16px; /* for font-relative sizes, 0.6em is a good choice */
-	--permalink-spacing: 4px;
+  --permalink-size: 16px; /* for font-relative sizes, 0.6em is a good choice */
+  --permalink-spacing: 4px;
 
-	width: calc(var(--permalink-size) + var(--permalink-spacing));
-	height: var(--permalink-size);
-	vertical-align: middle;
-	background-color: var(--md-default-fg-color--lighter);
-	background-size: var(--permalink-size);
-	mask-size: var(--permalink-size);
-	-webkit-mask-size: var(--permalink-size);
-	mask-repeat: no-repeat;
-	-webkit-mask-repeat: no-repeat;
-	visibility: visible;
+  width: calc(var(--permalink-size) + var(--permalink-spacing));
+  height: var(--permalink-size);
+  vertical-align: middle;
+  background-color: var(--md-default-fg-color--lighter);
+  background-size: var(--permalink-size);
+  mask-size: var(--permalink-size);
+  -webkit-mask-size: var(--permalink-size);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  visibility: visible;
   -webkit-mask-image: var(--md-admonition-icon--link);
           mask-image: var(--md-admonition-icon--link);
 }
 
 [id]:target .headerlink {
-	background-color: var(--md-typeset-a-color);
+  background-color: var(--md-typeset-a-color);
 }
 
 .headerlink:hover {
-	background-color: var(--md-accent-fg-color) !important;
+  background-color: var(--md-accent-fg-color) !important;
 }
 
-@media screen and (min-width: 76.25em) {
-	h1, h2, h3, h4, h5, h6 {
-		display: flex;
-		align-items: center;
-		flex-direction: row;
-	}
+/* Abbreviations - Still causes issues */
+/* @media screen and (min-width: 76.25em) {
+  h1, h2, h3, h4, h5, h6 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 
-  /* Sets icon location to left of header */
-	/* .headerlink {
-		order: -1;
-		margin-left: calc(var(--permalink-size) * -1 - var(--permalink-spacing)) !important;
-	} */
-}
+    Fixes word spacing of an abbreviation
+    column-gap: 0.2em;
 
+    Fixes vertical line spacing on an abbreviation
+    position: relative;
+    padding-bottom: 0.3em;
+  }
+} */
 
-
-
-/* ================================================================================== */
-/* Introduction                                                                       */
-/* ================================================================================== */
-
-/* Sets table width for introduction */
-.md-typeset table.desc {
-  width: 100%;
-  display: table;
-}
-.md-typeset table.desc label{
-  font-size: .85rem;
-}
 
 
 /* ================================================================================== */
@@ -270,15 +421,20 @@ pre code {
   .grid.cards.desc {
     grid-template-columns: 100%;
   }
+  /* .grid.cards.show {
+    grid-template-columns: 100%;
+  } */
 }
 
 
 /* ================================================================================== */
-/* YoutTube Videos                                                                    */
+/* YouTube Videos                                                                     */
 /* ================================================================================== */
 
 /* Auto adjust embedded youtube videos size */
-/* height: 47vw * (viewport/element) percentage */
+/* Aspect ratio: height = 56.25% of width */
+/* 90vw = 90% of (viewport width) */
+
 .video {
   position: relative;
   width: 100%;
@@ -286,77 +442,116 @@ pre code {
 .video iframe {
   position: relative;
   top: 0;
-  width: 90vh;
-  min-width: 200px;
-  height: 16.45vw;
-  min-height: 113px;
+  width: 60vw;
+  height: 33.75vw;
   border: 0;
   overflow: hidden;
 }
 
-.video_desc {
+.video-container {
   position: relative;
-  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
 }
-.video_desc iframe {
-  position: relative;
+.video-container iframe {
+  position: absolute;
   top: 0;
-  width: 90vh;
-  min-width: 200px;
-  /* height: 12.72vw; */
-  height: calc(calc(calc(100vw - 48.4rem) * 0.35 - 2rem) * 0.9);
-  min-height: 113px;
-  border: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-500px {
+  position: relative;
+  padding-bottom: min(281.25px, 56.25%); /* 16:9 */
+  height: 0;
+  max-width: 500px;
+  max-height: 281.25px;
+}
+.video-500px iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
+
+.video-300px {
+  position: relative;
+  padding-bottom: min(168.75px, 56.25%); /* 16:9 */
+  height: 0;
+  max-width: 300px;
+  max-height: 168.75px;
+}
+.video-300px iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
 
 /* Add compatibility for mobile devices */
-/* height: 47vw * (viewport) percentage */
+/* ================================================================================== */
+/* ================================================================================== */
 
-/* Single Column */
-@media (max-width: 750px) {
-  .video iframe {
-    height: 47vw;
-  }
+/* Double ToC */
+/* ================================================================================== */
 
-  .video_desc iframe {
-    /* 100vw * 0.9 * 56.25% (aspect ratio) */
-    height: 50.625vw;
+@media (max-width: 1219px) {
+  .video-container iframe {
+    /* width: 16vw;
+    height: 9vw; */
+    min-width: 200px;
+    min-height: 112.5px;
   }
 }
 
-/* Grid: 35/65 */
-@media (min-width: 751px) {
-  .video_desc iframe {
-    /* 100vw * 0.9 * 56.25% (aspect ratio) * 0.35 */
-    height: 17.71875vw;
+@media (min-width: 1220px) {
+  .video-container iframe {
+    max-width: 50vw;
+    max-height: 28.125vw;
+  }
+}
+
+@media (min-width:1600px) {
+  .video-container iframe {
+    max-width: 60vw;
+    max-height: 33.75vw;
   }
 }
 
 /* Single ToC */
-@media (min-width: 960px) {
-  .video_desc iframe {
-    /* height: 12.7vw; */
-    height: calc( ( (100vw - 24.2rem) * 0.35 - 2rem) * 0.9);
+/* ================================================================================== */
+@media (max-width: 960px) {
+  .video-container iframe {
+    /* width: 20vw;
+    height: 11.25vw; */
+    min-width: 200px;
+    min-height: 112.5px;
   }
 }
 
-/* Double ToC */
-@media (min-width: 1219px) {
-  .video_desc iframe {
-    /* height: 12.7vw; */
-    height: calc( ( (100vw - 24.2rem * 2) * 0.35 - 2rem) * 0.9);
+/* No ToC */
+/* ================================================================================== */
+/* @media (max-width: 750px) {
+  .video-container iframe {
+    width: 60vw;
+    height: 33.75vw;
   }
-}
+} */
+
 
 /* ================================================================================== */
 /* Parameters for PDF Rendering                                                       */
 /* ================================================================================== */
 
-/* Hides elemments with <class="pdf">, <class="qr">, or <class="tinyqr"> on webpage (used for the generated PDF) */
-* + .pdf {
-  display: none;
-}
+/* Hides elemments with <class="qr"> or <class="tinyqr"> on webpage (used for the generated PDF) */
+
 .md-typeset *.qr {
   display: none;
 }
@@ -364,15 +559,9 @@ pre code {
   display: none;
 }
 
-.md-typeset ul.pdf {
-  display: none;
-}
-
 @media print {
-  /* Shows elements with <class="pdf">, <class="qr">, or <class="tinyqr"> on webpage (used for the generated PDF) */
-  * + .pdf {
-    display: contents;
-  }
+  /* Shows elements with <class="qr"> or <class="tinyqr"> on webpage (used for the generated PDF) */
+
   .md-typeset *.qr {
     display: inline-flex;
     align-items: center;
@@ -384,52 +573,39 @@ pre code {
     width: 40px;
   }
 
-  .grid.cards.hide {
-    display: none;
-  }
-
-  /* Removes borders on tables with <class="pdf"> */
-  table + .pdf {
-    border-style:none;
-  }
-
-  /* Limits images size in table */
-  .pdf img {
-    width: 100%;
-    max-width: 200px;
-  }
-
-  .md-typeset ul.pdf {
-    display: flow-root;
-  }
-
   /* Sets table to 100% of page width */
   .md-typeset table:not([class]) {
     width: 100%;
     display: table;
     table-layout: fixed;
   }
-  .md-typeset table.pdf {
-    width: 100%;
-    display: table;
-    table-layout: fixed;
-  }
-  
+
   /* Sets images size in tables */
   .md-typeset table:not([class]) td img {
     width: 100%;
+    max-width: 150px;
     max-height: 150px;
   }
 
-
   /* ================================================================================== */
-  /* YoutTube Videos                                                                    */
+  /* YouTube Videos                                                                     */
   /* ================================================================================== */
 
-  .video iframe {
+  .video {
     display: none;
   }
 
+  .video-container {
+    display: none;
+  }
+
+  .video-500px {
+    display: none;
+  }
+
+  .video-300px {
+    display: none;
+  }
 
   /* ================================================================================== */
   /* Grid Cards                                                                         */
@@ -438,85 +614,39 @@ pre code {
   /* Column Spacing =================================================================== */
 
   /* Two Column Setting */
-  .md-typeset .grid.grid.cards.col-2 {
-	  grid-template-columns: repeat(auto-fit,minmax(16rem,1fr));
-  }
+  /* .md-typeset .grid.grid.cards.col-2 {
+    grid-template-columns: repeat(auto-fit,minmax(16rem,1fr));
+  } */
 
   /* Three Column Setting */
-  .md-typeset .grid.grid.cards.col-3 {
-	  grid-template-columns: repeat(auto-fit,minmax(12rem,1fr));
-  }
+  /* .md-typeset .grid.grid.cards.col-3 {
+    grid-template-columns: repeat(auto-fit,minmax(12rem,1fr));
+  } */
 
   /* Four Column Setting */
-  .md-typeset .grid.grid.cards.col-4 {
-	  grid-template-columns: repeat(auto-fit,minmax(8rem,1fr));
-  }
+  /* .md-typeset .grid.grid.cards.col-4 {
+    grid-template-columns: repeat(auto-fit,minmax(8rem,1fr));
+  } */
 
-  /* Sets grid card width (not working)
-  Works for File > Print function, but not valid for PDF generator due to issue with Weazy
-  * Refer to https://github.com/Kozea/WeasyPrint/issues/543
-  .md-typeset .grid {
-	display: grid;
-	grid-template-columns: repeat(4, 25%);
-  } */
-  /* Shrinks card width to 25% and font to 8px (kind of works for PDF generator, but doesn't create columns)
-  .md-typeset :is(.cards) {
-	width: 25%;
-	font-size: 8px;
-  } */
-  
-  
   /* Sets maximum image size */
   .md-typeset img {
-    max-width:  200px;
-    max-height: 200px;
-  }
-  /* Fixes positioning of admonition icon */
-  .md-typeset :is(.admonition-title,summary):before {
-    top: 0.6rem;
-    left: 0.6rem; 
-  }
-  /* Fixes appearance of admonition icon */
-  .md-typeset :is(.admonition,details)>:last-child {
-	  background-color: transparent; 
-  }
-  /* Fixes margin spacing for lists */
-  .md-typeset ol,ul {
-	  margin-left: 1.5rem;
+    max-width:  350px;
+    max-height: 500px;
   }
 
-  /* Adjusts page break for PDF generator */
-  article h2,h3,h4,h5,h6,ol,ul {
-	  page-break-before: avoid;
-  }
-  article div.admonition {
-	  page-break-before: avoid;
-  }
-  article table,ol,ul {
-    page-break-inside: auto !important;
-  }
-
-  /* Displays first tab (workaround to rendering issue) */
-  * + .tabbed-content {
-    display: contents;
-  }
-  * + .tabbed-content .tabbed-block {
-    display: contents;
-    page-break-after: always;
-  }
 
   /* Prevents page break when tabs are embedded in an admonition*/
-  article details.note {
+  /* article details.note {
     display: inline-block;
-    overflow: hidden;
+    overflow: hidden; */
     /* Hardcode max height to match code block size, when tabbed (need to find better alternative) */
-    max-height: 138mm;
-  }
+    /* max-height: 138mm;
+  } */
 
   /* Limits size of code blocks in admonitions (workaround to rendering issue) */
-  .md-typeset :is(pre, code) {
+  /* .md-typeset :is(pre, code) {
     display: inline-flexbox;
     max-height: 120mm;
     overflow: hidden;
-  }
+  } */
 }

@@ -8,7 +8,7 @@ repo_url: https://github.com/sparkfun/SparkFun_BlueSMiRF-v2
 repo_name: sparkfun/SparkFun_BlueSMiRF-v2
 
 copyright:
-  Copyright 2025 - <a href="https://www.sparkfun.com/" target="_blank" rel="noopener">SparkFun Electronics&#174;</a><br>
+  Copyright 2026 - <a href="https://www.sparkfun.com/" target="_blank" rel="noopener">SparkFun Electronics&#174;</a><br>
   <a href="https://goo.gl/maps/vkstCpQZW6jZMjzYA" target="_blank" rel="noopener">6333 Dry Creek Parkway, Niwot, Colorado 80503</a>
 
 # Default edit/view actions to "main" branch, instead of "master"
@@ -200,7 +200,6 @@ plugins:
       # print_gain: true
       # print_gain_summary: true
 
-
   # Add revision date
   - git-revision-date-localized:
       # Disables plugin on local builds
@@ -221,7 +220,6 @@ plugins:
   - monorepo:
       # Disables plugin on local builds
       enabled: !ENV [CI, false]
-
 
 # Included Markdown extensions
 markdown_extensions:
@@ -386,6 +384,9 @@ extra_css:
 
 # Enables support for rendering block and inline block equations through MathJax and KaTeX
 extra_javascript:
+  # Enables script to adjust PCB color of 3D models
+  - javascript/3d-color_adjust.js
+
   # Enables support for MathJax
   - javascript/mathjax.js
   # - https://polyfill.io/v3/polyfill.min.js?features=es6
@@ -407,26 +408,25 @@ exclude_docs: |
 # Pages that are built, but not in the navigation menu
 not_in_nav: |
   index.md
-  print_view.md
   favicon.ico
+  single_page.md
+
 
 # Configures webpage navigation
 nav:
   - Getting Started:
     - Introduction: introduction.md
-    - Old School to New School: old_school_to_new_school.md
+    - Board Revision History: revision_history.md
     - Hardware Overview: hardware_overview.md
-    - Hardware Hookup: hardware_hookup.md
-    #- Firmware Overview:
-    - AT Command Reference: at_commands.md
-    - Button Control: button.md
+    - Hardware Assembly: hardware_assembly.md
+    - Device Operation:
+      - Operation Modes: operation_modes.md
+      - Configuration: at_commands.md
+      - Firmware Update: firmware_update.md
     - Examples:
-      - Example 1 - BlueSMiRF to BlueSMiRF: bluesmirf-v2_to_bluesmirf-v2.md
-      - Example 2 - BlueSMiRF to Smartphone: bluesmirf-v2_to_smartphone.md
-      - Example 3 - Wireless Serial LCD: Arduino_Serial_LCD_BlueSMiRFs.md
-      #- Example 4 - Arduino Serial Passthrough: arduino_serial_passthrough.md
-
-    - Firmware Update: firmware_update.md
+      - Example 1 - Remote Access: example-remote_access.md
+      - Example 2 - Pair Two BlueSMiRFs: example-pair_bluesmirf.md
+      - Example 3 - Wireless Serial LCD: example-serlcd.md
   - Resources: resources.md
   - Support:
     - Troubleshooting: troubleshooting.md
