@@ -6,8 +6,8 @@ for (const iteration of modelViewer) {
 	iteration.addEventListener('load', () => {
 	const material = iteration.model.materials;
 	// material[material.length-1].pbrMetallicRoughness.setBaseColorFactor([224/255, 49/255, 29/255]); //SparkFun Red: #E0311D
-	material[material.length-2].pbrMetallicRoughness.setBaseColorFactor([224/255, 0, 0]); // #E00000
-	material[material.length-2].pbrMetallicRoughness.setMetallicFactor(.8);
-	material[material.length-2].pbrMetallicRoughness.setRoughnessFactor(.7);
+	material[material.length-3].pbrMetallicRoughness.setBaseColorFactor([224/255, 0, 0]); // #E00000
+	material[material.length-3].pbrMetallicRoughness.setMetallicFactor(.8);
+	material[material.length-3].pbrMetallicRoughness.setRoughnessFactor(.7);
 	});
 };
