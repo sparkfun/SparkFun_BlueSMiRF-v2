@@ -1,21 +1,7 @@
 SparkFun BlueSMiRF v2
 ===========================================================
 
-<table class="table table-hover table-striped table-bordered">
-  <tr align="center">
-   <td><a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2.html"><img src="https://cdn.sparkfun.com/r/600-600/assets/parts/2/4/4/3/8/24113-BlueSMiRF-ESP32-NoHeaders-Feature-NEW.jpg" alt="Product thumbnail of PTH variant"></a></td>
-   <td><a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html"><img src="https://cdn.sparkfun.com/r/600-600/assets/parts/2/3/4/8/3/23287-BlueSMiRF-ESP32-WithHeaders-Feature-NEW.jpg" alt="Product thumbnail of header variant"></a></td>
-   <td><a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html"><img src="https://cdn.sparkfun.com/r/600-600/assets/parts/3/2/3/2/2/30414-BlueSMiRF-V2-Feature.jpg" alt="Product thumbnail of JST variant"></a></td>
-	</a>
-  </tr>
-  <tr align="center">
-    <td><a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2.html">SparkFun BlueSMiRF v2 (WRL-24113)</a></td>
-    <td><a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html">SparkFun BlueSMiRF v2 - Headers (WRL-23287)</a></td>
-    <td><a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html">SparkFun BlueSMiRF v2 - JST (WRL-30414)</a></td>
-  </tr>
-</table>
-
-
+![SparkFun Allband GNSS RTK Breakout - mosaic-G5 P3](./banner-repo.png)
 
 The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/sparkfun-bluesmirf-v2.html), [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html), and [SparkFun BlueSMiRF v2 - JST](https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html) are wireless Bluetooth® serial links. These boards work as a wireless serial UART pipe and are a great wireless replacement for serial cables. Simply pair, connect, and transmit serial data between your TX/RX lines! Any serial stream from 2400 to 921600 baud can be passed seamlessly between two devices.
 

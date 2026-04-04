@@ -1,3 +1,9 @@
+<article style="text-align: center;" markdown>
+![Banner](./assets/img/banner-hookup_guide.png){ width="650px" }
+</article>
+
+
+
 # Introduction
 <div class="grid cards desc" markdown>
 
