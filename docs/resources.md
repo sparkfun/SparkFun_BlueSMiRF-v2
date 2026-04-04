@@ -4,6 +4,15 @@ Now that you've successfully got your SparkFun BlueSMiRF v2 up and running, it's
 
 	<div class="grid cards" markdown>
 
+	- **Composite (All Boards)**
+
+		---
+
+		- [Schematic (PDF)](./assets/board_files/schematic.pdf)
+		- [Board Dimensions (PDF)](./assets/board_files/dimensions.pdf)
+		- [KiCad Files (ZIP)](./assets/board_files/kicad_files.zip)
+
+
 	- **PTH Header**
 
 		- [Schematic (PDF)](./assets/board_files/schematic-pth.pdf)
