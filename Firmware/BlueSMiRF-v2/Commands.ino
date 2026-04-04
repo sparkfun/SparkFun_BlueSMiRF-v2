@@ -223,7 +223,11 @@ bool commandAT(const char *commandString)
 
         case ('X'): // ATX - Exit command mode
             wifiStop();
-            inLocalCommandMode = false; // Return to printing normal RF serial data
+
+            // Return to printing normal RF serial data
+            inLocalCommandMode = false;
+            inBluetoothCommandMode == false;
+            
             settings = tempSettings;    // Apply user's modifications
 
             ledStatusOff();
