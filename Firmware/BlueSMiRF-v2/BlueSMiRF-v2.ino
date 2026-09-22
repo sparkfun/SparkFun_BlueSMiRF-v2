@@ -32,7 +32,15 @@
     \ is not allowed
     # is seen as a script comment. Anything following a # will be ignored.
 
-  Compiler settings:
+
+  Dependencies:
+  * Arduino Core: esp32 v2.0.17
+  * Libraries:
+    * ESP32-OTA-Pull: v1.0.0
+    * ESP32_BleSerial: v1.0.4
+    * JC_Button: v2.1.2
+
+  Board settings:
   * Board: ESP32 Dev Module
   * Flash Size: 8MB
   * Partition Scheme: Use custom partition file called BlueSMiRF_Partitions.csv (or built-in "Minimal SPIFFs (1.9MB APP
@@ -254,8 +262,10 @@ void loop()
     {
         btPrintEchoExit = false;
 
-        inLocalCommandMode = false;
-        inBluetoothCommandMode = false;
+        inLocalCommandMode = false;             // Return to printing normal RF serial data
+        inBluetoothCommandMode = false;         // Return to printing normal RF serial data
+        btPrintEcho = false;                    // Stop echoing all serial prints to Bluetooth
+        printEndpoint = PRINT_ENDPOINT_SERIAL;  // Resumes normal serial data forwarding
 
         commandLength = 0; // Get ready for next command
     }
