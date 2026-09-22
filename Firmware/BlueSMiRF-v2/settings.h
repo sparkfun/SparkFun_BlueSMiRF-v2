@@ -80,9 +80,9 @@ typedef struct
     char btPin[5] = "1234";         // Default Pin for older Bluetooth devices is 1234.
     uint8_t btReadTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
     uint8_t btReadTaskPriority = 1; // Read from BT SPP and write to serialTransmitBuffer. 3 = highest, 0 = lowest
-    uint16_t btRxSize = 512 * 4;    // Receive buffer size. Original library is 320 bytes
+    uint16_t btRxSize = 1024 * 10;    // Receive buffer size. Original library is 320 bytes
     uint16_t btTimeout = 250;        // Default, ms
-    uint16_t btTxSize = 512 * 2;     // Original library is 32 bytes
+    uint16_t btTxSize = 1024 * 10;     // Original library is 32 bytes
     uint8_t btType = BLUETOOTH_RADIO_SPP;
     uint8_t btWriteTaskCore = 1;     // Core where task should run, 0=core, 1=Arduino
     uint8_t btWriteTaskPriority = 1; // Read from serialReceiveBuffer and write to SPP. 3 = highest, 0 = lowest
@@ -95,14 +95,14 @@ typedef struct
     uint8_t rtsStartSendingPercent =
         25; // Percent of serialReceiveBuffer that is free when RTS is asserted. Default of 25% of serialReceiveBuffer.
     uint32_t serialReceiveBufferSize =
-        1024 * 50; // Buffer size to receive serial data from the serial port, to be sent over Bluetooth.
+        1024 * 500; // Buffer size to receive serial data from the serial port, to be sent over Bluetooth.
     uint16_t rtsStopSendingPercent =
         5; // Percent of serialReceiveBuffer that is free when RTS is deasserted. Default of 5% of serialReceiveBuffer.
     int baudRate = 115200; // Also known as SerialSpeed
     uint32_t serialTransmitBufferSize =
-        1024 * 10; // Buffer size to receive bytes from Bluetooth waiting to be printed out UART.
+        1024 * 500; // Buffer size to receive bytes from Bluetooth waiting to be printed out UART.
 
-    uint32_t uartReceiveBufferSize = 1024 * 2; // Buffer size to receive bytes from hardware interrupt.
+    uint32_t uartReceiveBufferSize = 1024 * 500; // Buffer size to receive bytes from hardware interrupt.
     uint16_t serialRxFullThreshold = 50; // RX FIFO full interrupt. Max of ~128. See serialStart().
     int16_t serialTimeout = 1;           // In ms - used during SerialGNSS.begin. Number of ms to pass of no data before
                                          // hardware serial reports data available.

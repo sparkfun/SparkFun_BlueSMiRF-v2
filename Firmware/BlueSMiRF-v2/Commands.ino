@@ -45,8 +45,8 @@ const COMMAND_ENTRY commands[] = {
     {'B', 1, 0, 0, 4, 0, TYPE_STRING, valString, "BluetoothPin", &tempSettings.btPin},
     {'B', 0, 0, 0, 1, 0, TYPE_U8, valInt, "BluetoothReadTaskCore", &tempSettings.btReadTaskCore},
     {'B', 0, 0, 0, 3, 0, TYPE_U8, valInt, "BluetoothReadTaskPriority", &tempSettings.btReadTaskPriority},
-    {'B', 1, 0, 0, 1024 * 10, 0, TYPE_U16, valInt, "BluetoothRxSize", &tempSettings.btRxSize}, // Arbitrary 10k max
-    {'B', 1, 0, 0, 1024 * 10, 0, TYPE_U16, valInt, "BluetoothTxSize", &tempSettings.btTxSize},
+    {'B', 1, 0, 1024, 1024 * 1000, 0, TYPE_U16, valInt, "BluetoothRxSize", &tempSettings.btRxSize}, // Arbitrary 1MB max
+    {'B', 1, 0, 1024, 1024 * 1000, 0, TYPE_U16, valInt, "BluetoothTxSize", &tempSettings.btTxSize}, // Arbitrary 1MB max
     {'B', 1, 0, 0, 1, 0, TYPE_U8, valInt, "BluetoothType", &tempSettings.btType},
     {'B', 0, 0, 0, 3, 0, TYPE_U8, valInt, "BluetoothWriteTaskPriority", &tempSettings.btWriteTaskPriority},
     {'B', 0, 0, 0, 1, 0, TYPE_U8, valInt, "BluetoothWriteTaskCore", &tempSettings.btWriteTaskCore},
@@ -58,8 +58,8 @@ const COMMAND_ENTRY commands[] = {
     {'S', 1, 0, 0, 1, 0, TYPE_BOOL, valInt, "InvertRts", &tempSettings.invertRts},
     {'S', 1, 0, 1, 99, 0, TYPE_U8, valInt, "RtsStopSendingPercent", &tempSettings.rtsStopSendingPercent},
     {'S', 1, 0, 1, 99, 0, TYPE_U8, valInt, "RtsStartSendingPercent", &tempSettings.rtsStartSendingPercent},
-    {'S', 1, 0, 0, 0, 0, TYPE_U32, valInt, "SerialReceiveBufferSize", &tempSettings.serialReceiveBufferSize},
-    {'S', 1, 0, 0, 0, 0, TYPE_U32, valInt, "SerialTransmitBufferSize", &tempSettings.serialTransmitBufferSize},
+    {'S', 1, 0, 1024, 1024 * 1000, 0, TYPE_U32, valInt, "SerialReceiveBufferSize", &tempSettings.serialReceiveBufferSize}, // Arbitrary 1MB max
+    {'S', 1, 0, 1024, 1024 * 1000, 0, TYPE_U32, valInt, "SerialTransmitBufferSize", &tempSettings.serialTransmitBufferSize}, // Arbitrary 1MB max
     {'S', 1, 0, 0, 0, 0, TYPE_SPEED_SERIAL, valSpeedSerial, "SerialSpeed", &tempSettings.baudRate},
     {'S', 1, 0, 0, 1000, 0, TYPE_U16, valInt, "PartialFrameTimeoutMs",
      &tempSettings.serialPartialFrameTimeoutMs}, // Arbitrary 1s max
