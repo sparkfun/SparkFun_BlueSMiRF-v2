@@ -1,0 +1,49 @@
+name: Build Documentation
+
+# Allows you to run this workflow manually from the Actions tab
+# on:
+#   workflow_dispatch:
+#     branches: ["main"]
+
+# Allows this workflow to run automatically on pushes/commits
+on:
+  push:
+    branches: ["main"]
+
+# Sets permissions of the GITHUB_TOKEN to allow files to be committed to gh-pages branch
+permissions:
+  contents: write
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pgnquant for optimize plugin
+        run: sudo apt-get install pngquant
+
+      - name: Set up Python runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Set up build cache
+        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+
+      - name: Build Webpage
+        run: mkdocs gh-deploy --force

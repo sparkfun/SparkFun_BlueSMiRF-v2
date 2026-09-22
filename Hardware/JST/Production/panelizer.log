@@ -1,0 +1,15 @@
+2025-12-05 19:05:45,756 - panelizer_logger - INFO - Running Panelizer
+2025-12-05 19:05:45,764 - panelizer_logger - INFO - ['--panelx', '177.800000', '--panely', '101.600000', '--smaller', '--vscorelayer', 'User.Comments', '--vscoretextlayer', 'User.Comments', '--gapx', '6.350000', '--gapy', '0.000000', '--hrail', '6.35', '--vrail', '6.35', '--fiducialpos', '0.25', '--fiducialslr']
+2025-12-05 19:05:45,766 - panelizer_logger - INFO - PANELIZER START: 2025-12-05T19:05:45.766137
+2025-12-05 19:05:52,206 - panelizer_logger - WARNING - 
+START: 2025-12-05T19:05:45.766137
+Board saved by user.
+Gaps should be at least 0.3" for AOI.
+Zones filled by Panelizer.
+
+Board: C:/Users/wesley.furuya/Documents/GitHub/SparkFun_BlueSMiRF-v2/Hardware/JST\Production\SparkFun_BlueSMiRF-v2-JST_panelized.kicad_pcb
+Board dimensions: 40.65 x 15.24 mm.
+You can fit 3 x 6 boards on the panel.
+Zones refilled by Panelizer.
+
+2025-12-05 19:05:55,171 - panelizer_logger - INFO - Panelizer complete
