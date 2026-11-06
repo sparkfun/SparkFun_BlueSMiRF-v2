@@ -8,7 +8,7 @@ icon: fontawesome/solid/scroll
 # Introduction
 --8<-- "./docs/introduction.md"
 
-# Old School to New School
+# Revision History
 --8<-- "./docs/revision_history.md"
 
 # Hardware Overview
@@ -17,11 +17,14 @@ icon: fontawesome/solid/scroll
 # Hardware Assembly
 --8<-- "./docs/hardware_assembly.md"
 
-# Operation Modes
---8<-- "./docs/operation_modes.md"
+# Button Operation
+--8<-- "./docs/device-operation.md"
 
-# Configuration
---8<-- "./docs/at_commands.md"
+# Configuration Settings
+--8<-- "./docs/device-configuration.md"
+
+# Firmware Overview
+--8<-- "./docs/firmware-overview.md"
 
 # Example 1 - Remote Access
 --8<-- "./docs/example-remote_access.md"
@@ -31,9 +34,6 @@ icon: fontawesome/solid/scroll
 
 # Example 3 - Wireless Serial LCD
 --8<-- "./docs/example-serlcd.md"
-
-# Firmware Update
---8<-- "./docs/firmware_update.md"
 
 # Troubleshooting
 --8<-- "./docs/troubleshooting.md"

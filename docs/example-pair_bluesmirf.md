@@ -6,13 +6,13 @@ The image below on the left shows the Serial Basic (CH340, USB-C) connected to t
 <div class="grid cards" markdown>
 
 <figure markdown>
-[![USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with an Additional Stackable Header](./assets/img/assembly-smd-uart_adapter-alt.jpg){ width="600" }](./assets/img/assembly-smd-uart_adapter-alt.jpg "Click to enlarge")
+[![USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with an Additional Stackable Header](./assets/img/hookup_guide/assembly-smd-uart_adapter-alt.jpg){ width="600" }](./assets/img/hookup_guide/assembly-smd-uart_adapter-alt.jpg "Click to enlarge")
 <figcaption markdown>USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with an Additional Stackable Header</figcaption>
 </figure>
 
 
 <figure markdown>
-[![USB-to-Serial Converter (CH340) to BlueSMiRF v2 PTH](./assets/img/assembly-pth-uart_adapter.jpg){ width="600" }](./assets/img/assembly-pth-uart_adapter.jpg "Click to enlarge")
+[![USB-to-Serial Converter (CH340) to BlueSMiRF v2 PTH](./assets/img/hookup_guide/assembly-pth-uart_adapter.jpg){ width="600" }](./assets/img/hookup_guide/assembly-pth-uart_adapter.jpg "Click to enlarge")
 <figcaption markdown>USB-to-Serial Converter (CH340) to BlueSMiRF v2 PTH</figcaption>
 </figure>
 
@@ -26,7 +26,7 @@ Connect the first BlueSMiRF v2 to your computer's COM port. In this case, it was
 
 
 <figure markdown>
-[![First Serial Terminal](./assets/img/example-terminal_a-open.jpg){ width="600" }](./assets/img/example-terminal_a-open.jpg "Click to enlarge")
+[![First Serial Terminal](./assets/img/hookup_guide/example-terminal_a-open.jpg){ width="600" }](./assets/img/hookup_guide/example-terminal_a-open.jpg "Click to enlarge")
 <figcaption markdown>First Serial Terminal</figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ At this point, connect the second BlueSMiRF v2 to your computer's COM port. In t
 
 
 <figure markdown>
-[![Second Serial Terminal](./assets/img/example-terminal_b-open.jpg){ width="600" }](./assets/img/example-terminal_b-open.jpg "Click to enlarge")
+[![Second Serial Terminal](./assets/img/hookup_guide/example-terminal_b-open.jpg){ width="600" }](./assets/img/hookup_guide/example-terminal_b-open.jpg "Click to enlarge")
 <figcaption markdown>Second Serial Terminal</figcaption>
 </figure>
 
@@ -46,13 +46,13 @@ Start typing characters in the first serial terminal. You should see them in the
 <div class="grid cards" markdown>
 
 <figure markdown>
-[![Sending Characters through First Terminal](./assets/img/example-terminal_a-open.jpg){ width="600" }](./assets/img/example-terminal_a-open.jpg "Click to enlarge")
+[![Sending Characters through First Terminal](./assets/img/hookup_guide/example-terminal_a-open.jpg){ width="600" }](./assets/img/hookup_guide/example-terminal_a-open.jpg "Click to enlarge")
 <figcaption markdown>Sending Characters through First Terminal</figcaption>
 </figure>
 
 
 <figure markdown>
-[![Receiving Characters through Second Terminal](./assets/img/example-terminal_b-receive.jpg){ width="600" }](./assets/img/example-terminal_b-receive.jpg "Click to enlarge")
+[![Receiving Characters through Second Terminal](./assets/img/hookup_guide/example-terminal_b-receive.jpg){ width="600" }](./assets/img/hookup_guide/example-terminal_b-receive.jpg "Click to enlarge")
 <figcaption markdown>Receiving Characters through Second Terminal</figcaption>
 </figure>
 
@@ -65,13 +65,13 @@ Type a message in the second terminal window. You should see them in the first s
 <div class="grid cards" markdown>
 
 <figure markdown>
-[![Receiving Characters through First Serial TerminalSending Characters through First Terminal](./assets/img/example-terminal_a-receive.jpg){ width="600" }](./assets/img/example-terminal_a-receive.jpg "Click to enlarge")
+[![Receiving Characters through First Serial TerminalSending Characters through First Terminal](./assets/img/hookup_guide/example-terminal_a-receive.jpg){ width="600" }](./assets/img/hookup_guide/example-terminal_a-receive.jpg "Click to enlarge")
 <figcaption markdown>Receiving Characters through First Serial Terminal</figcaption>
 </figure>
 
 
 <figure markdown>
-[![Sending Characters through Second Terminal](./assets/img/example-terminal_b-receive.jpg){ width="600" }](./assets/img/example-terminal_b-receive.jpg "Click to enlarge")
+[![Sending Characters through Second Terminal](./assets/img/hookup_guide/example-terminal_b-receive.jpg){ width="600" }](./assets/img/hookup_guide/example-terminal_b-receive.jpg "Click to enlarge")
 <figcaption markdown>Sending Characters through Second Terminal</figcaption>
 </figure>
 

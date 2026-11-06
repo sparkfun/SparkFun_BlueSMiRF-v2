@@ -24,7 +24,7 @@ Connect a USB-to-Serial converter to the BlueSMiRF. Depending on the BlueSMiRF t
 
 
 <figure markdown>
-[![USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with an Additional Stackable Header](./assets/img/assembly-smd-uart_adapter-alt.jpg){ width="600" }](./assets/img/assembly-smd-uart_adapter-alt.jpg "Click to enlarge")
+[![USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with an Additional Stackable Header](./assets/img/hookup_guide/assembly-smd-uart_adapter-alt.jpg){ width="600" }](./assets/img/hookup_guide/assembly-smd-uart_adapter-alt.jpg "Click to enlarge")
 <figcaption markdown>USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with an Additional Stackable Header</figcaption>
 </figure>
 
@@ -33,7 +33,7 @@ Open a serial terminal and connect to the COM port at **115200 baud**. Type `$$$
 
 
 <figure markdown>
-[![BlueSMiRF v2 Connected to Serial Terminal and in Command Mode](./assets/img/example-terminal-command_mode.jpg){ width="600" }](./assets/img/example-terminal-command_mode.jpg "Click to enlarge")
+[![BlueSMiRF v2 Connected to Serial Terminal and in Command Mode](./assets/img/hookup_guide/example-terminal-command_mode.jpg){ width="600" }](./assets/img/hookup_guide/example-terminal-command_mode.jpg "Click to enlarge")
 <figcaption markdown>BlueSMiRF v2 Connected to Serial Terminal and in Command Mode</figcaption>
 </figure>
 
@@ -42,7 +42,7 @@ Type `AT-SerialSpeed=9600` to change the baud rate to match the SerLCD's baud ra
 
 
 <figure markdown>
-[![Configuring the Baud Rate of the BlueSMiRF v2](./assets/img/example-terminal-at_command.jpg){ width="600" }](./assets/img/example-terminal-at_command.jpg "Click to enlarge")
+[![Configuring the Baud Rate of the BlueSMiRF v2](./assets/img/hookup_guide/example-terminal-at_command.jpg){ width="600" }](./assets/img/hookup_guide/example-terminal-at_command.jpg "Click to enlarge")
 <figcaption markdown>Configuring the Baud Rate of the BlueSMiRF v2</figcaption>
 </figure>
 
@@ -142,7 +142,7 @@ With both boards powered, follow the steps to [pair and connect the two BlueSMiR
 
 
 <figure markdown>
-[![Wireless Serial LCD](./assets/img/example-serlcd.jpg){ width="600" }](./assets/img/example-serlcd.jpg "Click to enlarge")
+[![Wireless Serial LCD](./assets/img/hookup_guide/example-serlcd.jpg){ width="600" }](./assets/img/hookup_guide/example-serlcd.jpg "Click to enlarge")
 <figcaption markdown>Wireless Serial LCD with the RedBoard Plus</figcaption>
 </figure>
 

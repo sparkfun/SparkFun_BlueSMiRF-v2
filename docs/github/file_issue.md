@@ -36,15 +36,16 @@ If a section of the documentation is incorrect, please [open an issue](https://g
 
 
 
-### Problems in the Hardware Design
+### Problems in the Hardware Design or Firmware
 All of our designs are open-source! Please help us make it better.
 
-- Our board design files are contained in the `/Hardware` directories of the [SparkFun BlueSMiRF v2 repository](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2).
+- Our board design files are contained in the sub-directories of the [`/Hardware` directory](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2/tree/main/Hardware) in the SparkFun BlueSMiRF v2 repository
+- Our firmware files are primarily contained in the [`/Firmware/BlueSMiRF-v2` directory](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2/tree/main/Firmware/BlueSMiRF-v2) of the SparkFun BlueSMiRF v2 repository.
 
 
 
 #### Does something not make sense? 🤔
-If part of the design is confusing, please [open an issue](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2/issues) and let us know.
+If part of the design or firmware is confusing, please [open an issue](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2/issues) and let us know.
 
 
 
@@ -59,13 +60,13 @@ If part of the board's functionality is missing, please [open an issue](https://
 
 
 
-#### Do you wish to contribute directly to improving the board design?
+#### Do you wish to contribute directly to improving the board design or firmware?
 
 1. With a GitHub account, [fork this repository](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2/fork).
 2. Add your design augmentation(s)
 3. File a pull request with your changes, and enjoy making the ~~words~~ ~~worlds~~ world a better place.
 	1. Once received, the engineer in charge of the original design will automatically be notified.
-	2. We will review your suggested improvement(s) to verify that they are within our board design standards and meet our product design requirements.
+	2. We will review your suggested improvement(s) to verify that they are within our design standards and meet our product design requirements.
 	3. If approved, we will flag these changes for our next board revision. Congrats! 🍻
 
 

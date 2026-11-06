@@ -7,7 +7,7 @@ The image below shows the Serial Basic (CH340, USB-C) connected to the BlueSMiRF
 
 
 <figure markdown>
-[![BlueSMiRF v2 to SmartPhone Bluetooth Classic Serial Terminal](./assets/img/example-android.jpg){ width="600" }](./assets/img/example-android.jpg "Click to enlarge")
+[![BlueSMiRF v2 to SmartPhone Bluetooth Classic Serial Terminal](./assets/img/hookup_guide/example-android.jpg){ width="600" }](./assets/img/hookup_guide/example-android.jpg "Click to enlarge")
 <figcaption markdown>BlueSMiRF v2 to SmartPhone Bluetooth Classic Serial Terminal with the RedBoard Plus</figcaption>
 </figure>
 
@@ -32,7 +32,7 @@ Once downloaded, turn on your Bluetooth and open your Bluetooth settings. Scroll
 
 
 <figure markdown>
-[![BlueSMiRF Discovered on Android Smartphone](./assets/img/bluetooth-settings.jpg){ width="300" }](./assets/img/bluetooth-settings.jpg "Click to enlarge")
+[![BlueSMiRF Discovered on Android Smartphone](./assets/img/hookup_guide/bluetooth-settings.jpg){ width="300" }](./assets/img/hookup_guide/bluetooth-settings.jpg "Click to enlarge")
 <figcaption markdown>BlueSMiRF Discovered on Android Smartphone</figcaption>
 </figure>
 
@@ -41,7 +41,7 @@ Click on the device to begin pairing. A message will pop up asking if you want t
 
 
 <figure markdown>
-[![BlueSMiRF Discovered on Android Smartphone](./assets/img/bluetooth-pairing.jpg){ width="300" }](./assets/img/bluetooth-pairing.jpg "Click to enlarge")
+[![BlueSMiRF Discovered on Android Smartphone](./assets/img/hookup_guide/bluetooth-pairing.jpg){ width="300" }](./assets/img/hookup_guide/bluetooth-pairing.jpg "Click to enlarge")
 <figcaption markdown>BlueSMiRF Discovered on Android Smartphone</figcaption>
 </figure>
 
@@ -50,7 +50,7 @@ Scroll up to your Paired devices and look for the BlueSMiRF to verify that it ha
 
 
 <figure markdown>
-[![BlueSMiRF-5A66 Showing Up as a Paired Bluetooth Device](./assets/img/bluetooth-paired_device.jpg){ width="300" }](./assets/img/bluetooth-paired_device.jpg "Click to enlarge")
+[![BlueSMiRF-5A66 Showing Up as a Paired Bluetooth Device](./assets/img/hookup_guide/bluetooth-paired_device.jpg){ width="300" }](./assets/img/hookup_guide/bluetooth-paired_device.jpg "Click to enlarge")
 <figcaption markdown>BlueSMiRF-5A66 Showing Up as a Paired Bluetooth Device</figcaption>
 </figure>
 
@@ -61,7 +61,7 @@ Open the Serial Bluetooth Terminal app.
 
 
 <figure markdown>
-[![Serial Bluetooth Terminal Opened](./assets/img/example-terminal_ble-open.jpg){ width="300" }](./assets/img/example-terminal_ble-open.jpg "Click to enlarge")
+[![Serial Bluetooth Terminal Opened](./assets/img/hookup_guide/example-terminal_ble-open.jpg){ width="300" }](./assets/img/hookup_guide/example-terminal_ble-open.jpg "Click to enlarge")
 <figcaption markdown>Serial Bluetooth Terminal Opened</figcaption>
 </figure>
 
@@ -70,7 +70,7 @@ Click on the connect icon to the left of the trash can icon. If all is well, you
 
 
 <figure markdown>
-[![Connected to BlueSMiRF-5A66](./assets/img/example-terminal_ble-connect.jpg){ width="300" }](./assets/img/example-terminal_ble-connect.jpg "Click to enlarge")
+[![Connected to BlueSMiRF-5A66](./assets/img/hookup_guide/example-terminal_ble-connect.jpg){ width="300" }](./assets/img/hookup_guide/example-terminal_ble-connect.jpg "Click to enlarge")
 <figcaption markdown>Connected to BlueSMiRF-5A66</figcaption>
 </figure>
 
@@ -81,13 +81,13 @@ Open a serial terminal, and connect to the BlueSMiRF at **115200 baud**. In this
 <div class="grid" markdown style="place-items: center;">
 
 <figure markdown>
-[![Serial Terminal - Computer](./assets/img/example-terminal_a-open.jpg){ width="600" }](./assets/img/example-terminal_a-open.jpg "Click to enlarge")
+[![Serial Terminal - Computer](./assets/img/hookup_guide/example-terminal_a-open.jpg){ width="600" }](./assets/img/hookup_guide/example-terminal_a-open.jpg "Click to enlarge")
 <figcaption markdown>Serial Terminal Connected to BlueSMiRF v2</figcaption>
 </figure>
 
 
 <figure markdown>
-[![Serial Terminal - Phone](./assets/img/example-terminal_ble-receive.jpg){ width="300" }](./assets/img/example-terminal_ble-receive.jpg "Click to enlarge")
+[![Serial Terminal - Phone](./assets/img/hookup_guide/example-terminal_ble-receive.jpg){ width="300" }](./assets/img/hookup_guide/example-terminal_ble-receive.jpg "Click to enlarge")
 <figcaption markdown>Receiving Characters through the Serial Bluetooth Terminal</figcaption>
 </figure>
 
@@ -100,13 +100,13 @@ Type a message and send them using the Serial Bluetooth Terminal app. You should
 <div class="grid" markdown style="place-items: center;">
 
 <figure markdown>
-[![Serial Terminal - Computer](./assets/img/example-terminal_a-receive.jpg){ width="600" }](./assets/img/example-terminal_a-receive.jpg "Click to enlarge")
+[![Serial Terminal - Computer](./assets/img/hookup_guide/example-terminal_a-receive.jpg){ width="600" }](./assets/img/hookup_guide/example-terminal_a-receive.jpg "Click to enlarge")
 <figcaption markdown>Receiving Characters through First Serial Terminal</figcaption>
 </figure>
 
 
 <figure markdown>
-[![Serial Terminal - Phone](./assets/img/example-terminal_ble-send.jpg){ width="300" }](./assets/img/example-terminal_ble-send.jpg "Click to enlarge")
+[![Serial Terminal - Phone](./assets/img/hookup_guide/example-terminal_ble-send.jpg){ width="300" }](./assets/img/hookup_guide/example-terminal_ble-send.jpg "Click to enlarge")
 <figcaption markdown>Sending Characters through Serial Bluetooth Terminal</figcaption>
 </figure>
 

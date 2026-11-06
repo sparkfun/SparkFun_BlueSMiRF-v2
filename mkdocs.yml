@@ -54,23 +54,31 @@ theme:
     # Enables anchor tracking (updates page URL with the section the user is on)
     # i.e. https://docs.sparkfun.com/<page link>/#<sub-section>
     - navigation.tracking
-    - navigation.tabs.sticky
 
-    # Enables tabs for navigating the website
-    - navigation.tabs
+    # Expands the navigation menu to show all sub-sections of a page
+    # - navigation.expand
 
-    # Keeps tabs visible in the header when scrolling
-    - navigation.tabs.sticky
+    # Adds a "table of contents" to the navigation menu (left sidebar)
+    # - navigation.sections
 
     # Adds pop-up button just below the header (when the user starts to scroll up)
     # i.e. Allows users to easily jump to the beginning of the page
     - navigation.top
 
     # Renders path for page navigation at the top of the page (makes page navigation more mobile friendly)
-    - navigation.path
+    # - navigation.path
 
     # Highlights all occurrences of a search result when clicked on
     - search.highlight
+
+    # Integrates the table of contents (headers of a page) into the navigation (left) sidebar
+    - toc.integrate
+
+    # The table of contents is automatically scrolled to the active anchor
+    - toc.follow
+
+    # Allows the user to hide the announcement banner
+    - announce.dismiss
 
 
   # Adds light/dark theme to the webpage
@@ -332,7 +340,7 @@ markdown_extensions:
 
 extra:
   # Configures the hyperlink for the logo in the header
-  homepage: https://www.sparkfun.com/
+  homepage: https://docs.sparkfun.com/
 
   generator: right
 
@@ -404,6 +412,7 @@ extra_javascript:
 exclude_docs: |
   README.md
 
+
 # Pages that are built, but not in the navigation menu
 not_in_nav: |
   index.md
@@ -413,21 +422,22 @@ not_in_nav: |
 
 # Configures webpage navigation
 nav:
-  - Getting Started:
-    - Introduction: introduction.md
-    - Board Revision History: revision_history.md
+  - Introduction: introduction.md
+  - Quick Start Guide: quick_start.md
+  - Hardware:
     - Hardware Overview: hardware_overview.md
     - Hardware Assembly: hardware_assembly.md
-    - Device Operation:
-      - Operation Modes: operation_modes.md
-      - Configuration: at_commands.md
-      - Firmware Update: firmware_update.md
-    - Examples:
-      - Example 1 - Remote Access: example-remote_access.md
-      - Example 2 - Pair Two BlueSMiRFs: example-pair_bluesmirf.md
-      - Example 3 - Wireless Serial LCD: example-serlcd.md
-  - Resources: resources.md
-  - Support:
+  - Operation:
+    - Button Operation: device-operation.md
+    - Configuration Settings: device-configuration.md
+    - Firmware Overview: firmware-overview.md
+  - Examples:
+    - Bluetooth Terminal: example-remote_access.md
+    - Pair Two BlueSMiRFs: example-pair_bluesmirf.md
+    - Wireless Serial LCD: example-serlcd.md
+  - Resources and Support: 
+    - Product Resources: resources.md
     - Troubleshooting: troubleshooting.md
+    - Revision History: revision_history.md
     - Submit Issues: github/file_issue.md
     - Contribute: github/contribute.md

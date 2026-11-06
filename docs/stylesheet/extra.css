@@ -18,6 +18,14 @@
   transform: rotate(90deg); /* Equal to rotateZ(90deg) */
 }
 
+.rotate-180 {
+  transform: rotate(180deg); /* Equal to rotateZ(180deg) */
+}
+
+.rotate-270 {
+  transform: rotate(270deg); /* Equal to rotateZ(270deg) */
+}
+
 
 /* Allow users to set the "mkdocs-material generator" to right side of footer */
 .md-social.generator-right {

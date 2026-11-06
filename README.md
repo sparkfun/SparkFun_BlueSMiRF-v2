@@ -1,21 +1,6 @@
-SparkFun BlueSMiRF v2
-===========================================================
+# SparkFun BlueSMiRF v2
 
-<table class="table table-hover table-striped table-bordered">
-  <tr align="center">
-   <td><a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2.html"><img src="https://cdn.sparkfun.com/r/600-600/assets/parts/2/4/4/3/8/24113-BlueSMiRF-ESP32-NoHeaders-Feature-NEW.jpg" alt="Product thumbnail of PTH variant"></a></td>
-   <td><a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html"><img src="https://cdn.sparkfun.com/r/600-600/assets/parts/2/3/4/8/3/23287-BlueSMiRF-ESP32-WithHeaders-Feature-NEW.jpg" alt="Product thumbnail of header variant"></a></td>
-   <td><a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html"><img src="https://cdn.sparkfun.com/r/600-600/assets/parts/3/2/3/2/2/30414-BlueSMiRF-V2-Feature.jpg" alt="Product thumbnail of JST variant"></a></td>
-	</a>
-  </tr>
-  <tr align="center">
-    <td><a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2.html">SparkFun BlueSMiRF v2 (WRL-24113)</a></td>
-    <td><a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html">SparkFun BlueSMiRF v2 - Headers (WRL-23287)</a></td>
-    <td><a href="https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html">SparkFun BlueSMiRF v2 - JST (WRL-30414)</a></td>
-  </tr>
-</table>
-
-
+![Repo banner](./banner-repo.png)
 
 The [SparkFun BlueSMiRF v2](https://www.sparkfun.com/sparkfun-bluesmirf-v2.html), [SparkFun BlueSMiRF v2 - Headers](https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html), and [SparkFun BlueSMiRF v2 - JST](https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html) are wireless Bluetooth® serial links. These boards work as a wireless serial UART pipe and are a great wireless replacement for serial cables. Simply pair, connect, and transmit serial data between your TX/RX lines! Any serial stream from 2400 to 921600 baud can be passed seamlessly between two devices.
 
@@ -29,7 +14,8 @@ We've designed the BlueSMiRF to be remotely configured from a phone using a seri
 
 The BlueSMiRF v2 has an on-board voltage regulator to power between 3.3V and 5V. Logic level shifting circuitry is included on all pins to be 3.3V to 5V tolerant. Note that you will need an RS232 to TTL converter for higher voltages. A jumper on the top of the board is also included to bypass the voltage regulator. Two built-in LEDs indicate when the BlueSMiRF is connected and when there is serial UART traffic.
 
-**Note:** Bluetooth® classic (Serial Port Profile or SPP) is primarily supported. This Bluetooth protocol is supported on Android phones, most desktops, and laptops. BlueSMiRF also supports the BLE protocol, available on all Apple phones.
+> [!NOTE]
+> Bluetooth® classic (Serial Port Profile or SPP) is primarily supported. This Bluetooth protocol is supported on Android phones, most desktops, and laptops. BlueSMiRF also supports the BLE protocol, available on all Apple phones.
 
 This repo houses the [BlueSMiRF v2 Hookup Guide](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2) and the firmware that runs on the SparkFun BlueSMiRF v2 product line including:
 
@@ -38,78 +24,86 @@ This repo houses the [BlueSMiRF v2 Hookup Guide](https://docs.sparkfun.com/Spark
 - [SparkFun BlueSMiRF v2 - JST-GH Connector](https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html)
 
 
-For compiled binaries of the firmware, please see [SparkFun BlueSMiRF ESP32 Firmware Binaries](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries).
+> [!NOTE]
+> For compiled binaries of the firmware, please see [SparkFun BlueSMiRF ESP32 Firmware Binaries](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries).
 
 
 
-Repository Contents
--------------------
+## Documentation
 
-- **/.github/workflows** - YAML files used for GitHub Actions and GitHub Pages/mkdocs
-- **/docs** - Online documentation files
-  - **/assets** - Folder containing all the file assets used for product documentation
-    - **/3d_model** - Exported 3D models from KiCad
-    - **/board_files** - Copy of design files used for product documentation
-    - **/component_documentation** - Datasheets and manuals for hardware components
-    - **/img** - Images for product documentation
-  - **/github** - Files stating how to contribute and filing issues for product
-  - **/javascript** - Folder containing custom javascript used for product documentation
-  - **/stylesheet** - Folder containing CSS files used forproduct documentation
-- **/Firmware** - Source code for SparkFun BlueSMiRF firmware as well as various feature unit tests
-- **/Hardware** - KiCad design files (.kicad_pcb, .kicad_sch)
-  - **/Production** - Production panel files (.kicad_pcb)
-- **/overrides** - Customization files used for product documentation
-  - **/.icons** - Icons used for product documentation
-  - **./partials** - Used for product documentation
+- **[Hookup Guide](http://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/)** - Hookup guide for the BlueSMiRF v2 hosted by GitHub pages.<br>
+  [![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/) [![GitHub Pages Deploy](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2/actions/workflows/generate_documentation.yml/badge.svg)](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2/actions/workflows/generate_documentation.yml)<br>
+  *Need to download or print our hookup guide?*
+
+  - [Print *(Print to PDF)* from Single-Page View](http://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/print_view)
+
+- **[Firmware Binaries](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries)** - Compiled binaries of the firmware on the BlueSMiRF v2
 
 
 
-Documentation
---------------
-
-- **[Hookup Guide](http://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/)** - Hookup guide for the BlueSMiRF v2
-- **[Firmware Binaries](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries)** - Compiled binaries of the firmware
+## Repository
 
 
 
-Repository Branch Structure
----------------------------
+### Contents
+
+- **[/.github/workflows](/.github/workflows)** - YAML files used for GitHub Actions; compiles firmware binaries and deploys product documentation
+- **[/docs](/docs/)** - Online documentation files
+  - [/assets](/docs/assets/) - Assets files
+    - [/3d_model](/docs/assets/3d_model/) - 3D models for the board
+    - [/board_files](/docs/assets/board_files/) - Design files for the board
+      - [KiCad Design Files](/docs/assets/board_files/kicad_files.zip) (.zip)
+      - [Schematics](/docs/assets/board_files/schematics.pdf) (.pdf)
+      - [Dimensions](/docs/assets/board_files/dimensions.pdf) (.pdf)
+    - [/component_documentation](/docs/assets/component_documentation/) - Datasheets for hardware components
+    - [/img/hookup_guide](/docs/assets/img/hookup_guide/) - Images for hookup guide documentation - Hookup guide images for the board
+- **[/Firmware](/Firmware/)** - Source code for SparkFun BlueSMiRF firmware as well as various feature unit tests
+- /Hardware - Hardware design files (.brd, .sch)
+  - /Production - Production files
+
+
+
+### Branch Structure
 This repository has two long-term branches: `main` and `release_candidate`.
 
 With respect to the firmware, `main` is a branch where only changes that are appropriate for all users are applied. Thus, following `main` means updating to normal releases, and perhaps bugfixes to those releases.
 
 In contrast, `release_candidate` is where new code is added as it is developed.
 
-The documentation source code is in docs/ on `main`.  It is built automatically on push and stored in the branch `gh-pages`, from which it is served at the above URL. Documentation changes are pushed directly to main.
+The documentation source code is in `docs/` on `main`.  It is built automatically on push and stored in the branch `gh-pages`, from which it is served at the above URL. Documentation changes are pushed directly to main.
 
 
 
-Release Process
----------------
+## Releases
+
+
+
+### Firmware Releases
 A release is made by merging `release_candidate` back to `main`, and then applying a tag to that commit on `main`.
 
 A pre-release is often created using the latest stable release candidate. These binaries will have extra debug statements turned on that will not be present in a formal release, but should not affect the behavior of the firmware.
 
-The command-line interface is also available. You’ll need to download the [RTK Firmware Binaries](https://github.com/sparkfun/SparkFun_RTK_Firmware_Binaries) repo. This repo contains the binaries but also various supporting tools including esptool.exe and the three binaries required along with the firmware (bootloader, partitions, and app0).
+
+> [!NOTE]
+> **Firmware Updates:** Because it's much easier to use, we recommend the OTA firmware update process. If that fails for some reason, you can update the firmware directly. For more information, check out the tutorial under the section [Firmware Update](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/firmware-update/).
 
 
 
-## Updating Firmware From CLI
-Because it's much easier to use, we recommend the OTA firmware update process. If that fails for some reason, you can use the CLI method. For more information, check out the tutorial under the section [Firmware Update](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/firmware_update/).
+### Product Variants
+
+- [WRL-24113](https://www.sparkfun.com/sparkfun-bluesmirf-v2.html) - Initial release, PTH pads variant
+- [WRL-23287](https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html) - Initial release, male header pins variant
+- [WRL-30414](https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html) - Initial release, JST connector variant
 
 
 
-Product Versions
-----------------
+### Version History
 
-- [WRL-24113](https://www.sparkfun.com/sparkfun-bluesmirf-v2.html) - Initial release, PTH version
-- [WRL-23287](https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html) - Initial release, Header version
-- [WRL-30414](https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html) - Initial release, JST version
+- [v10](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2/releases/tag/v10) - Initial Release; for latest JST variant and docs landing page
 
 
 
-License Information
--------------------
+## License Information
 This product is ***open source***!  Please feel free to [contribute](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/github/contribute/) to both the firmware and documentation.
 
 Various bits of the code have different licenses applied. Anything SparkFun wrote is beerware; if you see me (or any other SparkFun employee) at the local, and you've found our code helpful, please buy us a round!
