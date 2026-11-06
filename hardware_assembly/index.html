@@ -18,14 +18,14 @@
         <link rel="prev" href="../hardware_overview/">
       
       
-        <link rel="next" href="../operation_modes/">
+        <link rel="next" href="../device-operation/">
       
       
         
       
       
       <link rel="icon" href="../assets/img/sfe-logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
   
@@ -204,7 +204,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#connecting-via-bluesmirf-v2-pth" class="md-skip">
+        <a href="#general-connection" class="md-skip">
           Skip to content
         </a>
       
@@ -214,15 +214,22 @@
         <aside class="md-banner">
           <div class="md-banner__inner md-grid md-typeset">
             
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
             
   <article style="text-align: center;">
     <span class="twemoji sfe">
       <svg xmlns="http://www.w3.org/2000/svg" width="15.955" height="24" viewbox="0 0 16 24"><title>SparkFun logo</title><path d="M13.03 3.838s.34 1.438-.745 1.638c-.756.134-1.976-.615-2.59-1.362-.756-.922-.66-1.647-.072-2.29.884-.978 2.397-.6 2.397-.6S9.248-1.209 6.362.783c-2.571 1.77-1.834 4.183.487 6.288 2.09 1.902.42 3.988-1.686 3.717-1.444-.184-2.035-1.343-1.688-2.054.299-.608 1.335-.982 1.335-.982s-1.19-.484-2.592.044C.96 8.27-.078 9.312.005 11.917V24s1.3-1.604 2.83-3.236c1.713-1.84 2.495-3.084 4.254-2.938 3.328.205 5.735-1.273 7.37-3.645 3.142-4.563.681-9.661-1.43-10.343" style="fill:#e0311d;fill-opacity:1;stroke-width:.66479"/></svg>
     </span>
-    <strong>Product Release:</strong> The new variant of the BlueSMiRF v2, features a JST connector to simplify connections to our GNSS breakout boards with just a JST cable.
+    <strong>New Firmware Release:</strong> Fixes exit command for Bluetooth connection and increases maximum buffer size. <a href="/SparkFun_BlueSMiRF-v2/firmware-update" title="View Firmware Update Instructions">Update Now</a>
   </article>
 
           </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
           
         </aside>
       
@@ -258,20 +265,20 @@
 
 
 <!-- Header -->
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav
     class="md-header__inner md-grid"
     aria-label="Header"
   >
 
     <!-- Link to home -->
-    <!-- <a href="https://www.sparkfun.com/" title="SparkFun BlueSMiRF v2 Hookup Guide" class="md-header__button md-logo" aria-label="SparkFun BlueSMiRF v2 Hookup Guide" data-md-component="logo" target="_blank" rel="noopener">
+    <!-- <a href="https://docs.sparkfun.com/" title="SparkFun BlueSMiRF v2 Hookup Guide" class="md-header__button md-logo" aria-label="SparkFun BlueSMiRF v2 Hookup Guide" data-md-component="logo" target="_blank" rel="noopener">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" width="15.955" height="24" viewbox="0 0 16 24"><title>SparkFun logo</title><path d="M13.03 3.838s.34 1.438-.745 1.638c-.756.134-1.976-.615-2.59-1.362-.756-.922-.66-1.647-.072-2.29.884-.978 2.397-.6 2.397-.6S9.248-1.209 6.362.783c-2.571 1.77-1.834 4.183.487 6.288 2.09 1.902.42 3.988-1.686 3.717-1.444-.184-2.035-1.343-1.688-2.054.299-.608 1.335-.982 1.335-.982s-1.19-.484-2.592.044C.96 8.27-.078 9.312.005 11.917V24s1.3-1.604 2.83-3.236c1.713-1.84 2.495-3.084 4.254-2.938 3.328.205 5.735-1.273 7.37-3.645 3.142-4.563.681-9.661-1.43-10.343" style="fill:#e0311d;fill-opacity:1;stroke-width:.66479"/></svg>
 
     </a> -->
-    <a href="https://www.sparkfun.com/" title="www.sparkfun.com/pnt" class="md-header__button md-logo" aria-label="SparkFun BlueSMiRF v2 Hookup Guide" data-md-component="logo" target="_blank" rel="noopener">
+    <a href="https://docs.sparkfun.com/" title="docs.sparkfun.com" class="md-header__button md-logo" aria-label="SparkFun BlueSMiRF v2 Hookup Guide" data-md-component="logo" target="_blank" rel="noopener">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" width="15.955" height="24" viewbox="0 0 16 24"><title>SparkFun logo</title><path d="M13.03 3.838s.34 1.438-.745 1.638c-.756.134-1.976-.615-2.59-1.362-.756-.922-.66-1.647-.072-2.29.884-.978 2.397-.6 2.397-.6S9.248-1.209 6.362.783c-2.571 1.77-1.834 4.183.487 6.288 2.09 1.902.42 3.988-1.686 3.717-1.444-.184-2.035-1.343-1.688-2.054.299-.608 1.335-.982 1.335-.982s-1.19-.484-2.592.044C.96 8.27-.078 9.312.005 11.917V24s1.3-1.604 2.83-3.236c1.713-1.84 2.495-3.084 4.254-2.938 3.328.205 5.735-1.273 7.37-3.645 3.142-4.563.681-9.661-1.43-10.343" style="fill:#e0311d;fill-opacity:1;stroke-width:.66479"/></svg>
@@ -456,124 +463,13 @@
 
   <!-- Navigation tabs (sticky) -->
   
-    
-      <!--
-  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-
-
-<!-- Navigation tabs -->
-<nav
-  class="md-tabs"
-  aria-label="Tabs"
-  data-md-component="tabs"
->
-  <div class="md-tabs__inner md-grid">
-
-  <!-- Adds tab on right side of header -->
-  
-  <ul class="md-tabs__list" style="float: right;">
-    <li class="md-tabs__item">
-    <a href="/SparkFun_BlueSMiRF-v2/single_page/" class="md-tabs__link">
-      🖨️ Print View
-    </a>
-    </li>
-  </ul>
-  
-
-  <!-- Original tabbed sections -->
-  <ul class="md-tabs__list">
-    
-    
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../introduction/" class="md-tabs__link">
-          
-  
-  
-  Getting Started
-
-        </a>
-      </li>
-    
-  
-
-    
-    
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../resources/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Resources
-
-      </a>
-    </li>
-  
-
-    
-    
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../troubleshooting/" class="md-tabs__link">
-          
-  
-  
-  Support
-
-        </a>
-      </li>
-    
-  
-
-    
-  </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -611,20 +507,20 @@
 <!-- Determine base classes -->
 
 
-  
 
+  
 
 
 <!-- Navigation -->
 <nav
-  class="md-nav md-nav--primary md-nav--lifted"
+  class="md-nav md-nav--primary md-nav--integrated"
   aria-label="Navigation"
   data-md-level="0"
 >
 
   <!-- Site title -->
   <!-- <label class="md-nav__title" for="__drawer">
-  <a href="https://www.sparkfun.com/" title="SparkFun BlueSMiRF v2 Hookup Guide" class="md-nav__button md-logo" aria-label="SparkFun BlueSMiRF v2 Hookup Guide" data-md-component="logo" target="_blank" rel="noopener">
+  <a href="https://docs.sparkfun.com/" title="SparkFun BlueSMiRF v2 Hookup Guide" class="md-nav__button md-logo" aria-label="SparkFun BlueSMiRF v2 Hookup Guide" data-md-component="logo" target="_blank" rel="noopener">
     
   
   <svg xmlns="http://www.w3.org/2000/svg" width="15.955" height="24" viewbox="0 0 16 24"><title>SparkFun logo</title><path d="M13.03 3.838s.34 1.438-.745 1.638c-.756.134-1.976-.615-2.59-1.362-.756-.922-.66-1.647-.072-2.29.884-.978 2.397-.6 2.397-.6S9.248-1.209 6.362.783c-2.571 1.77-1.834 4.183.487 6.288 2.09 1.902.42 3.988-1.686 3.717-1.444-.184-2.035-1.343-1.688-2.054.299-.608 1.335-.982 1.335-.982s-1.19-.484-2.592.044C.96 8.27-.078 9.312.005 11.917V24s1.3-1.604 2.83-3.236c1.713-1.84 2.495-3.084 4.254-2.938 3.328.205 5.735-1.273 7.37-3.645 3.142-4.563.681-9.661-1.43-10.343" style="fill:#e0311d;fill-opacity:1;stroke-width:.66479"/></svg>
@@ -633,7 +529,7 @@
   SparkFun BlueSMiRF v2 Hookup Guide
   </label> -->
   <label class="md-nav__title" for="__drawer">
-    <a href="https://www.sparkfun.com/" title="sparkfun.com" class="md-nav__button md-logo" aria-label="SparkFun Logo" data-md-component="logo" target="_blank" rel="noopener">
+    <a href="https://docs.sparkfun.com/" title="sparkfun.com" class="md-nav__button md-logo" aria-label="SparkFun Logo" data-md-component="logo" target="_blank" rel="noopener">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" width="15.955" height="24" viewbox="0 0 16 24"><title>SparkFun logo</title><path d="M13.03 3.838s.34 1.438-.745 1.638c-.756.134-1.976-.615-2.59-1.362-.756-.922-.66-1.647-.072-2.29.884-.978 2.397-.6 2.397-.6S9.248-1.209 6.362.783c-2.571 1.77-1.834 4.183.487 6.288 2.09 1.902.42 3.988-1.686 3.717-1.444-.184-2.035-1.343-1.688-2.054.299-.608 1.335-.982 1.335-.982s-1.19-.484-2.592.044C.96 8.27-.078 9.312.005 11.917V24s1.3-1.604 2.83-3.236c1.713-1.84 2.495-3.084 4.254-2.938 3.328.205 5.735-1.273 7.37-3.645 3.142-4.563.681-9.661-1.43-10.343" style="fill:#e0311d;fill-opacity:1;stroke-width:.66479"/></svg>
@@ -664,61 +560,6 @@
     
   
   
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Getting Started
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Getting Started
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
@@ -741,23 +582,22 @@
     </li>
   
 
-              
-            
-              
-                
+  
+    
+    
   
   
   
   
     <li class="md-nav__item">
-      <a href="../revision_history/" class="md-nav__link">
+      <a href="../quick_start/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Board Revision History
+    Quick Start Guide
   
 
     
@@ -769,7 +609,55 @@
     </li>
   
 
-              
+  
+    
+    
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -862,11 +750,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#connecting-via-bluesmirf-v2-pth" class="md-nav__link">
+  <a href="#general-connection" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Connecting via BlueSMiRF v2 PTH<a class="headerlink" data-preview="" href="#connecting-via-bluesmirf-v2-pth" title="Permanent link"></a>
+          General Connection<a class="headerlink" data-preview="" href="#general-connection" title="Permanent link"></a>
         </span>
       
     </span>
@@ -875,11 +763,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-serial-uart-connection" class="md-nav__link">
+  <a href="#jst-connector" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Basic Serial UART Connection<a class="headerlink" data-preview="" href="#basic-serial-uart-connection" title="Permanent link"></a>
+          JST Connector<a class="headerlink" data-preview="" href="#jst-connector" title="Permanent link"></a>
         </span>
       
     </span>
@@ -888,11 +776,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usb-to-serial-converter-to-bluesmirf-v2" class="md-nav__link">
+  <a href="#male-header-pins" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          USB-to-Serial Converter to BlueSMiRF v2<a class="headerlink" data-preview="" href="#usb-to-serial-converter-to-bluesmirf-v2" title="Permanent link"></a>
+          Male Header Pins<a class="headerlink" data-preview="" href="#male-header-pins" title="Permanent link"></a>
         </span>
       
     </span>
@@ -901,15 +789,47 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bluesmirf-v2-to-standard-serial-uart-port" class="md-nav__link">
+  <a href="#pth-pads" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          BlueSMiRF v2 to Standard Serial UART Port<a class="headerlink" data-preview="" href="#bluesmirf-v2-to-standard-serial-uart-port" title="Permanent link"></a>
+          PTH Pads<a class="headerlink" data-preview="" href="#pth-pads" title="Permanent link"></a>
         </span>
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="PTH Pads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Headers<a class="headerlink" data-preview="" href="#headers" title="Permanent link"></a>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hookup-wires" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Hookup Wires<a class="headerlink" data-preview="" href="#hookup-wires" title="Permanent link"></a>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -922,35 +842,39 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
+          </ul>
+        </nav>
       
-      
+    </li>
+  
+
+  
+    
+    
+  
+  
+  
+  
+    
+    
+    
     
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Device Operation
+    Operation
   
 
     
@@ -961,12 +885,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Device Operation
+    Operation
   
 
           </label>
@@ -979,14 +903,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../operation_modes/" class="md-nav__link">
+      <a href="../device-operation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Operation Modes
+    Button Operation
   
 
     
@@ -1007,14 +931,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../at_commands/" class="md-nav__link">
+      <a href="../device-configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Configuration
+    Configuration Settings
   
 
     
@@ -1035,14 +959,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../firmware_update/" class="md-nav__link">
+      <a href="../firmware-overview/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Firmware Update
+    Firmware Overview
   
 
     
@@ -1062,10 +986,9 @@
     </li>
   
 
-              
-            
-              
-                
+  
+    
+    
   
   
   
@@ -1073,19 +996,16 @@
     
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1103,8 +1023,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1128,7 +1048,7 @@
   <span class="md-ellipsis">
     
   
-    Example 1 - Remote Access
+    Bluetooth Terminal
   
 
     
@@ -1156,7 +1076,7 @@
   <span class="md-ellipsis">
     
   
-    Example 2 - Pair Two BlueSMiRFs
+    Pair Two BlueSMiRFs
   
 
     
@@ -1184,7 +1104,7 @@
   <span class="md-ellipsis">
     
   
-    Example 3 - Wireless Serial LCD
+    Wireless Serial LCD
   
 
     
@@ -1204,17 +1124,56 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
+  
+    
+    
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-    </li>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources and Support
   
 
+    
+  </span>
   
-    
-    
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources and Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -1227,7 +1186,7 @@
   <span class="md-ellipsis">
     
   
-    Resources
+    Product Resources
   
 
     
@@ -1239,56 +1198,7 @@
     </li>
   
 
-  
-    
-    
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Support
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Support
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+              
             
               
                 
@@ -1305,6 +1215,34 @@
     
   
     Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../revision_history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Revision History
   
 
     
@@ -1382,15 +1320,6 @@
 
   
 
-    <!-- Add Hard Copies to NAV menu -->
-    <li class="md-nav__item">
-      <a href="/SparkFun_BlueSMiRF-v2/single_page/" class="md-nav__link">
-      <span class="md-ellipsis">
-        🖨️ Print View
-        <!-- Hard Copies&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg> -->
-      </span>
-      </a>
-    </li>
   </ul>
 </nav>
                   </div>
@@ -1398,91 +1327,9 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#connecting-via-bluesmirf-v2-pth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Connecting via BlueSMiRF v2 PTH<a class="headerlink" data-preview="" href="#connecting-via-bluesmirf-v2-pth" title="Permanent link"></a>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-serial-uart-connection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Basic Serial UART Connection<a class="headerlink" data-preview="" href="#basic-serial-uart-connection" title="Permanent link"></a>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usb-to-serial-converter-to-bluesmirf-v2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          USB-to-Serial Converter to BlueSMiRF v2<a class="headerlink" data-preview="" href="#usb-to-serial-converter-to-bluesmirf-v2" title="Permanent link"></a>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bluesmirf-v2-to-standard-serial-uart-port" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          BlueSMiRF v2 to Standard Serial UART Port<a class="headerlink" data-preview="" href="#bluesmirf-v2-to-standard-serial-uart-port" title="Permanent link"></a>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
-              
-                
-
-
-
-
               
               <article class="md-content__inner md-typeset">
                 
@@ -1509,217 +1356,343 @@
 
   <h1>Hardware Assembly</h1>
 
-<p>In this section, we'll go over how to connect to the BlueSMiRF v2.</p>
-<h3 id="connecting-via-bluesmirf-v2-pth">Connecting via BlueSMiRF v2 PTH<a class="headerlink" data-preview="" href="#connecting-via-bluesmirf-v2-pth" title="Permanent link"></a></h3>
-<p>For a temporary connection to the PTH BlueSMiRF v2, you could use IC hooks to test out the pins. However, you'll need to solder headers or wires of your choice to the board for a secure connection. You can choose between a combination of <a href="https://learn.sparkfun.com/tutorials/how-to-solder-through-hole-soldering/all" target="_blank" rel="noopener">header pins and jumper wires</a>, or <a href="https://learn.sparkfun.com/tutorials/working-with-wire/all" target="_blank" rel="noopener">stripping wire and soldering the wire</a> directly to the board.</p>
-<div class="grid cards" style="text-align: center;">
+<h2 id="general-connection">General Connection<a class="headerlink" data-preview="" href="#general-connection" title="Permanent link"></a></h2>
+<p>For a connection between two UART interfaces, the data and flow-control signals are cross-coupled. In addition, power must also be supplied to the BlueSMiRF v2.</p>
+<div class="grid" style="place-items: center;">
+<div style="text-align: center;">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Device 1</strong></th>
+<th style="text-align: center;"><code>RX</code></th>
+<th style="text-align: center;"><code>TX</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Device 2</strong></td>
+<td style="text-align: center;"><code>TX</code></td>
+<td style="text-align: center;"><code>RX</code></td>
+</tr>
+</tbody>
+</table>
+<figcaption>
+<p>UART data bus only</p>
+</figcaption>
+</div>
+<div style="text-align: center;">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Device 1</strong></th>
+<th style="text-align: center;"><code>RX</code></th>
+<th style="text-align: center;"><code>TX</code></th>
+<th style="text-align: center;"><code>CTS</code></th>
+<th style="text-align: center;"><code>RTS</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Device 2</strong></td>
+<td style="text-align: center;"><code>TX</code></td>
+<td style="text-align: center;"><code>RX</code></td>
+<td style="text-align: center;"><code>RTS</code></td>
+<td style="text-align: center;"><code>CTS</code></td>
+</tr>
+</tbody>
+</table>
+<figcaption>
+<p>UART with flow control</p>
+</figcaption>
+</div>
+</div>
+<h2 id="jst-connector">JST Connector<a class="headerlink" data-preview="" href="#jst-connector" title="Permanent link"></a></h2>
+<p>In most circumstances, users will utilize the JST connector to interface with one of our <a href="https://www.sparkfun.com/gnss/gnss-boards/high-precision-gnss-boards.html" target="_blank" rel="noopener">high-precision GNSS breakout boards</a> for RTK correction data. However, users can also use the JST breadboard cable to connect the BlueSMiRF v2 - JST to other boards.</p>
+<div class="grid">
+<div>
+<figure>
+<p><a data-preview="" href="../assets/img/hookup_guide/assembly-jst-gnss.jpg" title="Click to enlarge"><img alt="JST connection with All-band GNSS RTK board" src="../assets/img/hookup_guide/assembly-jst-gnss.jpg" width="400" /></a></p>
+<figcaption>
+<p>Connecting to an All-band GNSS RTK board with a JST adapter cable.</p>
+</figcaption>
+</figure>
+<details class="warning">
+<summary>Compatibility - JST Connections</summary>
+<p>The simplest way to connect the BlueSMiRF to most of our GNSS breakout boards, is with our JST adapter cables:</p>
+<ul>
+<li><a href="https://www.sparkfun.com/ghr-04v-s-to-ghr-06v-s-cable-100mm.html" target="_blank" rel="noopener">100mm Cable</a></li>
+<li><a href="https://www.sparkfun.com/jst-ghr-04v-to-jst-ghr-06v-cable-1-25mm-pitch.html" target="_blank" rel="noopener">150mm Cable</a></li>
+</ul>
+<p>Unfortunately, when we designed some of our earlier GNSS boards/products, the pin layout of the JST connection wasn't been standardized yet. Therefore, users will need to verify that the pin layout of the GNSS breakout board's JST connector is compatibile with our adapter cables.</p>
+<article class="grid" style="place-items: center;" markdown>
+<article markdown>
+<p><figure markdown>
+<a data-preview="" href="../assets/img/hookup_guide/connection-jst-4.png" title="Click to enlarge"><img alt="JST pins for GNSS breakouts" src="../assets/img/hookup_guide/connection-jst-4.png" width="250" /></a>
+<figcaption markdown>The pin connections of a compatible JST connector</figcaption>
+</figure></p>
+</article>
+<article markdown>
+<p><figure markdown>
+<a data-preview="" href="../assets/img/hookup_guide/connection-jst-gnss.png" title="Click to enlarge"><img alt="JST pin labels for GNSS breakouts" src="../assets/img/hookup_guide/connection-jst-gnss.png" width="250" /></a>
+<figcaption markdown>The pin labels for a compatible JST connector</figcaption>
+</figure></p>
+</article>
+</article>
+<article style="text-align: center;" markdown>
+<p><table border="1" markdown>
+<tr markdown>
+<th style="vertical-align:middle;">Pin Number</th>
+<th style="text-align:center;" markdown><code>1</code><br><em>(Left)</em></td>
+<th style="text-align:center;" markdown><code>2</code></td>
+<th style="text-align:center;" markdown><code>3</code></td>
+<th style="text-align:center;" markdown><code>4</code><br><em>(Right)</em></td>
+</tr>
+<tr markdown>
+<th>Label</th>
+<td style="text-align:center;" markdown><code>+</code>, <code>V</code>, etc.</td>
+<td style="text-align:center;" markdown><code>T</code>, <code>TX</code>, etc.</td>
+<td style="text-align:center;" markdown><code>R</code>, <code>RX</code>, etc.</td>
+<td style="text-align:center;" markdown><code>-</code>, <code>G</code>, etc.</td>
+</tr>
+<tr markdown>
+<th style="vertical-align:middle;">Function</th>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>Voltage Output</strong><br><em>3.3 to 5V</em></td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>UART</strong><br>Transmit</td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>UART</strong><br>Receive</td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>Ground</strong></td>
+</tr>
+</table></p>
+</article>
+</details>
+</div>
+<div>
+<figure>
+<p><a data-preview="" href="../assets/img/hookup_guide/assembly-jst-ch340.jpg" title="Click to enlarge"><img alt="JST connection with serial adapter" src="../assets/img/hookup_guide/assembly-jst-ch340.jpg" width="400" /></a></p>
+<figcaption>
+<p>Connecting to the Serial Basic breakout with a JST breadboard cable.</p>
+</figcaption>
+</figure>
+</div>
+</div>
+<details class="info">
+<summary>Pin Layout - BlueSMiRF</summary>
+<div class="grid" style="place-items: center;" markdown>
+<div markdown>
+<p><figure markdown>
+<a data-preview="" href="../assets/img/hookup_guide/connection-jst-6.png" title="Click to enlarge"><img alt="JST Connector" src="../assets/img/hookup_guide/connection-jst-6.png" width="330" /></a>
+<figcaption markdown>The pin connections of the JST connector on the BlueSMiRF v2.</figcaption>
+</figure></p>
+</div>
+<div markdown>
+<p><figure markdown>
+<a data-preview="" href="../assets/img/hookup_guide/connection-jst-labels.png" title="Click to enlarge"><img alt="Board labels" src="../assets/img/hookup_guide/connection-jst-labels.png" width="330" /></a>
+<figcaption markdown>The labels for the JST-GH connector's pins, on the bottom of the BlueSMiRF v2.</figcaption>
+</figure></p>
+</div>
+</div>
+<article style="text-align: center;" markdown>
+<p><table border="1" markdown>
+<tr markdown>
+<th style="text-align:center; vertical-align:middle;" markdown>Pin Number</th>
+<th style="text-align:center;" markdown><code>1</code><br><em>(Left)</em></th>
+<th style="text-align:center;" markdown><code>2</code></th>
+<th style="text-align:center;" markdown><code>3</code></th>
+<th style="text-align:center;" markdown><code>4</code></th>
+<th style="text-align:center;" markdown><code>5</code></th>
+<th style="text-align:center;" markdown><code>6</code><br><em>(Right)</em></th>
+</tr>
+<tr markdown>
+<th markdown>Label</th>
+<td style="text-align:center;" markdown><code>3V3-5V</code></td>
+<td style="text-align:center;" markdown><code>RXI</code></td>
+<td style="text-align:center;" markdown><code>TXO</code></td>
+<td style="text-align:center;" markdown><code>CTS</code></td>
+<td style="text-align:center;" markdown><code>RTS</code></td>
+<td style="text-align:center;" markdown><code>GND</code></td>
+</tr>
+<tr markdown>
+<th style="vertical-align:middle;">Function</th>
+<td style="text-align:center; vertical-align:middle;" markdown>
+    <strong>Voltage Input</strong><br>
+    3.3 to 5V
+</td>
+<td style="text-align:center; vertical-align:middle;" markdown>
+    <strong>UART</strong><br>
+    Receive
+</td>
+<td style="text-align:center; vertical-align:middle;" markdown>
+    <strong>UART</strong><br>
+    Transmit
+</td>
+<td style="text-align:center; vertical-align:middle;" markdown>
+    <strong>Flow Control</strong><br>
+    <em>Clear-to-Send</em>
+</td>
+<td style="text-align:center; vertical-align:middle;" markdown>
+    <strong>Flow Control</strong><br>
+    <em>Ready-to-Send</em>
+</td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>Ground</strong></td>
+</tr>
+</table></p>
+</article>
+</details>
+<h2 id="male-header-pins">Male Header Pins<a class="headerlink" data-preview="" href="#male-header-pins" title="Permanent link"></a></h2>
+<p>The pins of the BlueSMiRF v2 - Male Header are broken out into 0.1"-spaced male header pins on the outer edges of the board. In most circumstances, users will simply connect the BlueSMiRF v2 to the female headers of another board or utilize jumper wires to make the connection.</p>
+<div class="grid" style="place-items: center;">
+<div>
+<figure>
+<p><a data-preview="" href="../assets/img/hookup_guide/assembly-smd-gnss.jpg" title="Click to enlarge"><img alt="All-band GNSS RTK breakout board JST connector" src="../assets/img/hookup_guide/assembly-smd-gnss.jpg" width="400" /></a></p>
+<figcaption>
+<p>Connecting to a header on the All-band GNSS RTK breakout board.</p>
+</figcaption>
+</figure>
+</div>
+<div>
+<figure>
+<p><a data-preview="" href="../assets/img/hookup_guide/assembly-smd-uart_adapter.jpg" title="Click to enlarge"><img alt="JST connection with All-band GNSS RTK board" src="../assets/img/hookup_guide/assembly-smd-uart_adapter.jpg" width="400" /></a></p>
+<figcaption>
+<p>Connecting to the Serial Basic breakout with jumper wires.</p>
+</figcaption>
+</figure>
+</div>
+</div>
+<details class="info">
+<summary>Pin Layout - BlueSMiRF</summary>
+<div class="grid" style="place-items: center;" markdown>
+<div markdown>
+<p><figure markdown>
+<a data-preview="" href="../assets/img/hookup_guide/connection-smd-labels-bottom.png" title="Click to enlarge"><img alt="Header Pin labels" src="../assets/img/hookup_guide/connection-smd-labels-bottom.png" width="330" /></a>
+<figcaption markdown>The labels for the header pins, on the bottom of the BlueSMiRF v2.</figcaption>
+</figure></p>
+</div>
+<div markdown>
+<p><figure markdown>
+<a data-preview="" href="../assets/img/hookup_guide/connection-smd-labels-top.png" title="Click to enlarge"><img alt="Header Pin labels" src="../assets/img/hookup_guide/connection-smd-labels-top.png" width="330" /></a>
+<figcaption markdown>The labels for the header pins, on the top of the BlueSMiRF v2.</figcaption>
+</figure></p>
+</div>
+</div>
+<article style="text-align: center;" markdown>
+<p><table border="1" markdown>
+<tr markdown>
+<th style="text-align:center; vertical-align:middle;" markdown>Pin Number</th>
+<th style="text-align:center;" markdown><code>1</code><br><em>(Left)</em></th>
+<th style="text-align:center;" markdown><code>2</code></th>
+<th style="text-align:center;" markdown><code>3</code></th>
+<th style="text-align:center;" markdown><code>4</code></th>
+<th style="text-align:center;" markdown><code>5</code></th>
+<th style="text-align:center;" markdown><code>6</code><br><em>(Right)</em></th>
+</tr>
+<tr markdown>
+<th style="vertical-align:middle;" markdown>Label</th>
+<td style="text-align:center; vertical-align:middle;" markdown><code>GND</code></td>
+<td style="text-align:center; vertical-align:middle;" markdown><code>CTS</code></td>
+<td style="text-align:center; vertical-align:middle;" markdown>Top: <code>VCC</code><br>Bottom: <code>3V3-5V</code></td>
+<td style="text-align:center; vertical-align:middle;" markdown><code>TXO</code></td>
+<td style="text-align:center; vertical-align:middle;" markdown><code>RXI</code></td>
+<td style="text-align:center; vertical-align:middle;" markdown><code>RTS</code></td>
+</tr>
+<tr markdown>
+<th style="vertical-align:middle;">Function</th>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>Ground</strong></td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>Flow Control</strong><br><em>Clear-to-Send</em></td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>Voltage Input</strong><br>3.3 to 5V</td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>UART</strong><br>Transmit</td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>UART</strong><br>Receive</td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>Flow Control</strong><br><em>Ready-to-Send</em></td>
+</tr>
+</table></p>
+</article>
+</details>
+<h2 id="pth-pads">PTH Pads<a class="headerlink" data-preview="" href="#pth-pads" title="Permanent link"></a></h2>
+<p>The <a href="https://en.wikipedia.org/wiki/Through-hole_technology" title="Plated Through Holes" target="_blank" rel="noopener">PTH</a> pads of the BlueSMiRF v2 - PTH Pins are broken out into 0.1"-spaced holes on the outer edges of the board.</p>
+<details class="note">
+<summary>New to soldering?</summary>
+<p>If you have never soldered before or need a quick refresher, check out our <a href="https://learn.sparkfun.com/tutorials/how-to-solder-through-hole-soldering" target="_blank" rel="noopener">How to Solder: Through-Hole Soldering</a> guide.</p>
+<div class="grid cards" markdown style="text-align:center;">
 <ul>
 <li>
-<p><a href="https://learn.sparkfun.com/tutorials/how-to-solder-through-hole-soldering/all" target="_blank" rel="noopener">
+<p><a href="https://learn.sparkfun.com/tutorials/5" target="_blank" rel="noopener">
     <figure markdown>
-    <img alt="How to Solder: Through Hole Soldering" src="../assets/external/cdn.sparkfun.com/c/178-100/assets/learn_tutorials/5/Soldering_Action-01.jpg">
+    <img alt="Tutorial thumbnail" src="../assets/external/cdn.sparkfun.com/c/264-148/assets/e/3/9/9/4/51d9fbe1ce395f7a2a000000.jpg">
     </figure></p>
 <hr />
-<p><strong>How to Solder: Through Hole Soldering</strong>
-</a></p>
-</li>
-<li>
-<p><a href="https://learn.sparkfun.com/tutorials/working-with-wire/all" target="_blank" rel="noopener">
-    <figure markdown>
-    <img alt="Working with Wire" src="../assets/external/cdn.sparkfun.com/c/178-100/assets/0/5/0/0/f/5138de3cce395fbb1b000002.JPG.jpg">
-    </figure></p>
-<hr />
-<p><strong>Working with Wire</strong>
-</a></p>
+<p><strong>How to Solder: Through-Hole Soldering</strong></a></p>
 </li>
 </ul>
 </div>
-<h3 id="basic-serial-uart-connection">Basic Serial UART Connection<a class="headerlink" data-preview="" href="#basic-serial-uart-connection" title="Permanent link"></a></h3>
-<p>At a minimum, you will need to connect serial TX, serial RX, power, and ground for a basic serial UART connection. This connection is needed to send serial data between the two UART devices, configure settings, or even manually upload binaries to the ESP32. Between each serial device, <a href="https://learn.sparkfun.com/tutorials/serial-communication#common-pitfalls" target="_blank" rel="noopener">always make sure to cross the RX and TX lines between serial devices (i.e. RX-to-TX and TX-to-RX)</a>. The table indicates below shows color cells being the same for the TXO-to-RXI and RXI-to-TXO. Note that the order of the pins may be different depending on the design, so you may not be able to make a direct connection with the BlueSMiRF v2's 1x6 header.</p>
-<div style="text-align: center;">
-    <table>
-        <tr>
-            <th style="text-align: center; border: solid 1px #cccccc;">Serial Device<br />Pinout
-            </th>
-            <th style="text-align: center; border: solid 1px #cccccc;">BlueSMiRF v2<br />Pinout
-            </th>
-        </tr>
-        <tr>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#d4edda"><font color="#000000">TXO</font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#d4edda"><font color="#000000">RXI</font>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#ffdaaf"><font color="#000000">RXI</font>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#ffdaaf"><font color="#000000">TXO</font>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#f2dede"><font color="#000000">3V3</font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#f2dede"><font color="#000000">VCC</font>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#DDDDDD"><font color="#000000">GND</font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#DDDDDD"><font color="#000000">GND</font>
-            </td>
-        </tr>
-    </table>
-</div>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In some cases, you may only need to just wire one serial wire from your serial device to the BlueSMiRF.</p>
-</div>
-<h3 id="usb-to-serial-converter-to-bluesmirf-v2">USB-to-Serial Converter to BlueSMiRF v2<a class="headerlink" data-preview="" href="#usb-to-serial-converter-to-bluesmirf-v2" title="Permanent link"></a></h3>
-<p>Depending on the USB-to-serial converter that you choose, you may need to install drivers. If you've never connected an FTDI or CH340 to your computer before, you may need to install drivers for the USB-to-serial converter. Check out our <a href="https://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers" target="_blank" rel="noopener">How to Install FTDI Drivers</a> or <a href="https://learn.sparkfun.com/tutorials/sparkfun-serial-basic-ch340c-hookup-guide#drivers-if-you-need-them" target="_blank" rel="noopener">How to Install CH340 Drivers</a> tutorial for help with the installation.</p>
-<div class="grid cards" style="text-align: center;">
-<ul>
-<li>
-<p><a href="https://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers" target="_blank" rel="noopener">
-    <figure markdown>
-    <img alt="How to Install FTDI Drivers" src="../assets/external/cdn.sparkfun.com/c/178-100/assets/learn_tutorials/7/4/USB-mini-B-FTDI.jpg">
-    </figure></p>
-<hr />
-<p><strong>How to Install FTDI Drivers</strong>
-</a></p>
-</li>
-<li>
-<p><a href="https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers" target="_blank" rel="noopener">
-    <figure markdown>
-    <img alt="How to Install CH340 Drivers" src="../assets/external/cdn.sparkfun.com/c/178-100/assets/learn_tutorials/9/0/8/USB-to-serial_converter_CH340-closeup.jpg">
-    </figure></p>
-<hr />
-<p><strong>How to Install CH340 Drivers</strong>
-</a></p>
-</li>
-</ul>
-</div>
-<p>To make a connection to a USB-to-serial converter, you will need a basic serial connection. There are several converters available such as the FT232 or CH340. Each of these boards include a different USB connector. You will need to manually wire them up using jumper wires as shown in the table and image below.</p>
-<div style="text-align: center;">
-    <table>
-        <tr>
-            <th style="text-align: center; border: solid 1px #cccccc;">USB-to-Serial Converter<br />Pinout
-            </th>
-            <th style="text-align: center; border: solid 1px #cccccc;" colspan="2">Intermediate Wire Connection</th>
-            <th style="text-align: center; border: solid 1px #cccccc;">BlueSMiRF v2<br />Pinout
-            </th>
-        </tr>
-        <tr>
-            <td style="text-align: center; border: solid 1px #cccccc;">DTR
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;"><font color="#000000"></font>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#d4edda"><font color="#000000"></font>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#d4edda"><font color="#000000"><span STYLE="text-decoration:overline">RTS</span></font>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#cce5ff"><font color="#000000">RXI</font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#cce5ff"><font color="#000000"></font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#fff3cd"><font color="#000000"></font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#fff3cd"><font color="#000000">RXI</font>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#fff3cd"><font color="#000000">TXO</font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#fff3cd"><font color="#000000"></font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#cce5ff"><font color="#000000"></font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#cce5ff"><font color="#000000">TXO</font>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#f2dede"><font color="#000000">3V3</font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#f2dede"><font color="#000000"></font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#f2dede"><font color="#000000"></font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#f2dede"><font color="#000000">VCC</font>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#d4edda"><font color="#000000">CTS</font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#d4edda"><font color="#000000"></font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;">
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;">CTS
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#DDDDDD"><font color="#000000">GND</font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#DDDDDD"><font color="#000000"></font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#DDDDDD"><font color="#000000"></font>
-            </td>
-            <td style="text-align: center; border: solid 1px #cccccc;" bgcolor="#DDDDDD"><font color="#000000">GND</font>
-            </td>
-        </tr>
-    </table>
-</div>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The connection includes an additional connection for one pair of flow control pins: <span STYLE="text-decoration:overline">RTS</span> and CTS. This connection is not necessary.</p>
-</div>
-<p>Below is one example between the serial basic breakout (CH340, USB-C) and the BlueSMiRF v2 Header. Male to female jumper wires were connected between the boards.</p>
+</details>
+<div class="grid">
+<div>
+<h3 id="headers">Headers<a class="headerlink" data-preview="" href="#headers" title="Permanent link"></a></h3>
+<p>When selecting headers, be sure you are aware of the functionality you require.</p>
 <figure>
-<p><a data-preview="" href="../assets/img/assembly-smd-uart_adapter.jpg" title="Click to enlarge"><img alt="USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with TX-to-RX and RX-to-TX" src="../assets/img/assembly-smd-uart_adapter.jpg" width="600" /></a></p>
+<p><a data-preview="" href="../assets/img/hookup_guide/assembly-pth-headers.jpg" title="Click to enlarge"><img alt="Soldering headers" src="../assets/img/hookup_guide/assembly-pth-headers.jpg" width="400" /></a></p>
 <figcaption>
-<p>USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with TX-to-RX and RX-to-TX</p>
-</figcaption>
-</figure>
-<p>Adding a simple 1x6 stackable header between the jumper wires will make a quick adapter with the M/F jumper wires and USB-to-serial converter. You'll just need to match the DTR and GND pins. This is useful for those that need to constantly configure the BlueSMiRF v2's settings and re-reconnect to a USB-to-serial converter.</p>
-<figure>
-<p><a data-preview="" href="../assets/img/assembly-smd-uart_adapter-alt.jpg" title="Click to enlarge"><img alt="USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with an Additional Stackable Header" src="../assets/img/assembly-smd-uart_adapter-alt.jpg" width="600" /></a></p>
-<figcaption>
-<p>USB-to-Serial Converter (CH340) to BlueSMiRF v2 Header with an Additional Stackable Header</p>
-</figcaption>
-</figure>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>To make it easier to connect visually, try adding a polarity marker with whiteout, Sharpie, or paint. You can even try rotating one of the jumper wires so that the metal tabs is not facing the same direction on one or both ends.</p>
-</div>
-<p>Remember, for those that are using the PTH version, you will need to solder either male headers, female headers, or wires. The type of header or wire will depend on your personal preference and project needs. In this case, we used a 1x6 female header to the board. At the time of writing, there were only female to male jumper wires available so extra long headers were placed between the female header pins. The male header was connected to another serial basic (CH340).</p>
-<figure>
-<p><a data-preview="" href="../assets/img/assembly-pth-uart_adapter.jpg" title="Click to enlarge"><img alt="USB-to-Serial Converter (CH340) to BlueSMiRF v2 PTH" src="../assets/img/assembly-pth-uart_adapter.jpg" width="600" /></a></p>
-<figcaption>
-<p>USB-to-Serial Converter (CH340) to BlueSMiRF v2 PTH</p>
-</figcaption>
-</figure>
-<h3 id="bluesmirf-v2-to-standard-serial-uart-port">BlueSMiRF v2 to Standard Serial UART Port<a class="headerlink" data-preview="" href="#bluesmirf-v2-to-standard-serial-uart-port" title="Permanent link"></a></h3>
-<p>For boards that already include the footprint for a standard serial UART port, you can connect directly to the pins. You will find these on a few Arduino development boards. The Arduino Pro, Arduino Pro Mini, and LilyPad Arduino 328 Main Board are just a few boards that have the standard port. You will also notice certain boards will have the standard serial UART port labeled as the RTCM Correction Port on SparkFun high precision GNSS breakout boards. For certain boards that have a male header soldered, you may need to consider soldering a 1x6 female header on the BlueSMiRF v2 PTH.</p>
-<div class="grid cards">
-<figure>
-<p><a data-preview="" href="../assets/img/example-arduino_pro_mini.jpg" title="Click to enlarge"><img alt="BlueSMiRF v2 Replacing Serial Connection on the Arduino Pro Mini 3.3V Serial Header Port" src="../assets/img/example-arduino_pro_mini.jpg" width="600" /></a></p>
-<figcaption>
-<p>BlueSMiRF v2 Replacing Serial Connection on the Arduino Pro Mini 3.3V Serial Header Port</p>
-</figcaption>
-</figure>
-<figure>
-<p><a data-preview="" href="../assets/img/example-iot_redboard-gnss.jpg" title="Click to enlarge"><img alt="RedBoard IoT Development Board ESP32 Connected to the ZED-F9P with the BlueSMiRF v2 Connected to the ZED-F9P's RTCM Correction Port" src="../assets/img/example-iot_redboard-gnss.jpg" width="600" /></a></p>
-<figcaption>
-<p>BlueSMiRF v2 Connected to the ZED-F9P's RTCM Correction Port</p>
-</figcaption>
-</figure>
-<figure>
-<p><a data-preview="" href="../assets/img/example-gnss.jpg" title="Click to enlarge"><img alt="High Precision GNSS UM980 with the BlueSMiRF v2 Connected to the UM980's RTCM Correction Port" src="../assets/img/example-gnss.jpg" width="600" /></a></p>
-<figcaption>
-<p>UM980 with the BlueSMiRF v2 Connected to the UM980's RTCM Correction Port</p>
+<p>Soldering headers to the All-band GNSS RTK breakout board.</p>
 </figcaption>
 </figure>
 </div>
+<div>
+<h3 id="hookup-wires">Hookup Wires<a class="headerlink" data-preview="" href="#hookup-wires" title="Permanent link"></a></h3>
+<p>For a more permanent connection, users can solder wires directly to the board.</p>
+<figure>
+<p><a data-preview="" href="../assets/img/hookup_guide/assembly-pth-wires.jpg" title="Click to enlarge"><img alt="Soldering wires" src="../assets/img/hookup_guide/assembly-pth-wires.jpg" width="400" /></a></p>
+<figcaption>
+<p>Soldering wires to the All-band GNSS RTK breakout board.</p>
+</figcaption>
+</figure>
+</div>
+</div>
+<details class="info">
+<summary>Pin Layout - BlueSMiRF</summary>
+<div class="grid" style="place-items: center;" markdown>
+<div markdown>
+<p><figure markdown>
+<a data-preview="" href="../assets/img/hookup_guide/connection-pth-labels-bottom.png" title="Click to enlarge"><img alt="PTH Pad labels" src="../assets/img/hookup_guide/connection-pth-labels-bottom.png" width="330" /></a>
+<figcaption markdown>The labels for the PTH pads, on the bottom of the BlueSMiRF v2.</figcaption>
+</figure></p>
+</div>
+<div markdown>
+<p><figure markdown>
+<a data-preview="" href="../assets/img/hookup_guide/connection-pth-labels-top.png" title="Click to enlarge"><img alt="PTH Pad labels" src="../assets/img/hookup_guide/connection-pth-labels-top.png" width="330" /></a>
+<figcaption markdown>The labels for the  PTH pads, on the top of the BlueSMiRF v2.</figcaption>
+</figure></p>
+</div>
+</div>
+<article style="text-align: center;" markdown>
+<p><table border="1" markdown>
+<tr markdown>
+<th style="text-align:center; vertical-align:middle;" markdown>Pin Number</th>
+<th style="text-align:center;" markdown><code>1</code><br><em>(Left)</em></th>
+<th style="text-align:center;" markdown><code>2</code></th>
+<th style="text-align:center;" markdown><code>3</code></th>
+<th style="text-align:center;" markdown><code>4</code></th>
+<th style="text-align:center;" markdown><code>5</code></th>
+<th style="text-align:center;" markdown><code>6</code><br><em>(Right)</em></th>
+</tr>
+<tr markdown>
+<th style="vertical-align:middle;" markdown>Label</th>
+<td style="text-align:center; vertical-align:middle;" markdown>Top: <code>G</code><br>Bottom: <code>GND</code></td>
+<td style="text-align:center; vertical-align:middle;" markdown>Top: <code>CT</code><br>Bottom: <code>CTS</code></td>
+<td style="text-align:center; vertical-align:middle;" markdown>Top: <code>V</code><br>Bottom: <code>3V3-5V</code></td>
+<td style="text-align:center; vertical-align:middle;" markdown>Top: <code>TO</code><br>Bottom: <code>TXO</code></td>
+<td style="text-align:center; vertical-align:middle;" markdown>Top: <code>RI</code><br>Bottom: <code>RXI</code></td>
+<td style="text-align:center; vertical-align:middle;" markdown>Top: <code>RT</code><br>Bottom: <code>RTS</code></td>
+</tr>
+<tr markdown>
+<th style="vertical-align:middle;">Function</th>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>Ground</strong></td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>Flow Control</strong><br><em>Clear-to-Send</em></td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>Voltage Input</strong><br>3.3 to 5V</td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>UART</strong><br>Transmit</td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>UART</strong><br>Receive</td>
+<td style="text-align:center; vertical-align:middle;" markdown><strong>Flow Control</strong><br><em>Ready-to-Send</em></td>
+</tr>
+</table></p>
+</article>
+</details>
 
 
 
@@ -1742,7 +1715,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 24, 2026 18:34:30 UTC"><span class="timeago" datetime="2026-03-24T18:34:30+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 24, 2026 18:34:30 UTC">2026-03-24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 6, 2026 23:25:26 UTC"><span class="timeago" datetime="2026-11-06T23:25:26+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 6, 2026 23:25:26 UTC">2026-11-06</span>
   </span>
 
     
@@ -1830,13 +1803,13 @@
         
         
           
-          <a href="../operation_modes/" class="md-footer__link md-footer__link--next" aria-label="Next: Operation Modes">
+          <a href="../device-operation/" class="md-footer__link md-footer__link--next" aria-label="Next: Button Operation">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Operation Modes
+                Button Operation
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2128,10 +2101,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.action.edit", "content.tooltips", "navigation.footer", "navigation.tracking", "navigation.tabs.sticky", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.path", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.action.edit", "content.tooltips", "navigation.footer", "navigation.tracking", "navigation.top", "search.highlight", "toc.integrate", "toc.follow", "announce.dismiss"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../js/timeago.min.js"></script>
       

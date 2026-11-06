@@ -18,14 +18,14 @@
         <link rel="prev" href="../resources/">
       
       
-        <link rel="next" href="../github/file_issue/">
+        <link rel="next" href="../revision_history/">
       
       
         
       
       
       <link rel="icon" href="../assets/img/sfe-logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
   
@@ -204,7 +204,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#issues-uploading-code-manually-via-cli" class="md-skip">
+        <a href="#faq" class="md-skip">
           Skip to content
         </a>
       
@@ -214,15 +214,22 @@
         <aside class="md-banner">
           <div class="md-banner__inner md-grid md-typeset">
             
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
             
   <article style="text-align: center;">
     <span class="twemoji sfe">
       <svg xmlns="http://www.w3.org/2000/svg" width="15.955" height="24" viewbox="0 0 16 24"><title>SparkFun logo</title><path d="M13.03 3.838s.34 1.438-.745 1.638c-.756.134-1.976-.615-2.59-1.362-.756-.922-.66-1.647-.072-2.29.884-.978 2.397-.6 2.397-.6S9.248-1.209 6.362.783c-2.571 1.77-1.834 4.183.487 6.288 2.09 1.902.42 3.988-1.686 3.717-1.444-.184-2.035-1.343-1.688-2.054.299-.608 1.335-.982 1.335-.982s-1.19-.484-2.592.044C.96 8.27-.078 9.312.005 11.917V24s1.3-1.604 2.83-3.236c1.713-1.84 2.495-3.084 4.254-2.938 3.328.205 5.735-1.273 7.37-3.645 3.142-4.563.681-9.661-1.43-10.343" style="fill:#e0311d;fill-opacity:1;stroke-width:.66479"/></svg>
     </span>
-    <strong>Product Release:</strong> The new variant of the BlueSMiRF v2, features a JST connector to simplify connections to our GNSS breakout boards with just a JST cable.
+    <strong>New Firmware Release:</strong> Fixes exit command for Bluetooth connection and increases maximum buffer size. <a href="/SparkFun_BlueSMiRF-v2/firmware-update" title="View Firmware Update Instructions">Update Now</a>
   </article>
 
           </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
           
         </aside>
       
@@ -258,20 +265,20 @@
 
 
 <!-- Header -->
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav
     class="md-header__inner md-grid"
     aria-label="Header"
   >
 
     <!-- Link to home -->
-    <!-- <a href="https://www.sparkfun.com/" title="SparkFun BlueSMiRF v2 Hookup Guide" class="md-header__button md-logo" aria-label="SparkFun BlueSMiRF v2 Hookup Guide" data-md-component="logo" target="_blank" rel="noopener">
+    <!-- <a href="https://docs.sparkfun.com/" title="SparkFun BlueSMiRF v2 Hookup Guide" class="md-header__button md-logo" aria-label="SparkFun BlueSMiRF v2 Hookup Guide" data-md-component="logo" target="_blank" rel="noopener">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" width="15.955" height="24" viewbox="0 0 16 24"><title>SparkFun logo</title><path d="M13.03 3.838s.34 1.438-.745 1.638c-.756.134-1.976-.615-2.59-1.362-.756-.922-.66-1.647-.072-2.29.884-.978 2.397-.6 2.397-.6S9.248-1.209 6.362.783c-2.571 1.77-1.834 4.183.487 6.288 2.09 1.902.42 3.988-1.686 3.717-1.444-.184-2.035-1.343-1.688-2.054.299-.608 1.335-.982 1.335-.982s-1.19-.484-2.592.044C.96 8.27-.078 9.312.005 11.917V24s1.3-1.604 2.83-3.236c1.713-1.84 2.495-3.084 4.254-2.938 3.328.205 5.735-1.273 7.37-3.645 3.142-4.563.681-9.661-1.43-10.343" style="fill:#e0311d;fill-opacity:1;stroke-width:.66479"/></svg>
 
     </a> -->
-    <a href="https://www.sparkfun.com/" title="www.sparkfun.com/pnt" class="md-header__button md-logo" aria-label="SparkFun BlueSMiRF v2 Hookup Guide" data-md-component="logo" target="_blank" rel="noopener">
+    <a href="https://docs.sparkfun.com/" title="docs.sparkfun.com" class="md-header__button md-logo" aria-label="SparkFun BlueSMiRF v2 Hookup Guide" data-md-component="logo" target="_blank" rel="noopener">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" width="15.955" height="24" viewbox="0 0 16 24"><title>SparkFun logo</title><path d="M13.03 3.838s.34 1.438-.745 1.638c-.756.134-1.976-.615-2.59-1.362-.756-.922-.66-1.647-.072-2.29.884-.978 2.397-.6 2.397-.6S9.248-1.209 6.362.783c-2.571 1.77-1.834 4.183.487 6.288 2.09 1.902.42 3.988-1.686 3.717-1.444-.184-2.035-1.343-1.688-2.054.299-.608 1.335-.982 1.335-.982s-1.19-.484-2.592.044C.96 8.27-.078 9.312.005 11.917V24s1.3-1.604 2.83-3.236c1.713-1.84 2.495-3.084 4.254-2.938 3.328.205 5.735-1.273 7.37-3.645 3.142-4.563.681-9.661-1.43-10.343" style="fill:#e0311d;fill-opacity:1;stroke-width:.66479"/></svg>
@@ -456,124 +463,13 @@
 
   <!-- Navigation tabs (sticky) -->
   
-    
-      <!--
-  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-
-
-<!-- Navigation tabs -->
-<nav
-  class="md-tabs"
-  aria-label="Tabs"
-  data-md-component="tabs"
->
-  <div class="md-tabs__inner md-grid">
-
-  <!-- Adds tab on right side of header -->
-  
-  <ul class="md-tabs__list" style="float: right;">
-    <li class="md-tabs__item">
-    <a href="/SparkFun_BlueSMiRF-v2/single_page/" class="md-tabs__link">
-      🖨️ Print View
-    </a>
-    </li>
-  </ul>
-  
-
-  <!-- Original tabbed sections -->
-  <ul class="md-tabs__list">
-    
-    
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../introduction/" class="md-tabs__link">
-          
-  
-  
-  Getting Started
-
-        </a>
-      </li>
-    
-  
-
-    
-    
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../resources/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Resources
-
-      </a>
-    </li>
-  
-
-    
-    
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
-          
-  
-  
-  Support
-
-        </a>
-      </li>
-    
-  
-
-    
-  </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -611,20 +507,20 @@
 <!-- Determine base classes -->
 
 
-  
 
+  
 
 
 <!-- Navigation -->
 <nav
-  class="md-nav md-nav--primary md-nav--lifted"
+  class="md-nav md-nav--primary md-nav--integrated"
   aria-label="Navigation"
   data-md-level="0"
 >
 
   <!-- Site title -->
   <!-- <label class="md-nav__title" for="__drawer">
-  <a href="https://www.sparkfun.com/" title="SparkFun BlueSMiRF v2 Hookup Guide" class="md-nav__button md-logo" aria-label="SparkFun BlueSMiRF v2 Hookup Guide" data-md-component="logo" target="_blank" rel="noopener">
+  <a href="https://docs.sparkfun.com/" title="SparkFun BlueSMiRF v2 Hookup Guide" class="md-nav__button md-logo" aria-label="SparkFun BlueSMiRF v2 Hookup Guide" data-md-component="logo" target="_blank" rel="noopener">
     
   
   <svg xmlns="http://www.w3.org/2000/svg" width="15.955" height="24" viewbox="0 0 16 24"><title>SparkFun logo</title><path d="M13.03 3.838s.34 1.438-.745 1.638c-.756.134-1.976-.615-2.59-1.362-.756-.922-.66-1.647-.072-2.29.884-.978 2.397-.6 2.397-.6S9.248-1.209 6.362.783c-2.571 1.77-1.834 4.183.487 6.288 2.09 1.902.42 3.988-1.686 3.717-1.444-.184-2.035-1.343-1.688-2.054.299-.608 1.335-.982 1.335-.982s-1.19-.484-2.592.044C.96 8.27-.078 9.312.005 11.917V24s1.3-1.604 2.83-3.236c1.713-1.84 2.495-3.084 4.254-2.938 3.328.205 5.735-1.273 7.37-3.645 3.142-4.563.681-9.661-1.43-10.343" style="fill:#e0311d;fill-opacity:1;stroke-width:.66479"/></svg>
@@ -633,7 +529,7 @@
   SparkFun BlueSMiRF v2 Hookup Guide
   </label> -->
   <label class="md-nav__title" for="__drawer">
-    <a href="https://www.sparkfun.com/" title="sparkfun.com" class="md-nav__button md-logo" aria-label="SparkFun Logo" data-md-component="logo" target="_blank" rel="noopener">
+    <a href="https://docs.sparkfun.com/" title="sparkfun.com" class="md-nav__button md-logo" aria-label="SparkFun Logo" data-md-component="logo" target="_blank" rel="noopener">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" width="15.955" height="24" viewbox="0 0 16 24"><title>SparkFun logo</title><path d="M13.03 3.838s.34 1.438-.745 1.638c-.756.134-1.976-.615-2.59-1.362-.756-.922-.66-1.647-.072-2.29.884-.978 2.397-.6 2.397-.6S9.248-1.209 6.362.783c-2.571 1.77-1.834 4.183.487 6.288 2.09 1.902.42 3.988-1.686 3.717-1.444-.184-2.035-1.343-1.688-2.054.299-.608 1.335-.982 1.335-.982s-1.19-.484-2.592.044C.96 8.27-.078 9.312.005 11.917V24s1.3-1.604 2.83-3.236c1.713-1.84 2.495-3.084 4.254-2.938 3.328.205 5.735-1.273 7.37-3.645 3.142-4.563.681-9.661-1.43-10.343" style="fill:#e0311d;fill-opacity:1;stroke-width:.66479"/></svg>
@@ -666,56 +562,6 @@
   
   
   
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Getting Started
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Getting Started
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../introduction/" class="md-nav__link">
         
@@ -736,23 +582,22 @@
     </li>
   
 
-              
-            
-              
-                
+  
+    
+    
   
   
   
   
     <li class="md-nav__item">
-      <a href="../revision_history/" class="md-nav__link">
+      <a href="../quick_start/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Board Revision History
+    Quick Start Guide
   
 
     
@@ -764,7 +609,53 @@
     </li>
   
 
-              
+  
+    
+    
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -822,35 +713,39 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
+          </ul>
+        </nav>
       
-      
+    </li>
+  
+
+  
+    
+    
+  
+  
+  
+  
+    
+    
+    
     
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Device Operation
+    Operation
   
 
     
@@ -861,12 +756,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Device Operation
+    Operation
   
 
           </label>
@@ -879,14 +774,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../operation_modes/" class="md-nav__link">
+      <a href="../device-operation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Operation Modes
+    Button Operation
   
 
     
@@ -907,14 +802,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../at_commands/" class="md-nav__link">
+      <a href="../device-configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Configuration
+    Configuration Settings
   
 
     
@@ -935,14 +830,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../firmware_update/" class="md-nav__link">
+      <a href="../firmware-overview/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Firmware Update
+    Firmware Overview
   
 
     
@@ -962,10 +857,9 @@
     </li>
   
 
-              
-            
-              
-                
+  
+    
+    
   
   
   
@@ -973,19 +867,16 @@
     
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1003,8 +894,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1028,7 +919,7 @@
   <span class="md-ellipsis">
     
   
-    Example 1 - Remote Access
+    Bluetooth Terminal
   
 
     
@@ -1056,7 +947,7 @@
   <span class="md-ellipsis">
     
   
-    Example 2 - Pair Two BlueSMiRFs
+    Pair Two BlueSMiRFs
   
 
     
@@ -1084,7 +975,7 @@
   <span class="md-ellipsis">
     
   
-    Example 3 - Wireless Serial LCD
+    Wireless Serial LCD
   
 
     
@@ -1104,17 +995,58 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
+  
+    
+    
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-    </li>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources and Support
   
 
+    
+  </span>
   
-    
-    
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources and Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -1127,7 +1059,7 @@
   <span class="md-ellipsis">
     
   
-    Resources
+    Product Resources
   
 
     
@@ -1139,61 +1071,7 @@
     </li>
   
 
-  
-    
-    
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Support
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Support
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+              
             
               
                 
@@ -1258,11 +1136,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#issues-uploading-code-manually-via-cli" class="md-nav__link">
+  <a href="#faq" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Issues Uploading Code Manually via CLI<a class="headerlink" data-preview="" href="#issues-uploading-code-manually-via-cli" title="Permanent link"></a>
+          FAQ<a class="headerlink" data-preview="" href="#faq" title="Permanent link"></a>
         </span>
       
     </span>
@@ -1271,11 +1149,56 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#can-the-bluesmirf-v2-be-used-for-wireless-serial-upload-with-an-arduino" class="md-nav__link">
+  <a href="#device-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Can the BlueSMiRF v2 be used for wireless serial upload with an Arduino?<a class="headerlink" data-preview="" href="#can-the-bluesmirf-v2-be-used-for-wireless-serial-upload-with-an-arduino" title="Permanent link"></a>
+          Device Compatibility<a class="headerlink" data-preview="" href="#device-compatibility" title="Permanent link"></a>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bluesmirfserial-interface-pins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          BlueSMiRF/Serial Interface Pins<a class="headerlink" data-preview="" href="#bluesmirfserial-interface-pins" title="Permanent link"></a>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jst-cables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          JST Cables<a class="headerlink" data-preview="" href="#jst-cables" title="Permanent link"></a>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow-control-pins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Flow Control Pins<a class="headerlink" data-preview="" href="#flow-control-pins" title="Permanent link"></a>
         </span>
       
     </span>
@@ -1283,10 +1206,70 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reprogramming-the-bluesmirf-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Reprogramming the BlueSMiRF v2<a class="headerlink" data-preview="" href="#reprogramming-the-bluesmirf-v2" title="Permanent link"></a>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reprogramming the BlueSMiRF v2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baud-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Baud Rate<a class="headerlink" data-preview="" href="#baud-rate" title="Permanent link"></a>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../revision_history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Revision History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1356,15 +1339,6 @@
 
   
 
-    <!-- Add Hard Copies to NAV menu -->
-    <li class="md-nav__item">
-      <a href="/SparkFun_BlueSMiRF-v2/single_page/" class="md-nav__link">
-      <span class="md-ellipsis">
-        🖨️ Print View
-        <!-- Hard Copies&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg> -->
-      </span>
-      </a>
-    </li>
   </ul>
 </nav>
                   </div>
@@ -1372,65 +1346,9 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#issues-uploading-code-manually-via-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Issues Uploading Code Manually via CLI<a class="headerlink" data-preview="" href="#issues-uploading-code-manually-via-cli" title="Permanent link"></a>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#can-the-bluesmirf-v2-be-used-for-wireless-serial-upload-with-an-arduino" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Can the BlueSMiRF v2 be used for wireless serial upload with an Arduino?<a class="headerlink" data-preview="" href="#can-the-bluesmirf-v2-be-used-for-wireless-serial-upload-with-an-arduino" title="Permanent link"></a>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
-              
-                
-
-
-
-
               
               <article class="md-content__inner md-typeset">
                 
@@ -1465,28 +1383,75 @@
 <p>If this is your first visit to our forum, you'll need to create a <a href="https://community.sparkfun.com/signup" target="_blank" rel="noopener">Forum Account</a> to post questions.</p>
 </div>
 </div>
-<h3 id="issues-uploading-code-manually-via-cli">Issues Uploading Code Manually via CLI<a class="headerlink" data-preview="" href="#issues-uploading-code-manually-via-cli" title="Permanent link"></a></h3>
-<p>If you are seeing the following error when attempting to flash the binaries:</p>
+<h2 id="faq">FAQ<a class="headerlink" data-preview="" href="#faq" title="Permanent link"></a></h2>
+<ul>
+<li>Can the BlueSMiRF v2 be used to program another Arduino board through its serial interface?<ul>
+<li>No, we recommend removing the BlueSMiRF v2 and using a USB-to-serial adapter instead</li>
+</ul>
+</li>
+<li>Can the BlueSMiRF v2 be used to update the firmware of a GNSS module on our breakout boards?<ul>
+<li>No, we recommend using a USB-to-serial adapter instead</li>
+</ul>
+</li>
+</ul>
+<h2 id="device-compatibility">Device Compatibility<a class="headerlink" data-preview="" href="#device-compatibility" title="Permanent link"></a></h2>
+<p>To be directly compatible with the BlueSMiRF v2, devices need the hardware connections listed below. Otherwise, our <a href="https://www.sparkfun.com/breadboard-to-jst-ghr-06v-cable-6-pin-x-1-25mm-pitch-for-loraserial.html" target="_blank" rel="noopener">JST pigtail cables</a> and jumper wires provide more flexibility for devices with a proper power supply, logic-levels, and a UART interface.</p>
+<h3 id="bluesmirfserial-interface-pins">BlueSMiRF/Serial Interface Pins<a class="headerlink" data-preview="" href="#bluesmirfserial-interface-pins" title="Permanent link"></a></h3>
+<p>To connect the BlueSMiRF v2 directly, a compatible device needs to have a 0.1" spaced header, with a pin layout of <code>GND</code>/<code>NC</code>/<code>VCC</code>/<code>TX</code>/<code>RX</code>/<code>NC</code>:</p>
 <figure>
-<p><a data-preview="" href="../assets/img/firmware-upload_failed.jpg" title="Click to enlarge"><img alt="Error message" src="../assets/img/firmware-upload_failed.jpg" width="600" /></a></p>
+<p><a data-preview="" href="../assets/img/hookup_guide/connection-pth-serial.png" title="Click to enlarge"><img alt="JST pinout" src="../assets/img/hookup_guide/connection-pth-serial.png" width="400" /></a></p>
 <figcaption>
-<p>Error Programming BlueSMiRF v2 - ESP32</p>
+<p>Compatible pin layout for a direct header connection.</p>
 </figcaption>
 </figure>
-<div class="admonition terminal">
-<p class="admonition-title">Error Message</p>
+<h3 id="jst-cables">JST Cables<a class="headerlink" data-preview="" href="#jst-cables" title="Permanent link"></a></h3>
+<p>To utilize our <a href="https://www.sparkfun.com/jst-ghr-04v-to-jst-ghr-06v-cable-1-25mm-pitch.html" target="_blank" rel="noopener">4-pin to 6-pin JST-GH cables</a>, a compatible device needs to have a 4-pin JST connector with a pin layout of <code>VCC</code>/<code>TX</code>/<code>RX</code>/<code>GND</code>, from left-to-right, as viewed looking into the connector:</p>
+<div class="grid">
+<figure>
+<p><a data-preview="" href="../assets/img/hookup_guide/connection-jst-4.png" title="Click to enlarge"><img alt="JST pinout" src="../assets/img/hookup_guide/connection-jst-4.png" width="400" /></a></p>
+<figcaption>
+<p>Pin layout for the 4-pin JST connector.</p>
+</figcaption>
+</figure>
+<figure>
+<p><a data-preview="" href="../assets/img/hookup_guide/connection-jst-gnss.png" title="Click to enlarge"><img alt="JST on board" src="../assets/img/hookup_guide/connection-jst-gnss.png" width="400" /></a></p>
+<figcaption>
+<p>The JST connection on compatible GNSS boards.</p>
+</figcaption>
+</figure>
+</div>
+<h2 id="flow-control-pins">Flow Control Pins<a class="headerlink" data-preview="" href="#flow-control-pins" title="Permanent link"></a></h2>
+<p>Only connect <strong>3.3V</strong> signals to the flow control pins of the UART interface; there is no logic-level conversion for these pins. When utilizing a UART-to-USB adapter with flow-control enabled, the <code>RTS</code> and <code>CTS</code> pins should be connected between the two devices.</p>
+<figure>
+<p><a data-preview="" href="../assets/img/hookup_guide/pins-flow_control.png" title="Click to enlarge"><img alt="Flow control pins" src="../assets/img/hookup_guide/pins-flow_control.png" width="600" /></a></p>
+<figcaption>
+<p>The UART flow control pins on the BlueSMiRF v2.</p>
+</figcaption>
+</figure>
+<h2 id="reprogramming-the-bluesmirf-v2">Reprogramming the BlueSMiRF v2<a class="headerlink" data-preview="" href="#reprogramming-the-bluesmirf-v2" title="Permanent link"></a></h2>
+<p>If you are seeing the following error when attempting to manually reprogram the firmware:</p>
+<details class="terminal">
+<summary>Error Message</summary>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>A<span class="w"> </span>fatal<span class="w"> </span>error<span class="w"> </span>occurred:<span class="w"> </span>Failed<span class="w"> </span>to<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>ESP32:<span class="w"> </span>No<span class="w"> </span>serial<span class="w"> </span>data<span class="w"> </span>received.<span class="w"> </span>For<span class="w"> </span>troubleshooting<span class="w"> </span>steps<span class="w"> </span>visit:<span class="w"> </span>https://docs.espressif.com/projects/esptool/en/latest/troubleshooting.md_in_html
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Done<span class="w"> </span>programming!<span class="w"> </span>Ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>next<span class="w"> </span>board.
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Press<span class="w"> </span>any<span class="w"> </span>key<span class="w"> </span>to<span class="w"> </span><span class="k">continue</span><span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.
 </span></code></pre></div>
-</div>
-<p>Make sure to:</p>
+</details>
+<div class="grid">
+<figure>
+<p><a data-preview="" href="../assets/img/hookup_guide/firmware-upload_failed.jpg" title="Click to enlarge"><img alt="Error message" src="../assets/img/hookup_guide/firmware-upload_failed.jpg" width="600" /></a></p>
+<figcaption>
+<p>Error Programming BlueSMiRF v2 - ESP32</p>
+</figcaption>
+</figure>
+<div>
+<p>Double-Check:</p>
 <ul>
 <li>The wires are making connection and not loose</li>
 <li>The wiring for USB-to-Serial Converter is connected properly the BlueSMiRF v2</li>
-<li>The proper COM Port is utilized for the USB-to-Serial converter, as enumerated to on your computer</li>
+<li>The proper COM port is utilized for the USB-to-Serial converter, as enumerated to on your computer</li>
 <li>The appropriate USB drivers ar installed for the USB-to-Serial converter</li>
-<li>The BlueSMiRF v2 is in Bootloader Mode</li>
+<li>The BlueSMiRF v2 is in Bootloader mode</li>
 </ul>
 <p>Still having issues? Try a power cycle by following the steps below:</p>
 <ol>
@@ -1495,8 +1460,10 @@
 <li>While holding the <span class="keys"><kbd>PAIR</kbd></span> button, reconnect the USB-to-serial converter back to your computer</li>
 <li>Release the <span class="keys"><kbd>PAIR</kbd></span> button</li>
 </ol>
-<h3 id="can-the-bluesmirf-v2-be-used-for-wireless-serial-upload-with-an-arduino">Can the BlueSMiRF v2 be used for wireless serial upload with an Arduino?<a class="headerlink" data-preview="" href="#can-the-bluesmirf-v2-be-used-for-wireless-serial-upload-with-an-arduino" title="Permanent link"></a></h3>
-<p>Currently, there is not support for wireless serial upload with an Arduino. We recommend removing the BlueSMiRF v2 and using a USB-to-serial converter to upload code to an Arduino.</p>
+</div>
+</div>
+<h3 id="baud-rate">Baud Rate<a class="headerlink" data-preview="" href="#baud-rate" title="Permanent link"></a></h3>
+<p>Some users have reported issues, where the <code>921600</code> baud rate does not work. If you encounter this problem, reduce the baud rate to <code>115200</code>.</p>
 
 
 
@@ -1519,7 +1486,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 26, 2026 09:23:17 UTC"><span class="timeago" datetime="2026-03-26T09:23:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 26, 2026 09:23:17 UTC">2026-03-26</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 6, 2026 23:25:26 UTC"><span class="timeago" datetime="2026-11-06T23:25:26+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 6, 2026 23:25:26 UTC">2026-11-06</span>
   </span>
 
     
@@ -1600,7 +1567,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../resources/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Resources">
+          <a href="../resources/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Product Resources">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1610,20 +1577,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Resources
+                Product Resources
               </div>
             </div>
           </a>
         
         
           
-          <a href="../github/file_issue/" class="md-footer__link md-footer__link--next" aria-label="Next: Submit Issues">
+          <a href="../revision_history/" class="md-footer__link md-footer__link--next" aria-label="Next: Revision History">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Submit Issues
+                Revision History
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1915,10 +1882,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.action.edit", "content.tooltips", "navigation.footer", "navigation.tracking", "navigation.tabs.sticky", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.path", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.action.edit", "content.tooltips", "navigation.footer", "navigation.tracking", "navigation.top", "search.highlight", "toc.integrate", "toc.follow", "announce.dismiss"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../js/timeago.min.js"></script>
       
