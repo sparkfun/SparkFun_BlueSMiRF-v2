@@ -52,7 +52,7 @@ To upload the firmware, users will need to compile and upload the firmware in th
 
 
 !!! tip "Bootloader Mode"
-	Users can manually force the ESP32 into the <a href="https://docs.espressif.com/projects/esptool/en/latest/esp32/advanced-topics/boot-mode-selection.html#select-bootloader-mode">serial bootloader mode</a> with the ++"PAIR"++ button, to upload new firmware to the BlueSMiRF v2. Please, refer to the [**++"PAIR"++ Button** section](hardware_overview.md#pair-button) below for more information.
+	Users can manually force the ESP32 into the <a href="https://docs.espressif.com/projects/esptool/en/latest/esp32/advanced-topics/boot-mode-selection.html#select-bootloader-mode">serial bootloader mode</a> with the ++"PAIR"++ button, to upload new firmware to the BlueSMiRF v2. Please, refer to the [**++"PAIR"++ Button** section](hardware-overview.md#pair-button) below for more information.
 
 
 

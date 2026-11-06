@@ -97,4 +97,4 @@ Hold down the ++"PAIR"++ button when the BlueSMiRF v2 is not powered. Applying p
 
 
 !!! note
-	As stated in the [hardware assembly](hardware_assembly.md#usb-to-serial-converter-to-BlueSMiRF-v2) when connecting a USB-to-serial converter, you will need to manually wire the TX-to-RX and RX-to-TX to a USB-to-serial converter with jumper wires.
+	As stated in the [hardware assembly](hardware-assembly.md#usb-to-serial-converter-to-BlueSMiRF-v2) when connecting a USB-to-serial converter, you will need to manually wire the TX-to-RX and RX-to-TX to a USB-to-serial converter with jumper wires.

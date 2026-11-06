@@ -78,7 +78,7 @@ Just as the Bluetooth modems from BlueRadio were discontinued, production of the
 		- <span style="text-decoration:overline">`RTS`</span>/`RXI`/`TXO`/`VCC`/<span style="text-decoration:overline">`CTS`</span>/`GND`
 		- Pin labels are now provided on both sides of the board
 	- On the JST variant, the pin layout and JST connector matches the serial radios
-- A [user button](hardware_overview.md#pair-button) has been added to simplify pairing, triggering various modes of operation, and resetting the factory defaults
+- A [user button](hardware-overview.md#pair-button) has been added to simplify pairing, triggering various modes of operation, and resetting the factory defaults
 - Upgraded the voltage regulator to the APA2112K 3.3V, 600mA for increased performance
 
 

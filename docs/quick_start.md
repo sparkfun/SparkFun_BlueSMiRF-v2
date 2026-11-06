@@ -1,4 +1,4 @@
---8<-- "./docs/hardware_overview.md::14"
+--8<-- "./docs/hardware-overview.md::14"
 
 
 
@@ -8,7 +8,7 @@ The SparkFun BlueSMiRF v2 features the following:
 
 <div class="grid" style="place-items: center;" markdown>
 
---8<-- "./docs/hardware_overview.md:26:29"
+--8<-- "./docs/hardware-overview.md:26:29"
 
 
 <div markdown>
@@ -20,7 +20,7 @@ The SparkFun BlueSMiRF v2 features the following:
 :   A multi-use button used to changes between the various [modes of operation](device-operation.md).
 
 - **Status LEDs**
-:   The green `CONNECT` and red `STATUS` LEDs are used to indicate various [modes of operation](hardware_overview.md#leds).
+:   The green `CONNECT` and red `STATUS` LEDs are used to indicate various [modes of operation](hardware-overview.md#leds).
 
 - [**Hardware Connection**](#pin-connections)
 :   This connection breaks out the pins for the UART interface and power supply for the BlueSMiRF. Additionally, the three variants provide different options for connecting the BlueSMiRF to their project.

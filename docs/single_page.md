@@ -12,10 +12,10 @@ icon: fontawesome/solid/scroll
 --8<-- "./docs/revision_history.md"
 
 # Hardware Overview
---8<-- "./docs/hardware_overview.md"
+--8<-- "./docs/hardware-overview.md"
 
 # Hardware Assembly
---8<-- "./docs/hardware_assembly.md"
+--8<-- "./docs/hardware-assembly.md"
 
 # Button Operation
 --8<-- "./docs/device-operation.md"

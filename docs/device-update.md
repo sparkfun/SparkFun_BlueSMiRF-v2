@@ -94,7 +94,7 @@ We recommend using a [breadboard](https://www.sparkfun.com/breadboard-self-adhes
 
 
 !!! note
-	To automatically trigger the reset of the ESP32, users can connect the `DTR` pin from the USB-to-Serial converter to the [`RST` reset pin on the BlueSMiRF](hardware_overview.md#reset-pin).
+	To automatically trigger the reset of the ESP32, users can connect the `DTR` pin from the USB-to-Serial converter to the [`RST` reset pin on the BlueSMiRF](hardware-overview.md#reset-pin).
 
 
 <figure markdown>

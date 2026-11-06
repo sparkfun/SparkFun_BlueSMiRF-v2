@@ -425,8 +425,8 @@ nav:
   - Introduction: introduction.md
   - Quick Start Guide: quick_start.md
   - Hardware:
-    - Hardware Overview: hardware_overview.md
-    - Hardware Assembly: hardware_assembly.md
+    - Hardware Overview: hardware-overview.md
+    - Hardware Assembly: hardware-assembly.md
   - Operation:
     - Button Operation: device-operation.md
     - Configuration Settings: device-configuration.md

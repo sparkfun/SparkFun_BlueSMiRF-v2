@@ -4,7 +4,7 @@
 	- Features an ESP32-PICO-MINI-02 module programmed with our open-source firmware
 		- Easily [update the firmware](firmware-update.md) Over-the-Air or through the serial interface
 		- Configure the settings with AT-commands
-	- A [user button](hardware_overview.md#pair-button) has been added to simplify pairing, triggering various modes of operation, and resetting the factory defaults
+	- A [user button](hardware-overview.md#pair-button) has been added to simplify pairing, triggering various modes of operation, and resetting the factory defaults
 	- We manufacture three variants, with different connections to simplify hooking up the BlueSMiRF to your project
 		- PTH pad and male header variants, which now have pin labels on both sides of the boards
 		- JST variant that is easily connected to our high-precision GNSS breakout boards
@@ -31,7 +31,7 @@ The SparkFun BlueSMiRF v2 features the following:
 
 <figure markdown>
 [![Connection options](./assets/img/hookup_guide/connection-options.png){ width="600" }](./assets/img/hookup_guide/connection-options.png "Click to enlarge")
-<figcaption markdown>The [connection options](hardware_overview.md#hardware-connection) for the BlueSMiRF v2: (from left; to right)<br>
+<figcaption markdown>The [connection options](hardware-overview.md#hardware-connection) for the BlueSMiRF v2: (from left; to right)<br>
 PTH pads, male header pins, or JST-GH connector</figcaption>
 </figure>
 
@@ -40,17 +40,17 @@ PTH pads, male header pins, or JST-GH connector</figcaption>
 
 <div markdown>
 
-- [**ESP32 Module**](hardware_overview.md#esp32-pico-mini)
+- [**ESP32 Module**](hardware-overview.md#esp32-pico-mini)
 :   Espressif's ESP32-PICO-MINI-02 module
 
-- [++"PAIR"++ **Button**](hardware_overview.md#pair-button)
-:   A multi-use [button](hardware_overview.md#pair-button) that changes between the various [modes of operation](device-operation.md).
+- [++"PAIR"++ **Button**](hardware-overview.md#pair-button)
+:   A multi-use [button](hardware-overview.md#pair-button) that changes between the various [modes of operation](device-operation.md).
 
-- [**Status LEDs**](hardware_overview.md#leds)
+- [**Status LEDs**](hardware-overview.md#leds)
 :   The green `CONNECT` and red `STATUS` LEDs are used to indicate various [modes of operation](device-operation.md).
 
-- [**Hardware Connection**](hardware_overview.md#hardware-connection)
-:   This connection breaks out the pins for the [UART interface](hardware_overview.md#uart-interface) and [power supply](hardware_overview.md#power-pins) for the BlueSMiRF. Additionally, the three variants provide different options for connecting the BlueSMiRF to their project.
+- [**Hardware Connection**](hardware-overview.md#hardware-connection)
+:   This connection breaks out the pins for the [UART interface](hardware-overview.md#uart-interface) and [power supply](hardware-overview.md#power-pins) for the BlueSMiRF. Additionally, the three variants provide different options for connecting the BlueSMiRF to their project.
 
 
 </div>
@@ -353,7 +353,7 @@ The brains of the BlueSMiRF v2 is an [ESP32 Pico-Mini module](https://espressif.
 
 
 !!! tip "Bootloader Mode"
-	Users can manually force the ESP32 into the <a href="https://docs.espressif.com/projects/esptool/en/latest/esp32/advanced-topics/boot-mode-selection.html#select-bootloader-mode">serial bootloader mode</a> with the ++"PAIR"++ button, to upload new firmware to the BlueSMiRF v2. Please, refer to the [**++"PAIR"++ Button** section](hardware_overview.md#pair-button) below for more information.
+	Users can manually force the ESP32 into the <a href="https://docs.espressif.com/projects/esptool/en/latest/esp32/advanced-topics/boot-mode-selection.html#select-bootloader-mode">serial bootloader mode</a> with the ++"PAIR"++ button, to upload new firmware to the BlueSMiRF v2. Please, refer to the [**++"PAIR"++ Button** section](hardware-overview.md#pair-button) below for more information.
 
 
 
@@ -592,8 +592,8 @@ Below, is a general summary of the power circuitry:
 - **`VCC`** - The input voltage for the BlueSMiRF v2, provided from its hardware connection
 	- Supplies the [AP2112](./assets/component_documentation/AP2112.pdf) LDO regulator
 		- Input Voltage Range: **3.3 to 6.0V** (1)
-		- Powers the [ESP32 module](hardware_overview.md#esp32-pico-mini), [LEDs](hardware_overview.md#leds), and lower voltage of the logic-level shifters
-		- The voltage regulator can be bypassed with the [`JP2` jumper](hardware_overview.md#jumpers)
+		- Powers the [ESP32 module](hardware-overview.md#esp32-pico-mini), [LEDs](hardware-overview.md#leds), and lower voltage of the logic-level shifters
+		- The voltage regulator can be bypassed with the [`JP2` jumper](hardware-overview.md#jumpers)
 - **`GND`** - The common ground or the 0V reference for the voltage supplies.
 
 </div>
@@ -712,9 +712,9 @@ The ++"PAIR"++ button is used to switch between the various [modes of operation]
 		- If the ++"PAIR"++ button is continued to be held, the device will transition to a **factory reset** *(see below)*.
 	- If the BlueSMiRF v2 hasn't been discovered or paired with the other BlueSMiRF v2 after a few seconds, it will return to the *(default)* **discoverable mode** and the `STATUS` LED will **fade in-and-out a few times** to indicate the transition.
 - Bootloader Mode
-	- Used to manually update the firmware through the [UART interface](hardware_overview.md#uart-interface).
+	- Used to manually update the firmware through the [UART interface](hardware-overview.md#uart-interface).
 	- To enter bootloader mode, users will need to hold down the ++"PAIR"++ button while the BlueSMiRF v2 is not powered.
-	- Continue holding down the ++"PAIR"++ button, while applying power to put the [microcontroller](hardware_overview.md#esp32-pico-mini) into bootloader mode.
+	- Continue holding down the ++"PAIR"++ button, while applying power to put the [microcontroller](hardware-overview.md#esp32-pico-mini) into bootloader mode.
 	- Release the button, to upload new firmware.
 - Factory Reset
 	- Press and hold the ++"PAIR"++ button down for more than 8sec, the `CONNECT` and `STATUS` LED will **blink back-and-forth, rapidly**.
@@ -785,7 +785,7 @@ The reset pin for the ESP32 is connected to the `RST` PTH pad. Pulling this pin 
 
 
 !!! tip
-	This is primarily provided for our production team, as a test point for programming and testing the board. However, users can use it when reprogramming the [ESP32 microcontroller](hardware_overview.md#esp32-pico-mini).
+	This is primarily provided for our production team, as a test point for programming and testing the board. However, users can use it when reprogramming the [ESP32 microcontroller](hardware-overview.md#esp32-pico-mini).
 
 
 
@@ -812,7 +812,7 @@ There are two jumpers on these board that can be used to easily modify the hardw
 
 
 **`JP2`**
-:   This jumper can be closed to [bypass the 3.3V voltage regulator](hardware_overview.md#power-pins); directly passing power from the `VCC` pin to all the components on the `3V3` power rail.
+:   This jumper can be closed to [bypass the 3.3V voltage regulator](hardware-overview.md#power-pins); directly passing power from the `VCC` pin to all the components on the `3V3` power rail.
 
 
 	<figure markdown>
@@ -826,7 +826,7 @@ There are two jumpers on these board that can be used to easily modify the hardw
 
 
 **`BTN`**
-:   This jumper can be cut to disconnect the [++"PAIR"++ button](hardware_overview.md#pair-button) from the `GPIO 0` pin of the ESP32.
+:   This jumper can be cut to disconnect the [++"PAIR"++ button](hardware-overview.md#pair-button) from the `GPIO 0` pin of the ESP32.
 
 
 	<figure markdown>

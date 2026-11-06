@@ -11,7 +11,7 @@ The ++"PAIR"++ button on the BlueSMiRF v2 is used to enter a few different state
 - [BlueSMiRF Pairing Mode](device-operation.md#bluesmirf-pairing-mode)
 	- Used to pair the BlueSMiRF v2 with another BlueSMiRF v2 in the *(default)* **discoverable mode**.
 - [Bootloader Mode](device-operation.md#bootloader-mode)
-	- Used to manually update the firmware through the [UART interface](hardware_overview.md#uart-interface).
+	- Used to manually update the firmware through the [UART interface](hardware-overview.md#uart-interface).
 - [Factory Reset](device-operation.md#factory-reset)
 	- Forces the BlueSMiRF v2 to return to its original factory settings. Then, it returns to the *(default)* **discoverable mode**.
 
