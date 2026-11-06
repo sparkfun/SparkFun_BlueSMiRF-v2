@@ -1379,9 +1379,36 @@
 
   <h1>Quick Start Guide</h1>
 
+<div class="admonition warning">
+<p class="admonition-title">What's New?</p>
+<p>The design of the BlueSMiRF is similar to previous generations. However, we have made a few design improvements that users will appreciate. In testing, we got about ~110 feet (~33m) of range from a pair of BlueSMiRF v2s in the SparkFun building.</p>
+<ul>
+<li>Features an ESP32-PICO-MINI-02 module programmed with our open-source firmware<ul>
+<li>Easily <a data-preview="" href="../firmware-update/">update the firmware</a> Over-the-Air or through the serial interface</li>
+<li>Configure the settings with AT-commands</li>
+</ul>
+</li>
+<li>A <a data-preview="" href="../hardware_overview/#pair-button">user button</a> has been added to simplify pairing, triggering various modes of operation, and resetting the factory defaults</li>
+<li>We manufacture three variants, with different connections to simplify hooking up the BlueSMiRF to your project<ul>
+<li>PTH pad and male header variants, which now have pin labels on both sides of the boards</li>
+<li>JST variant that is easily connected to our high-precision GNSS breakout boards</li>
+</ul>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For a full background on the development and design revisions of the BlueSMiRF, check out the <a data-preview="" href="../revision_history/"><strong>Board Revision History</strong> page</a> of this guide.</p>
+</div>
+</div>
 <h2 id="board-layout">Board Layout<a class="headerlink" data-preview="" href="#board-layout" title="Permanent link"></a></h2>
 <p>The SparkFun BlueSMiRF v2 features the following:</p>
 <div class="grid" style="place-items: center;">
+<figure>
+<p><a data-preview="" href="../assets/img/hookup_guide/layout.png" title="Click to enlarge"><img alt="Board layout" src="../assets/img/hookup_guide/layout.png" width="400" /></a></p>
+<figcaption>
+<p>The primary features of the BlueSMiRF v2 boards.</p>
+</figcaption>
+</figure>
 <div>
 <ul>
 <li>
@@ -1399,7 +1426,7 @@
 <li>
 <dl>
 <dt><strong>Status LEDs</strong></dt>
-<dd>The green <code>CONNECT</code> and red <code>STATUS</code> LEDs are used to indicate various <a href="hardware-overview.md#leds">modes of operation</a>.</dd>
+<dd>The green <code>CONNECT</code> and red <code>STATUS</code> LEDs are used to indicate various <a data-preview="" href="../hardware_overview/#leds">modes of operation</a>.</dd>
 </dl>
 </li>
 <li>
