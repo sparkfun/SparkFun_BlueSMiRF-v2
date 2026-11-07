@@ -1,5 +1,5 @@
 <article style="text-align: center;" markdown>
-![Banner](./assets/img/banner-hookup_guide.png){ width="650px" }
+![Banner](./assets/img/hookup_guide/banner-hookup_guide.png){ width="650px" }
 </article>
 
 

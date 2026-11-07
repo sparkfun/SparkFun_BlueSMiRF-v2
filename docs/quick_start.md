@@ -1,10 +1,10 @@
 <article style="text-align: center;" markdown>
-![Banner](./assets/img/banner-quick_start.png){ width="650px" }
+![Banner](./assets/img/hookup_guide/banner-quick_start.png){ width="650px" }
 </article>
 
 
 
-# Quick Start
+# Quick Start Guide
 
 --8<-- "./docs/hardware-overview.md::14"
 
