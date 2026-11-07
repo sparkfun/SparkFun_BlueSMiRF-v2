@@ -1,3 +1,11 @@
+<article style="text-align: center;" markdown>
+![Banner](./assets/img/banner-quick_start.png){ width="650px" }
+</article>
+
+
+
+# Quick Start
+
 --8<-- "./docs/hardware-overview.md::14"
 
 

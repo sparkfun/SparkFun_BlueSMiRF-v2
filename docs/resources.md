@@ -18,7 +18,7 @@
 
 		- :sfe: [Product Page](https://www.sparkfun.com/sparkfun-bluesmirf-v2.html)
 		- :fontawesome-solid-file-pdf: [Schematic](./assets/board_files/schematic-pth.pdf)
-		- :fontawesome-solid-file-pdf: [Board Dimensions](./assets/board_files/dimensions-pth.png)
+		- :fontawesome-solid-file-pdf: [Board Dimensions](./assets/board_files/dimensions-pth.pdf)
 		- :material-folder-zip: [KiCad Files](./assets/board_files/kicad_files-pth.zip)
 		- :material-cube-outline: [STEP File](./assets/3d_model/cad_model-pth.step)
 
@@ -29,7 +29,7 @@
 
 		- :sfe: [Product Page](https://www.sparkfun.com/sparkfun-bluesmirf-v2-headers.html)
 		- :fontawesome-solid-file-pdf: [Schematic](./assets/board_files/schematic-smd.pdf)
-		- :fontawesome-solid-file-pdf: [Board Dimensions](./assets/board_files/dimensions-smd.png)
+		- :fontawesome-solid-file-pdf: [Board Dimensions](./assets/board_files/dimensions-smd.pdf)
 		- :material-folder-zip: [KiCad Files](./assets/board_files/kicad_files-smd.zip)
 		- :material-cube-outline: [STEP File](./assets/3d_model/cad_model-smd.step)
 
@@ -40,7 +40,7 @@
 
 		- :sfe: [Product Page](https://www.sparkfun.com/sparkfun-bluesmirf-v2-jst.html)
 		- :fontawesome-solid-file-pdf: [Schematic](./assets/board_files/schematic-jst.pdf)
-		- :fontawesome-solid-file-pdf: [Board Dimensions](./assets/board_files/dimensions-jst.png)
+		- :fontawesome-solid-file-pdf: [Board Dimensions](./assets/board_files/dimensions-jst.pdf)
 		- :material-folder-zip: [KiCad Files](./assets/board_files/kicad_files-jst.zip)
 		- :material-cube-outline: [STEP File](./assets/3d_model/cad_model-jst.step)
 
