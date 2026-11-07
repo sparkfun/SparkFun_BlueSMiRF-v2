@@ -32,7 +32,7 @@ This repo houses the [BlueSMiRF v2 Hookup Guide](https://docs.sparkfun.com/Spark
 ## Documentation
 
 - **[Hookup Guide](http://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/)** - Hookup guide for the BlueSMiRF v2 hosted by GitHub pages.<br>
-  [![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/) [![GitHub Pages Deploy](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2/actions/workflows/generate_documentation.yml/badge.svg)](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2/actions/workflows/generate_documentation.yml)<br>
+  [![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/) [![GitHub Pages Deploy](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2/actions/workflows/build_documentation.yml/badge.svg)](https://github.com/sparkfun/SparkFun_BlueSMiRF-v2/actions/workflows/build_documentation.yml)<br>
   *Need to download or print our hookup guide?*
 
   - [Print *(Print to PDF)* from Single-Page View](http://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/print_view)
