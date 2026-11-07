@@ -220,7 +220,7 @@
     <span class="twemoji sfe">
       <svg xmlns="http://www.w3.org/2000/svg" width="15.955" height="24" viewbox="0 0 16 24"><title>SparkFun logo</title><path d="M13.03 3.838s.34 1.438-.745 1.638c-.756.134-1.976-.615-2.59-1.362-.756-.922-.66-1.647-.072-2.29.884-.978 2.397-.6 2.397-.6S9.248-1.209 6.362.783c-2.571 1.77-1.834 4.183.487 6.288 2.09 1.902.42 3.988-1.686 3.717-1.444-.184-2.035-1.343-1.688-2.054.299-.608 1.335-.982 1.335-.982s-1.19-.484-2.592.044C.96 8.27-.078 9.312.005 11.917V24s1.3-1.604 2.83-3.236c1.713-1.84 2.495-3.084 4.254-2.938 3.328.205 5.735-1.273 7.37-3.645 3.142-4.563.681-9.661-1.43-10.343" style="fill:#e0311d;fill-opacity:1;stroke-width:.66479"/></svg>
     </span>
-    <strong>New Firmware Release:</strong> Fixes exit command for Bluetooth connection and increases maximum buffer size. <a href="/SparkFun_BlueSMiRF-v2/firmware-update" title="View Firmware Update Instructions">Update Now</a>
+    <strong>New Firmware Release:</strong> Fixes exit command for Bluetooth connection and increases maximum buffer size. <a href="/SparkFun_BlueSMiRF-v2/firmware-overview/#over-the-air-ota" title="View Firmware Update Instructions">Update Now</a>
   </article>
 
           </div>
@@ -1353,7 +1353,7 @@
 <p>Just as the Bluetooth modems from BlueRadio were discontinued, production of the modules from Roving Network also ceased and in 2021 we sold the last of the BlueSMiRF Gold and Silver. Fast forward to January 2024 and the BlueSMiRF has arisen once more! The new BlueSMiRFs v2 features a few upgrades:</p>
 <ul>
 <li>Features an ESP32-PICO-MINI-02 module programmed with our open-source firmware<ul>
-<li>Easily <a data-preview="" href="../firmware-update/">update the firmware</a> Over-the-Air or through the serial interface</li>
+<li>Easily <a data-preview="" href="../firmware-overview/#over-the-air-ota">update the firmware</a> Over-the-Air or through the serial interface</li>
 <li>Remotely configure the settings with a simple <a data-preview="" href="../device-configuration/">AT-command set</a></li>
 </ul>
 </li>
@@ -1389,7 +1389,7 @@
 <p>The design of the BlueSMiRF is similar to previous generations. However, we have made a few design improvements that users will appreciate. In testing, we got about ~110 feet (~33m) of range from a pair of BlueSMiRF v2s in the SparkFun building.</p>
 <ul>
 <li>Features an ESP32-PICO-MINI-02 module programmed with our open-source firmware<ul>
-<li>Easily <a data-preview="" href="../firmware-update/">update the firmware</a> Over-the-Air or through the serial interface</li>
+<li>Easily <a data-preview="" href="../firmware-overview/#over-the-air-ota">update the firmware</a> Over-the-Air or through the serial interface</li>
 <li>Configure the settings with AT-commands</li>
 </ul>
 </li>
@@ -3357,7 +3357,7 @@ PTH pads, male header pins, or JST-GH connector.</p>
 <p>Users can manually force the ESP32 into the <a href="https://docs.espressif.com/projects/esptool/en/latest/esp32/advanced-topics/boot-mode-selection.html#select-bootloader-mode" target="_blank" rel="noopener">serial bootloader mode</a> with the <span class="keys"><kbd>PAIR</kbd></span> button, to upload new firmware to the BlueSMiRF v2. Please, refer to the <a data-preview="" href="../hardware-overview/#pair-button"><strong><span class="keys"><kbd>PAIR</kbd></span> Button</strong> section</a> below for more information.</p>
 </div>
 <h2 id="update-methods">Update Methods<a class="headerlink" data-preview="" href="#update-methods" title="Permanent link"></a></h2>
-<p>From time to time, SparkFun will release new firmware for the BlueSMiRF v2 product line to add and improve functionality. For most users, firmware can be upgraded over a 2.4GHz WiFi network using the <a data-preview="" href="../firmware-update/#over-the-air-ota">OTA method</a>. Users can also update the firmware by manually reprogramming the device with the new firmware.</p>
+<p>From time to time, SparkFun will release new firmware for the BlueSMiRF v2 product line to add and improve functionality. For most users, firmware can be upgraded over a 2.4GHz WiFi network using the <a data-preview="" href="#over-the-air-ota">OTA method</a>. Users can also update the firmware by manually reprogramming the device with the new firmware.</p>
 <h3 id="over-the-air-ota">Over-The-Air (OTA)<a class="headerlink" data-preview="" href="#over-the-air-ota" title="Permanent link"></a></h3>
 <p>Because it's much easier to use, we recommend this method. However, it does require an internet connection through your local WiFi network. Once the <code>AT-WiFiSSID</code> and <code>AT-WiFiPassword</code> settings have been entered for your local WiFi network, the <code>ATC</code> command can be issued to check for new firmware. If new firmware is available, send the <code>ATU</code> command to begin an update.</p>
 <ol>

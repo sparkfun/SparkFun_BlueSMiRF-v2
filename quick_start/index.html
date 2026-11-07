@@ -224,7 +224,7 @@
     <span class="twemoji sfe">
       <svg xmlns="http://www.w3.org/2000/svg" width="15.955" height="24" viewbox="0 0 16 24"><title>SparkFun logo</title><path d="M13.03 3.838s.34 1.438-.745 1.638c-.756.134-1.976-.615-2.59-1.362-.756-.922-.66-1.647-.072-2.29.884-.978 2.397-.6 2.397-.6S9.248-1.209 6.362.783c-2.571 1.77-1.834 4.183.487 6.288 2.09 1.902.42 3.988-1.686 3.717-1.444-.184-2.035-1.343-1.688-2.054.299-.608 1.335-.982 1.335-.982s-1.19-.484-2.592.044C.96 8.27-.078 9.312.005 11.917V24s1.3-1.604 2.83-3.236c1.713-1.84 2.495-3.084 4.254-2.938 3.328.205 5.735-1.273 7.37-3.645 3.142-4.563.681-9.661-1.43-10.343" style="fill:#e0311d;fill-opacity:1;stroke-width:.66479"/></svg>
     </span>
-    <strong>New Firmware Release:</strong> Fixes exit command for Bluetooth connection and increases maximum buffer size. <a href="/SparkFun_BlueSMiRF-v2/firmware-update" title="View Firmware Update Instructions">Update Now</a>
+    <strong>New Firmware Release:</strong> Fixes exit command for Bluetooth connection and increases maximum buffer size. <a href="/SparkFun_BlueSMiRF-v2/firmware-overview/#over-the-air-ota" title="View Firmware Update Instructions">Update Now</a>
   </article>
 
           </div>
@@ -1384,7 +1384,7 @@
 <p>The design of the BlueSMiRF is similar to previous generations. However, we have made a few design improvements that users will appreciate. In testing, we got about ~110 feet (~33m) of range from a pair of BlueSMiRF v2s in the SparkFun building.</p>
 <ul>
 <li>Features an ESP32-PICO-MINI-02 module programmed with our open-source firmware<ul>
-<li>Easily <a data-preview="" href="../firmware-update/">update the firmware</a> Over-the-Air or through the serial interface</li>
+<li>Easily <a data-preview="" href="../firmware-overview/#over-the-air-ota">update the firmware</a> Over-the-Air or through the serial interface</li>
 <li>Configure the settings with AT-commands</li>
 </ul>
 </li>
@@ -1691,42 +1691,53 @@
 <p>Below, is an example of this method using the UART interface. In the example, the WiFi network's SSID is <code>sparkfun-guest</code> and its password is <code>sparkfun6333</code>. The highlighted lines represent the commands that were sent.</p>
 <div class="admonition terminal">
 <p class="admonition-title">Terminal</p>
-<p>``` bash hl_lines="3 5 8 11 14 25"
-BlueSMiRF-v1.0</p>
-<p>$$$
-OK
-at-wifissid=sparkfun-guest
-AT-WIFISSID=sparkfun-guest
-OK
-at-wifipassword=sparkfun6333
-AT-WIFIPASSWORD=sparkfun6333
-OK
-atw
-ATW
-OK
-atc
-ATC
-Connecting to sparkfun-guest...
-Connected!
-Checking to see if an update is available from https://raw.githubusercontent.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries/main/BlueSMiRF-Firmware.json</p>
-<p>Current firmware version: v1.0</p>
-<p>New firmware version available: 1.1</p>
-<p>OK
-atu
-ATU
-Connecting to sparkfun-guest...
-Connected!
-Getting new firmware
-Installing new firmware</p>
-<p>[ 0%</p>
-<p>[ 1%</p>
-<p>[ 2%</p>
-<p>.
-.
-.</p>
-<p>[=================== 99%</p>
-<p>[==================== 100%
-]</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BlueSMiRF-v1.0
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="hll"><span class="nv">$$</span>$
+</span></span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>OK
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="hll">at-wifissid<span class="o">=</span>sparkfun-guest
+</span></span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>AT-WIFISSID<span class="o">=</span>sparkfun-guest
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>OK
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="hll">at-wifipassword<span class="o">=</span>sparkfun6333
+</span></span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>AT-WIFIPASSWORD<span class="o">=</span>sparkfun6333
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>OK
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="hll">atw
+</span></span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>ATW
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>OK
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="hll">atc
+</span></span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>ATC
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>Connecting<span class="w"> </span>to<span class="w"> </span>sparkfun-guest...
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>Connected!
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>Checking<span class="w"> </span>to<span class="w"> </span>see<span class="w"> </span><span class="k">if</span><span class="w"> </span>an<span class="w"> </span>update<span class="w"> </span>is<span class="w"> </span>available<span class="w"> </span>from<span class="w"> </span>https://raw.githubusercontent.com/sparkfun/SparkFun_BlueSMiRF-v2_Binaries/main/BlueSMiRF-Firmware.json
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>Current<span class="w"> </span>firmware<span class="w"> </span>version:<span class="w"> </span>v1.0
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>New<span class="w"> </span>firmware<span class="w"> </span>version<span class="w"> </span>available:<span class="w"> </span><span class="m">1</span>.1
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>OK
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="hll">atu
+</span></span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>ATU
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>Connecting<span class="w"> </span>to<span class="w"> </span>sparkfun-guest...
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>Connected!
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>Getting<span class="w"> </span>new<span class="w"> </span>firmware
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>Installing<span class="w"> </span>new<span class="w"> </span>firmware
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="o">[</span><span class="w"> </span><span class="m">0</span>%
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="o">[</span><span class="w"> </span><span class="m">1</span>%
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="o">[</span><span class="w"> </span><span class="m">2</span>%
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>.
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>.
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>.
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="o">[===================</span><span class="w"> </span><span class="m">99</span>%
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="o">[====================</span><span class="w"> </span><span class="m">100</span>%
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="o">]</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>BlueSMiRF-v1.1
+</span></code></pre></div>
 </div>
 </details>
 
@@ -1751,7 +1762,7 @@ Installing new firmware</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 6, 2026 23:53:52 UTC"><span class="timeago" datetime="2026-11-06T23:53:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 6, 2026 23:53:52 UTC">2026-11-06</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 7, 2026 00:05:32 UTC"><span class="timeago" datetime="2026-11-07T00:05:32+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 7, 2026 00:05:32 UTC">2026-11-07</span>
   </span>
 
     
