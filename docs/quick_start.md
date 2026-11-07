@@ -195,4 +195,4 @@ There are two methods to restore the device's settings to their factory defaults
 ### Firmware Update
 Because it's much easier to use, we recommend the OTA firmware update process.
 
---8<-- "./docs/firmware-update.md:9:68"
+--8<-- "./docs/firmware-overview.md:68:131"

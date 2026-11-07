@@ -85,7 +85,7 @@ A pre-release is often created using the latest stable release candidate. These 
 
 
 > [!NOTE]
-> **Firmware Updates:** Because it's much easier to use, we recommend the OTA firmware update process. If that fails for some reason, you can update the firmware directly. For more information, check out the tutorial under the section [Firmware Update](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/firmware-update/).
+> **Firmware Updates:** Because it's much easier to use, we recommend the OTA firmware update process. If that fails for some reason, you can upload the firmware directly. For more information, check out the tutorial under the section [Manually Reprogramming](https://docs.sparkfun.com/SparkFun_BlueSMiRF-v2/firmware-overview/#manually-reprogramming/).
 
 
 

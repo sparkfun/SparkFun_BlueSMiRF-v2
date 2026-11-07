@@ -71,7 +71,7 @@ Just as the Bluetooth modems from BlueRadio were discontinued, production of the
 
 
 - Features an ESP32-PICO-MINI-02 module programmed with our open-source firmware
-	- Easily [update the firmware](firmware-update.md) Over-the-Air or through the serial interface
+	- Easily [update the firmware](firmware-overview.md#over-the-air-ota) Over-the-Air or through the serial interface
 	- Remotely configure the settings with a simple [AT-command set](device-configuration.md)
 - We have three variants with different connections to simplify hooking up the BlueSMiRF to your project
 	- The PTH pad and male header variants have fully, adopted the pin layout from the Bluetooth Mate

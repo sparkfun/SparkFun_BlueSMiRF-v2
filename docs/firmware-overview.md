@@ -57,7 +57,7 @@ To upload the firmware, users will need to compile and upload the firmware in th
 
 
 ## Update Methods
-From time to time, SparkFun will release new firmware for the BlueSMiRF v2 product line to add and improve functionality. For most users, firmware can be upgraded over a 2.4GHz WiFi network using the [OTA method](firmware-update.md#over-the-air-ota). Users can also update the firmware by manually reprogramming the device with the new firmware.
+From time to time, SparkFun will release new firmware for the BlueSMiRF v2 product line to add and improve functionality. For most users, firmware can be upgraded over a 2.4GHz WiFi network using the [OTA method](#over-the-air-ota). Users can also update the firmware by manually reprogramming the device with the new firmware.
 
 
 

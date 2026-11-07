@@ -2,7 +2,7 @@
 	The design of the BlueSMiRF is similar to previous generations. However, we have made a few design improvements that users will appreciate. In testing, we got about ~110 feet (~33m) of range from a pair of BlueSMiRF v2s in the SparkFun building.
 
 	- Features an ESP32-PICO-MINI-02 module programmed with our open-source firmware
-		- Easily [update the firmware](firmware-update.md) Over-the-Air or through the serial interface
+		- Easily [update the firmware](firmware-overview.md#over-the-air-ota) Over-the-Air or through the serial interface
 		- Configure the settings with AT-commands
 	- A [user button](hardware-overview.md#pair-button) has been added to simplify pairing, triggering various modes of operation, and resetting the factory defaults
 	- We manufacture three variants, with different connections to simplify hooking up the BlueSMiRF to your project
